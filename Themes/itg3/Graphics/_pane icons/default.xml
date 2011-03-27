@@ -1,0 +1,36 @@
+<ActorFrame><children>
+<Layer
+		File="_jump"
+		InitCommand="shadowlength,2"
+		OnCommand="x,-127+100;y,225+5;decelerate,0.3;y,125+5"
+		OffCommand="linear,0.4;diffusealpha,0"
+	/>
+<Layer
+		File="_hold"
+		InitCommand="shadowlength,2"
+		OnCommand="x,-102+100;y,225+5;sleep,0.1;decelerate,0.3;y,125+5"
+		OffCommand="linear,0.4;diffusealpha,0"
+	/>
+<Layer
+		File="_mine"
+		InitCommand="shadowlength,2"
+		OnCommand="x,-77+100;y,225+5;sleep,0.2;decelerate,0.3;y,125+5"
+		OffCommand="linear,0.4;diffusealpha,0"
+	/>
+<Layer
+		File="_hand"
+		InitCommand="shadowlength,2"
+		OnCommand="x,-52+100;y,225+5;sleep,0.3;decelerate,0.3;y,125+5"
+		OffCommand="linear,0.4;diffusealpha,0"
+	/>
+<Layer
+		File="_roll"
+		InitCommand="shadowlength,2"
+		OnCommand="x,-27+100;y,225+5;sleep,0.4;decelerate,0.3;y,125+5"
+		OffCommand="linear,0.4;diffusealpha,0"
+	/>
+<Layer
+		File="_textmask"
+		OnCommand="x,-77+100;y,130;zbuffer,1;blend,noeffect"
+/>
+</children> </ActorFrame>

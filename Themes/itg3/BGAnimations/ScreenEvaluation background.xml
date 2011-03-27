@@ -1,0 +1,8 @@
+<ActorFrame>
+		<children>
+<Layer
+		File="ScreenSelectMusic background/CJ126.mpg"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3"
+	/>	
+		</children>
+</ActorFrame>

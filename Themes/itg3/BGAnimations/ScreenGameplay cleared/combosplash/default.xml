@@ -1,0 +1,575 @@
+<ActorFrame><children> 
+<!-- Player 1 -->
+<ActorFrame
+	Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+	InitCommand="%function(self)
+	if GAMESTATE:PlayerUsingBothSides() then self:x(0)
+	else self:x(-SCREEN_WIDTH/4) end
+	end"
+	OnCommand="%function(self)
+					local Selection = GAMESTATE:GetCurrentSteps(PLAYER_1);
+					P1TotalSteps = tonumber( Radar( Selection:GetRadarValues(),6 ) );
+					P1TotalHolds = tonumber( Radar( Selection:GetRadarValues(),2 ) );
+					P1TotalRolls = tonumber( Radar( Selection:GetRadarValues(),5 ) ); 
+					end"> <children>
+					
+<!-- Background beams -->
+	<Layer File="bluebeam"
+		InitCommand="additiveblend,1;y,-SCREEN_HEIGHT/9+15;diffusealpha,0;zoom,.3;cropleft,.5;cropright,.5;queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesFantasticHit(self,PLAYER_1) == P1TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_1) == (P1TotalHolds + P1TotalRolls) then
+				self:diffusealpha(1)
+				self:fadeleft(0.5)
+				self:faderight(0.5)
+				self:texcoordvelocity(0.5,0)
+				self:sleep(.2)
+				self:decelerate(.4)
+				self:cropleft(0)
+				self:cropright(0)
+				self:zoom(1)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="orangebeam"
+		InitCommand="additiveblend,1;y,-SCREEN_HEIGHT/9+15;diffusealpha,0;zoom,.3;cropleft,.5;cropright,.5;queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesExcellentComboHit(self,PLAYER_1) == P1TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_1) == (P1TotalHolds + P1TotalRolls) then
+				self:diffusealpha(1)
+				self:fadeleft(0.5)
+				self:faderight(0.5)
+				self:texcoordvelocity(0.5,0)
+				self:sleep(.2)
+				self:decelerate(.4)
+				self:cropleft(0)
+				self:cropright(0)
+				self:zoom(1)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="greenbeam"
+		InitCommand="additiveblend,1;y,-SCREEN_HEIGHT/9+15;diffusealpha,0;zoom,.3;cropleft,.5;cropright,.5;queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesGreatComboHit(self,PLAYER_1) == P1TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_1) == (P1TotalHolds + P1TotalRolls) then
+				self:diffusealpha(1)
+				self:fadeleft(0.5)
+				self:faderight(0.5)
+				self:texcoordvelocity(0.5,0)
+				self:sleep(.2)
+				self:decelerate(.4)
+				self:cropleft(0)
+				self:cropright(0)
+				self:zoom(1)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	
+<Layer File="full combo text"
+OnCommand="diffusealpha,0;shadowlength,0;y,-SCREEN_HEIGHT/8+15;queuecommand,SetStats" 
+SetStatsCommand="%function(self)
+					if PlayerFullComboed(PLAYER_1) then 
+						self:sleep(.4)
+						self:diffusealpha(1)
+						if GetNotesFantasticHit(self,PLAYER_1) == P1TotalSteps then 
+							self:diffuseshift()
+							self:effectcolor1(1,1,1,1)
+							self:effectcolor2(0.58,0.9,1,1)
+							self:effectperiod(1)
+						elseif GetNotesExcellentComboHit(self,PLAYER_1) == P1TotalSteps then 
+							self:diffuseshift()
+							self:effectcolor1(1,1,1,1)
+							self:effectcolor2(1,0.83,0.6,1)
+							self:effectperiod(1)	
+						elseif GetNotesGreatComboHit(self,PLAYER_1) == P1TotalSteps then 
+							self:diffuseshift()
+							self:effectcolor1(1,1,1,1)
+							self:effectcolor2(0.3,1,0.56,1)
+							self:effectperiod(1)	
+						end	
+						
+					else self:diffusealpha(0) end						
+						end" />
+<Layer File="full combo glow"
+OnCommand="diffusealpha,0;y,-SCREEN_HEIGHT/8+15;queuecommand,SetStats" 
+SetStatsCommand="%function(self)
+					if PlayerFullComboed(PLAYER_1) then 
+					self:sleep(0.1)
+					self:linear(.3)
+					self:diffusealpha(1)
+					self:sleep(.5)
+					self:linear(.5)
+					self:diffusealpha(0)
+					end
+						end" />
+	
+	<Layer File="_fan"
+		InitCommand="zoomx,1.25;additiveblend,1;cropleft,.5;cropright,.5;faderight,.5;fadeleft,.5;zoomtoheight,SCREEN_HEIGHT*1.5;diffusealpha,0"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesFantasticHit(self,PLAYER_1) == P1TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_1) == (P1TotalHolds + P1TotalRolls) then
+				self:diffusealpha(.5)
+				self:linear(1)
+				self:faderight(0)
+				self:fadeleft(0)
+				self:cropleft(0)
+				self:cropright(0)
+				self:zoomx(2)
+				self:linear(1)
+				self:fadebottom(1)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="_fan"
+		InitCommand="additiveblend,1;fadetop,.1;fadebottom,.5;zoomtoheight,SCREEN_HEIGHT*2;diffusealpha,0"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesFantasticHit(self,PLAYER_1) == P1TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_1) == (P1TotalHolds + P1TotalRolls) then
+				self:addy(SCREEN_HEIGHT*2)
+				self:diffusealpha(1)
+				self:decelerate(1.75)
+				self:addy(-SCREEN_HEIGHT*4)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="blueflare"
+		InitCommand="additiveblend,1;y,-SCREEN_HEIGHT/9+15;diffusealpha,0;zoom,.3;"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesFantasticHit(self,PLAYER_1) == P1TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_1) == (P1TotalHolds + P1TotalRolls) then
+				self:sleep(.1)
+				self:accelerate(.4)
+				self:diffusealpha(1)
+				self:zoom(5)
+				self:decelerate(3)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+<!--Excellent-->
+<Layer File="_ex"
+		InitCommand="zoomx,1.25;additiveblend,1;cropleft,.5;cropright,.5;faderight,.5;fadeleft,.5;zoomtoheight,SCREEN_HEIGHT*1.5;diffusealpha,0"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesExcellentComboHit(self,PLAYER_1) == P1TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_1) == (P1TotalHolds + P1TotalRolls) then
+				self:diffusealpha(.5)
+				self:linear(1)
+				self:faderight(0)
+				self:fadeleft(0)
+				self:cropleft(0)
+				self:cropright(0)
+				self:zoomx(2)
+				self:linear(1)
+				self:fadebottom(1)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="_ex"
+		InitCommand="additiveblend,1;fadetop,.1;fadebottom,.5;zoomtoheight,SCREEN_HEIGHT*2;diffusealpha,0"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesExcellentComboHit(self,PLAYER_1) == P1TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_1) == (P1TotalHolds + P1TotalRolls) then
+				self:addy(SCREEN_HEIGHT*2)
+				self:diffusealpha(1)
+				self:decelerate(1.75)
+				self:addy(-SCREEN_HEIGHT*4)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="orangeflare"
+		InitCommand="additiveblend,1;y,-SCREEN_HEIGHT/9+15;diffusealpha,0;zoom,.3;"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesExcellentComboHit(self,PLAYER_1) == P1TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_1) == (P1TotalHolds + P1TotalRolls) then
+				self:sleep(.1)
+				self:accelerate(.4)
+				self:diffusealpha(1)
+				self:zoom(5)
+				self:decelerate(3)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+<!-- Great -->
+<Layer File="_great"
+		InitCommand="zoomx,1.25;additiveblend,1;cropleft,.5;cropright,.5;faderight,.5;fadeleft,.5;zoomtoheight,SCREEN_HEIGHT*1.5;diffusealpha,0"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesGreatComboHit(self,PLAYER_1) == P1TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_1) == (P1TotalHolds + P1TotalRolls) then
+				self:diffusealpha(.5)
+				self:linear(1)
+				self:faderight(0)
+				self:fadeleft(0)
+				self:cropleft(0)
+				self:cropright(0)
+				self:zoomx(2)
+				self:linear(1)
+				self:fadebottom(1)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="_great"
+		InitCommand="additiveblend,1;fadetop,.1;fadebottom,.5;zoomtoheight,SCREEN_HEIGHT*2;diffusealpha,0"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesGreatComboHit(self,PLAYER_1) == P1TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_1) == (P1TotalHolds + P1TotalRolls) then
+				self:addy(SCREEN_HEIGHT*2)
+				self:diffusealpha(1)
+				self:decelerate(1.75)
+				self:addy(-SCREEN_HEIGHT*4)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="greenflare"
+		InitCommand="additiveblend,1;y,-SCREEN_HEIGHT/9+15;diffusealpha,0;zoom,.3;"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesGreatComboHit(self,PLAYER_1) == P1TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_1) == (P1TotalHolds + P1TotalRolls) then
+				self:sleep(.1)
+				self:accelerate(.4)
+				self:diffusealpha(1)
+				self:zoom(5)
+				self:decelerate(3)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	
+	
+	
+	
+</children> </ActorFrame>
+
+
+
+<!-- Player 2 -->
+<ActorFrame
+	Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+	InitCommand="%function(self)
+	if GAMESTATE:PlayerUsingBothSides() then self:x(0)
+	else self:x(SCREEN_WIDTH/4) end
+	end"
+	OnCommand="%function(self)
+					local Selection2 = GAMESTATE:GetCurrentSteps(PLAYER_2);
+					P2TotalSteps = tonumber( Radar( Selection2:GetRadarValues(),6 ) );
+					P2TotalHolds = tonumber( Radar( Selection2:GetRadarValues(),2 ) );
+					P2TotalRolls = tonumber( Radar( Selection2:GetRadarValues(),5 ) ); 
+					end"> <children>
+					
+<!-- Background beams -->
+	<Layer File="bluebeam"
+		InitCommand="additiveblend,1;y,-SCREEN_HEIGHT/9+15;diffusealpha,0;zoom,.3;cropleft,.5;cropright,.5;queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesFantasticHit(self,PLAYER_2) == P2TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_2) == (P2TotalHolds + P2TotalRolls) then
+				self:diffusealpha(1)
+				self:fadeleft(0.5)
+				self:faderight(0.5)
+				self:texcoordvelocity(0.5,0)
+				self:sleep(.2)
+				self:decelerate(.4)
+				self:cropleft(0)
+				self:cropright(0)
+				self:zoom(1)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="orangebeam"
+		InitCommand="additiveblend,1;y,-SCREEN_HEIGHT/9+15;diffusealpha,0;zoom,.3;cropleft,.5;cropright,.5;queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesExcellentComboHit(self,PLAYER_2) == P2TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_2) == (P2TotalHolds + P2TotalRolls) then
+				self:diffusealpha(1)
+				self:fadeleft(0.5)
+				self:faderight(0.5)
+				self:texcoordvelocity(0.5,0)
+				self:sleep(.2)
+				self:decelerate(.4)
+				self:cropleft(0)
+				self:cropright(0)
+				self:zoom(1)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="greenbeam"
+		InitCommand="additiveblend,1;y,-SCREEN_HEIGHT/9+15;diffusealpha,0;zoom,.3;cropleft,.5;cropright,.5;queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesGreatComboHit(self,PLAYER_2) == P2TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_2) == (P2TotalHolds + P2TotalRolls) then
+				self:diffusealpha(1)
+				self:fadeleft(0.5)
+				self:faderight(0.5)
+				self:texcoordvelocity(0.5,0)
+				self:sleep(.2)
+				self:decelerate(.4)
+				self:cropleft(0)
+				self:cropright(0)
+				self:zoom(1)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	
+<Layer File="full combo text"
+OnCommand="diffusealpha,0;shadowlength,0;y,-SCREEN_HEIGHT/8+15;queuecommand,SetStats" 
+SetStatsCommand="%function(self)
+					if PlayerFullComboed(PLAYER_2) then 
+						self:sleep(.4)
+						self:diffusealpha(1)
+						if GetNotesFantasticHit(self,PLAYER_2) == P2TotalSteps then 
+							self:diffuseshift()
+							self:effectcolor1(1,1,1,1)
+							self:effectcolor2(0.58,0.9,1,1)
+							self:effectperiod(1)
+						elseif GetNotesExcellentComboHit(self,PLAYER_2) == P2TotalSteps then 
+							self:diffuseshift()
+							self:effectcolor1(1,1,1,1)
+							self:effectcolor2(1,0.83,0.6,1)
+							self:effectperiod(1)	
+						elseif GetNotesGreatComboHit(self,PLAYER_2) == P2TotalSteps then 
+							self:diffuseshift()
+							self:effectcolor1(1,1,1,1)
+							self:effectcolor2(0.3,1,0.56,1)
+							self:effectperiod(1)	
+						end	
+						
+					else self:diffusealpha(0) end						
+						end" />
+<Layer File="full combo glow"
+OnCommand="diffusealpha,0;y,-SCREEN_HEIGHT/8+15;queuecommand,SetStats" 
+SetStatsCommand="%function(self)
+					if PlayerFullComboed(PLAYER_2) then 
+					self:sleep(0.1)
+					self:linear(.3)
+					self:diffusealpha(1)
+					self:sleep(.5)
+					self:linear(.5)
+					self:diffusealpha(0)
+						
+					elseif GetNotesExcellentHit(self,PLAYER_2) == P2TotalSteps then 
+						
+					elseif GetNotesHit(self,PLAYER_2) == P2TotalSteps then 
+					end
+						end" />
+	
+	<Layer File="_fan"
+		InitCommand="zoomx,1.25;additiveblend,1;cropleft,.5;cropright,.5;faderight,.5;fadeleft,.5;zoomtoheight,SCREEN_HEIGHT*1.5;diffusealpha,0"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesFantasticHit(self,PLAYER_2) == P2TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_2) == (P2TotalHolds + P2TotalRolls) then
+				self:diffusealpha(.5)
+				self:linear(1)
+				self:faderight(0)
+				self:fadeleft(0)
+				self:cropleft(0)
+				self:cropright(0)
+				self:zoomx(2)
+				self:linear(1)
+				self:fadebottom(1)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="_fan"
+		InitCommand="additiveblend,1;fadetop,.1;fadebottom,.5;zoomtoheight,SCREEN_HEIGHT*2;diffusealpha,0"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesFantasticHit(self,PLAYER_2) == P2TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_2) == (P2TotalHolds + P2TotalRolls) then
+				self:addy(SCREEN_HEIGHT*2)
+				self:diffusealpha(1)
+				self:decelerate(1.75)
+				self:addy(-SCREEN_HEIGHT*4)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="blueflare"
+		InitCommand="additiveblend,1;y,-SCREEN_HEIGHT/9+15;diffusealpha,0;zoom,.3;"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesFantasticHit(self,PLAYER_2) == P2TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_2) == (P2TotalHolds + P2TotalRolls) then
+				self:sleep(.1)
+				self:accelerate(.4)
+				self:diffusealpha(1)
+				self:zoom(5)
+				self:decelerate(3)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+<!--Excellent-->
+<Layer File="_ex"
+		InitCommand="zoomx,1.25;additiveblend,1;cropleft,.5;cropright,.5;faderight,.5;fadeleft,.5;zoomtoheight,SCREEN_HEIGHT*1.5;diffusealpha,0"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesExcellentComboHit(self,PLAYER_2) == P2TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_2) == (P2TotalHolds + P2TotalRolls) then
+				self:diffusealpha(.5)
+				self:linear(1)
+				self:faderight(0)
+				self:fadeleft(0)
+				self:cropleft(0)
+				self:cropright(0)
+				self:zoomx(2)
+				self:linear(1)
+				self:fadebottom(1)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="_ex"
+		InitCommand="additiveblend,1;fadetop,.1;fadebottom,.5;zoomtoheight,SCREEN_HEIGHT*2;diffusealpha,0"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesExcellentComboHit(self,PLAYER_2) == P2TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_2) == (P2TotalHolds + P2TotalRolls) then
+				self:addy(SCREEN_HEIGHT*2)
+				self:diffusealpha(1)
+				self:decelerate(1.75)
+				self:addy(-SCREEN_HEIGHT*4)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="orangeflare"
+		InitCommand="additiveblend,1;y,-SCREEN_HEIGHT/9+15;diffusealpha,0;zoom,.3;"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesExcellentComboHit(self,PLAYER_2) == P2TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_2) == (P2TotalHolds + P2TotalRolls) then
+				self:sleep(.1)
+				self:accelerate(.4)
+				self:diffusealpha(1)
+				self:zoom(5)
+				self:decelerate(3)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+<!-- Great -->
+<Layer File="_great"
+		InitCommand="zoomx,1.25;additiveblend,1;cropleft,.5;cropright,.5;faderight,.5;fadeleft,.5;zoomtoheight,SCREEN_HEIGHT*1.5;diffusealpha,0"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesGreatComboHit(self,PLAYER_2) == P2TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_2) == (P2TotalHolds + P2TotalRolls) then
+				self:diffusealpha(.5)
+				self:linear(1)
+				self:faderight(0)
+				self:fadeleft(0)
+				self:cropleft(0)
+				self:cropright(0)
+				self:zoomx(2)
+				self:linear(1)
+				self:fadebottom(1)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="_great"
+		InitCommand="additiveblend,1;fadetop,.1;fadebottom,.5;zoomtoheight,SCREEN_HEIGHT*2;diffusealpha,0"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesGreatComboHit(self,PLAYER_2) == P2TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_2) == (P2TotalHolds + P2TotalRolls) then
+				self:addy(SCREEN_HEIGHT*2)
+				self:diffusealpha(1)
+				self:decelerate(1.75)
+				self:addy(-SCREEN_HEIGHT*4)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	<Layer File="greenflare"
+		InitCommand="additiveblend,1;y,-SCREEN_HEIGHT/9+15;diffusealpha,0;zoom,.3;"
+		OnCommand="queuecommand,CheckScore"
+		CheckScoreCommand="%function(self)
+			if GetNotesGreatComboHit(self,PLAYER_2) == P2TotalSteps then
+				if GetHoldsHeldTotal(PLAYER_2) == (P2TotalHolds + P2TotalRolls) then
+				self:sleep(.1)
+				self:accelerate(.4)
+				self:diffusealpha(1)
+				self:zoom(5)
+				self:decelerate(3)
+				self:diffusealpha(0)
+				end
+			else self:hidden(1)
+			end
+		end"
+	/>
+	
+	
+	
+	
+</children> </ActorFrame>
+
+
+
+
+
+</children> </ActorFrame>
+

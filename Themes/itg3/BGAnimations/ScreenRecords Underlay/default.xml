@@ -1,0 +1,60 @@
+﻿<ActorFrame><children>
+
+
+		 <Layer
+		File="..\ScreenTitleMenu background\_lower.png"
+		InitCommand="diffusealpha,.4;additiveblend,1"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;croptop,-0.8;cropbottom,1;fadebottom,.45;fadetop,.45;linear,3;croptop,+1;cropbottom,-0.8;sleep,1;queuecommand,On" 
+	/> 
+			 <Layer
+		File="..\ScreenTitleMenu background\_upper.png"
+		InitCommand="diffusealpha,.4;additiveblend,1"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;croptop,-0.8;cropbottom,1;fadebottom,.45;fadetop,.45;linear,3;croptop,+1;cropbottom,-0.8;sleep,1;queuecommand,On" 
+	/> 
+		
+
+<Layer
+		File="..\ScreenTitleMenu background\_lside"
+		InitCommand="horizalign,left;vertalign,bottom"
+		OnCommand="x,SCREEN_LEFT;y,SCREEN_BOTTOM+100;decelerate,0.4;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+	/>
+<Layer
+		File="..\ScreenTitleMenu background\_lside"
+		InitCommand="zoomx,-1;horizalign,left;vertalign,bottom"
+		OnCommand="x,SCREEN_RIGHT;y,SCREEN_BOTTOM+100;decelerate,0.4;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+	/>
+
+<Layer
+		File="..\ScreenTitleMenu background\width"
+		InitCommand="horizalign,left;vertalign,bottom;;zoomtowidth,SCREEN_WIDTH-96"
+		OnCommand="x,SCREEN_LEFT+48;y,SCREEN_BOTTOM+100;decelerate,0.4;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+	/>
+	
+	
+	<Layer
+		File="..\ScreenWithMenuElements underlay\_normaltop"
+	/>
+	
+	
+	
+	
+	
+<Layer		
+		Font="_z bold gray 36px"
+		Text="LOADING..."
+		OnCommand="y,SCREEN_BOTTOM-50;x,SCREEN_RIGHT-30;horizalign,right;shadowlength,0.5;zoom,.5;diffusebottomedge,#df0000;diffusetopedge,#ff2828;sleep,.3;linear,.8;diffusealpha,0;"
+		
+OffCommand=""		
+	/>
+
+
+
+	
+	
+	
+
+</children></ActorFrame>
+

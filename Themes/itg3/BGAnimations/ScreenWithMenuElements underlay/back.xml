@@ -1,0 +1,12 @@
+<ActorFrame>
+	<children>
+<!-- base frame to width -->
+<Layer
+		File="_base"
+	/>
+<Layer
+		File="_sides"
+	/>
+
+		</children>
+</ActorFrame>

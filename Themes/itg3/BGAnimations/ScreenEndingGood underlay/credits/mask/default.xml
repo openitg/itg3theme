@@ -1,0 +1,11 @@
+<ActorFrame
+
+OnCommand="fov,82;y,-35;x,-259;addx,-40;rotationy,-85;decelerate,.25;addx,40;rotationy,0;linear,3.15;zoom,1.03;addx,-7;accelerate,.4;rotationy,30;addx,-10">
+	<children>
+		<ActorFrame OnCommand="">
+			<children>
+				<Quad OnCommand="HorizAlign,left;ZoomToWidth,518;ZoomToHeight,390;diffusetopedge,#e2e6ed;diffusebottomedge,#d3d5da;diffusealpha,0;decelerate,.4;diffusealpha,.8;sleep,2.8;accelerate,.5;diffusealpha,0;" />
+			</children>
+		</ActorFrame>
+	</children>
+</ActorFrame>

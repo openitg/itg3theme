@@ -1,0 +1,13 @@
+<ActorFrame> <children>
+<Layer 
+		File="@GameplayOverlay()"
+		Condition="not GAMESTATE:IsCourseMode()"
+	/>
+	
+<Layer 
+		File="_normal"
+		Condition="GAMESTATE:IsCourseMode()"
+	/>
+		</children> 
+</ActorFrame>
+

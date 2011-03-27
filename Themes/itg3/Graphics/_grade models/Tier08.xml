@@ -1,0 +1,14 @@
+<ActorFrame>
+	<children>
+		<ActorFrame
+			OnCommand="zoom,0.7;rotationy,-90;spin;EffectMagnitude,0,40,0"
+		>
+			<children>
+				<Actor
+					File="aplus.txt"
+					OnCommand=""
+				/>
+			</children>
+		</ActorFrame>
+	</children>
+</ActorFrame>

@@ -1,0 +1,10 @@
+<ActorFrame>
+	<children>
+		<AutoActor 
+				File="_shared background black"
+		/>
+		<Quad 
+			OnCommand="diffuse,0,0,0,0.2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT"
+		/>
+		</children>
+</ActorFrame>

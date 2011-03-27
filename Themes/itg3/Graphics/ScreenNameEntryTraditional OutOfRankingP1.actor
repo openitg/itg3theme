@@ -1,0 +1,4 @@
+[Actor]
+Font=_z bold gray 36px
+Text=OUT OF RANKING
+OnCommand=zoom,.5

@@ -1,0 +1,30 @@
+﻿<ActorFrame><children>
+	
+	
+<Layer
+		File="../_topright.png"
+		InitCommand="Additiveblend,1"
+		OnCommand="diffusealpha,0;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffusealpha,0;sleep,0.3;diffusealpha,1;croptop,-0.8;cropbottom,1;fadebottom,.45;fadetop,.45;sleep,0.4;diffusealpha,1;linear,3;croptop,+1;cropbottom,-0.8;sleep,0.5;QueueCommand,On;" 
+	/> 
+
+<Layer
+        File="../_2top.png"
+        InitCommand="Additiveblend,1;rotationz,180"
+        OnCommand="diffusealpha,0;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;cropright,-0.8;cropleft,1;fadeleft,.45;faderight,.45;sleep,.1;diffusealpha,1;linear,3;cropright,+1;cropleft,-0.8;sleep,0.35;QueueCommand,On;" 
+    /> 
+<Layer
+        File="../_left.png"
+        InitCommand="Additiveblend,1"
+        OnCommand="diffusealpha,0;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;cropright,-0.8;cropleft,1;fadeleft,.45;faderight,.45;sleep,.2;diffusealpha,1;linear,3;cropright,+1;cropleft,-0.8;sleep,0.5;QueueCommand,On;" 
+    /> 
+
+<Layer
+        File="../_right.png"
+        InitCommand="Additiveblend,1"
+        OnCommand="diffusealpha,0;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;cropleft,-0.8;cropleft,1;faderight,.45;fadeleft,.45;sleep,.2;diffusealpha,1;linear,3;cropleft,+1;cropright,-0.8;sleep,0.7;QueueCommand,On;" 
+    /> 
+
+    
+
+	
+</children></ActorFrame>

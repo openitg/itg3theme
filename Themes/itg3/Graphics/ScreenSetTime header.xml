@@ -1,0 +1,9 @@
+<ActorFrame>
+	<children>
+		<BitmapText
+			Text="Set Date and Time"
+			File="_v 26px bold white"
+			OnCommand="HorizAlign,Right;diffusealpha,1;"			
+/>
+		</children>
+</ActorFrame>

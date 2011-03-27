@@ -1,0 +1,29 @@
+<ActorFrame>
+<children>
+<Layer
+File="ScreenSelectMusic background/CJ126.mpg"
+Condition="songfail()"
+OnCommand="diffusealpha,.5;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3;rate,1"
+ />
+<Layer
+File="ScreenSelectMusic background/CJ126.mpg"
+Condition="songfail2()"
+OnCommand="playcommand,Color;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3;rate,.5"
+OffCommand="pause"
+ColorCommand="@vertexcolor()"
+ />
+ <Layer
+File="ScreenSelectMusic background/CJ126.mpg"
+Condition="songfail2()"
+OnCommand="playcommand,Color;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3;rate,.5"
+OffCommand="pause"
+ColorCommand="@vertexcolor()"
+ />
+<Layer
+Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:GetCurrentSong():GetBackgroundPath()"
+File="songbackground"
+InitCommand="Additiveblend,1"
+OnCommand="fadeleft,.2;faderight,.2;diffuseshift;effectcolor1,#FFFFFF30;EffectColor2,#FFFFFF50;effectperiod,12;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtoheight,SCREEN_HEIGHT;zoomtowidth,SCREEN_HEIGHT/10*16;"
+/>
+</children>
+</ActorFrame>

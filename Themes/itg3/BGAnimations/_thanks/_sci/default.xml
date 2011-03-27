@@ -1,0 +1,19 @@
+<ActorFrame InitCommand="ztest,1;Zoom,.5;"> <children>
+	
+	
+	<Layer
+		Class="Autoactor"
+		File="base"
+		InitCommand="ztest,1"
+
+	/>
+
+<Layer
+		Class="Autoactor"
+		File="SPAECESHIPLOL"
+		InitCommand="ztest,1;addx,-76;addy,-25;spin,1;EffectMagnitude,0,0,50;EffectPeriod,1"
+
+	/>
+	
+	
+</children> </ActorFrame>

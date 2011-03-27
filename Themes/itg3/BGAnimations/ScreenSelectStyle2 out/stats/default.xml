@@ -1,0 +1,143 @@
+<ActorFrame><children>
+
+
+
+<Layer
+File="../../_overlay/cardstats.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)and IsAnyPlayerUsingMemoryCard()"
+OnCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+155;croptop,.5;cropbottom,.5;sleep,1.15;accelerate,.15;croptop,.25;cropbottom,.25;decelerate,.2;croptop,0;cropbottom,0;"
+/>
+
+
+<Layer
+File="horiz-line"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)and IsAnyPlayerUsingMemoryCard()"
+OnCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+155;cropleft,.5;cropright,.5;sleep,1;accelerate,.15;cropleft,0;cropright,0;accelerate,.15;addy,-43;decelerate,.2;addy,-43;diffusealpha,0"
+/>
+
+
+<Layer
+File="horiz-line"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)and IsAnyPlayerUsingMemoryCard()"
+OnCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+155;cropleft,.5;cropright,.5;sleep,1;accelerate,.15;cropleft,0;cropright,0;accelerate,.15;addy,43;decelerate,.2;addy,43;diffusealpha,0"
+/>
+
+
+<Layer
+File="../../_overlay/p2card.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)and IsAnyPlayerUsingMemoryCard()"
+OnCommand="x,SCREEN_RIGHT-60;y,SCREEN_CENTER_Y+165;diffusealpha,0;sleep,1.5;linear,.3;diffusealpha,.6;"
+/>
+
+
+
+
+<!-- Player 1 card pane -->
+
+
+
+<Layer
+File="../../_overlay/cardstats.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)and IsAnyPlayerUsingMemoryCard()"
+OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+155;croptop,.5;cropbottom,.5;sleep,1.15;accelerate,.15;croptop,.25;cropbottom,.25;decelerate,.2;croptop,0;cropbottom,0;"
+/>
+
+<Layer
+File="../../_overlay/p1card.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)and IsAnyPlayerUsingMemoryCard()"
+OnCommand="x,SCREEN_LEFT+60;y,SCREEN_CENTER_Y+165;diffusealpha,0;sleep,1.5;linear,.3;diffusealpha,.6;"
+/>
+
+
+<Layer
+File="horiz-line"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)and IsAnyPlayerUsingMemoryCard()"
+OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+155;cropleft,.5;cropright,.5;sleep,1;accelerate,.15;cropleft,0;cropright,0;accelerate,.15;addy,-43;decelerate,.2;addy,-43;diffusealpha,0"
+/>
+
+
+<Layer
+File="horiz-line"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)and IsAnyPlayerUsingMemoryCard()"
+OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+155;cropleft,.5;cropright,.5;sleep,1;accelerate,.15;cropleft,0;cropright,0;accelerate,.15;addy,43;decelerate,.2;addy,43;diffusealpha,0"
+/>
+
+
+
+
+
+
+
+
+<Layer
+File="../../_disk"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)and IsAnyPlayerUsingMemoryCard()"
+Command="diffusealpha,0;x,SCREEN_LEFT+60;y,SCREEN_CENTER_Y+165;sleep,1.5;spin;diffusealpha,1;"
+
+/>
+
+<Layer
+File="../../_disk"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)and IsAnyPlayerUsingMemoryCard()"
+Command="diffusealpha,0;x,SCREEN_RIGHT-60;y,SCREEN_CENTER_Y+165;sleep,1.5;spin;diffusealpha,1;"
+
+/>
+
+
+
+
+
+
+
+
+<!-- player names -->
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)and IsAnyPlayerUsingMemoryCard()"
+Font="_r bold 30px"
+Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+87"
+OnCommand="diffusetopedge,#fff000;diffusebottomedge,#ffa500;shadowlength,2;horizalign,center;zoom,.8;diffusealpha,0;sleep,1.4;linear,.2;diffusealpha,1;"
+/> 
+
+
+
+ <Layer
+ Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)and IsAnyPlayerUsingMemoryCard()"
+Font="_r bold 30px"
+Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+87"
+OnCommand="diffusetopedge,#fffb81;diffusebottomedge,#bcff04;shadowlength,2;horizalign,center;zoom,.8;diffusealpha,0;sleep,1.4;linear,.2;diffusealpha,1;"
+/>
+
+
+
+
+
+
+
+
+
+
+
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)and IsAnyPlayerUsingMemoryCard()"
+Font="_v profile"
+Text="Checking for::saved profiles..."
+InitCommand="x,SCREEN_LEFT+148;y,SCREEN_CENTER_Y+162"
+OnCommand="shadowlength,2;horizalign,center;zoom,.8;diffusealpha,0;sleep,1.65;linear,.2;diffusealpha,1;"
+/> 
+
+
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)and IsAnyPlayerUsingMemoryCard()"
+Font="_v profile"
+Text="Checking for::saved profiles..."
+InitCommand="x,SCREEN_RIGHT-148;y,SCREEN_CENTER_Y+162"
+OnCommand="shadowlength,2;horizalign,center;zoom,.8;diffusealpha,0;sleep,1.65;linear,.2;diffusealpha,1;"
+/> 
+
+
+
+
+
+</children></ActorFrame>

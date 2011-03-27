@@ -1,0 +1,99 @@
+<ActorFrame> <children>
+
+
+<Layer 
+
+File="../ScreenEvaluationRave win frame p1/base frame"
+
+OnCommand="zoomx,-1"
+/>
+
+
+
+
+<Layer
+Font="_v 26px bold shadow"
+Text="FANTASTIC"
+InitCommand="x,-84;y,-132+16.5*0;horizalign,left;shadowlength,0;"
+OnCommand="zoomx,0.65;zoomy,.51;diffusebottomedge,#BBB9FB;"
+OffCommand="linear,0.2;diffusealpha,0" />
+<Layer
+Font="_v 26px bold shadow"
+Text="EXCELLENT"
+InitCommand="x,-84;y,-132+16.5*1;horizalign,left;shadowlength,0;" 
+OnCommand="zoomx,0.65;zoomy,.5;diffusebottomedge,#BBB9FB;"
+OffCommand="linear,0.2;diffusealpha,0" />
+<Layer
+Font="_v 26px bold shadow"
+Text="GREAT"
+InitCommand="x,-84;y,-132+16.5*2;horizalign,left;shadowlength,0;"
+OnCommand="zoomx,0.65;zoomy,.5;diffusebottomedge,#BBB9FB;"
+OffCommand="linear,0.2;diffusealpha,0" />
+<Layer
+Font="_v 26px bold shadow"
+Text="DECENT"
+InitCommand="x,-84;y,-132+16.5*3;horizalign	,left;shadowlength,0;" 
+OnCommand="zoomx,.65;zoomy,.5;diffusebottomedge,#BBB9FB;"
+OffCommand="linear,0.2;diffusealpha,0" />
+<Layer
+Font="_v 26px bold shadow"
+Text="WAY OFF"
+InitCommand="x,-84;y,-132+16.5*4;horizalign,left;shadowlength,0;"
+OnCommand="zoomx,.65;zoomy,.5;diffusebottomedge,#BBB9FB;"
+OffCommand="linear,0.2;diffusealpha,0" />
+<Layer
+Font="_v 26px bold shadow"
+Text="MISS"
+InitCommand="x,-84;y,-132+16.5*5;horizalign,left;shadowlength,0;"
+OnCommand="zoomx,0.65;zoomy,.5;diffusebottomedge,#BBB9FB;"
+OffCommand="linear,0.2;diffusealpha,0" />
+
+<Layer
+Font="_v 26px bold shadow"
+Text="JUMPS"
+InitCommand="x,-84;y,-132+16.5*6;horizalign,left;shadowlength,0;"
+OnCommand="zoomx,0.65;zoomy,.5;diffusebottomedge,#BBB9FB;"
+OffCommand="linear,0.2;diffusealpha,0" />
+
+<Layer
+Font="_v 26px bold shadow"
+Text="HOLDS"
+InitCommand="x,-84;y,-132+16.5*7;horizalign,left;shadowlength,0;"
+OnCommand="zoomx,0.65;zoomy,.5;diffusebottomedge,#BBB9FB;"
+OffCommand="linear,0.2;diffusealpha,0" />
+
+<Layer
+Font="_v 26px bold shadow"
+Text="MINES"
+InitCommand="x,-84;y,-132+16.5*8;horizalign,left;shadowlength,0;"
+OnCommand="zoomx,0.65;zoomy,.5;diffusebottomedge,#BBB9FB;"
+OffCommand="linear,0.2;diffusealpha,0" />
+
+<Layer
+Font="_v 26px bold shadow"
+Text="HANDS"
+InitCommand="x,-84;y,-132+16.5*9;horizalign,left;shadowlength,0;"
+OnCommand="zoomx,0.65;zoomy,.5;diffusebottomedge,#BBB9FB;"
+OffCommand="linear,0.2;diffusealpha,0" />
+
+<Layer
+Font="_v 26px bold shadow"
+Text="ROLLS"
+InitCommand="x,-84;y,-132+16.5*10;horizalign,left;shadowlength,0;"
+OnCommand="zoomx,0.65;zoomy,.5;diffusebottomedge,#BBB9FB;"
+OffCommand="linear,0.2;diffusealpha,0" />
+
+
+<Layer
+Font="_v 26px bold shadow"
+Text="MAX COMBO"
+InitCommand="x,-84;y,-130.5+16.5*11;horizalign,left;shadowlength,0;"
+OnCommand="zoomx,0.65;zoomy,.5;diffusebottomedge,#BBB9FB;"
+OffCommand="linear,0.2;diffusealpha,0" />
+
+
+
+
+
+
+</children> </ActorFrame>

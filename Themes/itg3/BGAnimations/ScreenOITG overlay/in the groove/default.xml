@@ -1,0 +1,30 @@
+﻿<ActorFrame><children>
+	
+	
+		<AutoActor
+			File="../../ScreenTitleMenu background/glow"
+			OnCommand="Zoom,.8;diffusealpha,0;sleep,.2;linear,.4;diffusealpha,1;zoom,1;sleep,1.5;"
+		/>
+		<AutoActor
+			File="../../ScreenTitleMenu background/glow"
+			OnCommand="additiveblend,1;zoom,1;diffusealpha,0;sleep,.4;accelerate,.3;diffusealpha,.4;linear,1.8;zoom,1.4;diffusealpha,0;"
+		/>
+		<AutoActor
+			File="../../ScreenTitleMenu background/light"
+			OnCommand="additiveblend,1;y,10;Zoom,1;cropright,1.2;cropleft,-0.2;linear,1;cropright,-0.2;cropleft,-0.3;cropright,1;faderight,.1;fadeleft,.1;sleep,.4;linear,0.7;cropleft,+1;cropright,-0.3;sleep,0.5;"
+		/>
+
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold shadow"
+		Text="www.inthegroove3.com"
+		InitCommand="X,0;y,115;shadowlength,2;"
+		OnCommand="diffusealpha,0;sleep,1;linear,0.5;diffusealpha,1"
+	/>
+		
+	
+		
+
+
+	
+</children></ActorFrame>

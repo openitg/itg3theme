@@ -1,0 +1,7 @@
+﻿<ActorFrame><children>
+	
+	<Layer
+		File="PROCFB.mpg"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3"
+	/>
+</children></ActorFrame>

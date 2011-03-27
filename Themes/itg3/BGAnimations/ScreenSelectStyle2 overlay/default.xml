@@ -1,0 +1,7 @@
+<ActorFrame>
+		<children> 
+<AutoActor 
+		File="../_join overlay" 
+	/>
+		</children>
+</ActorFrame>

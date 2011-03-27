@@ -1,0 +1,11 @@
+<ActorFrame><children>
+<Layer
+File="ScreenWithMenuElements underlay\_sides"
+/>
+<Layer
+File="ScreenWithMenuElements underlay\_base"
+/>
+<Layer
+File="ScreenWithMenuElements underlay\_expandtop"
+/>
+</children></ActorFrame>

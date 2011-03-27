@@ -1,0 +1,68 @@
+<ActorFrame>
+<children>
+	<Layer
+		Type="Quad"
+		OnCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,#000000;diffusealpha,0;linear,1.5;diffusealpha,1"
+	/>
+
+
+
+<Layer
+File="_stage"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-75;zoom,.6"
+OnCommand="diffusealpha,0;addy,-30;sleep,0.1;linear,.3;diffusealpha,1;addy,30"
+/>
+
+
+<Layer
+File="_failed text"
+Condition="songfail()"
+InitCommand="x,SCREEN_CENTER_X+2;y,SCREEN_CENTER_Y+30"
+OnCommand="diffusealpha,0;addx,-500;sleep,0.4;decelerate,.7;addx,500;diffusealpha,1"
+/>
+
+
+
+
+<Layer
+File="v_failed"
+Condition="songfail2()"
+InitCommand="x,SCREEN_CENTER_X+2;y,SCREEN_CENTER_Y+52"
+OnCommand="diffusealpha,.2;cropleft,.5;cropright,.5;sleep,.7;decelerate,.75;cropright,0;cropleft,0;diffusealpha,1;"
+/>
+
+
+<Layer
+File="../ScreenSelectStyle2 out/stats/horiz-line"
+Condition="songfail2()"
+OnCommand="zoomx,2;rotationz,90;x,SCREEN_CENTER_X+1;y,SCREEN_CENTER_Y+52;cropleft,.5;cropright,.5;sleep,.55;accelerate,.15;cropleft,0;cropright,0;decelerate,.725;addx,-300;linear,.15;diffusealpha,0;"
+/>
+
+
+<Layer
+File="../ScreenSelectStyle2 out/stats/horiz-line"
+Condition="songfail2()"
+OnCommand="zoomx,2;rotationz,90;x,SCREEN_CENTER_X+2;y,SCREEN_CENTER_Y+52;cropleft,.5;cropright,.5;sleep,.55;accelerate,.15;cropleft,0;cropright,0;decelerate,.725;addx,300;linear,.15;diffusealpha,0;"
+/>
+
+
+<Layer
+Condition="GAMESTATE:GetCurrentSong() and GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove/The Game')"
+Font="_v profile"
+Text="You just lost the game."
+InitCommand="horizalign,right;x,SCREEN_RIGHT-20;y,SCREEN_BOTTOM-35"
+OnCommand="diffusealpha,0;shadowlength,0;zoom,.8;linear,1;diffusealpha,.3;"
+/> 
+
+
+
+
+
+			<Layer
+Type="Quad"
+InitCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,#000000"
+OnCommand="diffusealpha,0;sleep,3.0;linear,.3;diffusealpha,1"
+
+/>
+
+</children> </ActorFrame>

@@ -1,0 +1,260 @@
+<ActorFrame> <children>
+<!-- intro quad -->
+
+	
+<Layer
+		File="ScreenWithMenuElements underlay\_sides"
+		OnCommand="ztest,1"
+	/>
+<Layer
+		File="ScreenWithMenuElements underlay\_base"
+	/>
+<!-- select button menu -->
+<Layer 
+		Class="ActorFrame" 
+		OnCommand="y,SCREEN_BOTTOM-54"
+		> 
+		<children>
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold white"
+		Text="&START; Change Sort"
+		Condition="ModeMenuAvailable()"
+		OnCommand="x,SCREEN_CENTER_X;zoomx,.3;zoomy,.6;diffusealpha,0;shadowlength,2"
+		OffCommand="linear,.3;diffusealpha,0"
+		EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,1;zoomx,0.6"
+		SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.3"
+	/>
+<ActorFrame
+OnCommand="%function(self) if ModeMenuAvailable() then self:x(SCREEN_CENTER_X-100) else self:x(SCREEN_CENTER_X-65) end end"
+><children>
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold black"
+		Text="&MENULEFT;"
+		OnCommand="addy,36;x,-5;horizalign,right;zoomx,.5;zoomy,.7;diffusealpha,0;shadowlength,0"
+		OffCommand="linear,.3;diffusealpha,0"
+		EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,1;zoomx,0.7"
+		SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.5"
+	/>
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold black"
+		Text="Easier"
+		OnCommand="addy,36;x,0;horizalign,left;zoomx,.5;zoomy,.7;diffusealpha,0;diffuseramp;effectperiod,1;effectoffset,0.20;effectclock,bgm;EffectColor1,#FFFFFF;EffectColor2,#20D020;shadowlength,0"
+		OffCommand="linear,.3;diffusealpha,0"
+		EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,1;zoomx,0.7"
+		SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.5"
+	/>
+</children> </ActorFrame>
+<ActorFrame
+OnCommand="%function(self) if ModeMenuAvailable() then self:x(SCREEN_CENTER_X+100) else self:x(SCREEN_CENTER_X+65) end end"
+><children>
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold black"
+		Text="Harder"
+		OnCommand="addy,36;x,0;horizalign,right;zoomx,.5;zoomy,.7;diffusealpha,0;diffuseramp;effectperiod,1;effectoffset,0.20;effectclock,bgm;EffectColor1,#FFFFFF;EffectColor2,#E06060;shadowlength,0"
+		OffCommand="linear,.3;diffusealpha,0"
+		EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,1;zoomx,0.7"
+		SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.5"
+	/>
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold black"
+		Text="&MENURIGHT;"
+		OnCommand="addy,36;x,+15;horizalign,center;zoomx,.5;zoomy,.7;diffusealpha,0;shadowlength,0"
+		OffCommand="linear,.3;diffusealpha,0"
+		EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,1;zoomx,0.7"
+		SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.5"
+	/>
+</children> </ActorFrame>
+</children> </Layer>
+
+
+
+
+
+
+
+
+
+
+<!-- put this to hide the pane things in optionlist opened -->
+	<Layer
+		File="../Graphics/_pane elements/_lbase"
+        InitCommand="draworder,-5;x,SCREEN_CENTER_X+26;y,SCREEN_BOTTOM;horizalign,right;vertalign,bottom;diffusealpha,0"
+		OnCommand="addx,-SCREEN_WIDTH;decelerate,0.75;addx,SCREEN_WIDTH"
+		OffCommand="sleep,.35;accelerate,0.75;addx,-SCREEN_WIDTH"
+		OptionsListOpenedP1MessageCommand="stoptweening;linear,0.2;diffusealpha,1"
+		OptionsListClosedP1MessageCommand="stoptweening;linear,0.2;diffusealpha,0"
+	/>
+	<Layer
+		File="../Graphics/_pane elements/_basewidth"
+        InitCommand="draworder,-5;x,SCREEN_CENTER_X-174;y,SCREEN_BOTTOM;horizalign,right;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2;diffusealpha,0"
+	    OnCommand="addx,-SCREEN_WIDTH;decelerate,0.75;addx,SCREEN_WIDTH"
+		OffCommand="sleep,.35;accelerate,0.75;addx,-SCREEN_WIDTH"
+		OptionsListOpenedP1MessageCommand="stoptweening;linear,0.2;diffusealpha,1"
+		OptionsListClosedP1MessageCommand="stoptweening;linear,0.2;diffusealpha,0"
+	/>
+<Layer
+		File="../Graphics/_pane elements/_rbase"
+		InitCommand="draworder,-5;x,SCREEN_CENTER_X-26;y,SCREEN_BOTTOM;horizalign,left;vertalign,bottom;diffusealpha,0"
+	    OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="sleep,.35;accelerate,0.75;addx,SCREEN_WIDTH"
+		OptionsListOpenedP2MessageCommand="stoptweening;linear,0.2;diffusealpha,1"
+		OptionsListClosedP2MessageCommand="stoptweening;linear,0.2;diffusealpha,0"
+	/>
+	<Layer
+		File="../Graphics/_pane elements/_basewidth"
+        InitCommand="draworder,-5;x,SCREEN_CENTER_X+174;y,SCREEN_BOTTOM;horizalign,left;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2;diffusealpha,0"
+	    OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="sleep,.35;accelerate,0.75;addx,SCREEN_WIDTH"
+		OptionsListOpenedP2MessageCommand="stoptweening;linear,0.2;diffusealpha,1"
+		OptionsListClosedP2MessageCommand="stoptweening;linear,0.2;diffusealpha,0"
+	/>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<!-- optionslist base -->
+	<Layer
+	File="options pane"
+	OnCommand="x,SCREEN_CENTER_X-220;y,SCREEN_CENTER_Y+22;diffusealpha,0;zoomx,0.6"
+	OptionsListOpenedP1MessageCommand="stoptweening;linear,0.2;diffusealpha,1;zoomx,1"
+	OptionsListClosedP1MessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.6"
+	/>
+	<Layer
+	File="options pane"
+	OnCommand="additiveblend,1;x,SCREEN_CENTER_X-220;y,SCREEN_CENTER_Y+22;diffusealpha,0"
+	OptionsListOpenedP1MessageCommand="stoptweening;diffusealpha,0"
+	OptionsListClosedP1MessageCommand="stoptweening;diffusealpha,0"
+	OptionsListResetP1MessageCommand="stoptweening;diffusealpha,1;linear,0.2;diffusealpha,0"
+	/>
+	
+	
+	<Layer
+	File="options pane"
+	InitCommand="zoomx,-1"
+	OnCommand="x,SCREEN_CENTER_X+220;y,SCREEN_CENTER_Y+22;diffusealpha,0;zoomx,-0.6"
+	OptionsListOpenedP2MessageCommand="stoptweening;linear,0.2;diffusealpha,1;zoomx,-1"
+	OptionsListClosedP2MessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,-0.6"
+	/>
+	<Layer
+	File="options pane"
+	InitCommand="zoomx,-1"
+	OnCommand="additiveblend,1;x,SCREEN_CENTER_X+220;y,SCREEN_CENTER_Y+22;diffusealpha,0"
+	OptionsListOpenedP2MessageCommand="stoptweening;diffusealpha,0"
+	OptionsListClosedP2MessageCommand="stoptweening;diffusealpha,0"
+	OptionsListResetP2MessageCommand="stoptweening;diffusealpha,1;linear,0.2;diffusealpha,0"
+	/>
+	
+	
+	
+
+<!-- XXX: ChildrenOn and ChildrenOff should tween. They don't. Why not? -->
+<ActorFrame
+	Condition="OPENITG"
+
+	ChildrenOnCommand="%function(self) self:propagate(1) self:stoptweening() self:linear(0.2) self:visible(1) self:propagate(0) end"
+	ChildrenOffCommand="%function(self) self:propagate(1) self:stoptweening() self:linear(0.2) self:visible(0) self:propagate(0) end"
+
+	OnCommand="playcommand,ChildrenOff"
+	OffCommand="playcommand,ChildrenOff"
+	EnableSelectHelpMessageCommand="playcommand,ChildrenOn"
+	SelectMenuOffMessageCommand="playcommand,ChildrenOff"
+
+	UpdateChildrenCommand="%function(self) MESSAGEMAN:Broadcast('UpdatePane') end"
+	CurrentSongChangedMessageCommand="playcommand,UpdateChildren"
+	CurrentStepsP1ChangedMessageCommand="playcommand,UpdateChildren"
+	CurrentTrailP1ChangedMessageCommand="playcommand,UpdateChildren"
+	CurrentStepsP2ChangedMessageCommand="playcommand,UpdateChildren"
+	CurrentTrailP2ChangedMessageCommand="playcommand,UpdateChildren"
+><children>
+	<ActorFrame
+		Name="NumbersP1"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		InitCommand="%function(self) self:x(SCREEN_LEFT+SCREEN_WIDTH/5.415-26) self:y(SCREEN_BOTTOM-54) self:propagate(1) end"
+	>
+	<children>
+		<BitmapText
+			Font="smallnumbers"
+			OnCommand="shadowlength,0"
+			UpdatePaneMessageCommand="%function(self) self:SetFromRadarValue(PLAYER_1, RADAR_CATEGORY_JUMPS) end"
+		/>
+		<BitmapText
+			Font="smallnumbers"
+			OnCommand="shadowlength,0;addx,25"
+			UpdatePaneMessageCommand="%function(self) self:SetFromRadarValue(PLAYER_1, RADAR_CATEGORY_HOLDS) end"
+		/>
+		<BitmapText
+			Font="smallnumbers"
+			OnCommand="shadowlength,0;addx,50"
+			UpdatePaneMessageCommand="%function(self) self:SetFromRadarValue(PLAYER_1, RADAR_CATEGORY_MINES) end"
+		/>
+		<BitmapText
+			Font="smallnumbers"
+			OnCommand="shadowlength,0;addx,75"
+			UpdatePaneMessageCommand="%function(self) self:SetFromRadarValue(PLAYER_1, RADAR_CATEGORY_HANDS) end"
+		/>
+		<BitmapText
+			Font="smallnumbers"
+			OnCommand="shadowlength,0;addx,100"
+			UpdatePaneMessageCommand="%function(self) self:SetFromRadarValue(PLAYER_1, RADAR_CATEGORY_ROLLS) end"
+		/>
+	</children>
+	</ActorFrame>
+
+	<ActorFrame
+		Name="NumbersP2"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		InitCommand="%function(self) self:x(SCREEN_RIGHT-SCREEN_WIDTH/5.415-26) self:y(SCREEN_BOTTOM-54) end"
+	>
+	<children>
+		<BitmapText
+			Font="smallnumbers"
+			OnCommand="shadowlength,0"
+			UpdatePaneMessageCommand="%function(self) self:SetFromRadarValue(PLAYER_2, RADAR_CATEGORY_JUMPS) end"
+		/>
+		<BitmapText
+			Font="smallnumbers"
+			OnCommand="shadowlength,0;addx,25"
+			UpdatePaneMessageCommand="%function(self) self:SetFromRadarValue(PLAYER_2, RADAR_CATEGORY_HOLDS) end"
+		/>
+		<BitmapText
+			Font="smallnumbers"
+			OnCommand="shadowlength,0;addx,50"
+			UpdatePaneMessageCommand="%function(self) self:SetFromRadarValue(PLAYER_2, RADAR_CATEGORY_MINES) end"
+		/>
+		<BitmapText
+			Font="smallnumbers"
+			OnCommand="shadowlength,0;addx,75"
+			UpdatePaneMessageCommand="%function(self) self:SetFromRadarValue(PLAYER_2, RADAR_CATEGORY_HANDS) end"
+		/>
+		<BitmapText
+			Font="smallnumbers"
+			OnCommand="shadowlength,0;addx,100"
+			UpdatePaneMessageCommand="%function(self) self:SetFromRadarValue(PLAYER_2, RADAR_CATEGORY_ROLLS) end"
+		/>
+	</children>
+	</ActorFrame>
+</children>
+</ActorFrame>
+
+	<!-- coins -->
+
+
+<Layer
+File="_coins"
+/>
+
+
+	
+		</children>
+	</ActorFrame>
+

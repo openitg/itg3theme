@@ -1,0 +1,57 @@
+﻿<ActorFrame><children>
+
+    
+    
+    <AutoActor
+  Condition="AddonPack1()"
+  File="../_overlay/joinin"
+  InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+110+37*0;zoom,0.65"
+  OnCommand="horizalign,right;addx,200;sleep,0.9;decelerate,0.25;addx,-200;PlayCommand,Fade"
+  FadeCommand="glow,1,1,1,0;sleep,2;linear,.3;glow,1,1,1,.25;sleep,.05;linear,.5;glow,1,1,1,0;sleep,1;QueueCommand,Fade"
+/>
+    
+    <Layer
+Condition="AddonPack1()"
+Font="_v profile"
+Text="@GetAddonName1()"
+InitCommand="shadowlength,1;x,SCREEN_RIGHT-165;y,SCREEN_CENTER_Y+110+37*0"
+  OnCommand="horizalign,left;addx,200;sleep,0.9;decelerate,0.25;addx,-200"
+/> 
+    
+    
+        <Layer
+  Condition="AddonPack2()"
+  File="../_overlay/joinin"
+  InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+110+37*1;zoom,0.65"
+  OnCommand="horizalign,right;addx,200;sleep,1.0;decelerate,0.25;addx,-200;PlayCommand,Fade"
+  FadeCommand="glow,1,1,1,0;sleep,2;linear,.3;glow,1,1,1,.25;sleep,.05;linear,.5;glow,1,1,1,0;sleep,1;QueueCommand,Fade"
+/>
+    
+    <Layer
+  Condition="AddonPack2()"
+Font="_v profile"
+Text="@GetAddonName2()"
+InitCommand="shadowlength,1;x,SCREEN_RIGHT-165;y,SCREEN_CENTER_Y+110+37*1"
+  OnCommand="horizalign,left;addx,200;sleep,1.0;decelerate,0.25;addx,-200"
+/> 
+
+
+
+    <Layer
+  Condition="AddonPack3()"
+  File="../_overlay/joinin"
+  InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+110+37*2;zoom,0.65"
+  OnCommand="horizalign,right;addx,200;sleep,1.1;decelerate,0.25;addx,-200;PlayCommand,Fade"
+  FadeCommand="glow,1,1,1,0;sleep,2;linear,.3;glow,1,1,1,.25;sleep,.05;linear,.5;glow,1,1,1,0;sleep,1;QueueCommand,Fade"
+/>
+    
+    <Layer
+  Condition="AddonPack3()"
+Font="_v profile"
+Text="@GetAddonName3()"
+InitCommand="shadowlength,1;x,SCREEN_RIGHT-165;y,SCREEN_CENTER_Y+110+37*2"
+  OnCommand="horizalign,left;addx,200;sleep,1.1;decelerate,0.25;addx,-200"
+/> 
+    
+</children>
+</ActorFrame>

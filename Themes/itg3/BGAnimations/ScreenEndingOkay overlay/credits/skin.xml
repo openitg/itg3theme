@@ -1,0 +1,10 @@
+<ActorFrame>
+	<children>
+		<Layer Type="AutoActor" File="frame"/>
+		<Layer Type="BitmapText" Text="Dominick Renzetti" File="_r bold 30px" OnCommand="zoom,.93;y,10;x,42;diffuse,#FFFFFF" />
+		<Layer Type="BitmapText" Text="Graphics, Stepcharts" File="_r normal" OnCommand="y,-29;x,38;zoomx,.57;zoomy,.6;shadowlength,0;diffuse,#FFFFFF" />
+		<Layer Type="AutoActor" File="_people" OnCommand="animate,0;setstate,2;x,-114"/>
+		
+		
+	</children>
+</ActorFrame>

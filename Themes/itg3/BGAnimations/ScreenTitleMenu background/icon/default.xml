@@ -1,0 +1,202 @@
+<ActorFrame><children>
+
+	<ActorFrame 
+><children>
+<Layer
+		File="_icon"
+		InitCommand="x,SCREEN_RIGHT-200;y,SCREEN_TOP-2+34;"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+<Layer
+		Font="_v 26px bold black"
+		Text="@PREFSMAN:GetPreference('SongsPerPlay')"
+		InitCommand="x,SCREEN_RIGHT-200+1;y,SCREEN_TOP-2+29;ShadowLength,0;horizalign,center;zoom,.8;"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+<Layer
+		Font="_v 26px bold black"
+		Text="ROUNDS"
+		InitCommand="x,SCREEN_RIGHT-200;y,SCREEN_TOP-2+46;zoom,0.4;ShadowLength,0"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+	</children></ActorFrame>
+
+<!-- difficulty -->
+<ActorFrame><children>
+<Layer
+		File="_icon"
+		InitCommand="x,SCREEN_RIGHT-200+53*1;y,SCREEN_TOP-2+34;"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+	<Layer
+	Type="ActorFrame"			
+	InitCommand="x,SCREEN_RIGHT-200+53;y,SCREEN_TOP-2+40"
+	OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"><children>
+	<!-- backgrounds -->
+	<Quad
+		InitCommand="x,-5*3;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,3;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#77777777"
+	/>
+	<Quad
+		InitCommand="x,-5*2;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,6;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#77777777"
+	/>
+	<Quad
+		InitCommand="x,-5*1;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,9;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#77777777"
+	/>
+	<Quad
+		InitCommand="x,0;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,12;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#77777777"
+	/>
+	<Quad		
+		InitCommand="x,5*1;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,15;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#77777777"
+	/>
+	<Quad		
+		InitCommand="x,5*2;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,18;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#77777777"
+	/>
+	<Quad
+		InitCommand="x,5*3;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,21;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#77777777"
+	/>
+	
+	
+	<!-- 1 -->
+	<Quad
+		Condition="LifeDifficultylevel1()"
+		InitCommand="x,-5*3;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,3;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+	/>
+	<!-- 2 -->
+	<Quad
+		Condition="LifeDifficultylevel2()"
+		InitCommand="x,-5*2;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,6;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+	/>
+	<!-- 3 -->
+	<Quad
+		Condition="LifeDifficultylevel3()"
+		InitCommand="x,-5*1;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,9;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+	/>
+	<!-- 4 -->
+	<Quad
+		Condition="LifeDifficultylevel4()"
+		InitCommand="x,0;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,12;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+	/>
+	<!-- 5 -->
+	<Quad
+		Condition="LifeDifficultylevel5()"		
+		InitCommand="x,5*1;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,15;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+	/>
+	<!-- 6 -->
+	<Quad
+		Condition="LifeDifficultylevel6()"			
+		InitCommand="x,5*2;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,18;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+	/>
+	<!-- 7 -->
+	<Quad
+		Condition="LifeDifficultylevel7()"	
+		InitCommand="x,5*3;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,21;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+	/>
+	
+	<Layer
+		Font="_v 26px bold black"
+		Text="LEVEL"
+		InitCommand="y,6;zoom,0.4;ShadowLength,0"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+	</children></Layer>
+</children></ActorFrame>
+	
+	
+	
+	
+	
+	
+	
+<ActorFrame 
+Condition="GAMESTATE:GetCoinMode()~=COIN_MODE_FREE and GAMESTATE:GetPremium()==PREMIUM_JOINT"
+><children>
+<Layer
+		File="_icon"
+		InitCommand="x,SCREEN_RIGHT-200+53*2;y,SCREEN_TOP-2+34;"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+<Layer
+		Font="_v 26px bold black"
+		Text="JOINT"
+		InitCommand="x,SCREEN_RIGHT-199+53*2;y,SCREEN_TOP-2+29;zoom,0.6;ShadowLength,0"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+<Layer
+		Font="_v 26px bold black"
+		Text="PREMIUM"
+		InitCommand="x,SCREEN_RIGHT-199+53*2;y,SCREEN_TOP-2+42;zoomx,0.38;zoomy,0.4;ShadowLength,0"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+	</children></ActorFrame>
+<ActorFrame 
+Condition="GAMESTATE:GetCoinMode()~=COIN_MODE_FREE and GAMESTATE:GetPremium()==PREMIUM_DOUBLE"
+><children>
+<Layer
+		File="_icon"
+		InitCommand="x,SCREEN_RIGHT-200+53*2;y,SCREEN_TOP-2+34;"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+
+
+<Layer
+		Font="_v 26px bold black"
+		Text="1 CREDIT"
+		InitCommand="x,SCREEN_RIGHT-199+53*2;y,SCREEN_TOP-2+28;zoom,0.4;ShadowLength,0"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+	
+<Layer
+		Font="_v 26px bold black"
+		Text="DOUBLES"
+		InitCommand="x,SCREEN_RIGHT-199+53*2;y,SCREEN_TOP-2+40;zoom,0.4;ShadowLength,0"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+	</children></ActorFrame>
+
+<ActorFrame 
+Condition="PREFSMAN:GetPreference('SongEdits')"
+><children>
+<Layer
+		File="_icon"
+		InitCommand="x,SCREEN_RIGHT-200+53*3;y,SCREEN_TOP-2+34;"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+<Layer
+		Font="_v 26px bold black"
+		Text="USB"
+		InitCommand="x,SCREEN_RIGHT-200+53*3;y,SCREEN_TOP-2+29;zoom,.6;ShadowLength,0"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+<Layer
+		Font="_v 26px bold black"
+		Text="SONGS"
+		InitCommand="x,SCREEN_RIGHT-200+53*3;y,SCREEN_TOP-2+42;zoom,0.4;ShadowLength,0"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+	/>
+	</children></ActorFrame>
+	
+	
+<!-- 	<Layer
+		Font="_v 26px bold white"
+		Text="@PREFSMAN:GetPreference('LifeDifficultyScale')"
+		InitCommand="x,SCREEN_RIGHT-200+53*2;y,SCREEN_TOP-2+106;zoomx,1;zoomy,0.8;ShadowLength,0"
+		OnCommand="diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1"
+		OffCommand="hidden,1"
+	/> -->
+	
+	<!-- life? -->
+</children></ActorFrame>	

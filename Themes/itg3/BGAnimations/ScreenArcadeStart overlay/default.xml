@@ -1,0 +1,24 @@
+<ActorFrame><children>
+
+
+<ActorFrame InitCommand="x,SCREEN_LEFT+160;y,SCREEN_TOP+70"><children>
+<AutoActor
+			File="../ScreenTitleMenu background/glow"
+			OnCommand="zoom,.5"
+		/>
+		<AutoActor
+			File="../ScreenTitleMenu background/light"
+			OnCommand="additiveblend,1;Zoom,.5;cropright,1.2;cropleft,-0.2;linear,1;cropright,-0.2;cropleft,-0.3;cropright,1;faderight,.1;fadeleft,.1;sleep,.4;linear,0.7;cropleft,+1;cropright,-0.3;sleep,3;queuecommand,On;"
+		/>
+		
+	</children></ActorFrame>	
+	
+	<AutoActor
+	Condition="OPENITG == true"
+						InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-112"
+			File="oitg-full"
+		/>
+	
+	
+</children></ActorFrame>
+

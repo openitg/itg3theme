@@ -1,0 +1,15 @@
+<ActorFrame>
+	<children>
+		<ActorFrame
+			OnCommand="zoom,0.7;wag;EffectMagnitude,0,10,0"
+		>
+			<children>
+				<Actor
+					File="cplus.txt"
+					OnCommand=""
+				/>
+				
+			</children>
+		</ActorFrame>
+	</children>
+</ActorFrame>

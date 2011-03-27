@@ -1,0 +1,47 @@
+﻿<ActorFrame><children>
+	
+	
+	
+	
+	<ActorFrame
+	OnCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-80;sleep,1.5;linear,9;addx,40"
+><children>
+	
+	
+<Layer
+		File="thanks"
+		OnCommand="diffusealpha,0;sleep,1.5;linear,3;diffusealpha,1;sleep,3;linear,3;diffusealpha,0" 
+	/>     
+	</children></ActorFrame>
+<!--
+<Layer
+		File="test"
+		InitCommand="X,SCREEN_LEFT-5;y,SCREEN_TOP-5;zoom,3"
+		OnCommand="additiveblend,1;rotationz,80;spin;EffectMagnitude,0,0,5" 
+	/>     
+	
+<Layer
+		File="test"
+		InitCommand="X,SCREEN_LEFT-5;y,SCREEN_TOP-5;zoom,3"
+		OnCommand="additiveblend,1;spin;EffectMagnitude,0,0,-4" 
+	/>     
+	
+	-->
+	
+<Layer
+		File="in"
+		InitCommand="zoom,.8;x,SCREEN_CENTER_X-50;y,SCREEN_CENTER_Y-20;"
+		OnCommand="diffusealpha,0;sleep,3.2;linear,2.5;diffusealpha,1;sleep,4;linear,3;diffusealpha,0" 
+	/>  	
+	
+<Layer
+		File="the"
+		InitCommand="zoom,.8;x,SCREEN_CENTER_X+45;y,SCREEN_CENTER_Y-20;"
+		OnCommand="diffusealpha,0;sleep,3.4;linear,2.5;diffusealpha,1;sleep,3.8;linear,3;diffusealpha,0" 
+	/>  	
+<Layer
+		File="groove"
+		InitCommand="zoom,.8;x,SCREEN_CENTER_X+100;y,SCREEN_CENTER_Y+55;"
+		OnCommand="diffusealpha,0;sleep,3.6;linear,2.5;diffusealpha,1;sleep,3.6;linear,3;diffusealpha,0" 
+	/>  		
+</children></ActorFrame>

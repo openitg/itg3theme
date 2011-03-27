@@ -1,0 +1,16 @@
+<ActorFrame>
+		<children>
+<AutoActor
+File="../_bar"
+InitCommand="x,22;diffusealpha,0;linear,.3;diffusealpha,.6;"
+/>
+
+<AutoActor
+File="p1a"
+InitCommand="x,-114;bounce;effectmagnitude,-3,0,0;effectperiod,1.0;effectoffset,0.2;effectclock,bgm;"
+OnCommand="diffusealpha,0;linear,.4;diffusealpha,1;"/>
+
+
+
+		</children>
+</ActorFrame>

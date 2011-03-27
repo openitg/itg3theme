@@ -1,0 +1,65 @@
+<ActorFrame> <children>
+	<ActorFrame> <children>
+<Layer 
+		File="Pixels"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;QueueCommand,Refresh"
+		RefreshCommand="%
+			function(self) 
+				local x = math.random()*200;
+				local y = math.random()*200;
+				local x2 = math.random()*200;
+				local y2 = math.random()*200;
+				self:x(0+x);
+				self:y(0+y);
+				self:sleep(0.03);
+				self:x(2+x);
+				self:y(2+y);
+				self:sleep(0.03);
+				self:x(0+x2);
+				self:y(0+y2);
+				self:sleep(0.03);
+				self:x(2+x2);
+				self:y(2+y2);
+				self:sleep(0.03);
+				self:queuecommand('Refresh')
+			end"
+	/>
+	
+	<Layer
+File="..\_Stage Background\bar.png"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+OnCommand="zoomtowidth,SCREEN_WIDTH;sleep,15;linear,1;diffusealpha,0;"
+/>
+
+
+<Layer
+Font="_r bold 30px"
+Text="This mode displays static noise to reduce burn-in on certain monitors.::Allow to run for several hours. Press &MENULEFT; or &MENURIGHT; to exit."
+InitCommand="horizalign,center;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+OnCommand="shadowlength,1;zoom,.6;sleep,15;linear,1;diffusealpha,0;"
+/> 
+
+</children> </ActorFrame>
+<ActorFrame
+InitCommand="x,SCREEN_RIGHT-100;y,SCREEN_TOP+30"
+OnCommand="queuecommand,Animate;"
+AnimateCommand="linear,180;y,SCREEN_BOTTOM-30;linear,360;x,SCREEN_LEFT+100;linear,180;y,SCREEN_TOP+30;linear,360;x,SCREEN_RIGHT-100;queuecommand,Animate"
+
+> <children>
+
+<Layer
+File="textbox.png"
+OnCommand="zoom,.5"
+/>
+<Layer
+Font="_r bold 30px"
+Text="Burn-in protection::Press &MENULEFT; or &MENURIGHT; to exit."
+OnCommand="zoom,.45;shadowlength,0;"
+/> 
+
+</children> </ActorFrame>
+
+
+</children> </ActorFrame>
+
+	

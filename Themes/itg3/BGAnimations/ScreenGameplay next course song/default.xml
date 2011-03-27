@@ -1,0 +1,8 @@
+<ActorFrame> <children>
+	<Layer
+		Type="Quad"
+		InitCommand="diffuse,#000000;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;"
+		StartCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffusealpha,0;sleep,0.3;linear,0.3;diffusealpha,1"
+		FinishCommand="sleep,0.3;linear,0.3;diffusealpha,0"
+	/>
+</children> </ActorFrame>

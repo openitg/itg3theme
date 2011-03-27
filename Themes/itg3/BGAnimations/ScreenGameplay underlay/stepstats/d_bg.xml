@@ -1,0 +1,6 @@
+<ActorFrame>
+> <children>
+<Actor File="base" OnCommand="addy,35" />
+<Actor File="streak" OnCommand="addy,185;addy,100;sleep,0.8;decelerate,0.6;addy,-100" />
+<Actor File="streak" OnCommand="addy,204;addy,100;sleep,1;decelerate,0.6;addy,-100" />
+</children></ActorFrame>

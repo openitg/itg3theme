@@ -1,0 +1,258 @@
+<ActorFrame> <children>
+
+
+
+<!--if GAMESTATE:PlayerIsUsingModifier(PLAYER_1, 'hallway') then rotationx,15 end -->
+
+	<ActorFrame Condition="not GAMESTATE:PlayerUsingBothSides() and GAMESTATE:IsPlayerEnabled(PLAYER_1)" ><children>
+		<ActorFrame OnCommand="%function(self)
+
+				self:y(SCREEN_CENTER_Y)
+				
+				if CustomMods[PLAYER_1].left then 
+					self:rotationz(90)
+					self:x(SCREEN_LEFT+190+GetLifebarAdjustment())
+					
+				elseif CustomMods[PLAYER_1].right then
+					self:rotationz(90)
+					self:x(SCREEN_CENTER_X-160-GetLifebarAdjustment()+SCREEN_WIDTH/2)	
+					
+				else self:x(SCREEN_WIDTH/4) end
+		
+				if CustomMods[PLAYER_1].solo then self:x(SCREEN_WIDTH/2) end
+					
+				if CustomMods[PLAYER_1].spin then 
+					self:spin() 
+					self:effectclock('beat') 
+					self:effectmagnitude(0,0,45) end
+					
+				if CustomMods[PLAYER_1].spinreverse then 
+					self:spin() 
+					self:effectclock('beat') 
+					self:effectmagnitude(0,0,-45) end
+
+				if CustomMods[PLAYER_1].vibrate then 
+					self:vibrate() end
+					
+				if CustomMods[PLAYER_1].wag then 
+					self:wag()
+					self:effectclock('beat') end
+					
+				if CustomMods[PLAYER_1].downward then self:addy(20) end
+
+
+				end"> <children>
+		<AutoActor
+			File="FilterBG"
+			OnCommand="%function(self)
+				self:diffusealpha(0)
+				if CustomMods[PLAYER_1].spin or CustomMods[PLAYER_1].spinreverse then 
+					self:zoomtoheight(SCREEN_HEIGHT*2) self:fadetop(.2) self:fadebottom(.2)
+					else 
+					
+						if CustomMods[PLAYER_1].right or CustomMods[PLAYER_1].left then 
+							if GAMESTATE:IsPlayerEnabled(PLAYER_2) then self:zoomtoheight(SCREEN_WIDTH/1.6) self:fadetop(.2) self:fadebottom(.2)
+							else self:zoomtoheight(SCREEN_WIDTH*1.75) end
+						elseif CustomMods[PLAYER_1].vibrate or CustomMods[PLAYER_1].wag then self:zoomtoheight(SCREEN_HEIGHT*1.5)
+						else self:zoomtoheight(SCREEN_HEIGHT) end
+					end
+				
+
+				self:decelerate(.3)
+				self:diffusealpha(DarkenPercent(PLAYER_1))
+				end"
+		/>
+		</children></ActorFrame>
+	</children></ActorFrame>
+	
+	
+		<!--Player 2 -->
+		<ActorFrame Condition="not GAMESTATE:PlayerUsingBothSides() and GAMESTATE:IsPlayerEnabled(PLAYER_2)" ><children>
+		<ActorFrame OnCommand="%function(self)
+
+				self:y(SCREEN_CENTER_Y)
+				
+				if CustomMods[PLAYER_2].left then 
+					self:rotationz(270)
+					self:x(SCREEN_CENTER_X+160+GetLifebarAdjustment()-SCREEN_WIDTH/2)
+				elseif CustomMods[PLAYER_2].right then
+					self:rotationz(90)
+					self:x(SCREEN_RIGHT-190-GetLifebarAdjustment())	
+					
+				else self:x(SCREEN_WIDTH/4*3) end
+		
+				if CustomMods[PLAYER_2].solo then self:x(SCREEN_WIDTH/2) end
+					
+				if CustomMods[PLAYER_2].spin then 
+					self:spin() 
+					self:effectclock('beat') 
+					self:effectmagnitude(0,0,45) end
+					
+				if CustomMods[PLAYER_2].spinreverse then 
+					self:spin() 
+					self:effectclock('beat') 
+					self:effectmagnitude(0,0,-45) end
+
+				if CustomMods[PLAYER_2].vibrate then 
+					self:vibrate() end
+					
+				if CustomMods[PLAYER_2].wag then 
+					self:wag()
+					self:effectclock('beat') end
+					
+				if CustomMods[PLAYER_2].downward then self:addy(20) end
+
+
+				end"> <children>
+		<AutoActor
+			File="FilterBG"
+			OnCommand="%function(self)
+				self:diffusealpha(0)
+				if CustomMods[PLAYER_2].spin or CustomMods[PLAYER_2].spinreverse then 
+					self:zoomtoheight(SCREEN_HEIGHT*2) self:fadetop(.2) self:fadebottom(.2)
+					else 
+					
+						if CustomMods[PLAYER_2].right or CustomMods[PLAYER_2].left then
+							if GAMESTATE:IsPlayerEnabled(PLAYER_1) then self:zoomtoheight(SCREEN_WIDTH/1.6) self:fadetop(.2) self:fadebottom(.2)
+							else self:zoomtoheight(SCREEN_WIDTH*1.75) end
+						elseif CustomMods[PLAYER_2].vibrate or CustomMods[PLAYER_2].wag then self:zoomtoheight(SCREEN_HEIGHT*1.5)
+						else self:zoomtoheight(SCREEN_HEIGHT) end
+					end
+				
+
+				self:decelerate(.3)
+				self:diffusealpha(DarkenPercent(PLAYER_2))
+				end"
+		/>
+		</children></ActorFrame>
+	</children></ActorFrame>
+	
+		
+		
+		
+		<!--dOUBLES-->
+		
+		<!--P1-->
+	
+	<ActorFrame Condition="GAMESTATE:PlayerUsingBothSides() and GAMESTATE:IsPlayerEnabled(PLAYER_1)" ><children>
+		<ActorFrame OnCommand="%function(self)
+
+				self:y(SCREEN_CENTER_Y)
+				self:x(SCREEN_CENTER_X)
+				
+				if CustomMods[PLAYER_1].left then 
+					self:rotationz(90)
+					
+				elseif CustomMods[PLAYER_1].right then
+					self:rotationz(270)
+					
+				else end
+		
+				if CustomMods[PLAYER_1].spin then 
+					self:spin() 
+					self:effectclock('beat') 
+					self:effectmagnitude(0,0,45) end
+					
+				if CustomMods[PLAYER_1].spinreverse then 
+					self:spin() 
+					self:effectclock('beat') 
+					self:effectmagnitude(0,0,-45) end
+
+				if CustomMods[PLAYER_1].vibrate then 
+					self:vibrate() end
+					
+				if CustomMods[PLAYER_1].wag then 
+					self:wag()
+					self:effectclock('beat') end
+					
+					
+				if CustomMods[PLAYER_1].downward then self:addy(20) end
+
+
+				end"> <children>
+
+		
+			<AutoActor
+				File="FilterBGDoubles"
+				OnCommand="%function(self)
+				self:diffusealpha(0)
+				if CustomMods[PLAYER_1].spin or CustomMods[PLAYER_1].spinreverse then 
+					self:zoomtoheight(SCREEN_HEIGHT*2) self:fadetop(.2) self:fadebottom(.2)
+					else 
+						if CustomMods[PLAYER_1].right or CustomMods[PLAYER_1].left then self:zoomtoheight(SCREEN_WIDTH)
+						elseif CustomMods[PLAYER_1].vibrate or CustomMods[PLAYER_1].wag then self:zoomtoheight(SCREEN_HEIGHT*1.5)
+						else self:zoomtoheight(SCREEN_HEIGHT) end
+					end
+				self:decelerate(.3)
+				self:diffusealpha(DarkenPercent(PLAYER_1))
+				end"
+		/>
+		</children></ActorFrame>
+	</children></ActorFrame>
+	<!--P2-->
+	<ActorFrame Condition="GAMESTATE:PlayerUsingBothSides() and GAMESTATE:IsPlayerEnabled(PLAYER_2)" ><children>
+		<ActorFrame OnCommand="%function(self)
+
+				self:y(SCREEN_CENTER_Y)
+				self:x(SCREEN_CENTER_X)
+				
+				if CustomMods[PLAYER_2].left then 
+					self:rotationz(90)
+					
+				elseif CustomMods[PLAYER_2].right then
+					self:rotationz(270)
+					
+				else end
+		
+				if CustomMods[PLAYER_2].spin then 
+					self:spin() 
+					self:effectclock('beat') 
+					self:effectmagnitude(0,0,45) end
+					
+				if CustomMods[PLAYER_2].spinreverse then 
+					self:spin() 
+					self:effectclock('beat') 
+					self:effectmagnitude(0,0,-45) end
+
+				if CustomMods[PLAYER_2].vibrate then 
+					self:vibrate() end
+					
+				if CustomMods[PLAYER_2].wag then 
+					self:wag()
+					self:effectclock('beat') end
+					
+					
+				if CustomMods[PLAYER_2].downward then self:addy(20) end
+
+
+				end"> <children>
+
+		
+			<AutoActor
+				File="FilterBGDoubles"
+				OnCommand="%function(self)
+				self:diffusealpha(0)
+				if CustomMods[PLAYER_2].spin or CustomMods[PLAYER_2].spinreverse then 
+					self:zoomtoheight(SCREEN_HEIGHT*2) self:fadetop(.2) self:fadebottom(.2)
+					else 
+						if CustomMods[PLAYER_2].right or CustomMods[PLAYER_2].left then self:zoomtoheight(SCREEN_WIDTH)
+						elseif CustomMods[PLAYER_2].vibrate or CustomMods[PLAYER_2].wag then self:zoomtoheight(SCREEN_HEIGHT*1.5)
+						else self:zoomtoheight(SCREEN_HEIGHT) end
+					end
+				self:decelerate(.3)
+				self:diffusealpha(DarkenPercent(PLAYER_2))
+				end"
+		/>
+		</children></ActorFrame>
+	</children></ActorFrame>
+		
+		
+		
+		
+		
+	
+</children> </ActorFrame>
+
+
+
+

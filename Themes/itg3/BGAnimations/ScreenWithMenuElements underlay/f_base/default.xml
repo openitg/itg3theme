@@ -1,0 +1,34 @@
+<ActorFrame>
+			<children>
+<Layer
+		Type="Autoactor"
+		File="../_base/_lside"
+		InitCommand="horizalign,left;vertalign,bottom"
+		OnCommand="x,SCREEN_LEFT;y,SCREEN_BOTTOM+97;y,SCREEN_BOTTOM"
+	/>
+<Layer
+		Type="Autoactor"
+		File="../_base/_rside"
+		InitCommand="horizalign,right;vertalign,bottom"
+		OnCommand="x,SCREEN_RIGHT;y,SCREEN_BOTTOM+97;y,SCREEN_BOTTOM"
+	/>
+<Layer
+		Type="Autoactor"
+		File="../_base/width"
+		InitCommand="horizalign,left;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2"
+		OnCommand="x,SCREEN_LEFT+48;y,SCREEN_BOTTOM+97;y,SCREEN_BOTTOM"
+	/>
+<Layer
+		Type="Autoactor"
+		File="../_base/width"
+		InitCommand="horizalign,right;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2"
+		OnCommand="x,SCREEN_RIGHT-48;y,SCREEN_BOTTOM+97;y,SCREEN_BOTTOM"
+	/>
+<Layer
+		Type="Autoactor"
+		File="../_base/base"
+		InitCommand="vertalign,bottom"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM+97;y,SCREEN_BOTTOM"
+	/>
+		</children>
+</ActorFrame>

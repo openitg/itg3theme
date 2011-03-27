@@ -1,0 +1,57 @@
+<ActorFrame>
+		<children>
+		<Layer
+		File="glow"
+		InitCommand="x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y-10"
+		OnCommand="diffusealpha,0;sleep,0.1;linear,0.3;diffusealpha,1;diffuseshift;effectcolor1,#00FFFF;effectcolor2,#0000CC;effectclock,bgm"
+		OffCommand="stoptweening;decelerate,0.3;diffusealpha,0" 
+		CurrentSongChangedMessageCommand="stoptweening;linear,0.15;x,SCREEN_CENTER_X-50;decelerate,0.3;x,SCREEN_CENTER_X-60"
+		/>
+		<!-- CurrentSongChangedMessageCommand="stoptweening;linear,0.15;x,-174;diffusealpha,0;decelerate,0.3;diffusealpha,1;x,-186" -->
+	
+<Layer
+		File="wheel cursor normal"
+		InitCommand="x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y-10"
+		OnCommand="diffusealpha,0;sleep,0.1;linear,0.3;diffusealpha,1"
+		OffCommand="stoptweening;decelerate,0.3;diffusealpha,0"
+		CurrentSongChangedMessageCommand="stoptweening;linear,0.15;x,SCREEN_CENTER_X-50;decelerate,0.3;x,SCREEN_CENTER_X-60"
+		/>
+		<!-- CurrentSongChangedMessageCommand="stoptweening;linear,0.15;x,-174;decelerate,0.3;x,-186" -->
+
+ <!-- <Layer
+		File="blueflare"
+		InitCommand="x,SCREEN_CENTER_X-58;y,SCREEN_CENTER_Y-10;additiveblend,1"
+		OnCommand="playcommand,Refresh"
+		RefreshCommand="%function(self)
+				self:stoptweening(1); self:zoom(0); self:diffusealpha(.6); self:sleep(0.4); 
+				self: accelerate(0.5); self:zoom(3) self:diffusealpha(0); end" 
+		CurrentSongChangedMessageCommand="PlayCommand,Refresh"
+		OffCommand=""/> 
+		
+		-->
+		
+		
+		
+	<Layer
+		File="outline"
+		InitCommand="x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y-10"
+		OnCommand="diffusealpha,0;additiveblend,1;"
+		OffCommand="stoptweening;decelerate,0.3;diffusealpha,0"
+		RefreshCommand="stoptweening;linear,.1;diffusealpha,0;sleep,.2;diffusealpha,1;cropright,-0.3;cropleft,1.1;fadeleft,.05;faderight,.05;diffusealpha,1;linear,0.72;cropright,1;cropleft,-0.3;"
+		CurrentSongChangedMessageCommand="diffusealpha,0;stoptweening;PlayCommand,Refresh"
+		/>
+		
+		
+		</children>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+</ActorFrame>

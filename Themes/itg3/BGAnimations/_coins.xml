@@ -1,0 +1,40 @@
+<ActorFrame><children>
+<Layer		
+Font="_v 26px bold black"
+Text="???"
+OnCommand="diffusealpha,0;x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-16;horizalign,center;shadowlength,0;zoom,.5;linear,.4;diffusealpha,1;PlayCommand,Refresh"
+RefreshCommand="%
+			function(self)
+				if GAMESTATE:IsEventMode() then self:settext('EVENT MODE') return end
+				if GAMESTATE:GetCoinMode()==COIN_MODE_FREE then self:settext('FREE PLAY') return end
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:settext('') return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				local credits=math.floor(coins/coinsPerCredit)
+				local remainder=math.mod(coins,coinsPerCredit)
+				local s='CREDIT(S) :  '
+				if credits&gt;0 then s=s..credits..'  ' end
+				s=s..remainder..'/'..coinsPerCredit
+				self:settext(s)
+			end"
+CoinInsertedMessageCommand="PlayCommand,Refresh"		
+CoinModeChangedMessageCommand="PlayCommand,Refresh"
+OffCommand=""	
+
+EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,0;"
+	SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,1;"
+
+	/>		
+	
+	
+	<Layer	
+File="updatecoin.png"		OnCommand="x,SCREEN_CENTER_X;diffusealpha,0;y,SCREEN_BOTTOM-16;horizalign,center;shadowlength,2;zoom,0.5;PlayCommand,Refresh"
+		RefreshCommand="%function(self)
+			self:diffusealpha(0); self:zoom(0); self:linear(0.08); self:zoom(0.5); self:diffusealpha(0.85); self:sleep(0.08); self:linear(0.1); self:diffusealpha(0) end"
+		CoinInsertedMessageCommand="stoptweening;PlayCommand,Refresh"		
+		
+OffCommand=""		
+	/>
+	
+	</children>
+</ActorFrame>

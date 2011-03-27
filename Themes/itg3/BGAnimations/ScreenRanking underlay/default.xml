@@ -1,0 +1,46 @@
+<ActorFrame>
+<children>
+<AutoActor
+	File="back frame"
+	InitCommand="diffusealpha,0;zoomtowidth,228;x,SCREEN_CENTER_X-1;y,SCREEN_CENTER_Y;" 
+	OnCommand="decelerate,0.30;zoomx,1;diffusealpha,1"
+	/>
+	
+	
+	
+
+	<Layer
+		File="horiz-line"
+		InitCommand="diffusealpha,0;zoomtowidth,0;x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-34;"
+	OnCommand="sleep,.2;decelerate,0.30;zoomx,.99;diffusealpha,1"	/> 
+	
+	
+		<Layer
+		File="mask"
+		InitCommand="zwrite,1;blend,noeffect;vertalign,bottom;x,SCREEN_CENTER_X;y,SCREEN_BOTTOM+2"
+	/> 
+	
+	
+	
+	<Layer
+		File="center"
+		InitCommand="vertalign,top;x,SCREEN_CENTER_X-120;y,SCREEN_TOP+4;"
+		/> 
+	
+	<Layer
+		File="left"
+		InitCommand="vertalign,top;horizalign,right;x,SCREEN_CENTER_X-120-17;y,SCREEN_TOP+4;zoomtowidth,SCREEN_WIDTH"
+		/> 
+		<Layer
+		File="right"
+		InitCommand="vertalign,top;horizalign,left;x,SCREEN_CENTER_X-120+14;y,SCREEN_TOP+4;zoomtowidth,SCREEN_WIDTH"
+		/> 
+
+<Layer
+		File="dgrades"
+		InitCommand="x,SCREEN_CENTER_X+100;y,SCREEN_TOP+56;"
+		/> 
+
+	
+</children>
+</ActorFrame>

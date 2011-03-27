@@ -1,0 +1,50 @@
+﻿<ActorFrame><children>
+<Layer
+		Condition="GAMESTATE:GetCoinMode()~=COIN_MODE_FREE and GAMESTATE:GetPremium()==PREMIUM_JOINT"
+		Font="_v 26px bold black"
+		Text="x2"
+		InitCommand="x,SCREEN_CENTER_X-100;y,SCREEN_TOP+14;zoom,0.7;ShadowLength,0"
+		OnCommand="diffusealpha,0;sleep,.4;linear,.4;diffusealpha,1"
+	/>
+	<Layer
+		Condition="GAMESTATE:GetCoinMode()~=COIN_MODE_FREE and GAMESTATE:GetPremium()==PREMIUM_JOINT"
+		Font="_v 26px bold black"
+		Text="PREMIUM"
+		InitCommand="x,SCREEN_CENTER_X-100;y,SCREEN_TOP+14;zoom,0.4;ShadowLength,0"
+		OnCommand="diffusealpha,0;sleep,.4;linear,.4;diffusealpha,1"
+	/>
+<Layer
+		Condition="GAMESTATE:GetCoinMode()~=COIN_MODE_FREE and GAMESTATE:GetPremium()==PREMIUM_DOUBLE"
+		Font="_r 26px bold glow"
+		Text="PLAY DOUBLE PAD STYLE FOR 1 CREDIT!"
+		InitCommand="x,SCREEN_CENTER_X-100;y,SCREEN_TOP+14;zoom,0.5;ShadowLength,0"
+		OnCommand="diffusealpha,0;sleep,.4;linear,.4;diffusealpha,1"
+	/>
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold glow"
+		Text="PRESS"
+		InitCommand="shadowlength,0;zoom,.7"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-100"
+	/>
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold diffuse"
+		Text="PRESS"
+		InitCommand="shadowlength,0;zoom,.7"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-100;diffuseshift;effectcolor1,#555555FF;effectcolor2,#000000FF;effectclock,beat"
+	/>
+<Layer
+		Type="BitmapText"
+		Font="_eurostile outline"
+		Text="&START;"
+		InitCommand="shadowlength,0;diffuseshift;effectcolor1,#6BFF75;effectcolor2,#858585;zoom,1.50;effectclock,beat"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-80"
+	/>
+<Layer
+		Type="BitmapText"
+		Font="_eurostile outline"
+		Text="&START;"
+		InitCommand="additiveblend,1;shadowlength,0;diffuseshift;effectcolor1,#6BFF75;effectcolor2,#FFFFFF00;zoom,1.50;effectclock,beat"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-80"
+	/>

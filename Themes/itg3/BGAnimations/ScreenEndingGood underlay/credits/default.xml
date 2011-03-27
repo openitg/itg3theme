@@ -1,0 +1,249 @@
+<ActorFrame>
+	<children>
+		<ActorFrame OnCommand="hibernate,4;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/jason_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/jason_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,7.3;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/kung_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/kung_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,10.6;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="	itg3/skin_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/skin_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,13.9;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/rain_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/rain_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,17.2;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/steve_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/steve_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,20.5;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/gutter_pic"  OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/gutter_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,23.8;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/phrek_pic"  OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/phrek_name"OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,27.1;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/jbean_pic"  OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/jbean_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+
+	<ActorFrame OnCommand="hibernate,30.4;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/kyle_pic"  OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/kyle_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+
+<ActorFrame OnCommand="hibernate,33.7;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="mj_pic"  OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/mj_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+
+
+
+<ActorFrame OnCommand="hibernate,37;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="foy_pic"  OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/foy_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+
+
+<ActorFrame OnCommand="hibernate,40.3;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="ryan_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/ryan_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+
+
+
+
+
+<ActorFrame OnCommand="hibernate,43.6;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/derek_pic"  OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/derek_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		
+		
+<ActorFrame OnCommand="hibernate,46.9;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/novus_pic"  OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/novus_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		
+		
+		<ActorFrame OnCommand="hibernate,50.2;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/grim_pic"  OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/grim_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		
+		
+		
+			<ActorFrame OnCommand="hibernate,53.5;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/eric_pic"  OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/eric_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		
+		
+		
+			<ActorFrame OnCommand="hibernate,56.8;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/link_pic"  OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/link_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		
+		
+		
+		<ActorFrame OnCommand="hibernate,60.1;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/groovrbgt_pic"  OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/groovrbgt_name"  OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+
+
+
+			
+<ActorFrame OnCommand="hibernate,63.4;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/tilt_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/tilt_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+
+
+
+<ActorFrame OnCommand="hibernate,66.7;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/npch_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/npch_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		
+		
+	<ActorFrame OnCommand="hibernate,70;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/md_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/md_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		
+		<ActorFrame OnCommand="hibernate,73.3;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/ozo_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/ozo_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		
+			<ActorFrame OnCommand="hibernate,76.6;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/lght_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/lght_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		
+		
+		
+		<ActorFrame OnCommand="hibernate,79.9;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/gz_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/gz_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		
+		<ActorFrame OnCommand="hibernate,83.2;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="itg3/ddm_pic" OnCommand="y,-35;diffusealpha,0;zoom,.8;sleep,.25;linear,.125;diffusealpha,1;linear,2.75;zoom,.82;accelerate,.2;diffusealpha,0;queuecommand,h" hCommand="hidden,1" />
+				
+				<AutoActor File="itg3/ddm_name" OnCommand="hibernate,.2;horizalign,center;addx,14;addx,-SCREEN_WIDTH;addy,200;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.46;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+
+		
+		
+		
+		
+	</children>
+</ActorFrame>

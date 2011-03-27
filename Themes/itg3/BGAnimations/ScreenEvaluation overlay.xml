@@ -1,0 +1,183 @@
+<ActorFrame>
+	<children>
+		
+
+
+<!-- difficulty regular, marathon, survival -->
+<ActorFrame
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"				
+OnCommand="x,SCREEN_CENTER_X-240+EvalX();y,SCREEN_CENTER_Y+10;difficultyoffset;addx,-SCREEN_WIDTH/1;sleep,3;decelerate,0.3;addx,+SCREEN_WIDTH/1"
+OffCommand="accelerate,0.3;addx,-SCREEN_WIDTH/1"> <children>
+<Actor
+File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+OnCommand="zoom,.8;animate,0;playcommand,Update"
+UpdateCommand="%function(self,parent) SetDifficultyFrameFromGameState(self, PLAYER_1) end"
+/>
+<Actor
+Class="DifficultyMeter"
+Type="ScreenGameplay DifficultyMeterP1"
+InitCommand="addy,-1"
+OnCommand="playcommand,Update"
+UpdateCommand="%function(self) 
+if GAMESTATE:GetCurrentTrail(PLAYER_1) then 
+self:SetFromTrail(GAMESTATE:GetCurrentTrail(PLAYER_1)) 
+else
+self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1))
+end
+end"
+/>
+</children> </ActorFrame>
+
+		
+
+<ActorFrame
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"				
+OnCommand="x,SCREEN_CENTER_X+238+EvalX();y,SCREEN_CENTER_Y+10;difficultyoffset;addx,+SCREEN_WIDTH/1;sleep,3;decelerate,0.3;addx,-SCREEN_WIDTH/1"
+OffCommand="accelerate,0.3;addx,+SCREEN_WIDTH/1"> <children>
+<Actor
+File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+OnCommand="zoomx,-0.8;zoomy,0.8;animate,0;playcommand,Update"
+UpdateCommand="%function(self,parent) SetDifficultyFrameFromGameState(self, PLAYER_2) end"
+/>
+<Actor
+Class="DifficultyMeter"
+Type="ScreenGameplay DifficultyMeterP2"
+InitCommand="addy,-1"
+OnCommand="playcommand,Update"
+UpdateCommand="%function(self) 
+  if GAMESTATE:GetCurrentTrail(PLAYER_2) then 
+    self:SetFromTrail(GAMESTATE:GetCurrentTrail(PLAYER_2)) 
+  else
+    self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2))
+  end
+    end"
+/>
+		</children> </ActorFrame>
+		<!-- end of difficulty R,M,S -->
+
+		
+
+
+		
+		<!-- difficulty battle-->
+<ActorFrame
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"				
+OnCommand="x,SCREEN_CENTER_X-225+EvalX();y,SCREEN_CENTER_Y-146;difficultyoffset;addx,-SCREEN_WIDTH/1;sleep,3;decelerate,0.3;addx,+SCREEN_WIDTH/1"
+OffCommand="accelerate,0.3;addx,-SCREEN_WIDTH/1"> <children>
+<Actor
+File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+OnCommand="animate,0;playcommand,Update"
+UpdateCommand="%function(self,parent) SetDifficultyFrameFromGameState(self, PLAYER_1) end"
+/>
+<Actor
+Class="DifficultyMeter"
+Type="ScreenGameplay DifficultyMeterP1"
+InitCommand="addy,1"
+OnCommand="playcommand,Update"
+UpdateCommand="%function(self) 
+if GAMESTATE:GetCurrentTrail(PLAYER_1) then 
+							self:SetFromTrail(GAMESTATE:GetCurrentTrail(PLAYER_1)) 
+						else
+							self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1))
+						end
+					end"
+			/>
+		</children> </ActorFrame>
+
+		
+
+<ActorFrame
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"					
+OnCommand="x,SCREEN_CENTER_X+223+EvalX();y,SCREEN_CENTER_Y-146;difficultyoffset;addx,+SCREEN_WIDTH/1;sleep,3;decelerate,0.3;addx,-SCREEN_WIDTH/1"
+OffCommand="accelerate,0.3;addx,+SCREEN_WIDTH/1"> <children>
+<Actor
+File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+OnCommand="zoomx,-1;animate,0;playcommand,Update"
+UpdateCommand="%function(self,parent) SetDifficultyFrameFromGameState(self, PLAYER_2) end"
+/>
+<Actor
+Class="DifficultyMeter"
+Type="ScreenGameplay DifficultyMeterP2"
+InitCommand="addy,1"
+OnCommand="playcommand,Update"
+UpdateCommand="%function(self) 
+						if GAMESTATE:GetCurrentTrail(PLAYER_2) then 
+							self:SetFromTrail(GAMESTATE:GetCurrentTrail(PLAYER_2)) 
+						else
+							self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2))
+						end
+					end"
+			/>
+		</children> </ActorFrame>
+		<!-- end of difficulty B -->
+<Layer
+			Type="ActorFrame"
+			OnCommand='@"x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-61;" .. GetUnlockCommand()'
+			>
+			<children>
+				<BitmapText
+					Text="text"
+					File="_v 26px bold diffuse"
+
+					UnlockSongCommand="settext,Unlocked a new song!"
+					UnlockCourseCommand="settext,Unlocked a new course!"
+					UnlockModifierCommand="settext,Unlocked a new modifier!"
+					OnCommand="ZoomX,0;sleep,1.0;ZoomY,6;BounceEnd,.3;Zoom,1;sleep,1.6;playcommand,Off"
+					OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+					NoUnlockCommand="hidden,1"
+				/>
+			</children>
+		</Layer>
+		
+			
+			
+			
+<Layer
+File="_coins"
+/>
+
+
+
+
+
+
+
+
+
+<ActorFrame> <children>
+
+   <ActorFrame 
+	OnCommand="x,SCREEN_LEFT+SCREEN_WIDTH/3.6;y,SCREEN_TOP+78"
+	OffCommand="accelerate,0.3;addy,-120"
+      > <children>
+<!-- Show the name of a song if it does not have a banner or is loaded from a USB drive -->
+      <Layer
+	Type="BitmapText"
+	Text="@WhyDontYouWork()"
+	Font="_r bold shadow 30px"
+	OnCommand="horizalign,center;maxwidth,SCREEN_WIDTH-40;shadowlength,0;zoom,.5;cropright,1;sleep,3;linear,.5;cropright,0;"
+      />
+	</children>
+	
+</ActorFrame>
+
+<!-- Show a player's percentage if they DIDN'T fail the song, but kept playing 
+
+<ActorFrame> <children>
+      <Layer
+	Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)
+	and GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR
+	and not (GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()==DIFFICULTY_BEGINNER or GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()==DIFFICULTY_EASY)"
+	Type="BitmapText"
+	Text="@GetPlayerPercentage(PLAYER_1)"
+	Font="_v tutorial"
+	OnCommand="horizalign,center;x,SCREEN_CENTER_X-200+EvalX();y,SCREEN_CENTER_Y+84;shadowlength,0;zoom,.5;cropright,1;sleep,3;linear,.5;cropright,0;"
+	/>
+</children> </ActorFrame>
+   
+   
+-->
+   
+   
+	</children>
+</ActorFrame>

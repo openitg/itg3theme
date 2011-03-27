@@ -1,0 +1,34 @@
+<ActorFrame>
+		<children>
+<Layer 
+		Type="Quad" 
+		InitCommand="zwrite,1;z,2;blend,noeffect;vertalign,top;diffuse,#FFFFFF;zoomtowidth,SCREEN_WIDTH;zoomtoheight,69"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP-100;decelerate,0.8;y,SCREEN_TOP"
+		OffCommand="accelerate,0.5;addy,-100" 
+	/>
+<Layer 
+		Type="Quad" 
+		InitCommand="zwrite,1;z,2;blend,noeffect;vertalign,top;horizalign,right;diffuse,#FFFFFF;zoomtowidth,260;zoomtoheight,77"
+		OnCommand="x,SCREEN_RIGHT;y,SCREEN_TOP-100;decelerate,0.8;y,SCREEN_TOP"
+		OffCommand="accelerate,0.5;addy,-100" 
+	/>
+<Layer
+		File="_banner mask"
+		Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
+		InitCommand="zwrite,1;z,2;blend,noeffect;x,SCREEN_CENTER_X+140;y,SCREEN_CENTER_Y-20"
+		OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="accelerate,0.75;addx,SCREEN_WIDTH"
+	/> 
+<Layer
+		File="_course banner mask"
+		Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_ONI or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP"
+		InitCommand="zwrite,1;z,2;blend,noeffect;x,SCREEN_CENTER_X+140;y,SCREEN_CENTER_Y-20"
+		OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="accelerate,0.75;addx,SCREEN_WIDTH"
+	/> 
+<Layer
+		File="..\ScreenWithMenuElements underlay\_expandtop" 
+		InitCommand="Draworder,400" 
+	/>
+		</children>
+</ActorFrame>

@@ -1,0 +1,18 @@
+<ActorFrame>
+		<children>
+<Layer
+		Type="Autoactor"
+		File="left"
+		InitCommand="horizalign,left"	
+		OnCommand="x,SCREEN_LEFT-50;y,SCREEN_CENTER_Y;sleep,0.2;decelerate,0.6;x,SCREEN_LEFT"
+		OffCommand="accelerate,0.4;addx,-100"
+	/>
+<Layer
+		Type="Autoactor"
+		File="right"
+		InitCommand="horizalign,right"		
+		OnCommand="x,SCREEN_RIGHT+50;y,SCREEN_CENTER_Y;sleep,0.2;decelerate,0.6;x,SCREEN_RIGHT"
+		OffCommand="accelerate,0.4;addx,100"
+	/> 
+		</children>
+</ActorFrame>

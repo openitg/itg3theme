@@ -1,0 +1,29 @@
+<ActorFrame><children>
+<!-- don't charge in metrics tween on/off command, do it here to get more effect --kung -->
+<Layer
+File="OptionsList cursor"
+OnCommand="finishtweening;additiveblend,1;diffusealpha,0;zoomx,0.4"
+OptionsListOpenedP1MessageCommand="finishtweening;linear,0.2;diffusealpha,1;zoomx,1"
+OptionsListClosedP1MessageCommand="finishtweening;linear,0.2;diffusealpha,0;zoomx,0.4"
+/>
+<Layer
+File="_p1 left cursor"
+OnCommand="finishtweening;addx,-60;zoom,0.6;diffusealpha,0"
+OptionsListOpenedP1MessageCommand="finishtweening;diffusealpha,0"
+OptionsListLeftP1MessageCommand="finishtweening;linear,0.1;diffusealpha,1;linear,0.1;diffusealpha,0"
+OptionsListStartP1MessageCommand="finishtweening;linear,0.1;diffusealpha,1;linear,0.1;diffusealpha,0"
+OptionsListPopP1MessageCommand="finishtweening;linear,0.1;diffusealpha,1;linear,0.1;diffusealpha,0"
+OptionsListPushP1MessageCommand="finishtweening;linear,0.1;diffusealpha,1;linear,0.1;diffusealpha,0"
+OptionsListResetP1MessageCommand="finishtweening;diffusealpha,1;linear,0.1;diffusealpha,0"
+/>
+<Layer
+File="_p1 right cursor"
+OnCommand="finishtweening;addx,+60;zoom,0.6;diffusealpha,0"
+OptionsListOpenedP1MessageCommand="finishtweening;diffusealpha,0"
+OptionsListRightP1MessageCommand="finishtweening;linear,0.1;diffusealpha,1;linear,0.1;diffusealpha,0"
+OptionsListStartP1MessageCommand="finishtweening;linear,0.1;diffusealpha,1;linear,0.1;diffusealpha,0"
+OptionsListPopP1MessageCommand="finishtweening;linear,0.1;diffusealpha,1;linear,0.1;diffusealpha,0"
+OptionsListPushP1MessageCommand="finishtweening;linear,0.1;diffusealpha,1;linear,0.1;diffusealpha,0"
+OptionsListResetP1MessageCommand="finishtweening;diffusealpha,1;linear,0.1;diffusealpha,0"
+/>
+</children></ActorFrame>

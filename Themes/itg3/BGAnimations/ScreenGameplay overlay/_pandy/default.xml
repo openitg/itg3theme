@@ -1,0 +1,233 @@
+<ActorFrame> <children>
+<Layer 
+		Type="BitmapText"
+		Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
+		Font="_v 26px bold black"
+		Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_1)"
+		OnCommand="x,SCREEN_CENTER_X-254;y,SCREEN_TOP+58;shadowlength,0;zoom,.55;maxwidth,180;addy,-100;sleep,0.5;decelerate,0.8;addy,+100"
+		OffCommand="accelerate,0.8;addy,-100"
+	/>
+<Layer 
+		Type="BitmapText"
+		Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
+		Font="_v 26px bold black"
+		Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_2)"
+		OnCommand="x,SCREEN_CENTER_X+254;y,SCREEN_TOP+58;shadowlength,0;zoom,.55;maxwidth,180;addy,-100;sleep,0.5;decelerate,0.8;addy,+100"
+		OffCommand="accelerate,0.8;addy,-100"
+	/>
+<Layer 
+		Type="ActorFrame"
+		OnCommand="addy,-100;sleep,0.5;queuecommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		TweenOnCommand="decelerate,0.8;addy,+100"
+		TweenOffCommand="%function(self)
+				if AnyPlayerFullComboed() then 
+					self:sleep(3) end
+				self:accelerate(0.8)
+				self:addy(-100)
+			end"> 	
+	<children>
+			<Layer 
+					File="baseshade"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+			/> 
+</children> 
+</Layer>
+
+<Layer 
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+27;addy,-100;sleep,0.5;queuecommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		TweenOnCommand="decelerate,0.8;addy,+100"
+		TweenOffCommand="%function(self)
+				if AnyPlayerFullComboed() then 
+					self:sleep(3) end
+				self:accelerate(0.8)
+				self:addy(-100)
+			end"> 	
+		<children>
+			<Layer
+					Type="SongMeterDisplay"
+					StreamWidth="292"
+					StreamPath="meter stream"
+				>
+					<Tip
+							File="tip"
+							OnCommand="zoom,0;sleep,1.8;zoom,1;diffuseshift;effectcolor1,1,1,1,1;EffectColor2,1,1,1,.5;effectclock,bgm;effectperiod,4;"
+					/>
+			</Layer>
+		</children> 
+	</Layer>
+<Layer 
+		Type="ActorFrame"
+		OnCommand="addy,-100;sleep,0.5;queuecommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		TweenOnCommand="decelerate,0.8;addy,+100"
+		TweenOffCommand="%function(self)
+				if AnyPlayerFullComboed() then 
+					self:sleep(3) end
+				self:accelerate(0.8)
+				self:addy(-100)
+			end"> 	
+	<children>
+			<Layer 
+					File="_uplight"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="diffusealpha,0;sleep,1.8;linear,.4;diffusealpha,1;diffuse,#356cbe"
+					OffCommand=""
+			/> 
+			
+			<Layer 
+					File="_uplight"
+					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="diffusealpha,0;sleep,1.8;linear,.4;diffusealpha,1;diffuse,#356cbe"
+					OffCommand=""
+			/> 
+			
+			<Layer 	
+					File="width"
+					InitCommand="x,SCREEN_CENTER_X-190;y,SCREEN_TOP+24;horizalign,right;zoomtowidth,3"
+					OnCommand="sleep,1.5;linear,.1;zoomtowidth,SCREEN_WIDTH/2-206"
+					OffCommand=""
+			/> 
+			<Layer 	
+					File="width"
+					InitCommand="x,SCREEN_CENTER_X+190;y,SCREEN_TOP+24;horizalign,left;zoomtowidth,3"
+					OnCommand="sleep,1.5;linear,.1;zoomtowidth,SCREEN_WIDTH/2-206"
+					OffCommand=""
+			/>
+			<Layer 	
+					File="left"
+					InitCommand="horizalign,right"
+					OnCommand="x,SCREEN_CENTER_X-193;y,SCREEN_TOP+24;sleep,1.5;linear,.1;x,SCREEN_LEFT+16"
+					OffCommand=""
+			/>
+			<Layer 
+					File="left"
+					InitCommand="horizalign,right;zoomx,-1"
+					OnCommand="x,SCREEN_CENTER_X+193;y,SCREEN_TOP+24;sleep,1.5;linear,.1;x,SCREEN_RIGHT-16"
+					OffCommand=""
+			/>
+			<Layer 
+					File="base"
+					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OffCommand=""
+			/> 
+			<Layer
+					File="_neons"
+					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#007892;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+			/>
+			<Layer
+					File="_neons"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#82f5ff;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+					
+					
+			/>
+			<Layer
+					Type="BitmapText"
+					Font="_r bold 30px"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24;maxwidth,540;diffusebottomedge,#dedede"
+					OnCommand="addy,3;zoom,.5;shadowlength,2;zoomy,0;sleep,2;decelerate,0.3;zoomy,.45;animate,0;playcommand,Update"
+					CurrentSongChangedMessageCommand="playcommand,Update"
+					UpdateCommand="%SetFromSongTitleAndCourseTitle"
+			/>
+</children> </Layer>
+
+<!-- Difficulty: -->
+<Layer 
+		Type="ActorFrame"
+		OnCommand="sleep,0.5;queuecommand,TweenOn"
+		OffCommand="queuecommand,Hide"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="queuecommand,Hide"
+		HideCommand="%function(self)
+				if AnyPlayerFullComboed() then 
+					self:sleep(3) end
+				self:queuecommand('TweenOff')
+			end"> 
+		<children>
+
+<!-- p1 -->
+		<ActorFrame 
+					Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" 
+					OnCommand="x,SCREEN_CENTER_X-240;y,SCREEN_TOP+29;addx,-SCREEN_WIDTH/3" 
+					TweenOnCommand="sleep,1.5;decelerate,0.5;addx,+SCREEN_WIDTH/3" 
+					TweenOffCommand="accelerate,0.8;addx,-SCREEN_WIDTH/3"
+		>
+<children>
+<Actor
+File="_difficulty icons"
+OnCommand="animate,0;playcommand,Update"
+CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_1) end"
+/>
+<Actor
+Class="DifficultyMeter"
+Type="ScreenGameplay DifficultyMeterP1"
+OnCommand="y,-1;playcommand,Update"
+CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1)) end"
+/>
+</children></ActorFrame>
+
+<!-- p2 -->
+		<ActorFrame 
+					Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" 
+					OnCommand="x,SCREEN_CENTER_X+240;y,SCREEN_TOP+29;addx,SCREEN_WIDTH/3" 
+					TweenOnCommand="sleep,1.5;decelerate,0.5;addx,-SCREEN_WIDTH/3" 
+					TweenOffCommand="accelerate,0.8;addx,SCREEN_WIDTH/3"
+		>
+<children>
+<Actor
+File="_difficulty icons"
+OnCommand="zoomx,-1;animate,0;playcommand,Update"
+CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_2) end"
+/>
+<Actor
+Class="DifficultyMeter"
+Type="ScreenGameplay DifficultyMeterP2"
+OnCommand="y,-1;playcommand,Update"
+CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2)) end"
+/>
+</children></ActorFrame>
+		</children> 
+</Layer>
+
+
+
+
+
+
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+File="difficulty glow"
+InitCommand="additiveblend,1"
+OnCommand="x,SCREEN_CENTER_X-240;y,SCREEN_TOP+29;diffusealpha,0;sleep,2.4;decelerate,.5;diffusealpha,1;sleep,.2;decelerate,.8;diffusealpha,0;sleep,0;"
+OffCommand="stoptweening;decelerate,.3;diffusealpha,0"  />
+
+
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+File="difficulty glow"
+InitCommand="additiveblend,1;zoomx,-1"
+OnCommand="x,SCREEN_CENTER_X+240;y,SCREEN_TOP+29;;diffusealpha,0;sleep,2.4;decelerate,.5;diffusealpha,1;sleep,.2;decelerate,.8;diffusealpha,0;sleep,0;"
+OffCommand="stoptweening;decelerate,.3;diffusealpha,0"  />
+
+</children> 
+</ActorFrame>

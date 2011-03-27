@@ -1,0 +1,34 @@
+<ActorFrame><children>
+<BitampText
+Text="Two Players, each use 4 Panels"
+File="_r bold glow 30px"
+InitCommand="x,SCREEN_CENTER_X+100;y,SCREEN_CENTER_Y+138;zoom,.68;maxwidth,840;horizalign,center;shadowlength,0"
+GainFocusCommand="hidden,0;finishtweening;cropright,1;linear,0.5;cropright,0"
+LoseFocusCommand="hidden,1"
+OffCommand="linear,0.3;diffusealpha,0"
+/>
+<Layer
+File="_join icons/versus_icon"
+InitCommand="x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-95+120;horizalign,left"	
+GainFocusCommand="finishtweening;accelerate,0.1;diffuse,#FFFFFF;x,SCREEN_LEFT+40"
+LoseFocusCommand="finishtweening;decelerate,0.1;diffuse,#636363;x,SCREEN_LEFT+20"
+OffCommand="sleep,0.1;accelerate,0.4;addx,-SCREEN_WIDTH*.5"	/>
+<Layer
+File="_join icons/styleglow"
+InitCommand="x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-95+120;horizalign,left;additiveblend,1"		
+GainFocusCommand="finishtweening;accelerate,0.1;diffusealpha,1;x,SCREEN_LEFT+40;sleep,.07;linear,.2;diffusealpha,0"
+LoseFocusCommand="finishtweening;decelerate,0.1;x,SCREEN_LEFT+20;diffusealpha,0"
+OffCommand="accelerate,0.4;addx,-SCREEN_WIDTH*.5"	/>
+<Layer
+File="blueflare"
+InitCommand="x,SCREEN_CENTER_X+100;y,SCREEN_CENTER_Y-40;additiveblend,1;diffusealpha,0"		
+GainFocusCommand="finishtweening;zoom,0;diffusealpha,0;zoomx,7;zoomy,4;diffusealpha,1;linear,.2;zoomy,0;diffusealpha,0"
+LoseFocusCommand="diffusealpha,0"
+OffCommand="diffusealpha,0"	/> 
+<Layer
+File="blueflare"
+InitCommand="x,SCREEN_CENTER_X+100;y,SCREEN_CENTER_Y-40;additiveblend,1;diffusealpha,0"		
+GainFocusCommand="finishtweening;zoom,0;diffusealpha,0;zoomx,7;zoomy,4;diffusealpha,1;linear,.4;zoomy,0;diffusealpha,0"
+LoseFocusCommand="diffusealpha,0"
+OffCommand="diffusealpha,0"	/> 
+</children></ActorFrame>

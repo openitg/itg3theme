@@ -1,0 +1,80 @@
+<ActorFrame><children>
+<Layer
+File="top"
+OnCommand=""
+/>	
+<Layer
+File="bottom"
+OnCommand=""
+/>
+<Layer
+File="highlight"		
+OnCommand="x,SCREEN_CENTER_X+5;y,SCREEN_CENTER_Y+60;diffusealpha,0;decelerate,0.2;diffusealpha,1"
+/>				
+<Layer
+File="_left gradient"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT;y,SCREEN_CENTER_Y+150"
+OnCommand="horizalign,left"
+/>
+<Layer
+File="_right gradient"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+150"
+OnCommand="horizalign,right"
+/>
+<Layer
+File="_p1"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT;y,SCREEN_CENTER_Y+150"
+OnCommand="horizalign,left"
+/>
+<Layer
+File="_p2"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+150"
+OnCommand="horizalign,right"
+/>
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
+Font="_r bold 30px"
+Text="Step Artist:"
+InitCommand="x,SCREEN_LEFT+5;y,SCREEN_CENTER_Y+172"
+OnCommand="shadowlength,2;horizalign,left;zoom,.6"
+/> 
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
+Font="_r bold 30px"
+Text=":Step Artist"
+InitCommand="x,SCREEN_RIGHT-5;y,SCREEN_CENTER_Y+172"
+OnCommand="shadowlength,2;horizalign,right;zoom,.6"
+/>
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+Font="_r bold 30px"
+Text="@GetStepsDescriptionTextP1()"
+InitCommand="x,SCREEN_LEFT+100;y,SCREEN_CENTER_Y+172"
+OnCommand="shadowlength,2;horizalign,left;zoom,.6"
+/> 
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+Font="_r bold 30px"
+Text="@GetStepsDescriptionTextP2()"
+InitCommand="x,SCREEN_RIGHT-100;y,SCREEN_CENTER_Y+172"
+OnCommand="shadowlength,2;horizalign,right;zoom,.6"
+/>
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+Font="_r bold 30px"
+Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT+44;y,SCREEN_CENTER_Y+142"
+OnCommand="shadowlength,2;horizalign,left;zoom,.8"
+/> 
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+Font="_r bold 30px"
+Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT-44;y,SCREEN_CENTER_Y+142"
+OnCommand="shadowlength,2;horizalign,right;zoom,.8"
+/>
+</children></ActorFrame>

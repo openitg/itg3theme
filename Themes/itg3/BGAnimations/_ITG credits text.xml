@@ -1,0 +1,274 @@
+﻿<BGAnimation 
+	UseScroller="1"
+	SecondsPerItem="0.2805" 
+	NumItemsToDraw="23" 
+	ItemPaddingStart="10"
+	ItemPaddingEnd="0"
+	TransformFunction="function(self,offset,itemIndex,numItems) self:y(offset*24); end"
+>
+<children>
+<Layer Type="BitmapText" Text="In The Groove 3" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#00E4FF;ztest,1" />
+<Layer Type="BitmapText" Text="Development Team" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#00E4FF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Theme Graphics/Coding" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
+<Layer Type="BitmapText" Text="Jason Bolt" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="A.J. Kung" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Dominick Renzetti" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Felipe Valladares" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Original UI Concept" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
+<Layer Type="BitmapText" Text="Ryan McKanna" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="John Schlemmer" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Song/Course Graphics" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
+<Layer Type="BitmapText" Text="Dominick Renzetti" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="N. Colley" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="M.J. Quigley" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Ryan McKanna" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Matt Puls" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Heather Dority" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />	
+
+
+<Layer Type="BitmapText" Text="Music" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
+<Layer Type="BitmapText" Text="Kyle Ward" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="John Mendenhall" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Scott Brown" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Programming" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
+<Layer Type="BitmapText" Text="Glenn Maynard" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Chris Danford" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Mark Cannon" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Pat McIlroy" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Step Artists" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
+<Layer Type="BitmapText" Text="Donnie D'Amato" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Matthew Emirzian" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Dalton Runberg" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Dominick Renzetti" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Jordan Frederick" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Mike Calfin" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Ryan Konkul" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Kyle Ward" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Chris Foy" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Ryan McKanna" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Matt Puls" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Jonas Casarino" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Christopher Emirzian" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Eric Holniker" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="A.J. Kung" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="G. PolloxxX" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Max Leonardo Cerna" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Joseph DeGarmo" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Alex Sofikitis" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="N. Colley" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="J. Nordli" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Justin Pagano" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="M.J. Quigley" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Derek Bauer" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Grace Turner" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Bryan Garofalo" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Nick Sbisa" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Courses" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
+<Layer Type="BitmapText" Text="Chris Foy" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Gabriel Marchan" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Barry Knapp-Tabbernor" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Producer" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer File="_br" OnCommand="ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="PressX" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FF0000;ztest,1" />
+<Layer Type="BitmapText" Text="KholdFuzion" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />	
+<Layer Type="BitmapText" Text="AJ 197" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />	
+<Layer Type="BitmapText" Text="Infamouspat" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="vdl" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="vyhd" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="OpenGroove" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#3C00FF;ztest,1" />
+<Layer Type="BitmapText" Text="r0dent" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Edgar131" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="GRIM.657" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Hellacious" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Kalek" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Lightning" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="NX-306" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="xjen0vax" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Honorary members" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#00C300;ztest,1" />
+<Layer Type="BitmapText" Text="sherl0k" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="bacon" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="neoMAXCML" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="SonGohanX" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Rubbinnexx" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Kung" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Midiman" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Test Locations" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
+<Layer Type="BitmapText" Text="Divertonicos Kripton - Bogota" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Great Wolf L. - Ontario, Canada" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Pittsburgh Mills - PA" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="North Park Club House - PA" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Game Zone - KS" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="TownMall - MD" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Corner Pocket - PA" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Funland - Trocadero Centre, UK" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Family Fun Center - PA" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Ten Pin Alley - NC" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+
+<Layer Type="BitmapText" Text="Test Team" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
+<Layer Type="BitmapText" Text="G. PolloxxX" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Lil Lion" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Matt Vandermeulen" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Jeffrey Odendahl" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Carlos 'Wanny' Ortega" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="John 'GooFWeaR' Uhlman" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="AJ Kelly" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Steve 'Nevets933' Bauer" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Derek 'Whicker' Bauer" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Scott 'Scooter' Smiesko" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Max Racaud" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Josh Laughery" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Ryan Jackson" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Andrzej Poetek" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Grace 'GACT' Turner" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Tyler Thompson" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="Ryan Lower" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Joseph Sherman" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Kevin 'PF3K' Lin" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Mike Porter" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Michael Phillips" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Brian 'Red' Kurtz" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Valentina O'Donnell" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Bryan Wills" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Brandon Stokes" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Janel Yeager" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Brian Rudowski" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Ryan Campbell" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Jarad Kaplan " File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Phil Eberhardt" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Chelsie Ehasz" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Adam Landes" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Patrick Richards" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Ian Hunsberger" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Huamid 'Moon' Alnuaimi" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Felicia 'Foola' Olawuni" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Sonia Leng" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Garrett Shourds" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Bradley Shank" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Jorrie Marie" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Jordan Miller" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Damien Diehl" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Jason 'TheGreat' Gilleece" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Justin 'Pags' Pagano" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Mike Severino" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+
+
+
+
+
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="Audio" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
+<Layer Type="BitmapText" Text="Kyle Ward" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Eric Holniker" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Grace Turner" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Bryan Garofalo" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Hardware Support" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
+<Layer Type="BitmapText" Text="Mark Cannon" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Pat McIlroy" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Eric Holniker" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Andrzej Poetek" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Jason Bolt" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="Special Thanks to:" File="_r bold 30px" OnCommand="zoom,0.6;diffuse,#ffa800;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+<Layer File="_thanks/_bx" OnCommand="ztest,1;zoom,.8;" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.4;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="Boxorroxors" File="_r bold 30px" OnCommand="zoom,0.6;diffuse,#ffa800;ztest,1" />
+<Layer Type="BitmapText" Text="www.boxorroxors.net" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#ddf3ff;ztest,1" />
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.4;diffuse,#FFFFFF;ztest,1" />
+<Layer File="_thanks/_sci" OnCommand="ztest,1" />
+
+
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="SCI Recordings!" File="_r bold 30px" OnCommand="zoom,0.6;diffuse,#ffa800;ztest,1" />
+<Layer Type="BitmapText" Text="www.scirecordings.com" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#ddf3ff;ztest,1" />
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer File="_thanks/_itgf" OnCommand="ztest,1;zoom,.7;" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.4;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="ITGfreak/Rhythmatic.net" File="_r bold 30px" OnCommand="zoom,0.6;diffuse,#ffa800;ztest,1" />
+<Layer Type="BitmapText" Text="www.rhythmatic.net" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#ddf3ff;ztest,1" />
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+
+<Layer File="_thanks/_gs" OnCommand="ztest,1;zoom,.7;" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.4;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="GrooveStats" File="_r bold 30px" OnCommand="zoom,0.6;diffuse,#ffa800;ztest,1" />
+<Layer Type="BitmapText" Text="www.groovestats.com" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#ddf3ff;ztest,1" />
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+<Layer File="_thanks/_n3k" OnCommand="ztest,1;zoom,.7;" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.4;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="Naota3k" File="_r bold 30px" OnCommand="zoom,0.6;diffuse,#ffa800;ztest,1" />
+<Layer Type="BitmapText" Text="www.naota3k.com" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#ddf3ff;ztest,1" />
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+
+<Layer File="_thanks/_rx" OnCommand="ztest,1;zoom,.7;" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.4;diffuse,#FFFFFF;ztest,1" />
+
+<Layer Type="BitmapText" Text="RoXoR" File="_r bold 30px" OnCommand="zoom,0.6;diffuse,#ffa800;ztest,1" />
+<Layer Type="BitmapText" Text="www.roxorgames.com" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#ddf3ff;ztest,1" />
+
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+
+
+
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.9;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="THANK YOU FOR PLAYING!" File="_r bold 30px" OnCommand="zoomx,0.8;zoomy,0.7;diffuse,#FFFFFF;ztest,1" />
+</children>  <!-- JESUS LOVES THE LITTLE CHILDREN /* -->
+</BGAnimation>

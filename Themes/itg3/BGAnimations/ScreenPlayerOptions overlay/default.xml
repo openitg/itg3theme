@@ -1,0 +1,47 @@
+<ActorFrame> 
+	<children>
+<!-- stuff -->
+
+	
+<Layer 
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)" 
+		OnCommand="x,372;y,81;addx,SCREEN_WIDTH*3/4;sleep,0.1;decelerate,0.3;addx,-SCREEN_WIDTH*3/4" 
+		OffCommand="accelerate,0.3;addx,SCREEN_WIDTH" 
+		File="@THEME:GetPath(EC_GRAPHICS,'','_name p1')"
+	/>
+<Layer 
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)" 
+		OnCommand="x,540;y,81;addx,SCREEN_WIDTH*3/4;sleep,0.2;decelerate,0.3;addx,-SCREEN_WIDTH*3/4" 
+		OffCommand="accelerate,0.3;addx,SCREEN_WIDTH" 
+		File="@THEME:GetPath(EC_GRAPHICS,'','_name p2')"
+	/>
+<Layer
+		File="ScreenOptions frame"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+		OnCommand="diffusealpha,0;zoom,.7;bounceend,0.3;diffusealpha,.7;zoom,1"
+		OffCommand=""
+	/>
+<Layer
+File="ScreenOptions frame"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;additiveblend,1;diffuseblink;effectcolor1,0.8,0.8,0.8,.85;effectdelay,.6;effectperiod,0.4;effectoffset,0.2;effectclock,bgm"
+OnCommand="diffusealpha,0;zoom,.7;bounceend,0.3;diffusealpha,1;zoom,1"
+OffCommand="diffusealpha,1;accelerate,0.3;diffusealpha,0"
+/>
+
+<Layer 
+		Class="Quad" 
+		OnCommand="hidden,1" 
+		OffCommand="hidden,0;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,#FFFFFF;diffusealpha,0;linear,0.1;diffusealpha,1;sleep,0.2;linear,0.3;diffusealpha,0"
+	/> 
+<Layer 
+		Class="Quad" 
+		OnCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,#FFFFFF;diffusealpha,1;sleep,.2;linear,0.4;diffusealpha,0" 
+		OffCommand="hidden,1;"
+	/> 
+
+<!-- system layer add -->
+<Layer
+File="..\_coins"
+/>
+	</children>
+</ActorFrame>

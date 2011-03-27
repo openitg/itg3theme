@@ -1,0 +1,77 @@
+<ActorFrame> <children>
+	<!-- <Layer
+		File="player pane"
+		OnCommand="x,SCREEN_CENTER_X-320+74;y,SCREEN_CENTER_Y+18"
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
+	/>
+ -->
+ <Layer
+		File="p1gradient"
+		OnCommand="x,SCREEN_CENTER_X-230;y,SCREEN_CENTER_Y-140"
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
+	/>
+	<ActorFrame
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1) and not GAMESTATE:IsCourseMode()"
+		OnCommand="x,SCREEN_CENTER_X-276;y,SCREEN_CENTER_Y+41"
+	> <children>
+		<Layer Type="BitmapText" Text="@DifficultyToThemedString(DIFFICULTY_EASY)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_EASY) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*0" />
+		<Layer Type="BitmapText" Text="@DifficultyToThemedString(DIFFICULTY_MEDIUM)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_MEDIUM) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*1" />
+		<Layer Type="BitmapText" Text="@DifficultyToThemedString(DIFFICULTY_HARD)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_HARD) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*2" />
+		<Layer Type="BitmapText" Text="@DifficultyToThemedString(DIFFICULTY_CHALLENGE)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_CHALLENGE) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*3" />
+	</children> </ActorFrame>
+
+	<ActorFrame
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1) and GAMESTATE:IsCourseMode()"
+		OnCommand="x,SCREEN_CENTER_X-276;y,SCREEN_CENTER_Y+41"
+	> <children>
+		<Layer Type="BitmapText" Text="@CourseDifficultyToThemedString(DIFFICULTY_MEDIUM)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_MEDIUM) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*1" />
+		<Layer Type="BitmapText" Text="@CourseDifficultyToThemedString(DIFFICULTY_HARD)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_HARD) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*2" />
+	</children> </ActorFrame>
+	
+	<!-- <Layer
+		File="player pane"
+		OnCommand="x,SCREEN_CENTER_X+320-74;y,SCREEN_CENTER_Y+18"
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+	/> -->
+	
+<Layer
+		File="p2gradient"
+		OnCommand="x,SCREEN_CENTER_X+230;y,SCREEN_CENTER_Y-140"
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+	/>
+	<ActorFrame
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2) and not GAMESTATE:IsCourseMode()"
+		OnCommand="x,SCREEN_CENTER_X+216;y,SCREEN_CENTER_Y+41"
+	> <children>
+		<Layer Type="BitmapText" Text="@DifficultyToThemedString(DIFFICULTY_EASY)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_EASY) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*0" />
+		<Layer Type="BitmapText" Text="@DifficultyToThemedString(DIFFICULTY_MEDIUM)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_MEDIUM) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*1" />
+		<Layer Type="BitmapText" Text="@DifficultyToThemedString(DIFFICULTY_HARD)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_HARD) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*2" />
+		<Layer Type="BitmapText" Text="@DifficultyToThemedString(DIFFICULTY_CHALLENGE)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_CHALLENGE) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*3" />
+	</children> </ActorFrame>
+
+	<ActorFrame
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2) and GAMESTATE:IsCourseMode()"
+		OnCommand="x,SCREEN_CENTER_X+216;y,SCREEN_CENTER_Y+41"
+	> <children>
+		<Layer Type="BitmapText" Text="@CourseDifficultyToThemedString(DIFFICULTY_MEDIUM)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_MEDIUM) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*1" />
+		<Layer Type="BitmapText" Text="@CourseDifficultyToThemedString(DIFFICULTY_HARD)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_HARD) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*2" />
+	</children> </ActorFrame>
+
+	<Layer File="../_scrolling ITG credits" />
+	<Layer File="../_ScreenEnding overlay common" />
+
+	<Layer
+		Text="@ScreenEndingGetDisplayName(PLAYER_1)"
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		File="_r bold 30px"
+		OnCommand="@'x,SCREEN_CENTER_X-246;y,SCREEN_CENTER_Y-140;zoom,0.7;ShadowLength,2;diffuse,'..PlayerColor(PLAYER_1)"
+	/>
+
+	<Layer
+		Text="@ScreenEndingGetDisplayName(PLAYER_2)"
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		File="_r bold 30px"
+		OnCommand="@'x,SCREEN_CENTER_X+246;y,SCREEN_CENTER_Y-140;zoom,0.7;ShadowLength,2;diffuse,'..PlayerColor(PLAYER_2)"
+	/>
+</children> </ActorFrame>
+

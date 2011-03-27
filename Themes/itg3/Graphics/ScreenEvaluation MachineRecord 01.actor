@@ -1,0 +1,6 @@
+[Actor]
+Text=Machine Record #1 
+File=_v 26px bold diffuse
+OnCommand=zoomx,.6;zoomy,.5;shadowlength,2;cropright,1;sleep,3;linear,.3;cropright,0;DiffuseShift;EffectColor1,#00C0FF
+
+
