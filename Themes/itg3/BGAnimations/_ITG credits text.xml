@@ -7,7 +7,14 @@
 	TransformFunction="function(self,offset,itemIndex,numItems) self:y(offset*24); end"
 >
 <children>
-<Layer Type="BitmapText" Text="In The Groove 3" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#00E4FF;ztest,1" />
+<Layer Type="BitmapText" Text="Open In The Groove 3" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#00E4FF;ztest,1" />
+<Layer Type="BitmapText" Text="Mark Cannon" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Pat McIlroy" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Matt Vandermeulen" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Carl Myers" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />	
+
+<Layer Type="BitmapText" Text="Original In The Groove 3 Team" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#00E4FF;ztest,1" />
 <Layer Type="BitmapText" Text="Development Team" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#00E4FF;ztest,1" />
 <Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 <Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
