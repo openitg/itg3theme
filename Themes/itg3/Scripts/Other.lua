@@ -764,6 +764,12 @@ function GetSongLength()
 end
 
 function SHUTUPSERIOUSLY()
+	Debug( "Screen width: " .. tostring(SCREEN_WIDTH) )
+	Debug( "Screen height: " .. tostring(SCREEN_HEIGHT) )
+	Debug( "Screen right: " .. tostring(SCREEN_RIGHT) )
+	Debug( "Screen left: " .. tostring(SCREEN_LEFT) )
+	Debug( "Screen top: " .. tostring(SCREEN_TOP) )
+	Debug( "Screen bottom: " .. tostring(SCREEN_BOTTOM) )
 	SOUND:DimMusic(0, 6)
 end
 
@@ -838,6 +844,8 @@ function GameplayOverlay()
 		return "_energy" end
 	if string.find( CurrentSong:GetDisplayFullTitle(), "Love Eternal" ) then
 		return "_love" end
+	if string.find( CurrentSong:GetDisplayFullTitle(), "Disconnected Hardkore" ) then
+		return "_disconnect" end
 	return "_normal"
 end
 

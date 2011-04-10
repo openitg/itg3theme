@@ -142,10 +142,21 @@ OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtohe
 />
 
 </children></Layer>
-<!-- lol -->
+<!-- coin display -->
 <Layer
 Condition="not GAMESTATE:IsDemonstration()"
 File="..\_gameplaycoins"
+/>
+
+
+<Layer
+Condition="not GAMESTATE:IsDemonstration()
+and GAMESTATE:IsPlayerEnabled(PLAYER_1)
+and GAMESTATE:IsPlayerEnabled(PLAYER_2)
+and GAMESTATE:GetCurrentSong():GetDisplayArtist() == 'Dragonforce'
+and GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty() == GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()
+"
+File="_battlemeter"
 />
 		</children> 
 </ActorFrame>

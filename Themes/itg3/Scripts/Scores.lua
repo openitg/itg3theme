@@ -88,6 +88,9 @@ end
 
 function GetPlayerPercentage( pn )
 
+
+if GAMESTATE:IsPlayerEnabled(pn) then
+
 	local NotesHitScore = 0;
 	local NotesPossibleScore = 0;
 	local PlayerPercentage = 0;
@@ -109,8 +112,22 @@ function GetPlayerPercentage( pn )
 				
 	PlayerPercentage = NotesHitScore/NotesPossibleScore *100
 
-	return "Song Completion Percentage: " .. string.sub(string.format("%.5f", PlayerPercentage),1,5) .. "%"
+	--return "Song Completion Percentage: " .. string.sub(string.format("%.5f", PlayerPercentage),1,5) .. "%"
+	return PlayerPercentage end	
 end
+
+function CompareScoresRange( difference, range )
+	local Player1Score=GetPlayerPercentage( PLAYER_1 )
+	local Player2Score=GetPlayerPercentage( PLAYER_2 )
+	local ScoreDifference = GetPlayerPercentage( PLAYER_1 ) - GetPlayerPercentage( PLAYER_2 )
+	local ReturnValue = scale(ScoreDifference, -difference, difference, range, -range)
+
+if ReturnValue <= -range then return -range
+elseif ReturnValue >= range then return range
+else return ReturnValue end
+
+end
+
 
 function PlayerFullComboed(pn)
 

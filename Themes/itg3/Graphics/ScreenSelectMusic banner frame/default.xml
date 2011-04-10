@@ -26,8 +26,22 @@
 File="../_pane elements/_length"
 Condition="OPENITG and not GAMESTATE:IsCourseMode()"
 InitCommand="diffusealpha,0;ztest,1;zoom,.6;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-34;vertalign,bottom"
-EnableSelectHelpMessageCommand="stoptweening;playcommand,Set;linear,0.2;diffusealpha,1"
-SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;"/>		
+EnableSelectHelpMessageCommand="%function(self)
+if not GAMESTATE:GetCurrentSong() then
+self:queuecommand('SelectMenuOffMessage')
+else
+self:stoptweening()
+self:linear(0.2)
+self:diffusealpha(1) end
+end"
+SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;"
+CurrentSongChangedMessageCommand="%function(self)
+if not GAMESTATE:GetCurrentSong() then
+self:stoptweening()
+self:linear(0.2)
+self:diffusealpha(0)  end
+end"
+/>		
 <Layer Type="BitmapText"
 Font="_v 26px bold diffuse"
 Text="HELLO"
@@ -49,8 +63,21 @@ SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;"
 		File="../_pane elements/_length"
 		Condition="OPENITG and not GAMESTATE:IsCourseMode()"
 InitCommand="diffusealpha,0;ztest,1;zoomx,.6;zoomy,-.6;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-34;vertalign,bottom"
-EnableSelectHelpMessageCommand="stoptweening;playcommand,Set;linear,0.2;diffusealpha,.5"
+EnableSelectHelpMessageCommand="%function(self)
+if not GAMESTATE:GetCurrentSong() then
+self:queuecommand('SelectMenuOffMessage')
+else
+self:stoptweening()
+self:linear(0.2)
+self:diffusealpha(.5) end
+end"
 SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;"
+CurrentSongChangedMessageCommand="%function(self)
+if not GAMESTATE:GetCurrentSong() then
+self:stoptweening()
+self:linear(0.2)
+self:diffusealpha(0) end
+end"
 		/>		
 <Layer Type="BitmapText"
 Font="_v 26px bold diffuse"
