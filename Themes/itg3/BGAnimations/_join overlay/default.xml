@@ -1,0 +1,264 @@
+<ActorFrame><children>
+<BitmapText
+		Font="_v 26px bold black"
+		Text="???"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-14;shadowlength,0;zoom,.6;diffusealpha,0;sleep,.5;linear,.2;diffusealpha,1"
+		OnCommand="diffuseshift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF;PlayCommand,Refresh"
+		RefreshCommand="%function(self) self:settext(Get2PlayerJoinMessage()) end"
+		SideJoinedP1MessageCommand="PlayCommand,Refresh"
+		SideJoinedP2MessageCommand="PlayCommand,Refresh"
+		CurrentStyleChangedMessageCommand="PlayCommand,Refresh"
+		CoinInsertedMessageCommand="PlayCommand,Refresh"
+		CoinModeChangedMessageCommand="PlayCommand,Refresh"
+		OffCommand="stoptweening;linear,.2;diffusealpha,0"
+	/> 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<ActorFrame
+InitCommand="draworder,999999999999999999999999;hidden,1;shadowlength,0;PlayCommand,Refresh"
+OnCommand="x,SCREEN_LEFT+90;y,SCREEN_BOTTOM-44;"
+CoinModeChangedMessageCommand="PlayCommand,Refresh"	
+CoinInsertedMessageCommand="PlayCommand,Refresh"
+SideJoinedP1MessageCommand="PlayCommand,Joined"	
+RefreshCommand="%
+			function(self) 
+				if GAMESTATE:IsPlayerEnabled(PLAYER_1) then self:hidden(1); return end
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:hidden(0); return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				if coins&gt;=coinsPerCredit or GAMESTATE:GetCoinMode()==COIN_MODE_FREE or GAMESTATE:GetPremium() == PREMIUM_JOINT then 
+					self:playcommand('PressStart') 
+				else 
+					self:playcommand('InsertCoin') 
+				end 
+			end"
+		InsertCoinCommand="hidden,1"
+		PressStartCommand="%
+			function(self)
+			self:hidden(0)
+			end"
+			
+><children>
+<Layer
+		File="..\_overlay\joinin"
+		InitCommand="draworder,999999999999999999999999;zoom,-.6;x,-10"
+		JoinedCommand="linear,.2;diffusealpha,0;"
+	/>
+	
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold diffuse"
+		Text="PRESS"
+		InitCommand="draworder,999999999999999999999999;shadowlength,2;zoom,0.6"
+		JoinedCommand="linear,.2;diffusealpha,0;"
+	/>
+<Layer
+		File="..\_common base start button"
+		InitCommand="draworder,999999999999999999999999;addx,45;shadowlength,0;zoom,0.5"
+		JoinedCommand="linear,.2;diffusealpha,0;"
+	/>
+<Layer
+		File="..\_common start button"
+		InitCommand="draworder,999999999999999999999999;addx,45;shadowlength,0;diffuseshift;effectcolor1,#FFFFFF;effectcolor2,#858585;zoom,0.5;effectclock,beat"
+		JoinedCommand="linear,.2;diffusealpha,0;"
+	/>
+<Layer
+		File="..\_common glow start button"
+		InitCommand="draworder,999999999999999999999999;addx,45;additiveblend,1;shadowlength,0;diffuseshift;effectcolor1,#6BFF75;effectcolor2,#FFFFFF00;zoom,0.5;effectclock,beat"
+		JoinedCommand="linear,.2;diffusealpha,0;"
+	/>	
+
+
+</children></ActorFrame>
+
+
+
+<ActorFrame
+InitCommand="hidden,1;shadowlength,0;PlayCommand,Refresh"
+OnCommand="x,SCREEN_LEFT+90;y,SCREEN_BOTTOM-44;"
+CoinModeChangedMessageCommand="PlayCommand,Refresh"	
+CoinInsertedMessageCommand="PlayCommand,Refresh"
+SideJoinedP1MessageCommand="PlayCommand,Refresh"	
+RefreshCommand="%
+			function(self) 
+				if GAMESTATE:IsPlayerEnabled(PLAYER_1) then self:hidden(1); return end
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:hidden(1); return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				if coins&gt;=coinsPerCredit or GAMESTATE:GetCoinMode()==COIN_MODE_FREE or GAMESTATE:GetPremium() == PREMIUM_JOINT then 
+					self:playcommand('PressStart') 
+				else 
+					self:playcommand('InsertCoin') 
+				end 
+			end"
+		InsertCoinCommand="hidden,0"
+		PressStartCommand="%
+			function(self)
+			self:hidden(1)
+			end"
+><children>
+
+<Layer
+		File="..\_overlay\joinin"
+InitCommand="zoom,-.6;x,-10;"
+	/>
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold glow"
+		Text="@GetCreditType()"
+		InitCommand="addx,58;horizalign,right;shadowlength,2;zoom,0.6;diffuseshift;effectcolor1,#CCCCCC99;effectcolor2,#22222299;effectperiod,3;shadowlength,0"
+	/>	
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold diffuse"
+		Text="@GetCreditType()"
+		InitCommand="addx,58;horizalign,right;shadowlength,2;zoom,0.6;diffuseshift;effectcolor1,#CCCCCC99;effectcolor2,#22222299;effectperiod,3;shadowlength,0"
+	/>		
+</children></ActorFrame>
+
+
+
+<!-- P2-->
+	
+<ActorFrame
+InitCommand="hidden,1;shadowlength,0;PlayCommand,Refresh"
+OnCommand="x,SCREEN_RIGHT-90;y,SCREEN_BOTTOM-44"
+CoinModeChangedMessageCommand="PlayCommand,Refresh"	
+CoinInsertedMessageCommand="PlayCommand,Refresh"
+SideJoinedP2MessageCommand="PlayCommand,Refresh"	
+RefreshCommand="%
+			function(self) 
+				if GAMESTATE:IsPlayerEnabled(PLAYER_2) then self:hidden(1); return end
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:hidden(1); return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				if coins&gt;=coinsPerCredit or GAMESTATE:GetCoinMode()==COIN_MODE_FREE or GAMESTATE:GetPremium() == PREMIUM_JOINT then 
+					self:playcommand('PressStart') 
+				else 
+					self:playcommand('InsertCoin') 
+				end 
+			end"
+		InsertCoinCommand="hidden,0"
+		PressStartCommand="%
+			function(self)
+			self:hidden(1)
+			end"
+><children>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Layer
+		File="..\_overlay\joinin"
+		InitCommand="zoom,.6;x,10;"
+	/>
+	
+	<Layer
+		Type="BitmapText"
+		Font="_v 26px bold glow"
+		Text="@GetCreditType()"
+		InitCommand="addx,-58;horizalign,left;shadowlength,2;zoom,0.6;diffuseshift;effectcolor1,#CCCCCC99;effectcolor2,#22222299;effectperiod,3;shadowlength,0"
+	/>	
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold diffuse"
+		Text="@GetCreditType()"
+		InitCommand="addx,-58;horizalign,left;shadowlength,2;zoom,0.6;diffuseshift;effectcolor1,#CCCCCC99;effectcolor2,#22222299;effectperiod,3;shadowlength,0"
+	/>		
+	
+	
+	
+	
+
+</children></ActorFrame>
+
+
+	
+<ActorFrame
+InitCommand="hidden,1;shadowlength,0;PlayCommand,Refresh"
+OnCommand="x,SCREEN_RIGHT-90;y,SCREEN_BOTTOM-44"
+CoinModeChangedMessageCommand="PlayCommand,Refresh"	
+CoinInsertedMessageCommand="PlayCommand,Refresh"
+SideJoinedP2MessageCommand="PlayCommand,Joined"	
+RefreshCommand="%
+			function(self) 
+				if GAMESTATE:IsPlayerEnabled(PLAYER_2) then self:hidden(1); return end
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:hidden(0); return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				if coins&gt;=coinsPerCredit or GAMESTATE:GetCoinMode()==COIN_MODE_FREE or GAMESTATE:GetPremium() == PREMIUM_JOINT then 
+					self:playcommand('PressStart') 
+				else 
+					self:playcommand('InsertCoin') 
+				end 
+			end"
+		InsertCoinCommand="hidden,1"
+		PressStartCommand="%
+			function(self)
+			self:hidden(0)
+			end"
+><children>
+
+<Layer
+		File="..\_overlay\joinin"
+		InitCommand="zoom,.6;x,10"
+				JoinedCommand="linear,.2;diffusealpha,0;"
+
+	/>
+<Layer
+		Type="BitmapText"
+		Font="_v 26px bold diffuse"
+		Text="PRESS"
+		InitCommand="x,-33;shadowlength,2;zoom,0.6"
+				JoinedCommand="linear,.2;diffusealpha,0;"
+
+	/>
+<Layer
+		File="..\_common base start button"
+		InitCommand="addx,11;shadowlength,0;zoom,0.5"
+				JoinedCommand="linear,.2;diffusealpha,0;"
+
+	/>
+<Layer
+		File="..\_common start button"
+		InitCommand="addx,11;shadowlength,0;diffuseshift;effectcolor1,#FFFFFF;effectcolor2,#858585;zoom,0.5;effectclock,beat"
+				JoinedCommand="linear,.2;diffusealpha,0;"
+
+	/>
+<Layer
+		File="..\_common glow start button"
+		InitCommand="addx,11;additiveblend,1;shadowlength,0;diffuseshift;effectcolor1,#6BFF75;effectcolor2,#FFFFFF00;zoom,0.5;effectclock,beat"
+				JoinedCommand="linear,.2;diffusealpha,0;"
+
+	/>			
+</children></ActorFrame>
+
+
+
+
+
+</children></ActorFrame>

@@ -1,0 +1,50 @@
+<ActorFrame>
+	<children>
+
+	<AutoActor File="../_fade in normal" />
+	
+<!-- lock the input in all eval screens for 4 seconds -->
+<Layer
+File="../_blank" 
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-75"
+OnCommand="diffusealpha,1;sleep,4;linear,.3;diffuse,0,0,0,0;addy,-30" 
+/>
+
+<Layer
+Condition="OnePassed()"
+File="../ScreenGameplay cleared/_stage text" 
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-75;zoom,.6"
+OnCommand="diffusealpha,1;sleep,.1;linear,.4;diffuse,0,0,0,0;addy,-30" 
+/>
+
+<Layer 
+Condition="OnePassed()"
+File="../ScreenGameplay cleared/_cleared bottom"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+15;zoom,.9"
+OnCommand="diffusealpha,1;sleep,.1;accelerate,.4;diffuse,0,0,0,0;addx,-100" 
+/>
+<Layer 
+Condition="OnePassed()"
+File="../ScreenGameplay cleared/_cleared top"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+10;zoom,.9"
+OnCommand="diffusealpha,1;sleep,.1;accelerate,.4;diffuse,0,0,0,0;addx,100"  
+/>
+
+
+
+<ActorFrame Condition="OnePassed()">
+			<children>
+				<AutoActor File="cleared glow" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-240+340;cropleft,-0.3;cropright,1;faderight,.1;fadeleft,.1;sleep,0.35;linear,0.7;cropleft,+1;cropright,-0.3" />
+				<AutoActor File="cleared text" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-240+340;cropright,1.3;faderight,0.1;sleep,0.35;linear,0.7;cropright,-0.3;sleep,1.95;linear,0.3;diffuse,0,0,0,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame Condition="not OnePassed()">
+			<children>
+				<AutoActor File="failed glow" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-240+340;cropleft,-0.3;cropright,1;faderight,.1;fadeleft,.1;sleep,0.35;linear,0.7;cropleft,+1;cropright,-0.3" />
+				<AutoActor File="failed text" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-240+340;cropright,1.3;faderight,0.1;sleep,0.35;linear,0.7;cropright,-0.3;sleep,1.95;linear,0.3;diffuse,0,0,0,0" />
+			</children>
+		</ActorFrame>
+
+		
+	</children>
+</ActorFrame>

@@ -1,0 +1,51 @@
+﻿<ActorFrame
+MadeChoiceP1MessageCommand="playcommand,shutup;playcommand,GoOff"
+MadeChoiceP2MessageCommand="playcommand,shutup;playcommand,GoOff"
+shutupCommand="%function() SHUTUPSERIOUSLY() end"><children>
+
+
+    <AutoActor
+  Condition="AddonPack1()"
+  File="_frame"
+  InitCommand="x,SCREEN_RIGHT+70;y,SCREEN_CENTER_Y+90+37*0;"
+  OnCommand="shadowlength,3;horizalign,right;addx,200;sleep,0.9;decelerate,0.25;addx,-200;PlayCommand,Fade"
+  FadeCommand="glow,1,1,1,0;sleep,2;linear,.3;glow,1,1,1,.25;sleep,.05;linear,.5;glow,1,1,1,0;sleep,1;QueueCommand,Fade"
+/>
+    <Layer
+Condition="AddonPack1()"
+Font="stencil"
+Text="@GetAddonName1()"
+InitCommand="shadowlength,1;zoomy,.9;zoomx,.8;x,SCREEN_RIGHT-5;y,SCREEN_CENTER_Y+90+37*0"
+  OnCommand="horizalign,right;addx,200;sleep,0.9;decelerate,0.25;addx,-200;maxwidth,200;"
+/> 
+        <Layer
+  Condition="AddonPack2()"
+  File="_frame"
+  InitCommand="x,SCREEN_RIGHT+70;y,SCREEN_CENTER_Y+90+37*1;"
+  OnCommand="zoomx,-1;shadowlength,3;horizalign,left;addx,200;sleep,1.0;decelerate,0.25;addx,-200;PlayCommand,Fade"
+  FadeCommand="glow,1,1,1,0;sleep,2;linear,.3;glow,1,1,1,.25;sleep,.05;linear,.5;glow,1,1,1,0;sleep,1;QueueCommand,Fade"
+/>
+    <Layer
+  Condition="AddonPack2()"
+Font="stencil"
+Text="@GetAddonName2()"
+InitCommand="shadowlength,1;zoomy,.9;zoomx,.8;x,SCREEN_RIGHT-5;y,SCREEN_CENTER_Y+90+37*1"
+  OnCommand="horizalign,right;addx,200;sleep,1.0;decelerate,0.25;addx,-200;maxwidth,200;"
+/> 
+    <Layer
+  Condition="AddonPack3()"
+  File="_frame"
+  InitCommand="x,SCREEN_RIGHT+70;y,SCREEN_CENTER_Y+90+37*2;"
+  OnCommand="shadowlength,3;horizalign,right;addx,200;sleep,1.1;decelerate,0.25;addx,-200;PlayCommand,Fade"
+  FadeCommand="glow,1,1,1,0;sleep,2;linear,.3;glow,1,1,1,.25;sleep,.05;linear,.5;glow,1,1,1,0;sleep,1;QueueCommand,Fade"
+/>
+    <Layer
+  Condition="AddonPack3()"
+Font="stencil"
+Text="@GetAddonName3()"
+InitCommand="shadowlength,1;zoomy,.9;zoomx,.8;x,SCREEN_RIGHT-5;y,SCREEN_CENTER_Y+90+37*2"
+  OnCommand="horizalign,right;addx,200;sleep,1.1;decelerate,0.25;addx,-200;maxwidth,200;"
+/> 
+    
+</children>
+</ActorFrame>

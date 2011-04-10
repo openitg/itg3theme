@@ -1,0 +1,120 @@
+<ActorFrame><children>
+<!--  dummy shit
+<Layer
+File="rear"
+InitCommand="zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;accelerate,0.3;diffusealpha,1"
+/>
+
+<Layer
+File="banner"
+OnCommand="ztest,1;diffusealpha,1"
+/> -->
+
+
+
+<Layer
+File="top"
+OnCommand=""
+/>	
+<Layer
+File="bottom"
+OnCommand=""
+/>	
+<!-- 	
+<Layer
+File="highlight.png"		
+OnCommand="x,SCREEN_CENTER_X+5;y,SCREEN_CENTER_Y+60;diffusealpha,0;sleep,0.3;decelerate,0.3;diffusealpha,0.75;sleep,0.2;accelerate,0.6;diffusealpha,0.35"
+/>-->
+<Layer
+File="highlight.png"		
+OnCommand="x,SCREEN_CENTER_X+5;y,SCREEN_CENTER_Y+60;diffusealpha,0;decelerate,0.2;diffusealpha,1"
+/>
+
+
+
+
+
+
+
+
+
+
+<Layer
+File="_left gradient.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT;y,SCREEN_CENTER_Y+150"
+OnCommand="horizalign,left"
+/>
+<Layer
+File="_right gradient.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+150"
+OnCommand="horizalign,right"
+/>
+<Layer
+File="_p1.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT;y,SCREEN_CENTER_Y+150"
+OnCommand="horizalign,left"
+/>
+<Layer
+File="_p2.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+150"
+OnCommand="horizalign,right"
+/>
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
+Font="_r bold 30px"
+Text="Step Artist:"
+InitCommand="x,SCREEN_LEFT+5;y,SCREEN_CENTER_Y+178"
+OnCommand="shadowlength,2;horizalign,left;zoom,.6"
+/> 
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or not GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
+Font="_r bold 30px"
+Text=":Step Artist"
+InitCommand="x,SCREEN_RIGHT-5;y,SCREEN_CENTER_Y+178"
+OnCommand="shadowlength,2;horizalign,right;zoom,.6"
+/> 
+
+
+
+
+<!-- steps description -->
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+Font="_r bold 30px"
+Text="@GetStepsDescriptionTextP1()"
+InitCommand="x,SCREEN_LEFT+100;y,SCREEN_CENTER_Y+178"
+OnCommand="shadowlength,2;horizalign,left;zoom,.6"
+/> 
+ <Layer
+ Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+Font="_r bold 30px"
+Text="@GetStepsDescriptionTextP2()"
+InitCommand="x,SCREEN_RIGHT-100;y,SCREEN_CENTER_Y+178"
+OnCommand="shadowlength,2;horizalign,right;zoom,.6"
+/>
+
+
+
+<!-- player names -->
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+Font="_r bold 30px"
+Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT+44;y,SCREEN_CENTER_Y+142"
+OnCommand="shadowlength,2;horizalign,left;zoom,.8"
+/> 
+ <Layer
+ Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+Font="_r bold 30px"
+Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT-44;y,SCREEN_CENTER_Y+142"
+OnCommand="shadowlength,2;horizalign,right;zoom,.8"
+/>
+
+
+</children></ActorFrame>

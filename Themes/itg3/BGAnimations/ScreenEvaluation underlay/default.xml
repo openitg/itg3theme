@@ -1,0 +1,118 @@
+<ActorFrame><children>
+<Layer
+File="../ScreenWithMenuElements underlay\_base"
+OnCommand="PlayCommand,DoOff;finishtweening;playcommand,Slow;queuecommand,DoOn"
+SlowCommand="%function(self) self:SetUpdateRate(1.5) end"
+/>
+<Layer
+File="../ScreenWithMenuElements underlay\_sides"
+OnCommand="PlayCommand,DoOff;finishtweening;playcommand,Slow;queuecommand,DoOn"
+SlowCommand="%function(self) self:SetUpdateRate(1.5) end"
+/>
+<Layer
+File="../ScreenWithMenuElements underlay\_expandtop"
+OnCommand="PlayCommand,DoOff;finishtweening;playcommand,Slow;queuecommand,DoOn"
+SlowCommand="%function(self) self:SetUpdateRate(1.5) end"
+/>
+<Layer
+File="evaluation banner mask"
+Type="sprite"
+Command="zbuffer,1;blend,noeffect;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+135;diffusealpha,0;sleep,2.8;diffusealpha,1"
+OffCommand="stoptweening;linear,0.2;diffusealpha,0"
+/>
+<Layer
+Condition="not GAMESTATE:PlayerUsingBothSides() and GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
+File="light"
+OnCommand="x,SCREEN_CENTER_X-2;y,SCREEN_CENTER_Y-40;diffusealpha,0;sleep,3.5;linear,0.8;diffusealpha,1;diffuseramp;effectperiod,1;effectoffset,0.20;Playcommand,set;EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#FFFFFFFF;effectperiod,2;"
+OffCommand="stoptweening;linear,0.2;diffusealpha,0"
+/>
+<Layer
+Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
+File="modsframe"
+InitCommand="shadowlength,2"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-34;diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
+OffCommand="stoptweening;linear,0.2;diffusealpha,0"
+/>
+
+<Layer
+Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
+File="modsframe"
+InitCommand="shadowlength,2"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-34;diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
+OffCommand="stoptweening;linear,0.2;diffusealpha,0"
+/>
+
+
+
+
+
+
+<Layer
+Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
+File="trapezoid"
+InitCommand="shadowlength,2"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-109;diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
+OffCommand="stoptweening;linear,0.2;diffusealpha,0"
+/>
+
+<Layer 
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+File="_v 26px bold shadow"
+Text='@DisplayCustomModifiersText(PLAYER_1)'
+InitCommand='@"maxwidth,370;zoom,.5;x,SCREEN_CENTER_X-4;y,SCREEN_CENTER_Y+9;horizalign,right;shadowlength,0;diffusebottomedge,#BBB9FB;" ..OffsetDoublesModifiers(PLAYER_1)'
+OnCommand="diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
+OffCommand="linear,0.2;diffusealpha,0" />
+
+<Layer 
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+File="_v 26px bold shadow"
+Text='@DisplayCustomModifiersText(PLAYER_2)'
+InitCommand='@"maxwidth,370;zoom,.5;x,SCREEN_CENTER_X+5;y,SCREEN_CENTER_Y+9;horizalign,left;shadowlength,0;diffusebottomedge,#BBB9FB;" ..OffsetDoublesModifiers(PLAYER_2)'
+OnCommand="diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
+OffCommand="linear,0.2;diffusealpha,0" />
+
+<Layer 
+Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
+File="_v 26px bold shadow"
+Text="JUMPS"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-142+13*0;horizalign,center;zoomx,0.5;zoomy,0.4;shadowlength,0;diffusebottomedge,#BBB9FB"
+OnCommand="diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
+OffCommand="linear,0.2;diffusealpha,0" />
+
+<Layer 
+Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
+File="_v 26px bold shadow"
+Text="HOLDS"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-142+13*1;horizalign,center;zoomx,0.5;zoomy,0.4;shadowlength,0;diffusebottomedge,#BBB9FB"
+OnCommand="diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
+OffCommand="linear,0.2;diffusealpha,0" />
+<Layer 
+Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
+File="_v 26px bold shadow"
+Text="MINES"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-142+13*2;horizalign,center;zoomx,0.5;zoomy,0.4;shadowlength,0;diffusebottomedge,#BBB9FB"
+OnCommand="diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
+OffCommand="linear,0.2;diffusealpha,0" />
+<Layer 
+Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
+File="_v 26px bold shadow"
+Text="HANDS"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-142+13*3;horizalign,center;zoomx,0.5;zoomy,0.4;shadowlength,0;diffusebottomedge,#BBB9FB"
+OnCommand="diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
+OffCommand="linear,0.2;diffusealpha,0" />
+<Layer 
+Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
+File="_v 26px bold shadow"
+Text="ROLLS"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-142+13*4;horizalign,center;zoomx,0.5;zoomy,0.4;shadowlength,0;diffusebottomedge,#BBB9FB"
+OnCommand="diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
+OffCommand="linear,0.2;diffusealpha,0" />
+<Layer 
+Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
+File="_v 26px bold shadow"
+Text="PEAK COMBO"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-142+13*5	;horizalign,center;zoomx,0.5;zoomy,0.4;shadowlength,0;diffusebottomedge,#BBB9FB"
+OnCommand="diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
+OffCommand="linear,0.2;diffusealpha,0" />
+</children></ActorFrame>
+

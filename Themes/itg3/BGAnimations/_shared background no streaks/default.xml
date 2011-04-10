@@ -1,0 +1,9 @@
+<ActorFrame>
+	<children>
+		<Layer
+		File="../_blank"
+		OnCommand="diffusealpha,1"
+		OffCommand="diffusealpha,0"
+		/>
+		</children>
+</ActorFrame>

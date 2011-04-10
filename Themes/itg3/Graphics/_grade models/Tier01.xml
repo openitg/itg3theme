@@ -1,0 +1,42 @@
+<ActorFrame>
+	<children>
+		
+		<Actor
+			File="star.txt"
+			OnCommand="x,-25;y,-22;zoom,0.5;wag;EffectMagnitude,0,4,10"
+		/>
+		<Actor
+			File="goldflare.png"
+			OnCommand="additiveblend,1;x,-25;y,-21;zoom,0.45;wag;EffectMagnitude,0,4,10"
+		/>
+		
+		<Actor
+			File="star.txt"
+			OnCommand="x,25;y,-22;zoom,0.5;wag;EffectMagnitude,0,4,10"
+		/>
+		<Actor
+			File="goldflare.png"
+			OnCommand="additiveblend,1;x,25;y,-21;zoom,0.45;wag;EffectMagnitude,0,4,10"
+		/>
+		
+		
+		<Actor
+			File="star.txt"
+			OnCommand="x,-25;y,22;zoom,0.5;wag;EffectMagnitude,0,4,10"
+		/>
+		<Actor
+			File="goldflare.png"
+			OnCommand="additiveblend,1;x,-25;y,23.5;zoom,0.45;wag;EffectMagnitude,0,4,10"
+/>
+		
+		
+		<Actor
+			File="star.txt"
+			OnCommand="x,25;y,22;zoom,0.5;wag;EffectMagnitude,0,4,10"
+		/><Actor
+			File="goldflare.png"
+			OnCommand="additiveblend,1;x,25;y,23.5;zoom,0.45;wag;EffectMagnitude,0,4,10"
+/>
+	</children>
+</ActorFrame>
+

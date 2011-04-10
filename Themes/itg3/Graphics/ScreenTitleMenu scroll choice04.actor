@@ -1,0 +1,8 @@
+[Actor]
+File=_ScreenTitleMenu choices
+Text=Survival
+InitCommand=HorizAlign,right;ShadowLength,0;setstate,3;pause
+GainFocusCommand=StopTweening;diffuseshift;EffectPeriod,-2;EffectColor1,#0188DE;EffectColor2,1,1,1,0;effectclock,bgm;Linear,0;Zoom,0.8
+LoseFocusCommand=StopTweening;StopEffect;Linear,0;Zoom,0.7
+EnabledCommand=
+DisabledCommand=Diffuse,0.5,0.5,0.5,1

@@ -1,0 +1,13 @@
+<ActorFrame><children>
+<Layer
+File="../_stage background/rear"
+InitCommand="zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;"
+/>
+<Layer
+File="../_stage background/lines"
+InitCommand="zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;accelerate,0.3;diffusealpha,1"
+/>
+</children></ActorFrame>
+

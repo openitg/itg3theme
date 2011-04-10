@@ -1,0 +1,59 @@
+<ActorFrame><children>
+	<Layer
+		File="../ScreenWithMenuElements underlay"
+	/>
+	
+	
+	<Layer 
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)" 
+		OnCommand="x,372;y,81;addx,SCREEN_WIDTH*3/4;sleep,0.1;decelerate,0.3;addx,-SCREEN_WIDTH*3/4" 
+		OffCommand="accelerate,0.3;addx,SCREEN_WIDTH" 
+		File="@THEME:GetPath(EC_GRAPHICS,'','_name p1')"
+	/>
+<Layer 
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)" 
+		OnCommand="x,815;y,81;addx,SCREEN_WIDTH*3/4;sleep,0.2;decelerate,0.3;addx,-SCREEN_WIDTH*3/4" 
+		OffCommand="accelerate,0.3;addx,SCREEN_WIDTH" 
+		File="@THEME:GetPath(EC_GRAPHICS,'','_name p2')"
+	/>
+	
+	
+	<ActorFrame
+		OnCommand="addx,-SCREEN_WIDTH;decelerate,0.3;addx,SCREEN_WIDTH"
+		OffCommand="accelerate,0.3;addx,SCREEN_WIDTH"
+	><children>
+	
+		
+		<Layer
+			File="player-frame"
+			Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
+			OnCommand="x,SCREEN_CENTER_X-146;y,SCREEN_CENTER_Y-60"
+		/>
+		<Layer
+			File="2player-frame"
+			Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+			OnCommand="x,SCREEN_CENTER_X+146;y,SCREEN_CENTER_Y-60"
+		/>
+		<Layer
+			Font="_v credit"
+			Text="Not Present"
+			Condition="not GAMESTATE:IsHumanPlayer(PLAYER_1)"
+			OnCommand="x,SCREEN_CENTER_X-146;y,SCREEN_CENTER_Y-70;DiffuseShift;EffectColor1,.8,.8,.8,1;EffectColor2,.4,.4,.4,1;EffectPeriod,2;"
+		/>
+		<Layer
+			Font="_v credit"
+			Text="Not Present"
+			Condition="not GAMESTATE:IsHumanPlayer(PLAYER_2)"
+			OnCommand="x,SCREEN_CENTER_X+146;y,SCREEN_CENTER_Y-70;DiffuseShift;EffectColor1,.8,.8,.8,1;EffectColor2,.4,.4,.4,1;EffectPeriod,2;"
+		/>
+		<Layer
+			File="shared-frame"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+36"
+		/>
+		<Layer
+			File="explanation-frame"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+118"
+		/>
+	</children></ActorFrame>
+</children></ActorFrame>
+

@@ -1,0 +1,54 @@
+<ActorFrame> <children>
+
+<ActorFrame> <children>
+
+
+<!-- Full Combo Splashes -->
+<Layer 
+		File="combosplash"
+		Condition="not GAMESTATE:IsCourseMode()"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	/>
+
+
+</children></ActorFrame>
+
+<ActorFrame
+OnCommand="queuecommand,Check"
+CheckCommand="%function(self)
+	if AnyPlayerFullComboed() then 
+	PlayComboSound()
+	self:hibernate(3) end
+end"> <children>
+
+
+<Layer
+Type="AutoActor"
+File="../_black"
+OnCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffusealpha,0;linear,0.3;diffusealpha,1;sleep,1;"
+
+
+/> 
+
+<Layer
+File="_stage text"
+			InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+75;zoom,.6"
+			OnCommand="diffusealpha,0;y,SCREEN_CENTER_Y-75;addy,-30;sleep,0.3;linear,.3;diffusealpha,1;addy,30"
+/>
+			
+<Layer
+File="_cleared bottom"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+15;zoom,.9"
+OnCommand="diffusealpha,0;addx,100;sleep,0.6;decelerate,0.3;diffusealpha,1;addx,-100;sleep,0.5"
+
+/>
+
+
+		<Layer
+				File="_cleared top"
+				InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+10;zoom,.9"
+			    OnCommand="diffusealpha,0;addx,-100;sleep,0.6;decelerate,0.3;diffusealpha,1;addx,100;sleep,0.5"
+/>
+
+</children></ActorFrame>
+</children></ActorFrame>

@@ -1,0 +1,24 @@
+[BGAnimation]
+LengthSeconds=0.5
+[Layer2]
+File=../_black
+Command=x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT;diffusealpha,0;sleep,0.2;linear,0.2;diffusealpha,1
+[Layer3]
+File=../_metallic streak
+OnCommand=x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,SCREEN_WIDTH;zoomy,0;linear,.5;zoomy,1
+[Layer4]
+Text=LOADING...
+File=_z 36px black
+InitCommand=zoom,.7;ShadowLength,0
+OnCommand=x,SCREEN_CENTER_X+42;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,.12;linear,.5;diffusealpha,1
+[Layer5]
+File=../_disk
+Command=x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y;spin
+[Layer6]
+File=../blueflare
+InitCommand=draworder,115
+OnCommand=additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,15;zoomtoheight,SCREEN_HEIGHT+SCREEN_HEIGHT/4;decelerate,.9;zoomtoheight,0;diffusealpha,.5
+[Layer7]
+File=../_flare
+InitCommand=Additiveblend,1
+Command=x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y;zoom,.5;linear,1.6;rotationz,460;zoom,0

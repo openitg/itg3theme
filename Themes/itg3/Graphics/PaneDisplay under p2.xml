@@ -1,0 +1,10 @@
+<ActorFrame><children>
+<Layer File="_pane icons" />
+<!-- import untested (kung)   <BitmapText Font="_serpentine outline"
+OnCommand="shadowlength,2;zoom,0.8;DiffuseAlpha,0.8;maxwidth,184;PlayCommand,Refresh"
+RefreshCommand="%function(self) self:settext(GetMeterTextP2()) self:sleep(0.01); self:queuecommand('Refresh') end" 		/> 
+<BitmapText Font="_r bold numbers"
+OnCommand="maxwidth,184;PlayCommand,Refresh"
+RefreshCommand="%function(self) self:settext(GetMeterText(PLAYER_2)) self:sleep(0.01); self:queuecommand('Refresh') end" 		/>
+-->
+</children></ActorFrame>

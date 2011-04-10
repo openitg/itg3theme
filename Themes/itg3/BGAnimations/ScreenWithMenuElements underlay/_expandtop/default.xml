@@ -1,0 +1,29 @@
+<ActorFrame>
+			<children>
+
+<Layer
+		Type="Autoactor"
+		File="_width"
+		InitCommand="x,SCREEN_LEFT+180;vertalign,top;horizalign,left;zoomtowidth,SCREEN_WIDTH-630;"
+		OnCommand="y,SCREEN_TOP-100;decelerate,0.8;y,SCREEN_TOP"
+		OffCommand="accelerate,0.5;addy,-100"
+	/>
+
+
+
+<Layer
+		Type="Autoactor"
+		File="_lside"
+		InitCommand="x,SCREEN_LEFT;horizalign,left;vertalign,top"
+		OnCommand="y,SCREEN_TOP-100;decelerate,0.8;y,SCREEN_TOP"
+		OffCommand="accelerate,0.5;addy,-100"
+	/>
+<Layer
+		Type="Autoactor"
+		File="_rside"
+		InitCommand="x,SCREEN_RIGHT;horizalign,right;vertalign,top"
+		OnCommand="y,SCREEN_TOP-100;decelerate,0.8;y,SCREEN_TOP"
+		OffCommand="accelerate,0.5;addy,-100"
+	/>
+			</children>
+</ActorFrame>

@@ -1,0 +1,144 @@
+﻿<ActorFrame><children>
+
+
+<Layer
+Type="BitmapText"
+Font="_r bold shadow 30px"
+Text="PRESS"
+InitCommand="shadowlength,0;zoomx,.8;zoomy,.7"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-100"
+/>
+<Layer
+File="..\_common base start button"
+InitCommand="shadowlength,0;zoom,.7"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-75"
+/>
+<Layer
+File="..\_common start button"
+InitCommand="shadowlength,0;diffuseshift;effectcolor1,#FFFFFF;effectcolor2,#858585;zoom,.7;effectclock,bgm"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-75"
+/>
+<Layer
+File="..\_common glow start button"
+InitCommand="additiveblend,1;shadowlength,0;diffuseshift;effectcolor1,#6BFF75;effectcolor2,#FFFFFF00;zoom,.7;effectclock,bgm"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-75"
+/>
+
+
+
+	
+<ActorFrame
+
+OnCommand="%function(self) self:GetChild('Hoe'):settext('')end"
+InitCommand="draworder,9999;y,SCREEN_TOP+80;x,SCREEN_LEFT+210;cropleft,.5;cropright,.5;"
+
+
+><children>
+
+
+
+
+<Layer	
+	File="..\_overlay\unlock.png"
+	OnCommand="horizalign,center;cropleft,.5;cropright,.5;"
+	UnlockEnteredMessageCommand="decelerate,.33;cropleft,0;cropright,0;sleep,3.3;accelerate,.7;diffusealpha,0;sleep,0;cropleft,.5;cropright,.5;diffusealpha,1;"		
+		
+OffCommand=""		
+	/>
+	
+
+	
+	
+	
+	<Layer		
+		Font="_z bold gray 36px"
+		Text="   YOU'VE UNLOCKED:   "
+		OnCommand="y,-18;horizalign,center;shadowlength,0.5;zoom,.5;cropleft,.5;cropright,.5;"
+		UnlockEnteredMessageCommand="decelerate,.33;cropleft,0;cropright,0;sleep,3;accelerate,.7;diffusealpha,0;sleep,0;cropleft,.5;cropright,.5;diffusealpha,1;"
+		
+OffCommand=""		
+	/>
+	
+	
+	
+<Layer		
+		Name="Hoe"
+		Font="_z bold gray 36px"
+		Text=""
+		OnCommand="y,7;x,-1;horizalign,center;shadowlength,0.5;zoom,.5;diffusebottomedge,#1d3283;diffusetopedge,#62a8e9;maxwidth,700;cropleft,.5;cropright,.5;"
+		UnlockEnteredMessageCommand="%function(self) self:settext(GAMESTATE:GetEnv('UnlockName')) 
+		
+		
+		self:decelerate(.33)
+		self:cropleft(0)
+		self:cropright(0)
+		self:sleep(3)
+		self:accelerate(.7)
+		self:diffusealpha(0)
+		self:sleep(0)
+		self:cropleft(.5)
+		self:cropright(.5)
+		self:diffusealpha(1)
+		
+		
+		end"
+		
+		CoinInsertedMessageCommand="PlayCommand,UnlockEnteredMessage"		
+		CoinModeChangedMessageCommand="PlayCommand,UnlockEnteredMessage"
+OffCommand=""		
+	/>
+
+
+	<Layer	
+	File="..\_overlay\unlockflash.png"
+	OnCommand="horizalign,center;zoomx,0;"
+	UnlockEnteredMessageCommand="decelerate,.3;zoomx,1;sleep,0;linear,.2;diffusealpha,0;sleep,0;zoomx,0;diffusealpha,1;"		
+		
+OffCommand=""		
+	/>
+
+
+<Layer	
+	File="..\blueflare"
+	OnCommand="horizalign,center;diffusealpha,0;additiveblend,1;zoomx,2;"
+	UnlockEnteredMessageCommand="stoptweening;zoomy,3;zoomx,4;linear,.15;diffusealpha,1;decelerate,.22;zoom,2;diffusealpha,0"		
+		
+OffCommand=""		
+	/>
+	
+	<Layer	
+	File="..\blueflare"
+	OnCommand="horizalign,center;diffusealpha,0;additiveblend,1;zoomx,2;"
+	UnlockEnteredMessageCommand="stoptweening;zoomy,3;zoomx,4;linear,.15;diffusealpha,1;decelerate,.22;zoom,2;diffusealpha,0"		
+		
+OffCommand=""		
+	/>
+	
+	
+	
+	
+	
+
+</children></ActorFrame>
+
+
+
+
+
+
+
+<Layer
+		Type="Quad"
+		InitCommand="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM"
+		OnCommand="diffusealpha,0"
+		UnlockEnteredMessageCommand="decelerate,1;diffusealpha,.4;sleep,3;accelerate,1;diffusealpha,0"
+	/>
+
+
+
+
+
+
+
+
+</children></ActorFrame>

@@ -1,0 +1,38 @@
+<ActorFrame><children>
+<Layer
+File="_top"
+InitCommand="zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;accelerate,0.3;diffusealpha,1"
+/>
+<Layer
+File="_shadow"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-94;linear,1;y,SCREEN_CENTER_Y-61"
+/>
+<Layer
+File="_banner mask"
+InitCommand="zbuffer,1;blend,noeffect"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-77;linear,1;y,SCREEN_CENTER_Y-44"
+/>
+<Layer
+Condition="not GAMESTATE:IsCourseMode()"
+File="songbanner"
+OnCommand="scaletoclipped,292,114;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-77;diffusealpha,0;linear,1;y,SCREEN_CENTER_Y-44;diffusealpha,1;ztest,1"
+/>
+<Layer
+Condition="GAMESTATE:IsCourseMode()"
+File="coursebanner"
+OnCommand="scaletoclipped,292,114;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-77;diffusealpha,0;linear,1;y,SCREEN_CENTER_Y-44;diffusealpha,1;ztest,1"
+/>
+<Layer
+File="_banner glass"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-77;linear,1;y,SCREEN_CENTER_Y-44"
+/>
+<Layer
+File="_flares"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+OnCommand="%function(self)
+ self:diffusealpha(1) self:zoom(1); self:linear(1) self:rotationz(250) self:diffusealpha(0) end"
+/> 
+
+</children></ActorFrame>
+

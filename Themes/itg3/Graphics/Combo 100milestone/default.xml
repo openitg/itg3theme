@@ -1,0 +1,14 @@
+<ActorFrame><children>
+<Layer
+        Class="Actor"
+		File="explosion"
+		InitCommand="diffusealpha,0;additiveblend,1"
+		MilestoneCommand="zoom,0;linear,0.1;zoom,2.4;diffusealpha,1;linear,0.5;zoom,2;diffusealpha,0"
+	/>
+<Layer
+		Class="Actor"
+		File="explosion"
+		InitCommand="diffusealpha,0;additiveblend,1"
+		MilestoneCommand="zoom,0;linear,0.1;zoom,2.4;diffusealpha,1;linear,0.5;zoom,2;diffusealpha,0"
+	/>
+</children></ActorFrame>

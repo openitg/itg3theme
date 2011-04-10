@@ -1,0 +1,22 @@
+<ActorFrame> <children>
+	<ActorFrame OnCommand="x,SCREEN_LEFT+60;y,SCREEN_CENTER_Y">
+			<children>
+				<Layer File="_ITG credits text-perfect" />
+			</children>
+		</ActorFrame>
+	
+					<Layer File="_r"
+						OnCommand="X,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-SCREEN_HEIGHT/8;diffusealpha,0;sleep,91.5;linear,.8;diffusealpha,1" />
+
+	
+					<Layer File="_b"
+						OnCommand="X,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+SCREEN_HEIGHT/8;diffusealpha,0;sleep,91.5;linear,.8;diffusealpha,1" />
+
+					<BitmapText File="_v credit"
+						OnCommand="X,SCREEN_CENTER_X;y,SCREEN_BOTTOM-100;zoom,.6;diffusealpha,0;sleep,91.5;linear,.8;diffusealpha,1"
+						Text="Released 2009 - Dedicated to the game that never was." />
+
+	
+
+</children> </ActorFrame>
+

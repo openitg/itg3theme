@@ -1,0 +1,12 @@
+<ActorFrame>
+	<children>
+		<ActorFrame OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y">
+			<children>
+			    <!-- <Layer Type="Quad" OnCommand="y,+223;zwrite,1;blend,noeffect;ZoomToWidth,340;ZoomToHeight,66" /> -->
+				<Layer Type="AutoActor" File="credits frame" OnCommand="croptop,1;fadetop,1;sleep,3;linear,.8;croptop,-1;fadetop,-1;" />
+				<Layer Type="AutoActor" File="playerpanes" OnCommand="addy,7" />
+				
+			</children>
+		</ActorFrame>
+	</children>
+</ActorFrame>

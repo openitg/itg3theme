@@ -1,0 +1,7 @@
+<!-- _short -->
+
+<BGAnimation Sound="_ok.ogg">
+	<children>
+		<AutoActor Condition="not SelectButtonAvailable()" File="_fade in normal" />
+	</children>
+</BGAnimation>

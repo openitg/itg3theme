@@ -1,0 +1,176 @@
+<ActorFrame>
+
+<children>
+
+
+
+<ActorFrame OnCommand="rotationz,-3.5;zoom,1.2" ><children>
+
+
+	<ActorFrame 
+><children>
+
+<Layer
+		Font="stencil"
+		Text="@PREFSMAN:GetPreference('SongsPerPlay')"
+		InitCommand="x,-200+1;y,-4+27;ShadowLength,0;horizalign,center;"
+		OnCommand="diffusealpha,1"
+	/>
+<Layer
+		Font="stencil"
+		Text="ROUNDS"
+		InitCommand="x,-200;y,-2+44;zoom,0.5;ShadowLength,0"
+		OnCommand="diffusealpha,1"
+	/>
+	</children></ActorFrame>
+
+<!-- difficulty -->
+<ActorFrame><children>
+
+	<Layer
+	Type="ActorFrame"			
+	InitCommand="x,-200+53;y,-2+36"
+	OnCommand="diffusealpha,1"><children>
+	<!-- backgrounds -->
+	<Layer File="_icon"
+		InitCommand="x,-5*3;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,3;diffusealpha,1;diffuse,#77777777"
+	/>
+	<Layer File="_icon"
+		InitCommand="x,-5*2;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,6;diffusealpha,1;diffuse,#77777777"
+	/>
+	<Layer File="_icon"
+		InitCommand="x,-5*1;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,9;diffusealpha,1;diffuse,#77777777"
+	/>
+	<Layer File="_icon"
+		InitCommand="x,0;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,12;diffusealpha,1;diffuse,#77777777"
+	/>
+	<Layer File="_icon"		
+		InitCommand="x,5*1;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,15;diffusealpha,1;diffuse,#77777777"
+	/>
+	<Layer File="_icon"		
+		InitCommand="x,5*2;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,18;diffusealpha,1;diffuse,#77777777"
+	/>
+	<Layer File="_icon"
+		InitCommand="x,5*3;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,21;diffusealpha,1;diffuse,#77777777"
+	/>
+	
+	
+	<!-- 1 -->
+	<Layer File="_icon"
+		Condition="LifeDifficultylevel1()"
+		InitCommand="x,-5*3;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,3;diffusealpha,1;diffuse,#000000"
+	/>
+	<!-- 2 -->
+	<Layer File="_icon"
+		Condition="LifeDifficultylevel2()"
+		InitCommand="x,-5*2;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,6;diffusealpha,1;diffuse,#000000"
+	/>
+	<!-- 3 -->
+	<Layer File="_icon"
+		Condition="LifeDifficultylevel3()"
+		InitCommand="x,-5*1;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,9;diffusealpha,1;diffuse,#000000"
+	/>
+	<!-- 4 -->
+	<Layer File="_icon"
+		Condition="LifeDifficultylevel4()"
+		InitCommand="x,0;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,12;diffusealpha,1;diffuse,#000000"
+	/>
+	<!-- 5 -->
+	<Layer File="_icon"
+		Condition="LifeDifficultylevel5()"		
+		InitCommand="x,5*1;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,15;diffusealpha,1;diffuse,#000000"
+	/>
+	<!-- 6 -->
+	<Layer File="_icon"
+		Condition="LifeDifficultylevel6()"			
+		InitCommand="x,5*2;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,18;diffusealpha,1;diffuse,#000000"
+	/>
+	<!-- 7 -->
+	<Layer File="_icon"
+		Condition="LifeDifficultylevel7()"	
+		InitCommand="x,5*3;vertalign,bottom"
+		OnCommand="zoomtowidth,4;zoomtoheight,21;diffusealpha,1;diffuse,#000000"
+	/>
+	
+	<Layer
+		Font="stencil"
+		Text="LEVEL"
+		InitCommand="y,7.5;zoom,0.5;ShadowLength,0"
+		OnCommand="diffusealpha,1"
+	/>
+	</children></Layer>
+</children></ActorFrame>
+	
+	
+	
+	
+	
+	
+	
+<ActorFrame 
+Condition="GAMESTATE:GetCoinMode()~=COIN_MODE_FREE and GAMESTATE:GetPremium()==PREMIUM_JOINT"
+><children>
+
+<Layer
+		Font="stencil"
+		Text="JOINT"
+		InitCommand="x,-202+53*2;y,-4+29;zoom,0.6;ShadowLength,0"
+		OnCommand="diffusealpha,1"
+	/>
+<Layer
+		Font="stencil"
+		Text="PREMIUM"
+		InitCommand="x,-202+53*2;y,41;zoomx,0.45;zoomy,0.5;ShadowLength,0"
+		OnCommand="diffusealpha,1"
+	/>
+	</children></ActorFrame>
+<ActorFrame 
+Condition="GAMESTATE:GetCoinMode()~=COIN_MODE_FREE and GAMESTATE:GetPremium()==PREMIUM_DOUBLE"
+><children>
+
+<Layer
+		Font="stencil"
+		Text="ONE::CREDIT"
+		InitCommand="x,-202+53*2;y,-4+30;zoom,0.5;ShadowLength,0"
+		OnCommand="diffusealpha,1"
+	/>
+	
+<Layer
+		Font="stencil"
+		Text="DOUBLES"
+		InitCommand="x,-202+53*2;y,41;zoomy,0.5;zoomx,.47;ShadowLength,0"
+		OnCommand="diffusealpha,1"
+	/>
+	</children></ActorFrame>
+
+<ActorFrame 
+Condition="PREFSMAN:GetPreference('SongEdits')"
+><children>
+<Layer
+		Font="stencil"
+		Text="USB"
+		InitCommand="x,-198+53*3;y,-2+27;zoom,.8;ShadowLength,0"
+		OnCommand="diffusealpha,1"
+	/>
+<Layer
+		Font="stencil"
+		Text="SONGS"
+		InitCommand="x,-198+53*3;y,-2+42;zoom,0.6;ShadowLength,0"
+		OnCommand="diffusealpha,1"
+	/>
+	</children></ActorFrame>
+</children></ActorFrame>	
+</children></ActorFrame>	

@@ -1,0 +1,4 @@
+<ActorFrame><children>
+	<BitmapText Font="_r bold shadow 30px" Text="Barely!" OnCommand="draworder,999999;zoom,0.5;shadowlength,2;y,-8;diffusealpha,0;addy,-20;sleep,4.25;accelerate,.2;diffusealpha,1;addy,+20;" />
+	<AutoActor File="arrow" OnCommand="zoom,.8;y,+6;diffuseshift;effectoffset,.5;diffusealpha,0;sleep,3.5;addy,-20;accelerate,.3;diffusealpha,1;addy,+25;decelerate,.3;addy,-10;accelerate,.3;addy,+10" />
+</children></ActorFrame>

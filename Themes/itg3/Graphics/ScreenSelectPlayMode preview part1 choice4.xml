@@ -1,0 +1,54 @@
+<ActorFrame><children>
+<Layer
+File="blueflare"
+InitCommand="x,SCREEN_CENTER_X-70;y,SCREEN_CENTER_Y;additiveblend,1;diffusealpha,0"		
+GainFocusCommand="finishtweening;zoom,0;diffusealpha,0;zoomx,7;zoomy,4;diffusealpha,1;linear,.2;zoomy,0;diffusealpha,0"
+LoseFocusCommand="diffusealpha,0"
+OffCommand="diffusealpha,0"	/> 
+<Layer
+File="blueflare"
+InitCommand="x,SCREEN_CENTER_X-70;y,SCREEN_CENTER_Y;additiveblend,1;diffusealpha,0"		
+GainFocusCommand="finishtweening;zoom,0;diffusealpha,0;zoomx,7;zoomy,4;diffusealpha,1;linear,.4;zoomy,0;diffusealpha,0"
+LoseFocusCommand="diffusealpha,0"
+OffCommand="diffusealpha,0"	/> 
+<Layer
+Type="BitmapText"
+Text="Beat the clock by stepping::accurately with modifiers"
+File="_r bold glow 30px"
+InitCommand="x,SCREEN_CENTER_X-88;y,SCREEN_CENTER_Y+95;zoomx,.8;zoomy,.7;maxwidth,300;horizalign,center;shadowlength,0"
+GainFocusCommand="hidden,0;finishtweening;cropright,1;linear,0.5;cropright,0"
+LoseFocusCommand="hidden,1"
+OffCommand="linear,0.3;diffusealpha,0"
+/>
+<Layer
+File="_join icons/survival_icon"
+InitCommand="x,SCREEN_RIGHT-20;y,SCREEN_CENTER_Y+155;horizalign,right"		
+GainFocusCommand="finishtweening;accelerate,0.1;diffuse,#FFFFFF;x,SCREEN_RIGHT-40"
+LoseFocusCommand="finishtweening;decelerate,0.1;diffuse,#636363;x,SCREEN_RIGHT-20"
+OffCommand="sleep,.3;accelerate,0.4;addx,SCREEN_WIDTH*.5"	/>
+<Layer
+File="_join icons/gameglow"
+InitCommand="x,SCREEN_RIGHT-20;y,SCREEN_CENTER_Y+155;horizalign,right;additiveblend,1"		
+GainFocusCommand="finishtweening;accelerate,0.1;diffusealpha,1;x,SCREEN_RIGHT-40;sleep,.07;linear,.2;diffusealpha,0"
+LoseFocusCommand="finishtweening;decelerate,0.1;diffusealpha,0;x,SCREEN_RIGHT-20"
+OffCommand="accelerate,0.4;addx,400"	/> 
+<!-- <Layer
+File="_join icons/_whitebasegamelight"
+InitCommand="x,SCREEN_RIGHT-20;y,SCREEN_CENTER_Y+155;horizalign,right"		
+GainFocusCommand="stoptweening;accelerate,0.1;diffusealpha,0;x,SCREEN_RIGHT-40;sleep,.07;linear,.2;diffusealpha,1;diffuseramp;effectcolor1,#000000;effectcolor2,#00EAFF;effectperiod,1;effectclock,beat"
+LoseFocusCommand="stoptweening;decelerate,0.1;diffusealpha,0;x,SCREEN_RIGHT-20"
+OffCommand="accelerate,0.4;addx,400"	/>
+<Layer
+File="_join icons/_basegamelight"
+InitCommand="x,SCREEN_RIGHT-20;y,SCREEN_CENTER_Y+155;horizalign,right;additiveblend,1"		
+GainFocusCommand="stoptweening;accelerate,0.1;diffusealpha,0;x,SCREEN_RIGHT-40;sleep,.07;linear,.2;diffusealpha,1;diffuseramp;effectcolor1,#FFFFFF00;effectcolor2,#00EAFF;effectperiod,1;effectclock,beat"
+LoseFocusCommand="stoptweening;decelerate,0.1;diffusealpha,0;x,SCREEN_RIGHT-20"
+OffCommand="accelerate,0.4;addx,400"	/>
+<Layer
+File="_join icons/_gamelight"
+InitCommand="x,SCREEN_RIGHT-20;y,SCREEN_CENTER_Y+155;horizalign,right;additiveblend,1"		
+GainFocusCommand="stoptweening;accelerate,0.1;diffusealpha,0;x,SCREEN_RIGHT-40;sleep,.07;linear,.2;diffusealpha,1;diffuseramp;effectcolor1,#FFFFFF00;effectcolor2,#00EAFF;effectperiod,1;effectclock,beat"
+LoseFocusCommand="stoptweening;decelerate,0.1;diffusealpha,0;x,SCREEN_RIGHT-20"
+OffCommand="accelerate,0.4;addx,400"	/> -->
+
+</children></ActorFrame>

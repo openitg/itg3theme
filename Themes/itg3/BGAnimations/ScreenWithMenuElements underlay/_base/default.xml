@@ -1,0 +1,39 @@
+<ActorFrame>
+			<children>
+<Layer
+		Type="Autoactor"
+		File="_lside"
+		InitCommand="horizalign,left;vertalign,bottom"
+		OnCommand="x,SCREEN_LEFT;y,SCREEN_BOTTOM+97;decelerate,0.6;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+	/>
+<Layer
+		Type="Autoactor"
+		File="_rside"
+		InitCommand="horizalign,right;vertalign,bottom"
+		OnCommand="x,SCREEN_RIGHT;y,SCREEN_BOTTOM+97;decelerate,0.6;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+	/>
+<Layer
+		Type="Autoactor"
+		File="width"
+		InitCommand="horizalign,left;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2"
+		OnCommand="x,SCREEN_LEFT+48;y,SCREEN_BOTTOM+97;decelerate,0.6;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+	/>
+<Layer
+		Type="Autoactor"
+		File="width"
+		InitCommand="horizalign,right;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2"
+		OnCommand="x,SCREEN_RIGHT-48;y,SCREEN_BOTTOM+97;decelerate,0.6;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+	/>
+<Layer
+		Type="Autoactor"
+		File="base"
+		InitCommand="vertalign,bottom"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM+97;decelerate,0.6;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+	/>
+		</children>
+</ActorFrame>

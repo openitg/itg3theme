@@ -1,0 +1,16 @@
+<ActorFrame> <children>
+<Layer
+Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
+File="frame"
+OnCommand="zoom,1"/>
+<Layer File="_base" 
+Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
+OnCommand="x,SCREEN_CENTER_X-200;y,SCREEN_CENTER_Y+154;addx,-EvalTweenDistance();sleep,3;decelerate,0.3;addx,EvalTweenDistance()"
+OffCommand="accelerate,0.3;addx,-EvalTweenDistance()"/>
+<Layer File="_maskp1" 
+InitCommand="zbuffer,1;blend,noeffect"
+OnCommand="x,SCREEN_CENTER_X-138;y,SCREEN_CENTER_Y+188;addx,-EvalTweenDistance();sleep,3;decelerate,0.3;addx,EvalTweenDistance()"
+OffCommand="accelerate,0.3;addx,-EvalTweenDistance()"/>
+</children> </ActorFrame>
+<!-- InitCommand="zbuffer,1;blend,noeffect"-->
+

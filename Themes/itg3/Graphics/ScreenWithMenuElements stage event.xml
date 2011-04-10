@@ -1,0 +1,10 @@
+<ActorFrame>
+	<children>
+		<BitmapText
+			Text="EVENT"
+			File="_z bold 19px"
+			InitCommand="ShadowLength,1"
+			
+		/>
+		</children>
+</ActorFrame>

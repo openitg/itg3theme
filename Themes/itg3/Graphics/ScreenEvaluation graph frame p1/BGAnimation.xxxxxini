@@ -1,0 +1,6 @@
+[Layer1]
+Condition=GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE
+File=frame
+OnCommand=zoom,1
+
+

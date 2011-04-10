@@ -1,0 +1,84 @@
+<ActorFrame>
+	<children>
+	
+	
+	<AutoActor
+File="songbackground"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtoheight,SCREEN_HEIGHT;zoomtowidth,SCREEN_WIDTH"
+/>
+	<AutoActor
+File="../_stage background/rear"
+InitCommand="diffusealpha,.98;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;"
+/>
+<AutoActor
+File="../_stage background/lines"
+InitCommand="zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;accelerate,0.3;diffusealpha,1"
+/>
+	
+	
+	<AutoActor
+	
+	File="bar.png"
+	InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+60;zoomtowidth,SCREEN_WIDTH"
+	
+	/>
+	<AutoActor
+	
+	File="sides.png"
+	InitCommand="horizalign,left;x,SCREEN_LEFT;y,SCREEN_CENTER_Y;zoomtoheight,SCREEN_HEIGHT"
+	
+	/>
+	
+	<AutoActor
+	
+	File="infopane.png"
+	InitCommand="horizalign,right;x,SCREEN_RIGHT;y,SCREEN_CENTER_Y-5;"
+	
+	/>
+	<AutoActor
+	
+	File="icons.png"
+	InitCommand="x,SCREEN_RIGHT-127;y,SCREEN_CENTER_Y+64;"
+	
+	/>
+	
+	
+		<BitmapText
+			Text="EDITOR"
+			Font="_r 26px bold glow"
+			InitCommand="ShadowLength,1;x,SCREEN_LEFT+76;y,SCREEN_TOP+40;DiffuseAlpha,1"
+			OnCommand=""
+			OffCommand=""
+		/>
+				
+		<AutoActor 
+			File="difficultyframe"
+			OnCommand="animate,0;playcommand,Update;x,SCREEN_LEFT+76;y,SCREEN_CENTER_Y-20;zoom,.8;DiffuseAlpha,0;linear,.3;diffusealpha,1"
+			CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_1) end"
+		/>
+		<BitmapText 
+			Font="_r bold glow 30px"
+			OnCommand="shadowlength,0;DiffuseAlpha,0.8;zoom,.6;maxwidth,184;x,SCREEN_LEFT+76;y,SCREEN_CENTER_Y-20;PlayCommand,Update"
+			CurrentStepsP1ChangedMessageCommand="PlayCommand,Update"
+			UpdateCommand="%function(self) self:settext(GetEditStepsText()) self:sleep(0.5); end" 
+			
+		/>
+		
+		<Layer
+File="songbanner"
+OnCommand="scaletoclipped,136,52;x,SCREEN_LEFT+76;y,SCREEN_CENTER_Y-70;diffusealpha,0;decelerate,1;y,SCREEN_CENTER_Y-74;diffusealpha,1;ztest,1"
+/>
+
+		
+		<BitmapText
+			Text="Press F1::for commands.::::Press Start::for the Edit Menu"
+			Font="_r bold 30px"
+			InitCommand="horizalign,center;ShadowLength,2;zoom,0.6;x,SCREEN_LEFT+76;y,SCREEN_BOTTOM-90"
+			OnCommand=""
+			OffCommand=""
+		/>
+	</children>
+</ActorFrame>

@@ -1,0 +1,275 @@
+﻿<BGAnimation 
+	UseScroller="1"
+	SecondsPerItem="0.38395" 
+	NumItemsToDraw="23" 
+	ItemPaddingStart="30"
+	ItemPaddingEnd="0"
+	TransformFunction="function(self,offset,itemIndex,numItems) self:y(offset*24); end"
+>
+<children>
+<Layer Type="BitmapText" Text="In The Groove 3" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#00E4FF;" />
+<Layer Type="BitmapText" Text="Open Groove Team" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#00E4FF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Theme Graphics/Coding" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
+<Layer Type="BitmapText" Text="Dominick Renzetti" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Felipe Valladares" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="A.J. Kung" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Jason Bolt" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Original UI Concept" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
+<Layer Type="BitmapText" Text="Ryan McKanna" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="John Schlemmer" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Song/Course Graphics" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
+<Layer Type="BitmapText" Text="Dominick Renzetti" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="N. Colley" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="M.J. Quigley" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Ryan McKanna" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Matt Puls" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Heather Dority" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />	
+
+
+<Layer Type="BitmapText" Text="Audio" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
+<Layer Type="BitmapText" Text="Kyle Ward" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="John Mendenhall" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Scott Brown" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Renard Queenston" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+	
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.4;diffuse,#FFFFFF;" />
+
+
+
+
+<Layer Type="BitmapText" Text="Programming" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
+<Layer Type="BitmapText" Text="Glenn Maynard" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Chris Danford" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Mark Cannon" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Pat McIlroy" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Step Artists" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
+<Layer Type="BitmapText" Text="Donnie D'Amato" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Matthew Emirzian" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Dalton Runberg" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Dominick Renzetti" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Jordan Frederick" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Mike Calfin" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Ryan Konkul" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Kyle Ward" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Chris Foy" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Ryan McKanna" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Matt Puls" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Jonas Casarino" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Christopher Emirzian" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="A.J. Kung" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="G. PolloxxX" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Max Leonardo Cerna" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Joseph DeGarmo" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Alex Sofikitis" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="N. Colley" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="J. Nordli" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Derek Bauer" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Brandon Bauer" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="M.J. Quigley" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Eric Holniker" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Courses" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
+<Layer Type="BitmapText" Text="Barry Knapp-Tabbernor" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Gabriel Marchan" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Producer" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer File="../_br" OnCommand="horizalign,left;shadowlength,1.25;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="PressX" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FF0000;" />
+<Layer Type="BitmapText" Text="KholdFuzion" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />	
+<Layer Type="BitmapText" Text="AJ 197" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />	
+<Layer Type="BitmapText" Text="Infamouspat" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="vdl" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="vyhd" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="OpenGroove" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#3C00FF;" />
+<Layer Type="BitmapText" Text="r0dent" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Edgar131" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="GRIM.657" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Hellacious" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Kalek" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Lightning" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="NX-306" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="xjen0vax" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Honorary members" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#00C300;" />
+<Layer Type="BitmapText" Text="sherl0k" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="bacon" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="neoMAXCML" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="SonGohanX" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Rubbinnexx" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Kung" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Midiman" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Test Locations" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
+<Layer Type="BitmapText" Text="Divertonicos Kripton - Bogota" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Lightning's basement - PA" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Infamous360's house - SC" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Great Wolf L. - Ontario, Canada" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Pittsburgh Mills - PA" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="North Park Club House - PA" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Game Zone - KS" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Players - MD" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Corner Pocket - PA" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Funland - Trocadero Centre, UK" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+
+<Layer Type="BitmapText" Text="Test Team" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
+<Layer Type="BitmapText" Text="G. PolloxxX" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Lil Lion" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Matt Vandermeulen" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Jeff 'Jeffrey' Odendahl" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Carlos 'Wanny' Ortega" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="John 'GooFWeaR' Uhlman" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="AJ Kelly" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Steve 'Nevets933' Bauer" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Derek 'Whicker' Bauer" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Scott 'Scooter' Smiesko" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Max Racaud" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Josh Laughery" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Ryan Jackson" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Andrzej Poetek" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Eric Holniker" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Tyler Thompson" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+
+
+
+
+
+
+<Layer Type="BitmapText" Text="Janel Yeager" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Ryan Lower" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Joseph Sherman" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Kevin 'PF3K' Lin" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Michael Porter" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Brian 'Red' Kurtz" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Valentina O'Donnell" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Bryan Wills" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Brandon Stokes" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Brian Rudowski" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Ryan Campbell" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Jarad Kaplan " File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Phil Eberhardt" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Chelsie Ehasz" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Adam Landes" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Patrick Richards" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Ian Hunsberger" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Carly Chiavaroli" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Huamid 'Moon' Alnuaimi" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Sonia Leng" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Garrett Shourds" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Bradley Shank" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Jorrie Marie" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Jordan Miller" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Damien Diehl" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Jason 'TheGreat' Gilleece" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Justin 'Pags' Pagano" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+
+
+
+
+
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+<Layer Type="BitmapText" Text="Hardware Support" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
+<Layer Type="BitmapText" Text="Mark Cannon" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Pat McIlroy" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Andrzej Poetek" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Jason Bolt" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+<Layer Type="BitmapText" Text="Special Thanks to:" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.6;diffuse,#ffa800;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+<Layer File="../_thanks/_bx" OnCommand="horizalign,left;shadowlength,1.25;;zoom,.8;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.4;diffuse,#FFFFFF;" />
+
+<Layer Type="BitmapText" Text="Boxorroxors" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.6;diffuse,#ffa800;" />
+<Layer Type="BitmapText" Text="www.boxorroxors.net" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#ddf3ff;" />
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.4;diffuse,#FFFFFF;" />
+<Layer File="../_thanks/_sci" OnCommand="horizalign,left;shadowlength,1.25;" />
+
+
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+<Layer Type="BitmapText" Text="SCI Recordings!" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.6;diffuse,#ffa800;" />
+<Layer Type="BitmapText" Text="www.scirecordings.com" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#ddf3ff;" />
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer File="../_thanks/_itgf" OnCommand="horizalign,left;shadowlength,1.25;;zoom,.7;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.4;diffuse,#FFFFFF;" />
+
+<Layer Type="BitmapText" Text="ITGfreak/Rhythmatic.net" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.6;diffuse,#ffa800;" />
+<Layer Type="BitmapText" Text="www.rhythmatic.net" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#ddf3ff;" />
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+
+<Layer File="../_thanks/_gs" OnCommand="horizalign,left;shadowlength,1.25;;zoom,.7;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.4;diffuse,#FFFFFF;" />
+
+<Layer Type="BitmapText" Text="GrooveStats" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.6;diffuse,#ffa800;" />
+<Layer Type="BitmapText" Text="www.groovestats.com" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#ddf3ff;" />
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+<Layer File="../_thanks/_n3k" OnCommand="horizalign,left;shadowlength,1.25;;zoom,.7;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.4;diffuse,#FFFFFF;" />
+
+<Layer Type="BitmapText" Text="Naota3k" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.6;diffuse,#ffa800;" />
+<Layer Type="BitmapText" Text="www.naota3k.com" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#ddf3ff;" />
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+
+<Layer File="../_thanks/_rx" OnCommand="horizalign,left;shadowlength,1.25;;zoom,.7;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.4;diffuse,#FFFFFF;" />
+
+<Layer Type="BitmapText" Text="RoXoR" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.6;diffuse,#ffa800;" />
+<Layer Type="BitmapText" Text="www.roxorgames.com" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#ddf3ff;" />
+
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+
+
+
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.9;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+</children>  <!-- NOT SUPERNOVA2 /* -->
+</BGAnimation>

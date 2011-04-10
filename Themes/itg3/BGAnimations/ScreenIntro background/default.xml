@@ -1,0 +1,421 @@
+<ActorFrame><children>
+	<Layer
+		File="intro.mpg"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3;rate,.92;sleep,35;diffusealpha,0"
+	/>
+	
+	
+	<Layer
+		Class="Quad"
+		Command="vertalign,top;x,SCREEN_CENTER_X;y,SCREEN_TOP;zoomtowidth,SCREEN_WIDTH;zoomtoheight,(SCREEN_WIDTH/4*.35)/2;diffuse,0,0,0,1"
+	/>
+	<Layer
+		Class="Quad"
+		Command="vertalign,bottom;x,SCREEN_CENTER_X;y,SCREEN_BOTTOM;zoomtowidth,SCREEN_WIDTH;zoomtoheight,(SCREEN_WIDTH/4*.35)/2;diffuse,0,0,0,1"
+	/>
+	
+	<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;"
+	><children>
+		<Layer
+			Class="AutoActor"
+			File="swoosh"
+			Command="y,20;zoomtowidth,SCREEN_WIDTH;additiveblend,1;cropright,1;faderight,1;linear,0.5;cropright,0;faderight,0;sleep,4;linear,0.5;diffusealpha,0.0;addx,50;cropleft,1;fadeleft,1;"
+		/>
+	</children></Layer>
+	<Layer
+		Class="BitmapText"
+		Font="_v 26px bold glow"
+		Text="RoXoR Games Presents"
+		Command="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;cropright,1;faderight,1;sleep,.1;linear,.2;cropright,0;faderight,0;sleep,2;linear,0.5;diffusealpha,0"
+	/>
+	
+	<Layer
+		Class="BitmapText"
+		Font="_v credit"
+		Text="RoXoR Games Presents"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;cropright,1;faderight,1;sleep,.1;linear,.2;cropright,0;faderight,0;sleep,2;linear,0.5;diffusealpha,0"
+	/>
+	
+	
+	
+	
+	
+
+
+
+
+	<Layer
+		Class="ActorFrame"
+	><children>
+		<Layer
+	Class="AutoActor"
+	File="wavelogo.xml"
+	OnCommand="hibernate,3.2;x,SCREEN_CENTER_X-30;y,SCREEN_CENTER_Y-30;addy,20;addx,30;linear,3.0;sleep,1.2;queuecommand,h"
+	hCommand="hidden,1"
+	/>
+	</children></Layer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_RIGHT-20;y,SCREEN_BOTTOM-200;sleep,11;linear,6;y,SCREEN_TOP+200"
+	><children>
+		<Layer
+			Class="BitmapText"
+			Font="_v credit"
+			Text="@GetRandomSongNames(23)"
+			Command="horizalign,Right;zoom,0.8;diffusealpha,0;sleep,11.5;linear,0.5;diffusealpha,0.3;linear,3;linear,0.5;diffusealpha,0.0"
+		/>
+	</children></Layer>
+	
+	
+
+
+
+	<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_TOP+100;rotationZ,-3;sleep,11;linear,6;addx,-10;addy,5"
+	><children>
+	<Layer
+		Class="AutoActor"
+		File="blue"
+		Command="x,SCREEN_RIGHT+SCREEN_WIDTH*2;zoomtowidth,SCREEN_WIDTH*1.5;zoomtoheight,100;sleep,11;linear,0.5;fadeleft,0.3;faderight,0.3;x,50;linear,4;addx,-100;accelerate,0.5;addx,-SCREEN_WIDTH*2"
+	/> 
+	
+	<Layer
+		Class="AutoActor"
+		File="songs"
+		InitCommand="zoom,.8;x,-100;diffusealpha,0;sleep,11.5;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+	/>
+	
+	</children></Layer>
+	
+	
+	
+	
+	
+	<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+150;"
+	><children>
+		<Layer
+			Class="AutoActor"
+			File="swoosh"
+			Command="zoomtowidth,SCREEN_WIDTH;additiveblend,1;cropright,1;faderight,1;sleep,11;linear,0.5;cropright,0;faderight,0;sleep,4;linear,0.5;diffusealpha,0.0;addx,50;cropleft,1;fadeleft,1;"
+		/>
+		
+		
+		<Layer
+		Class="ActorFrame"
+		Command="sleep,11;linear,6;addx,-20;"
+	><children>
+		<Layer
+			Class="AutoActor"
+			File="200"
+			Command="x,-75;y,-80;diffusealpha,0;sleep,11.5;linear,0.5;diffusealpha,1;sleep,4;linear,0.5;diffusealpha,0.0"
+		/>
+	</children></Layer>
+	
+	</children></Layer>
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end songs -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_RIGHT-20;y,SCREEN_BOTTOM-200;sleep,16;linear,6;y,SCREEN_TOP+200"
+	><children>
+		<Layer
+			Class="BitmapText"
+			Font="_v credit"
+			Text="@GetStepChartFacts()"
+			Command="horizalign,Right;zoom,0.8;diffusealpha,0;sleep,16.5;linear,0.5;diffusealpha,0.3;linear,3;linear,0.5;diffusealpha,0.0"
+		/>
+	</children></Layer>
+	
+	
+
+
+
+	<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_TOP+100;rotationZ,3;sleep,16;linear,6;addx,-10;addy,5"
+	><children>
+	<Layer
+		Class="AutoActor"
+		File="green"
+		Command="x,SCREEN_LEFT-SCREEN_WIDTH*2;zoomtowidth,SCREEN_WIDTH*1.5;zoomtoheight,100;sleep,16;linear,0.5;fadeleft,0.3;faderight,0.3;x,50;linear,4;addx,100;accelerate,0.5;addx,SCREEN_WIDTH*2"
+	/> 
+	
+	<Layer
+		Class="AutoActor"
+		File="charts"
+		InitCommand="zoom,.8;x,-100;diffusealpha,0;sleep,16.5;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+	/>
+	
+	</children></Layer>
+	
+	
+	
+	
+	
+	<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+150;"
+	><children>
+		<Layer
+			Class="AutoActor"
+			File="swoosh"
+			Command="zoomtowidth,SCREEN_WIDTH;zoomy,-1;y,-10;additiveblend,1;cropleft,1;fadeleft,1;sleep,16;linear,0.5;cropleft,0;fadeleft,0;sleep,4;linear,0.5;addx,-50;diffusealpha,0.0;cropright,1;faderight,1;"
+		/>
+		
+		
+		<Layer
+		Class="ActorFrame"
+		Command="sleep,16;linear,6;addx,20;"
+	><children>
+		<Layer
+			Class="AutoActor"
+			File="1500"
+			Command="x,-75;y,-80;diffusealpha,0;sleep,16.5;linear,0.5;diffusealpha,1;sleep,4;linear,0.5;diffusealpha,0.0"
+		/>
+	</children></Layer>
+	
+	</children></Layer>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_RIGHT-20;y,SCREEN_BOTTOM-200;sleep,21;linear,6;y,SCREEN_TOP+200"
+	><children>
+		<Layer
+			Class="BitmapText"
+			Font="_v credit"
+			Text="@GetRandomCourseNames(23)"
+			Command="horizalign,Right;zoom,0.8;diffusealpha,0;sleep,21.5;linear,0.5;diffusealpha,0.3;linear,3;linear,0.5;diffusealpha,0.0"
+		/>
+	</children></Layer>
+	
+	
+
+
+
+	<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_TOP+100;rotationZ,-1.5;sleep,21;linear,6;addx,-10;addy,5"
+	><children>
+	<Layer
+		Class="AutoActor"
+		File="orange"
+		Command="x,SCREEN_RIGHT+SCREEN_WIDTH*2;zoomtowidth,SCREEN_WIDTH*1.5;zoomtoheight,100;sleep,21;linear,0.5;fadeleft,0.3;faderight,0.3;x,50;linear,4;addx,-100;accelerate,0.5;addx,-SCREEN_WIDTH*2"
+	/> 
+	
+	<Layer
+		Class="AutoActor"
+		File="courses"
+		InitCommand="zoom,.8;x,-100;diffusealpha,0;sleep,21.5;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+	/>
+	
+	</children></Layer>
+	
+	
+	
+	
+	
+	<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+150;"
+	><children>
+		<Layer
+			Class="AutoActor"
+			File="swoosh"
+			Command="zoomtowidth,SCREEN_WIDTH;additiveblend,1;cropright,1;faderight,1;sleep,21;linear,0.5;cropright,0;faderight,0;sleep,4;linear,0.5;diffusealpha,0.0;addx,50;cropleft,1;fadeleft,1;"
+		/>
+		
+		
+		<Layer
+		Class="ActorFrame"
+		Command="sleep,21;linear,6;addx,-20;"
+	><children>
+		<Layer
+			Class="AutoActor"
+			File="70"
+			Command="x,-75;y,-80;diffusealpha,0;sleep,21.5;linear,0.5;diffusealpha,1;sleep,4;linear,0.5;diffusealpha,0.0"
+		/>
+	</children></Layer>
+	
+	</children></Layer>
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_RIGHT-20;y,SCREEN_BOTTOM-200;sleep,26;linear,6;y,SCREEN_TOP+200"
+	><children>
+		<Layer
+			Class="BitmapText"
+			Font="_v credit"
+			Text="@GetModifierNames(23)"
+			Command="horizalign,Right;zoom,0.8;diffusealpha,0;sleep,26.5;linear,0.5;diffusealpha,0.3;linear,3;linear,0.5;diffusealpha,0.0"
+		/>
+	</children></Layer>
+	
+	
+
+
+
+	<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_TOP+100;rotationZ,3;sleep,26;linear,6;addx,-10;addy,5"
+	><children>
+	<Layer
+		Class="AutoActor"
+		File="red"
+		Command="x,SCREEN_LEFT-SCREEN_WIDTH*2;zoomtowidth,SCREEN_WIDTH*1.5;zoomtoheight,100;sleep,26;linear,0.5;fadeleft,0.3;faderight,0.3;x,50;linear,4;addx,100;accelerate,0.5;addx,SCREEN_WIDTH*2"
+	/> 
+	
+	<Layer
+		Class="AutoActor"
+		File="mods"
+		InitCommand="zoom,.8;x,-100;diffusealpha,0;sleep,26.5;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+	/>
+	
+	</children></Layer>
+	
+	
+	
+	
+	
+	<Layer
+		Class="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+150;"
+	><children>
+		<Layer
+			Class="AutoActor"
+			File="swoosh"
+			Command="zoomtowidth,SCREEN_WIDTH;zoomy,-1;y,-10;additiveblend,1;cropleft,1;fadeleft,1;sleep,26;linear,0.5;cropleft,0;fadeleft,0;sleep,4;linear,0.5;addx,-50;diffusealpha,0.0;cropright,1;faderight,1;"
+		/>
+		
+		
+		<Layer
+		Class="ActorFrame"
+		Command="sleep,26;linear,6;addx,20;"
+	><children>
+		<Layer
+			Class="AutoActor"
+			File="60"
+			Command="x,-75;y,-80;diffusealpha,0;sleep,26.5;linear,0.5;diffusealpha,1;sleep,4;linear,0.5;diffusealpha,0.0"
+		/>
+	</children></Layer>
+	
+	</children></Layer>
+	
+	
+	
+	
+	
+	
+	
+	
+	<Layer
+		Class="Quad"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;hibernate,34.5;linear,0.5;diffusealpha,1;linear,0.5;diffusealpha,0"
+	/>
+</children></ActorFrame>

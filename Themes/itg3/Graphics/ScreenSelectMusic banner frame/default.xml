@@ -1,0 +1,280 @@
+<ActorFrame>
+		<children>
+<ActorFrame>
+		<children>
+		
+		
+		
+		
+<!-- reflect  -->
+	<Layer 
+		Type="FadingBanner"
+		Condition="not GAMESTATE:IsCourseMode()"
+		InitCommand="x,SCREEN_CENTER_X+140;y,SCREEN_CENTER_Y+26;playcommand,Refresh;ztest,1;vertalign,bottom;zoomy,-1"
+		OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;;addx,-SCREEN_WIDTH"	
+		RefreshCommand="%function(self)
+						self:LoadFromSong(GAMESTATE:GetCurrentSong()) self:ScaleToClipped(320,120) end" 
+		CurrentSongChangedMessageCommand="PlayCommand,Refresh"
+		OffCommand="accelerate,0.75;addx,SCREEN_WIDTH"
+	/>
+<!-- bannerframe -->
+
+<!--Song Length Popup -->
+
+
+<Layer 
+File="../_pane elements/_length"
+Condition="OPENITG and not GAMESTATE:IsCourseMode()"
+InitCommand="diffusealpha,0;ztest,1;zoom,.6;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-34;vertalign,bottom"
+EnableSelectHelpMessageCommand="%function(self)
+if not GAMESTATE:GetCurrentSong() then
+self:queuecommand('SelectMenuOffMessage')
+else
+self:stoptweening()
+self:linear(0.2)
+self:diffusealpha(1) end
+end"
+SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;"
+CurrentSongChangedMessageCommand="%function(self)
+if not GAMESTATE:GetCurrentSong() then
+self:stoptweening()
+self:linear(0.2)
+self:diffusealpha(0)  end
+end"
+/>		
+<Layer Type="BitmapText"
+Font="_v 26px bold diffuse"
+Text="HELLO"
+Condition="OPENITG and not GAMESTATE:IsCourseMode()"
+InitCommand="diffusealpha,0;shadowlength,0.5;horizalign,left;zoom,.6;x,SCREEN_CENTER_X-14;y,SCREEN_CENTER_Y-44"
+OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+CurrentSongChangedMessageCommand="playcommand,Set"
+SetCommand="%function(self)
+local song = GAMESTATE:GetCurrentSong()
+if not song then self:hidden(1) return end
+self:hidden(0)
+self:settext( GetSongLength() )
+end"
+EnableSelectHelpMessageCommand="stoptweening;playcommand,Set;linear,0.2;diffusealpha,1"
+SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;"
+ OffCommand="linear,.12;diffusealpha,0;"/>
+ <!--reflection-->
+<Layer 
+		File="../_pane elements/_length"
+		Condition="OPENITG and not GAMESTATE:IsCourseMode()"
+InitCommand="diffusealpha,0;ztest,1;zoomx,.6;zoomy,-.6;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-34;vertalign,bottom"
+EnableSelectHelpMessageCommand="%function(self)
+if not GAMESTATE:GetCurrentSong() then
+self:queuecommand('SelectMenuOffMessage')
+else
+self:stoptweening()
+self:linear(0.2)
+self:diffusealpha(.5) end
+end"
+SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;"
+CurrentSongChangedMessageCommand="%function(self)
+if not GAMESTATE:GetCurrentSong() then
+self:stoptweening()
+self:linear(0.2)
+self:diffusealpha(0) end
+end"
+		/>		
+<Layer Type="BitmapText"
+Font="_v 26px bold diffuse"
+Text="HELLO"
+Condition="OPENITG and not GAMESTATE:IsCourseMode()"
+InitCommand="diffusealpha,0;shadowlength,0;horizalign,left;zoomx,.6;zoomy,-.6;x,SCREEN_CENTER_X-14;y,SCREEN_CENTER_Y-23"
+OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+CurrentSongChangedMessageCommand="playcommand,Set"
+SetCommand="%function(self)
+local song = GAMESTATE:GetCurrentSong()
+if not song then self:hidden(1) return end
+self:hidden(0)
+self:settext( GetSongLength() )
+end"
+EnableSelectHelpMessageCommand="stoptweening;playcommand,Set;linear,0.2;diffusealpha,.25"
+SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;"
+OffCommand="linear,.12;diffusealpha,0;"/>
+
+<Layer
+		File="frame"
+		InitCommand="x,SCREEN_CENTER_X+140;y,SCREEN_CENTER_Y-20"
+		OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="accelerate,0.75;addx,SCREEN_WIDTH"
+		/>
+
+<Layer 
+		Text="ARTIST:"
+		Font="_v 26px bold diffuse"
+		InitCommand="x,SCREEN_CENTER_X+10;y,SCREEN_CENTER_Y-24"
+		OnCommand="diffusealpha,1;ShadowLength,2.5;zoom,.5;addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="accelerate,0.75;addx,SCREEN_WIDTH"	
+	/>
+
+<Layer
+		Text="BPM:"
+		File="_v 26px bold diffuse"
+		InitCommand="x,SCREEN_CENTER_X+280;y,SCREEN_CENTER_Y-24"
+		OnCommand="diffusealpha,1;ShadowLength,2.5;zoom,.5;addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="accelerate,0.75;addx,SCREEN_WIDTH"	
+	/>
+<!-- triangle -->
+<Layer
+		File="triangle"
+/>
+	</children>
+</ActorFrame>
+
+
+<!-- P1 Stepartist -->
+<ActorFrame
+		InitCommand="x,SCREEN_LEFT;y,SCREEN_BOTTOM-109;addx,-SCREEN_WIDTH;decelerate,0.75;addx,SCREEN_WIDTH;"
+		OffCommand="accelerate,0.75;addx,-SCREEN_WIDTH"
+		SelectMenuOffMessageCommand="stoptweening;decelerate,.3;y,SCREEN_BOTTOM-109"
+		SelectMenuOnMessageCommand="%StepartistHiddenPress"
+		CurrentStepsP1ChangedMessageCommand="%StepartistHiddenSort"
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)">
+<children>
+
+	<Layer 
+		File="../_pane elements/_artist"
+		InitCommand="horizalign,left;zoom,.5;"/>
+	<Layer 
+		Text=""
+		Font="_v 26px bold diffuse"
+		InitCommand="MaxWidth,350;horizalign,left;x,20;y,2;ShadowLength,0.5;zoom,.5"	
+		CurrentStepsP1ChangedMessageCommand="%P1Stepartist"
+	/>
+	
+	</children>
+</ActorFrame>
+<!-- P2 Stepartist -->
+<ActorFrame
+		InitCommand="x,SCREEN_RIGHT;y,SCREEN_BOTTOM-109;addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH;"
+		OffCommand="accelerate,0.75;addx,SCREEN_WIDTH"
+		SelectMenuOffMessageCommand="stoptweening;decelerate,.3;y,SCREEN_BOTTOM-109"
+		SelectMenuOnMessageCommand="%StepartistHiddenPress"
+		CurrentStepsP2ChangedMessageCommand="%StepartistHiddenSort"
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)">
+<children>
+
+	<Layer 
+		File="../_pane elements/_artist"
+		InitCommand="zoomx,-.5;zoomy,.5;horizalign,left;"/>
+	<Layer 
+		Text=""
+		Font="_v 26px bold diffuse"
+		InitCommand="MaxWidth,350;horizalign,right;x,-20;y,2;ShadowLength,0.5;zoom,.5"	
+		CurrentStepsP2ChangedMessageCommand="%P2Stepartist"
+	/>
+	
+	</children>
+</ActorFrame>
+	
+<!-- pane -->
+<Layer
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		File="../_pane elements/_ldifficulty"
+        InitCommand="x,SCREEN_CENTER_X+12;y,SCREEN_BOTTOM-8;horizalign,right;vertalign,bottom"
+		OnCommand="addx,-SCREEN_WIDTH;sleep,.5;decelerate,0.75;addx,SCREEN_WIDTH"
+		OffCommand="accelerate,0.75;addx,-SCREEN_WIDTH"
+	/>
+<Layer
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		File="../_pane elements/_ldifficulty"
+        InitCommand="zoomx,-1;x,SCREEN_CENTER_X-12;y,SCREEN_BOTTOM-8;horizalign,right;vertalign,bottom"
+	    OnCommand="addx,SCREEN_WIDTH;sleep,.5;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="accelerate,0.75;addx,SCREEN_WIDTH"
+	/>
+<Layer
+		File="../_pane elements/_lbase"
+        InitCommand="x,SCREEN_CENTER_X+26;y,SCREEN_BOTTOM;horizalign,right;vertalign,bottom"
+		OnCommand="addx,-SCREEN_WIDTH;decelerate,0.75;addx,SCREEN_WIDTH"
+		OffCommand="sleep,.5;accelerate,0.75;addx,-SCREEN_WIDTH"
+	/>
+	<Layer
+		File="../_pane elements/_basewidth"
+        InitCommand="x,SCREEN_CENTER_X-174;y,SCREEN_BOTTOM;horizalign,right;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2"
+	    OnCommand="addx,-SCREEN_WIDTH;decelerate,0.75;addx,SCREEN_WIDTH"
+		OffCommand="sleep,.5;accelerate,0.75;addx,-SCREEN_WIDTH"
+	/>
+<Layer
+		File="../_pane elements/_rbase"
+		InitCommand="x,SCREEN_CENTER_X-26;y,SCREEN_BOTTOM;horizalign,left;vertalign,bottom"
+	    OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="sleep,.5;accelerate,0.75;addx,SCREEN_WIDTH"
+	/>
+	<Layer
+		File="../_pane elements/_basewidth"
+        InitCommand="x,SCREEN_CENTER_X+174;y,SCREEN_BOTTOM;horizalign,left;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2"
+	    OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="sleep,.5;accelerate,0.75;addx,SCREEN_WIDTH"
+	/>
+<!-- light p1 -->
+
+	<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		File="../_pane elements/_lneon"
+		InitCommand="x,SCREEN_CENTER_X-90;y,SCREEN_BOTTOM-76;horizalign,right;vertalign,bottom;diffuseshift;effectcolor1,#bed0ff;effectcolor2,#767676;effectoffset,0;effectclock,bgm"
+        OnCommand="addx,-SCREEN_WIDTH;decelerate,0.75;addx,SCREEN_WIDTH"
+		OffCommand="sleep,.5;accelerate,0.75;addx,-SCREEN_WIDTH"
+	/>
+	<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		File="../_pane elements/_neonwidth"
+		InitCommand="x,SCREEN_CENTER_X-146;y,SCREEN_BOTTOM-76;horizalign,right;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2;diffuseshift;effectcolor1,#bed0ff;effectcolor2,#767676;effectoffset,0;effectclock,bgm"
+        OnCommand="addx,-SCREEN_WIDTH;decelerate,0.75;addx,SCREEN_WIDTH"
+		OffCommand="sleep,.5;accelerate,0.75;addx,-SCREEN_WIDTH"
+	/>
+<!-- light p2 -->
+<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		File="../_pane elements/_rneon"
+		InitCommand="x,SCREEN_CENTER_X+90;y,SCREEN_BOTTOM-76;horizalign,left;vertalign,bottom;diffuseshift;effectcolor1,#bed0ff;effectcolor2,#767676;effectoffset,0;effectclock,bgm"
+        OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="sleep,.5;accelerate,0.75;addx,SCREEN_WIDTH"
+	/>
+	<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		File="../_pane elements/_neonwidth"
+		InitCommand="x,SCREEN_CENTER_X+146;y,SCREEN_BOTTOM-76;horizalign,left;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2;diffuseshift;effectcolor1,#bed0ff;effectcolor2,#767676;effectoffset,0;effectclock,bgm"
+		OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="sleep,.5;accelerate,0.75;addx,SCREEN_WIDTH"
+	/>
+	
+<!-- lights double -->
+
+		
+	<Layer
+		Condition="GAMESTATE:PlayerUsingBothSides()"
+		File="../_pane elements/_lneon"
+		InitCommand="x,SCREEN_CENTER_X-90;y,SCREEN_BOTTOM-76;horizalign,right;vertalign,bottom;diffuseshift;effectcolor1,#bed0ff;effectcolor2,#767676;effectoffset,0;effectclock,bgm"
+        OnCommand="addx,-SCREEN_WIDTH;decelerate,0.75;addx,SCREEN_WIDTH"
+		OffCommand="sleep,.5;accelerate,0.75;addx,-SCREEN_WIDTH"
+	/>
+	<Layer
+		Condition="GAMESTATE:PlayerUsingBothSides()"
+		File="../_pane elements/_neonwidth"
+		InitCommand="x,SCREEN_CENTER_X-146;y,SCREEN_BOTTOM-76;horizalign,right;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2;diffuseshift;effectcolor1,#bed0ff;effectcolor2,#767676;effectoffset,0;effectclock,bgm"
+        OnCommand="addx,-SCREEN_WIDTH;decelerate,0.75;addx,SCREEN_WIDTH"
+		OffCommand="sleep,.5;accelerate,0.75;addx,-SCREEN_WIDTH"
+	/>
+<Layer
+		Condition="GAMESTATE:PlayerUsingBothSides()"
+		File="../_pane elements/_rneon"
+		InitCommand="x,SCREEN_CENTER_X+90;y,SCREEN_BOTTOM-76;horizalign,left;vertalign,bottom;diffuseshift;effectcolor1,#bed0ff;effectcolor2,#767676;effectoffset,0;effectclock,bgm"
+        OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="sleep,.5;accelerate,0.75;addx,SCREEN_WIDTH"
+	/>
+	<Layer
+		Condition="GAMESTATE:PlayerUsingBothSides()"
+		File="../_pane elements/_neonwidth"
+		InitCommand="x,SCREEN_CENTER_X+146;y,SCREEN_BOTTOM-76;horizalign,left;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2;diffuseshift;effectcolor1,#bed0ff;effectcolor2,#767676;effectoffset,0;effectclock,bgm"
+		OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
+		OffCommand="sleep,.5;accelerate,0.75;addx,SCREEN_WIDTH"
+	/>
+
+
+
+		</children>
+</ActorFrame>

@@ -1,0 +1,40 @@
+<ActorFrame> <children>
+
+<!--guitar hero-->
+
+<ActorFrame InitCommand="X,SCREEN_CENTER_X;y,SCREEN_TOP+100"> <children>
+
+	
+	
+<Layer
+File="bg"
+InitCommand="animate,0;"
+StepP1MessageCommand="queuecommand,Update"
+StepP2MessageCommand="queuecommand,Update"
+UpdateCommand="%function(self) 
+	local score=CompareScoresRange( .5, 80 )
+		self:setstate( score < 0 and 1 or 2 )
+end"
+/>	
+<Layer
+File="bar"
+InitCommand="y,10"
+StepP1MessageCommand="queuecommand,Update"
+StepP2MessageCommand="queuecommand,Update"
+UpdateCommand="%function(self) self:stoptweening() self:linear(.1) self:rotationz(CompareScoresRange( .5, 80 )) end"
+/>	
+<Layer
+File="frame"
+/>	
+	
+
+		</children> 
+</ActorFrame>
+
+
+
+
+
+		</children> 
+</ActorFrame>
+

@@ -1,0 +1,124 @@
+<ActorFrame><children>
+
+
+
+
+<Layer
+File="../_overlay/cardstats.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+155;sleep,2;accelerate,.3;addx,300;"
+/>
+
+
+
+<Layer
+File="../_overlay/p2card.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="x,SCREEN_RIGHT-60;y,SCREEN_CENTER_Y+165;diffusealpha,.6;sleep,2;accelerate,.3;addx,300;"
+/>
+
+
+
+
+<!-- Player 1 card pane -->
+
+<Layer
+File="../_overlay/cardstats.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+155;sleep,2;accelerate,.3;addx,-300;"
+/>
+
+
+
+
+
+
+
+
+<Layer
+File="../_overlay/p1card.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="x,SCREEN_LEFT+60;y,SCREEN_CENTER_Y+165;diffusealpha,.6;sleep,2;accelerate,.3;addx,-300;"
+/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- player names -->
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+Font="_r bold 30px"
+Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+87"
+OnCommand="diffusetopedge,#fff000;diffusebottomedge,#ffa500;shadowlength,2;horizalign,center;zoom,.8;sleep,2;accelerate,.3;addx,-300;"
+/> 
+
+
+
+ <Layer
+ Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+Font="_r bold 30px"
+Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+87"
+OnCommand="diffusetopedge,#fffb81;diffusebottomedge,#bcff04;shadowlength,2;horizalign,center;zoom,.8;sleep,2;accelerate,.3;addx,300;"
+/>
+
+
+
+
+
+
+
+
+
+
+
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+Font="_v profile"
+Text="@profilesongs(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT+148;y,SCREEN_CENTER_Y+162"
+OnCommand="shadowlength,2;horizalign,center;zoom,.8;linear,.2;diffusealpha,.8;sleep,1.8;accelerate,.3;addx,-300;"
+/> 
+
+
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+Font="_v profile"
+Text="@profilesongs(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT-148;y,SCREEN_CENTER_Y+162"
+OnCommand="shadowlength,2;horizalign,center;zoom,.8;linear,.2;diffusealpha,.8;sleep,1.8;accelerate,.3;addx,300;"
+/> 
+
+
+
+
+
+
+<Layer
+File="../_overlay/check.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+125;cropright,1;linear,.5;cropright,0;sleep,1.5;accelerate,.3;addx,-300;"
+/>
+
+
+
+<Layer
+File="../_overlay/check.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+125;cropright,1;linear,.5;cropright,0;sleep,1.5;accelerate,.3;addx,300;"
+/>
+
+
+
+
+</children></ActorFrame>

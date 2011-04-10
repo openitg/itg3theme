@@ -1,0 +1,221 @@
+<ActorFrame><children>
+	<BitmapText
+		Font="_r bold stroke"
+		Text="???"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-100;shadowlength,0;zoom,1;PlayCommand,Refresh"
+		CoinModeChangedMessageCommand="PlayCommand,Refresh"		
+		RefreshCommand="%
+			function(self) 
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:settext(''); return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				if coins&gt;=coinsPerCredit or GAMESTATE:GetCoinMode()==COIN_MODE_FREE then 
+					self:playcommand('PressStart') 
+				else 
+					self:playcommand('InsertCoin') 
+				end 
+			end"
+		InsertCoinCommand="%
+			function(self)
+			self:settext(GetCreditType())
+			self:diffuseshift()
+			self:effectcolor1(0,0,0,.3)
+			self:effectcolor2(0,0,0,0)
+			self:effectperiod(2)
+			end"
+		PressStartCommand="%
+			function(self)
+				self:settext(' ')
+				self:diffuseblink()
+				self:effectcolor1(0,0,0,.2)
+				self:effectcolor2(0,0,0,1)
+				self:effectperiod((GAMESTATE:GetCoinMode() == COIN_MODE_FREE) and 1.0 or 0.3)
+			end"
+	/> 
+	
+	
+	
+	
+	
+	
+	
+		<BitmapText
+		Font="_r bold shadow 30px"
+		Text="???"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-100;shadowlength,0;zoom,1;PlayCommand,Refresh"
+		CoinModeChangedMessageCommand="PlayCommand,Refresh"		
+		RefreshCommand="%
+			function(self) 
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:settext(''); return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				if coins&gt;=coinsPerCredit or GAMESTATE:GetCoinMode()==COIN_MODE_FREE then 
+					self:playcommand('PressStart') 
+				else 
+					self:playcommand('InsertCoin') 
+				end 
+			end"
+		InsertCoinCommand="%
+			function(self)
+			self:settext(GetCreditType())
+			self:diffuseshift()
+			self:effectcolor1(1,1,1,.2)
+			self:effectcolor2(1,1,1,1)
+			self:effectperiod(2)
+			end"
+		PressStartCommand="%
+			function(self)
+				self:settext(' ')
+				self:diffuseblink()
+				self:effectcolor1(1,1,1,.2)
+				self:effectcolor2(1,1,1,1)
+				self:effectperiod((GAMESTATE:GetCoinMode() == COIN_MODE_FREE) and 1.0 or 0.3)
+			end"
+	/> 
+	
+	
+	
+	
+	
+	<BitmapText
+		Font="_r bold shadow 30px"
+		Text="???"
+
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-48;shadowlength,0;zoom,0.65;diffusebottomedge,#00daff;diffusetopedge,#4fc5de;PlayCommand,Refresh"
+		RefreshCommand="%
+			function(self)
+				if GAMESTATE:IsEventMode() then self:settext('EVENT MODE') return end
+				if GAMESTATE:GetCoinMode()==COIN_MODE_FREE then self:settext('FREE PLAY') return end
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:hidden(1) return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				local credits=math.floor(coins/coinsPerCredit)
+				local remainder=math.mod(coins,coinsPerCredit)
+				local s='CREDIT(S)  '
+				if credits&gt;0 then s=s..credits..'  ' end
+				s=s..remainder..'/'..coinsPerCredit
+				self:settext(s)
+			end"
+		CoinInsertedMessageCommand="PlayCommand,Refresh"		
+		CoinModeChangedMessageCommand="PlayCommand,Refresh"		
+	/>
+	
+	
+	
+	
+	
+	
+	
+	
+	<Layer
+Type="BitmapText"
+Font="_r bold shadow 30px"
+Text="PRESS"
+InitCommand="hidden,1;shadowlength,0;zoomx,.8;zoomy,.7;PlayCommand,Refresh"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-100"
+		CoinModeChangedMessageCommand="PlayCommand,Refresh"		
+
+RefreshCommand="%
+			function(self) 
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:hidden(0); return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				if coins&gt;=coinsPerCredit or GAMESTATE:GetCoinMode()==COIN_MODE_FREE then 
+					self:playcommand('PressStart') 
+				else 
+					self:playcommand('InsertCoin') 
+				end 
+			end"
+		InsertCoinCommand="hidden,1"
+		PressStartCommand="%
+			function(self)
+			self:hidden(0)
+			end"
+			
+			
+/>
+<!-- <Layer
+Type="BitmapText"
+Font="_v 26px bold diffuse"
+Text="PRESS"
+InitCommand="shadowlength,0;zoom,.7"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-100;diffuseshift;effectcolor1,#555555FF;effectcolor2,#000000FF;effectclock,beat"
+/> -->
+<Layer
+File="_common base start button"
+InitCommand="hidden,1;shadowlength,0;zoom,.7;PlayCommand,Refresh"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-75"
+		CoinModeChangedMessageCommand="PlayCommand,Refresh"		
+
+RefreshCommand="%
+			function(self) 
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:hidden(0); return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				if coins&gt;=coinsPerCredit or GAMESTATE:GetCoinMode()==COIN_MODE_FREE then 
+					self:playcommand('PressStart') 
+				else 
+					self:playcommand('InsertCoin') 
+				end 
+			end"
+		InsertCoinCommand="hidden,1"
+		PressStartCommand="%
+			function(self)
+			self:hidden(0)
+			end"
+			
+			
+/>/>
+<Layer
+File="_common start button"
+InitCommand="hidden,1;shadowlength,0;diffuseshift;effectcolor1,#FFFFFF;effectcolor2,#858585;zoom,.7;effectclock,bgm;PlayCommand,Refresh"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-75"
+		CoinModeChangedMessageCommand="PlayCommand,Refresh"		
+
+RefreshCommand="%
+			function(self) 
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:hidden(0); return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				if coins&gt;=coinsPerCredit or GAMESTATE:GetCoinMode()==COIN_MODE_FREE then 
+					self:playcommand('PressStart') 
+				else 
+					self:playcommand('InsertCoin') 
+				end 
+			end"
+		InsertCoinCommand="hidden,1"
+		PressStartCommand="%
+			function(self)
+			self:hidden(0)
+			end"
+			
+			
+/>/>
+<Layer
+File="_common glow start button"
+InitCommand="hidden,1;additiveblend,1;shadowlength,0;diffuseshift;effectcolor1,#6BFF75;effectcolor2,#FFFFFF00;zoom,.7;effectclock,bgm;PlayCommand,Refresh"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-75"
+		CoinModeChangedMessageCommand="PlayCommand,Refresh"		
+
+RefreshCommand="%
+			function(self) 
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:hidden(0); return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				if coins&gt;=coinsPerCredit or GAMESTATE:GetCoinMode()==COIN_MODE_FREE then 
+					self:playcommand('PressStart') 
+				else 
+					self:playcommand('InsertCoin') 
+				end 
+			end"
+		InsertCoinCommand="hidden,1"
+		PressStartCommand="%
+			function(self)
+			self:hidden(0)
+			end"
+			
+			
+/>/>
+
+
+</children></ActorFrame>

@@ -1,0 +1,84 @@
+<ActorFrame><children>
+	
+	<ActorFrame
+
+InitCommand="x,SCREEN_LEFT+42;y,SCREEN_CENTER_Y;PlayCommand,Bob"
+BobCommand="accelerate,.75;addx,-2;decelerate,.75;addx,-2;accelerate,.75;addx,2;decelerate,.75;addx,2;queuecommand,Bob"
+
+><children>
+
+<AutoActor
+		
+File="arrow"
+		OnCommand="zoom,0.8;addx,-200;decelerate,0.5;addx,200"
+		MenuLeftP1MessageCommand="playcommand,Blink"
+		MenuLeftP2MessageCommand="playcommand,Blink"
+		BlinkCommand="finishtweening;zoom,1.2;glow,1,1,1,1;linear,0.2;glow,1,1,1,0;zoom,0.8"
+		MadeChoiceP1MessageCommand="playcommand,GoOff"
+		MadeChoiceP2MessageCommand="playcommand,GoOff"
+		GoOffCommand="zbuffer,1;accelerate,0.5;addx,-300"	/>
+	
+
+
+
+
+
+<AutoActor
+		
+File="glow"
+		InitCommand="additiveblend,1;"
+	OnCommand="diffusealpha,0;zoom,0.8;addx,-200;decelerate,0.5;addx,200"
+	MenuLeftP1MessageCommand="playcommand,Blink"
+		MenuLeftP2MessageCommand="playcommand,Blink"
+		BlinkCommand="finishtweening;zoom,1.2;diffusealpha,1;linear,0.4;diffusealpha,0;zoom,0.8"
+		MadeChoiceP1MessageCommand="playcommand,GoOff"
+		MadeChoiceP2MessageCommand="playcommand,GoOff"
+		GoOffCommand="zbuffer,1;accelerate,0.5;addx,-300"	/>
+
+</children></ActorFrame>
+
+
+
+
+
+<ActorFrame
+
+InitCommand="x,SCREEN_RIGHT-218;y,SCREEN_CENTER_Y;PlayCommand,Bob"
+BobCommand="accelerate,.75;addx,2;decelerate,.75;addx,2;accelerate,.75;addx,-2;decelerate,.75;addx,-2;queuecommand,Bob"
+
+><children>
+
+
+
+<AutoActor
+		
+File="arrow"
+		InitCommand="RotationZ,180"
+	OnCommand="zoom,0.8;addx,200;decelerate,0.5;addx,-200"
+		MenuRightP1MessageCommand="playcommand,Blink"
+		MenuRightP2MessageCommand="playcommand,Blink"
+		BlinkCommand="finishtweening;zoom,1.2;glow,1,1,1,1;linear,0.2;glow,1,1,1,0;zoom,0.8"
+		MadeChoiceP1MessageCommand="playcommand,GoOff"
+		MadeChoiceP2MessageCommand="playcommand,GoOff"
+		GoOffCommand="zbuffer,1;accelerate,0.5;addx,300"
+	/>
+<AutoActor
+		
+File="glow"
+		InitCommand="additiveblend,1;RotationZ,180"
+	
+OnCommand="diffusealpha,0;zoom,0.8;addx,200;decelerate,0.5;addx,-200"
+	MenuRightP1MessageCommand="playcommand,Blink"
+		MenuRightP2MessageCommand="playcommand,Blink"
+		BlinkCommand="finishtweening;zoom,1.2;diffusealpha,1;linear,0.4;diffusealpha,0;zoom,0.8"
+		MadeChoiceP1MessageCommand="playcommand,GoOff"
+		MadeChoiceP2MessageCommand="playcommand,GoOff"
+		GoOffCommand="zbuffer,1;accelerate,0.5;addx,300"
+	/>
+
+
+</children></ActorFrame>
+
+
+</children></ActorFrame>
+

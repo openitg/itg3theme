@@ -1,0 +1,16 @@
+<ActorFrame>
+	<children>
+		
+		<Layer
+		Type="Quad"
+		InitCommand="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM"
+		OnCommand="diffusealpha,.4"
+	/>
+	
+				<Layer
+					File="announce.png"
+					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;addy,-SCREEN_HEIGHT;decelerate,.4;addy,SCREEN_HEIGHT;"
+				/>
+				
+	</children>
+</ActorFrame>

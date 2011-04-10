@@ -1,0 +1,163 @@
+<ActorFrame><children>
+
+<Layer
+File="../_overlay/cardstats.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+155;sleep,2;accelerate,.3;addx,300;"
+/>
+
+<Layer
+File="../_overlay/p2card.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="x,SCREEN_RIGHT-60;y,SCREEN_CENTER_Y+165;diffusealpha,.6;sleep,2;accelerate,.3;addx,300;"
+/>
+<!-- Player 1 card pane -->
+
+<Layer
+File="../_overlay/cardstats.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+155;sleep,2;accelerate,.3;addx,-300;"
+/>
+
+<Layer
+File="../_overlay/p1card.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="x,SCREEN_LEFT+60;y,SCREEN_CENTER_Y+165;diffusealpha,.6;sleep,2;accelerate,.3;addx,-300;"
+/>
+
+<!-- player names -->
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+Font="_r bold 30px"
+Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+87"
+OnCommand="diffusetopedge,#fff000;diffusebottomedge,#ffa500;shadowlength,2;horizalign,center;zoom,.8;sleep,2;accelerate,.3;addx,-300;"
+/> 
+
+ <Layer
+ Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+Font="_r bold 30px"
+Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+87"
+OnCommand="diffusetopedge,#fffb81;diffusebottomedge,#bcff04;shadowlength,2;horizalign,center;zoom,.8;sleep,2;accelerate,.3;addx,300;"
+/>
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+Font="_v profile"
+Text="@profilesongs(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT+148;y,SCREEN_CENTER_Y+162"
+OnCommand="shadowlength,2;horizalign,center;zoom,.8;linear,.2;diffusealpha,.8;sleep,1.8;accelerate,.3;addx,-300;"
+/> 
+
+
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+Font="_v profile"
+Text="@profilesongs(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT-148;y,SCREEN_CENTER_Y+162"
+OnCommand="shadowlength,2;horizalign,center;zoom,.8;linear,.2;diffusealpha,.8;sleep,1.8;accelerate,.3;addx,300;"
+/> 
+<Layer
+File="../_overlay/check.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+125;cropright,1;linear,.3;cropright,0;sleep,1.7;accelerate,.3;addx,-300;"
+/>
+
+
+
+<Layer
+File="../_overlay/check.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+125;cropright,1;linear,.3;cropright,0;sleep,1.7;accelerate,.3;addx,300;"
+/>
+
+
+
+
+
+
+<!-- Awards -->
+
+<!-- P1 -->
+
+
+<Layer
+File="../_overlay/achpane"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT+242;y,SCREEN_CENTER_Y+155;"
+OnCommand="sleep,1.25;accelerate,.3;cropleft,1;addx,-54;"
+/>
+
+<Layer
+File="../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="horizalign,center;animate,0;x,SCREEN_LEFT+238;y,SCREEN_CENTER_Y+103+34*0;zoom,.55;playcommand,Update"
+UpdateCommand="%function(self,parent) StarIcon(self, PLAYER_1) self:sleep(.9) self:bouncebegin(0.4) self:zoom(0) end"
+/>
+
+<Layer
+File="../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="zoom,.55;horizalign,center;animate,0;x,SCREEN_LEFT+235;y,SCREEN_CENTER_Y+103+34*1;playcommand,Update"
+UpdateCommand="%function(self,parent) QuadIcon(self, PLAYER_1) self:sleep(.95) self:bouncebegin(0.4) self:zoom(0) end"
+/>
+
+<Layer
+File="../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="zoom,.55;horizalign,center;animate,0;x,SCREEN_LEFT+238;y,SCREEN_CENTER_Y+103+34*2;playcommand,Update"
+UpdateCommand="%function(self,parent) PercentIcon(self, PLAYER_1) self:sleep(1) self:bouncebegin(0.4) self:zoom(0) end"
+/>
+
+<Layer
+File="../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="zoom,.55;horizalign,center;animate,0;x,SCREEN_LEFT+238;y,SCREEN_CENTER_Y+105+34*3;playcommand,Update"
+UpdateCommand="%function(self,parent) CalorieIcon(self, PLAYER_1) self:sleep(1.05) self:bouncebegin(0.4) self:zoom(0) end"
+/>
+
+
+<!-- P2 -->
+
+
+<Layer
+File="../_overlay/rachpane"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT-242;y,SCREEN_CENTER_Y+155;"
+OnCommand="cropright,0;sleep,1.25;accelerate,.3;cropright,1;addx,54;"
+/>
+
+<Layer
+File="../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="horizalign,center;animate,0;x,SCREEN_RIGHT-238;y,SCREEN_CENTER_Y+103+34*0;zoom,.55;playcommand,Update"
+UpdateCommand="%function(self,parent) StarIcon(self, PLAYER_2) self:sleep(.9) self:bouncebegin(0.4) self:zoom(0) end"
+/>
+
+<Layer
+File="../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="zoom,.55;horizalign,center;animate,0;x,SCREEN_RIGHT-235;y,SCREEN_CENTER_Y+103+34*1;playcommand,Update"
+UpdateCommand="%function(self,parent) QuadIcon(self, PLAYER_2) self:sleep(.95) self:bouncebegin(0.4) self:zoom(0) end"
+/>
+
+<Layer
+File="../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="zoom,.55;horizalign,center;animate,0;x,SCREEN_RIGHT-238;y,SCREEN_CENTER_Y+103+34*2;playcommand,Update"
+UpdateCommand="%function(self,parent) PercentIcon(self, PLAYER_2) self:sleep(1.) self:bouncebegin(0.4) self:zoom(0) end"
+/>
+
+<Layer
+File="../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="zoom,.55;horizalign,center;animate,0;x,SCREEN_RIGHT-238;y,SCREEN_CENTER_Y+105+34*3;playcommand,Update"
+UpdateCommand="%function(self,parent) CalorieIcon(self, PLAYER_2) self:sleep(1.05) self:bouncebegin(0.4) self:zoom(0) end"
+/>
+
+
+
+
+
+
+</children></ActorFrame>

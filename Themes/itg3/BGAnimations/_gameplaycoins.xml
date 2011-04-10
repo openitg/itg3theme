@@ -1,0 +1,25 @@
+<ActorFrame><children>
+<Layer		
+Font="_v 26px bold white"
+Text="???"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-16;horizalign,center;shadowlength,2;zoom,.5;PlayCommand,Refresh"
+RefreshCommand="%
+			function(self)
+				if GAMESTATE:IsEventMode() then self:settext('EVENT MODE') return end
+				if GAMESTATE:GetCoinMode()==COIN_MODE_FREE then self:settext('FREE PLAY') return end
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:settext('') return end
+				local coins=GAMESTATE:GetCoins()
+				local coinsPerCredit=PREFSMAN:GetPreference('CoinsPerCredit')
+				local credits=math.floor(coins/coinsPerCredit)
+				local remainder=math.mod(coins,coinsPerCredit)
+				local s='CREDIT(S) :  '
+				if credits&gt;0 then s=s..credits..'  ' end
+				s=s..remainder..'/'..coinsPerCredit
+				self:settext(s)
+			end"
+CoinInsertedMessageCommand="PlayCommand,Refresh"		
+CoinModeChangedMessageCommand="PlayCommand,Refresh"
+OffCommand=""		
+	/>		
+	</children>
+</ActorFrame>

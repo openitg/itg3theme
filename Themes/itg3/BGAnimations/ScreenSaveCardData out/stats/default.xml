@@ -1,0 +1,266 @@
+<ActorFrame><children>
+
+
+<!-- Player 1 card pane -->
+<Layer
+File="../../_overlay/cardstats.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+155;croptop,.5;cropbottom,.5;sleep,1.15;accelerate,.15;croptop,.25;cropbottom,.25;decelerate,.2;croptop,0;cropbottom,0;"
+/>
+
+<Layer
+File="../../_overlay/p1card.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="x,SCREEN_LEFT+60;y,SCREEN_CENTER_Y+165;diffusealpha,0;sleep,1.5;linear,.3;diffusealpha,.6;"
+/>
+
+
+<Layer
+File="horiz-line"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+155;cropleft,.5;cropright,.5;sleep,1;accelerate,.15;cropleft,0;cropright,0;accelerate,.15;addy,-43;decelerate,.2;addy,-43;diffusealpha,0"
+/>
+
+
+<Layer
+File="horiz-line"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+155;cropleft,.5;cropright,.5;sleep,1;accelerate,.15;cropleft,0;cropright,0;accelerate,.15;addy,43;decelerate,.2;addy,43;diffusealpha,0"
+/>
+
+<!-- Player 2 card pane -->
+<Layer
+File="../../_overlay/cardstats.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+155;croptop,.5;cropbottom,.5;sleep,1.15;accelerate,.15;croptop,.25;cropbottom,.25;decelerate,.2;croptop,0;cropbottom,0;"
+/>
+
+
+<Layer
+File="horiz-line"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+155;cropleft,.5;cropright,.5;sleep,1;accelerate,.15;cropleft,0;cropright,0;accelerate,.15;addy,-43;decelerate,.2;addy,-43;diffusealpha,0"
+/>
+
+
+<Layer
+File="horiz-line"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+155;cropleft,.5;cropright,.5;sleep,1;accelerate,.15;cropleft,0;cropright,0;accelerate,.15;addy,43;decelerate,.2;addy,43;diffusealpha,0"
+/>
+
+
+<Layer
+File="../../_overlay/p2card.png"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="x,SCREEN_RIGHT-60;y,SCREEN_CENTER_Y+165;diffusealpha,0;sleep,1.5;linear,.3;diffusealpha,.6;"
+/>
+
+
+<!-- Player names -->
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+Font="_r bold 30px"
+Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+87"
+OnCommand="diffusetopedge,#fff000;diffusebottomedge,#ffa500;shadowlength,2;horizalign,center;zoom,.8;diffusealpha,0;sleep,1.4;linear,.2;diffusealpha,1;"
+/> 
+
+ <Layer
+ Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+Font="_r bold 30px"
+Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+87"
+OnCommand="diffusetopedge,#fffb81;diffusebottomedge,#bcff04;shadowlength,2;horizalign,center;zoom,.8;diffusealpha,0;sleep,1.4;linear,.2;diffusealpha,1;"
+/>
+
+
+<!-- Song info -->
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+Font="_v profile"
+Text="@profilesongs(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT+148;y,SCREEN_CENTER_Y+162"
+OnCommand="shadowlength,2;horizalign,center;zoom,.8;diffusealpha,0;sleep,1.65;linear,.2;diffusealpha,1;"
+/> 
+
+
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+Font="_v profile"
+Text="@profilesongs(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT-148;y,SCREEN_CENTER_Y+162"
+OnCommand="shadowlength,2;horizalign,center;zoom,.8;diffusealpha,0;sleep,1.65;linear,.2;diffusealpha,1;"
+/> 
+
+
+
+<!-- Awards -->
+
+<!-- P1 -->
+
+
+<Layer
+File="../../_overlay/achpane"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT+242;y,SCREEN_CENTER_Y+155;"
+OnCommand="addx,-54;cropleft,1;sleep,.7+.7;decelerate,.3;addx,54;cropleft,0;"
+/>
+
+<Layer
+File="../../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="horizalign,center;animate,0;x,SCREEN_LEFT+238;y,SCREEN_CENTER_Y+103+34*0;zoom,0;sleep,1.35+.5;playcommand,Update"
+UpdateCommand="%function(self,parent) StarIcon(self, PLAYER_1) self:bounceend(0.4) self:zoom(.55) end"
+/>
+
+<Layer
+File="../../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="zoom,0;horizalign,center;animate,0;x,SCREEN_LEFT+235;y,SCREEN_CENTER_Y+103+34*1;sleep,1.40+.5;playcommand,Update"
+UpdateCommand="%function(self,parent) QuadIcon(self, PLAYER_1) self:bounceend(0.4) self:zoom(.55) end"
+/>
+
+<Layer
+File="../../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="zoom,0;horizalign,center;animate,0;x,SCREEN_LEFT+238;y,SCREEN_CENTER_Y+103+34*2;sleep,1.45+.5;playcommand,Update"
+UpdateCommand="%function(self,parent) PercentIcon(self, PLAYER_1) self:bounceend(0.4) self:zoom(.55) end"
+/>
+
+<Layer
+File="../../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="zoom,0;horizalign,center;animate,0;x,SCREEN_LEFT+238;y,SCREEN_CENTER_Y+105+34*3;sleep,1.50+.5;playcommand,Update"
+UpdateCommand="%function(self,parent) CalorieIcon(self, PLAYER_1) self:bounceend(0.4) self:zoom(.55) end"
+/>
+
+
+<!-- P2 -->
+
+
+<Layer
+File="../../_overlay/rachpane"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT-242;y,SCREEN_CENTER_Y+155;"
+OnCommand="addx,54;cropright,1;sleep,.7+.7;decelerate,.3;addx,-54;cropright,0;"
+/>
+
+<Layer
+File="../../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="horizalign,center;animate,0;x,SCREEN_RIGHT-238;y,SCREEN_CENTER_Y+103+34*0;zoom,0;sleep,1.35+.5;playcommand,Update"
+UpdateCommand="%function(self,parent) StarIcon(self, PLAYER_2) self:bounceend(0.4) self:zoom(.55) end"
+/>
+
+<Layer
+File="../../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="zoom,0;horizalign,center;animate,0;x,SCREEN_RIGHT-235;y,SCREEN_CENTER_Y+103+34*1;sleep,1.40+.5;playcommand,Update"
+UpdateCommand="%function(self,parent) QuadIcon(self, PLAYER_2) self:bounceend(0.4) self:zoom(.55) end"
+/>
+
+<Layer
+File="../../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="zoom,0;horizalign,center;animate,0;x,SCREEN_RIGHT-238;y,SCREEN_CENTER_Y+103+34*2;sleep,1.45+.5;playcommand,Update"
+UpdateCommand="%function(self,parent) PercentIcon(self, PLAYER_2) self:bounceend(0.4) self:zoom(.55) end"
+/>
+
+<Layer
+File="../../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="zoom,0;horizalign,center;animate,0;x,SCREEN_RIGHT-238;y,SCREEN_CENTER_Y+105+34*3;sleep,1.50+.5;playcommand,Update"
+UpdateCommand="%function(self,parent) CalorieIcon(self, PLAYER_2) self:bounceend(0.4) self:zoom(.55) end"
+/>
+
+
+
+
+<Layer
+File="../../_overlay/awards"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="zoom,0;horizalign,center;animate,0;x,SCREEN_RIGHT-238;y,SCREEN_CENTER_Y+105+34*3;sleep,1.50+.5;playcommand,Update"
+UpdateCommand="%function(self,parent) CalorieIcon(self, PLAYER_2) self:bounceend(0.4) self:zoom(.55) end"
+/>
+
+
+
+
+
+
+
+
+
+
+<!-- Award information -->
+<Layer
+File="../../_overlay/joinin"
+OnCommand="horizalign,right;zoomx,-1;x,SCREEN_LEFT;y,SCREEN_TOP+60;addx,-280;sleep,1.3;decelerate,.3;addx,280;"
+/>
+
+<Layer
+File="../../_overlay/joinin"
+OnCommand="horizalign,right;zoomx,-1;x,SCREEN_LEFT;y,SCREEN_TOP+140;addx,-280;sleep,1.3;decelerate,.3;addx,280;"
+/>
+
+
+<Layer
+File="../../_overlay/joinin"
+OnCommand="horizalign,right;x,SCREEN_RIGHT;y,SCREEN_TOP+60;addx,280;sleep,1.3;decelerate,.3;addx,-280;"
+/>
+
+<Layer
+File="../../_overlay/joinin"
+OnCommand="horizalign,right;x,SCREEN_RIGHT;y,SCREEN_TOP+140;addx,280;sleep,1.3;decelerate,.3;addx,-280;"
+/>
+<Layer
+File="../../_overlay/awards"
+OnCommand="horizalign,center;animate,0;x,SCREEN_LEFT+30;y,SCREEN_TOP+60;zoom,.55;setstate,4;diffusealpha,.7;addx,-280;sleep,1.3;decelerate,.3;addx,280;"
+/>
+<Layer
+Font="_v profile"
+Text="SX Star Count: 10, 25, 50, 100"
+InitCommand="x,SCREEN_LEFT+55;y,SCREEN_TOP+60;horizalign,left;shadowlength,0;zoom,.8;addx,-280;sleep,1.3;decelerate,.3;addx,280;"
+/> 
+<Layer
+File="../../_overlay/awards"
+OnCommand="horizalign,center;animate,0;x,SCREEN_LEFT+30;y,SCREEN_TOP+140;zoom,.55;setstate,8;diffusealpha,.7;addx,-280;sleep,1.3;decelerate,.3;addx,280;"
+/>
+<Layer
+Font="_v profile"
+Text="Expert Quads: 10, 25, 50, 100"
+InitCommand="x,SCREEN_LEFT+55;y,SCREEN_TOP+140;horizalign,left;shadowlength,0;zoom,.8;addx,-280;sleep,1.3;decelerate,.3;addx,280;"
+/> 
+<Layer
+File="../../_overlay/awards"
+OnCommand="horizalign,center;animate,0;x,SCREEN_RIGHT-247;y,SCREEN_TOP+60;zoom,.55;setstate,0;diffusealpha,.7;addx,280;sleep,1.3;decelerate,.3;addx,-280;"
+/>
+<Layer
+Font="_v profile"
+Text=": 500, 2.5k, 7.5k, 15k"
+InitCommand="x,SCREEN_RIGHT-10;y,SCREEN_TOP+60;horizalign,right;shadowlength,0;zoom,.8;addx,280;sleep,1.3;decelerate,.3;addx,-280;"
+/> 
+<Layer
+Font="_v profile"
+Text="Total % of"
+InitCommand="x,SCREEN_RIGHT-226;y,SCREEN_TOP+55;horizalign,left;shadowlength,0;zoom,.6;addx,280;sleep,1.3;decelerate,.3;addx,-280;"
+/> 
+<Layer
+Font="_v profile"
+Text="passed SX"
+InitCommand="x,SCREEN_RIGHT-228;y,SCREEN_TOP+67;horizalign,left;shadowlength,0;zoom,.6;addx,280;sleep,1.3;decelerate,.3;addx,-280;"
+/> 
+<Layer
+File="../../_overlay/awards"
+OnCommand="horizalign,center;animate,0;x,SCREEN_RIGHT-247;y,SCREEN_TOP+140;zoom,.55;setstate,12;diffusealpha,.7;addx,280;sleep,1.3;decelerate,.3;addx,-280;"
+/>
+<Layer
+Font="_v profile"
+Text="Calories: .25k, .75k, 1.5k, 3k"
+InitCommand="x,SCREEN_RIGHT-10;y,SCREEN_TOP+140;horizalign,right;shadowlength,0;zoom,.8;addx,280;sleep,1.3;decelerate,.3;addx,-280;"
+/> 
+
+
+
+</children></ActorFrame>
