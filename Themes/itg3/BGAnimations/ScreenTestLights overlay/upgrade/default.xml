@@ -1,0 +1,141 @@
+<ActorFrame><children>
+	<!-- Base cabinet -->
+	<Layer
+		File="cabinet"
+		InitCommand="x,SCREEN_LEFT+140;y,SCREEN_CENTER_Y-18"
+		OnCommand="additiveblend,1"
+	/>
+
+	<!-- Base pads -->
+	<Layer
+		File="floor"
+		InitCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y-40"
+	/>
+	<Layer
+		File="floor"
+		InitCommand="x,SCREEN_RIGHT-140;y,SCREEN_CENTER_Y-40"
+	/>
+
+	<!-- Halogen flashes -->
+	<Layer
+		File="halogen"
+		InitCommand="diffusealpha,0;x,SCREEN_LEFT+55;y,SCREEN_CENTER_Y-193;additiveblend,1"
+		MarqueeUpLeftOnMessageCommand="finishtweening;accelerate,.085;diffusealpha,1"
+		MarqueeUpLeftOffMessageCommand="finishtweening;decelerate,.15;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		File="halogen"
+		InitCommand="diffusealpha,0;x,SCREEN_LEFT+55;y,SCREEN_CENTER_Y-138;additiveblend,1"
+		MarqueeLrLeftOnMessageCommand="finishtweening;accelerate,.085;diffusealpha,1"
+		MarqueeLrLeftOffMessageCommand="finishtweening;decelerate,.15;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		File="halogen"
+		InitCommand="diffusealpha,0;x,SCREEN_LEFT+226;y,SCREEN_CENTER_Y-193;additiveblend,1"
+		MarqueeUpRightOnMessageCommand="finishtweening;accelerate,.085;diffusealpha,1"
+		MarqueeUpRightOffMessageCommand="finishtweening;decelerate,.15;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		File="halogen"
+		InitCommand="diffusealpha,0;x,SCREEN_LEFT+226;y,SCREEN_CENTER_Y-138;additiveblend,1"
+		MarqueeLrRightOnMessageCommand="finishtweening;accelerate,.085;diffusealpha,1"
+		MarqueeLrRightOffMessageCommand="finishtweening;decelerate,.15;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+
+	<!-- Buttons flashes -->
+	<Layer
+		File="buttons"
+		InitCommand="diffusealpha,0;x,SCREEN_LEFT+111;y,SCREEN_CENTER_Y+3.75"
+		ButtonsLeftOnMessageCommand="stoptweening;linear,.03;diffusealpha,1"
+		ButtonsLeftOffMessageCommand="finishtweening;decelerate,.02;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		File="buttons"
+		InitCommand="diffusealpha,0;x,SCREEN_LEFT+171;y,SCREEN_CENTER_Y+3.75"
+		ButtonsRightOnMessageCommand="stoptweening;linear,.03;diffusealpha,1"
+		ButtonsRightOffMessageCommand="finishtweening;decelerate,.02;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+
+	<!-- Bass light flashes -->
+	<ActorFrame><children>
+	<Layer
+		File="neon"
+		InitCommand="diffusealpha,0;x,SCREEN_LEFT+76;y,SCREEN_CENTER_Y+105"
+		BassOnMessageCommand="stoptweening;linear,.03;diffusealpha,1"
+		BassOffMessageCommand="finishtweening;decelerate,.02;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		File="neon"
+		InitCommand="diffusealpha,0;x,SCREEN_LEFT+204;y,SCREEN_CENTER_Y+105"
+		BassOnMessageCommand="stoptweening;linear,.03;diffusealpha,1"
+		BassOffMessageCommand="finishtweening;decelerate,.02;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+
+	<!-- P1 pad lights -->
+	<Layer
+		File="arrow_blue"
+		InitCommand="diffusealpha,0;x,SCREEN_RIGHT-322;y,SCREEN_CENTER_Y-47;additiveblend,1"
+		P1LeftOnMessageCommand="stoptweening;linear,.03;diffusealpha,1"
+		P1LeftOffMessageCommand="finishtweening;decelerate,.02;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		File="arrow_blue"
+		InitCommand="diffusealpha,0;zoomx,-1;x,SCREEN_RIGHT-238;y,SCREEN_CENTER_Y-47;additiveblend,1"
+		P1RightOnMessageCommand="stoptweening;linear,.03;diffusealpha,1"
+		P1RightOffMessageCommand="finishtweening;decelerate,.02;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		File="arrow_red"
+		InitCommand="diffusealpha,0;x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y-89;additiveblend,1"
+		P1UpOnMessageCommand="stoptweening;linear,.03;diffusealpha,1"
+		P1UpOffMessageCommand="finishtweening;decelerate,.02;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		File="arrow_red"
+		InitCommand="diffusealpha,0;zoomy,-1;x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y-5;additiveblend,1"
+		P1DownOnMessageCommand="stoptweening;linear,.03;diffusealpha,1"
+		P1DownOffMessageCommand="finishtweening;decelerate,.02;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+
+	<!-- P2 pad lights -->
+	<Layer
+		File="arrow_blue"
+		InitCommand="diffusealpha,0;x,SCREEN_RIGHT-182;y,SCREEN_CENTER_Y-47;additiveblend,1"
+		P2LeftOnMessageCommand="stoptweening;linear,.03;diffusealpha,1"
+		P2LeftOffMessageCommand="finishtweening;decelerate,.02;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		File="arrow_blue"
+		InitCommand="diffusealpha,0;zoomx,-1;x,SCREEN_RIGHT-98;y,SCREEN_CENTER_Y-47;additiveblend,1"
+		P2RightOnMessageCommand="stoptweening;linear,.03;diffusealpha,1"
+		P2RightOffMessageCommand="finishtweening;decelerate,.02;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+	File="arrow_red"
+		InitCommand="diffusealpha,0;x,SCREEN_RIGHT-140;y,SCREEN_CENTER_Y-89;additiveblend,1"
+		P2UpOnMessageCommand="stoptweening;linear,.03;diffusealpha,1"
+		P2UpOffMessageCommand="finishtweening;decelerate,.02;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		File="arrow_red"
+		InitCommand="diffusealpha,0;zoomy,-1;x,SCREEN_RIGHT-140;y,SCREEN_CENTER_Y-5;additiveblend,1"
+		P2DownOnMessageCommand="stoptweening;linear,.03;diffusealpha,1"
+		P2DownOffMessageCommand="finishtweening;decelerate,.02;diffusealpha,0"
+		OffCommand="stoptweening"
+	/>
+</children></ActorFrame>
