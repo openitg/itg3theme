@@ -1,5 +1,4 @@
 -- Override these in other themes.
-
 function SongModifiers()
 	if OPENITG then 
 		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR and not GAMESTATE:PlayerUsingBothSides() then
@@ -24,19 +23,19 @@ function oitgACoptions()
 	return "1,2,3,4,5,6,7,8,114,113,46,47,13"
 end
 
---function oitgoptions()
---	if OPENITG then return "1,20,2,21,3,17,4,5,6,7,8,9,10,11,12,13,14,19,18" end
---	return "1,2,3,17,4,5,6,7,8,9,10,11,12,13,14"
---end
-
 function Platform() return "arcade" end
 
+function IsPIUIO() return GetInputType() == "PIUIO`" end
+function IsITGIO() return GetInputType() == "ITGIO" end
+
+function IsArcadeIO() return IsPIUIO() or IsITGIO() end
+
 function SelectButtonAvailable()
-	if GetInputType() == "ITGIO" then return false end
-return true
+	return not IsITGIO()
 end
 
 function ShowForITGIO( actor )
+	
 	if GetInputType() == "ITGIO" then actor:hidden(0) 
 	elseif GetInputType() == "Home" then actor:hidden(1)
 	end
