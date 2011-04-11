@@ -1,0 +1,4 @@
+[Model]
+Meshes=shell.txt
+Materials=64th.txt
+Bones=shell.txt

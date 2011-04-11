@@ -1,0 +1,4 @@
+[Model]
+Meshes=cybermesh.txt
+Materials=cybermesh2.txt
+Bones=cybermesh.txt
