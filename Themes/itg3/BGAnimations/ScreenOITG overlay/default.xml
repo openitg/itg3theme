@@ -1,137 +1,35 @@
 ﻿<ActorFrame><children>
-	
-	
-	<ActorFrame Condition=ScreenOpenITG() InitCommand="zoom,.65;x,SCREEN_LEFT-15;y,SCREEN_CENTER_Y-SCREEN_HEIGHT/2.8"><children>
-	
+	<!-- OpenITG logo (obviously, used only on OpenITG) -->
 	<Layer
-		File="../_otherred"
-		InitCommand="horizalign,left;zoomy,.3;X,SCREEN_CENTER_X-120;y,SCREEN_CENTER_Y+30;ZoomToWidth,430;faderight,1"
-		OnCommand="addx,-430;cropleft,1;sleep,.6;decelerate,.3;cropleft,0;addx,430;"
-		
-		/>
-		
-		<Layer
-		File="../_otherred"
-		InitCommand="horizalign,left;zoomy,.3;X,SCREEN_CENTER_X-120;y,SCREEN_CENTER_Y+30;ZoomToWidth,430;faderight,1"
-		OnCommand="addx,-430;cropleft,1;sleep,.6;decelerate,.3;cropleft,0;addx,430;"
-		
-		/>
-		
-	
-	<Layer
-		File="arrow"
-		InitCommand="zoom,.8;X,SCREEN_CENTER_X-190;y,SCREEN_CENTER_Y-25;"
-		OnCommand="glow,1,1,1,1;addx,SCREEN_WIDTH/2;addy,SCREEN_HEIGHT/1.2;sleep,.2;decelerate,.5;addx,-SCREEN_WIDTH/2;addy,-SCREEN_HEIGHT/1.2;glow,1,1,1,0;wag;EffectMagnitude,4,0,4;EffectPeriod,8"
-		/>
-		<Layer
-		File="oitg"
-		InitCommand="zoom,.8;X,SCREEN_CENTER_X+90;y,SCREEN_CENTER_Y+30;"
-		OnCommand="cropright,1;faderight,1;sleep,.7;linear,.3;cropright,0;faderight,.1;linear,.03;faderight,0;"
-		/>
-		
-		
-		<Layer
-		File="oitgglow"
-		InitCommand="zoom,.8;X,SCREEN_CENTER_X+90;y,SCREEN_CENTER_Y+30;"
-		OnCommand="diffusealpha,.8;cropright,1;faderight,1;sleep,.7;linear,.3;cropright,0;faderight,.1;linear,.03;faderight,0;linear,.5;diffusealpha,0;"
-		/>
-		
-		
-	
-	
-	
-	
-	
-	<Layer
-		Type="BitmapText"
-		Font="_v profile"
-		Text="Powered by"
-		InitCommand="X,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-28;shadowlength,2;"
-		OnCommand="diffusealpha,0;sleep,1;linear,0.5;diffusealpha,1"
+		Condition="OPENITG"
+		File="openitg"
+		InitCommand="zoom,.65;x,SCREEN_LEFT-15;y,SCREEN_CENTER_Y-SCREEN_HEIGHT/2.8"
 	/>
-	
-	
+
+	<!-- Animated BoXoRRoXoRs logo -->
+	<!-- Use "BoXoR" command to init if on OpenITG, "RoXoR" on ITG2 -->
 	<Layer
-		Type="BitmapText"
-		Font="_v 26px bold shadow"
-		Text="http://github.com/openitg/"
-		InitCommand="X,SCREEN_CENTER_X+90;y,SCREEN_CENTER_Y+88;shadowlength,2;"
-		OnCommand="diffusealpha,0;sleep,1;linear,0.5;diffusealpha,1"
+		File="bxrx"
+		BoXoRCommand="zoom,.6;x,SCREEN_RIGHT-SCREEN_WIDTH/3.3;y,SCREEN_BOTTOM-150"
+		RoXoRCommand="zoom,.9;x,SCREEN_RIGHT-SCREEN_WIDTH/2;y,SCREEN_BOTTOM-190"
+		InitCommand="%function(self) self:playcommand(OPENITG and 'BoXoR' or 'RoXoR') end"
 	/>
-	
-	
-	
-	
 
-		
-		
-		
-		
-		
-		
-		
-		
-
-		
-		</children></ActorFrame>
-		
-	
-		
-		
-		
-			<ActorFrame InitCommand=@AdBx()>
-			<children>
-
-		
-		
-		<Layer
-		File="wipe"
-		OnCommand="cropright,1;faderight,1;y,27;sleep,2.7;linear,0.5;cropright,0;faderight,0;"
-		
-		/> 
-		
-		
-		<Layer
-		File="bx"
-		OnCommand="diffusealpha,0;sleep,2.6;linear,.4;diffusealpha,1;"
-		
-		/> 
-		
-		<Layer
-		File="b"
-		OnCommand="x,-35;zoom,1.6;diffusealpha,0;sleep,.8;linear,.8;diffusealpha,1;sleep,.4;decelerate,.7;zoom,1;addx,-193;sleep,1;linear,.7;diffusealpha,0;"
-		
-		/> 
-		
-		<Layer
-		File="r"
-		OnCommand="x,35;zoom,1.6;diffusealpha,0;sleep,.8;linear,.8;diffusealpha,1;sleep,.4;decelerate,.7;zoom,1;addx,-31;sleep,1;linear,.7;diffusealpha,0;"
-		
-		/> 
-			<Layer
-			Type="BitmapText"
-			Font="_v 26px bold shadow"
-			Text="www.boxorroxors.net"
-			InitCommand="zoom,1.2;y,52;shadowlength,2;"
-			OnCommand="zoom,.9;diffusealpha,0;sleep,3;linear,0.5;diffusealpha,1"
-			/>
-		</children>
-	</ActorFrame>
-						
-	<ActorFrame InitCommand=@AdITG3()>
-		<children>
-			<Layer
-			File="in the groove"
-			/> 		
-		</children>
-	</ActorFrame>
-		
-		
+	<!-- ITG3 logo -->
+	<!-- Use "BoXoR" command to init if on OpenITG, "RoXoR" on ITG2 -->
 	<Layer
-		Class="Quad"
-		OnCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,#FFFFFF;diffusealpha,1;sleep,0.1;accelerate,0.5;diffusealpha,0"
+		File="in the groove"
+		BoXoRCommand="zoom,.7;x,SCREEN_RIGHT-SCREEN_WIDTH/3;y,SCREEN_TOP+100"
+		RoXoRCommand="zoom,.8;x,SCREEN_RIGHT-SCREEN_WIDTH/2;y,SCREEN_TOP+120"
+		InitCommand="%function(self) self:playcommand(OPENITG and 'BoXoR' or 'RoXoR') end"
 	/>
-		<Layer
-		File="../ScreenAttract overlay"
-		/> 	
+
+	<!-- Full-screen fade in -->
+	<Quad
+		InitCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,#FFFFFF"
+		OnCommand="diffusealpha,1;sleep,0.1;accelerate,0.5;diffusealpha,0"
+	/>
+
+	<!-- Shared attract overlay -->
+	<Layer File="../ScreenAttract overlay" />
 </children></ActorFrame>
