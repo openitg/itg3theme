@@ -2,15 +2,15 @@
 <!-- Set some global values that store the total number of steps for each player.-->
 <ActorFrame
 OnCommand="%function(self)
-					if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
+					if GAMESTATE:IsHumanPlayer(PLAYER_1) then
 					local Selection = GAMESTATE:GetCurrentSteps(PLAYER_1);
 					P1TotalSteps = tonumber( Radar( Selection:GetRadarValues(),6 ) ); end
 					
-					if GAMESTATE:IsPlayerEnabled(PLAYER_2) then
+					if GAMESTATE:IsHumanPlayer(PLAYER_2) then
 					local SelectionP2 = GAMESTATE:GetCurrentSteps(PLAYER_2);
 					P2TotalSteps = tonumber( Radar( SelectionP2:GetRadarValues(),6 ) ); end
 					
-					end" >
+					end"
 > <children>
 <!--Enable the big frames if only one player is playing and not playing doubles-->
 	<ActorFrame
@@ -25,9 +25,11 @@ OnCommand="%function(self)
 		
 		<!-- Player 1 judgment pane -->
 		<ActorFrame
-			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and ShowStats(PLAYER_1) == 1"
+			Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats(PLAYER_1) == 1"
 			OnCommand="%function(self)
-					self:x(SCREEN_WIDTH/4);
+					self:x(SCREEN_WIDTH/4+(CustomMods[PLAYER_1].solo and 64 or 0));
+					self:y(CustomMods[PLAYER_1].solo and 34 or 0);
+					self:zoom(CustomMods[PLAYER_1].solo and .75 or 1)
 					self:addx(SCREEN_WIDTH/2);
 					self:decelerate(1);
 					self:addx(-SCREEN_WIDTH/2);
@@ -35,7 +37,7 @@ OnCommand="%function(self)
 			<children>
 			<Actor File="stats bg"/>		<!--Draw the BG image -->
 			<!-- Draw the text -->
-			<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+			<ActorFrame Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
 				OnCommand="addx,10"
 				StepP1MessageCommand="%function(self) SetJudgmentFrameForPlayer(self, PLAYER_1) end">
 				<children>
@@ -68,9 +70,11 @@ OnCommand="%function(self)
 		
 		<!-- Player 2 judgment pane -->
 		<ActorFrame
-			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and ShowStats(PLAYER_2) == 1"
+			Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1"
 			OnCommand="%function(self)
-					self:x(-SCREEN_WIDTH/4);
+					self:x(-SCREEN_WIDTH/4-(CustomMods[PLAYER_2].solo and 64 or 0));
+					self:y(CustomMods[PLAYER_2].solo and 34 or 0);
+					self:zoom(CustomMods[PLAYER_2].solo and .75 or 1)
 					self:addx(-SCREEN_WIDTH/2);
 					self:decelerate(1);
 					self:addx(SCREEN_WIDTH/2);
@@ -78,7 +82,7 @@ OnCommand="%function(self)
 			<children>
 			<Actor File="stats bg" InitCommand="zoomx,-1"/>		<!--Draw the BG image -->
 			<!-- Draw the text -->
-			<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+			<ActorFrame Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
 				OnCommand="addx,10"
 				StepP1MessageCommand="%function(self) SetJudgmentFrameForPlayer(self, PLAYER_2) end">
 				<children>
@@ -121,7 +125,7 @@ OnCommand="%function(self)
 		<children>	
 		<!-- Player 1's crap -->
 		<ActorFrame
-			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and ShowStats(PLAYER_1) == 1"
+			Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats(PLAYER_1) == 1"
 			OnCommand="%function(self)
 					self:x(SCREEN_LEFT+20+GetLifebarAdjustment()-SCREEN_WIDTH/2);
 					self:y(-154);
@@ -144,7 +148,7 @@ OnCommand="%function(self)
 		</children></ActorFrame>
 		<!-- Player 2's crap -->
 		<ActorFrame
-			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and ShowStats(PLAYER_2) == 1"
+			Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1"
 			OnCommand="%function(self)
 					self:x(SCREEN_RIGHT-20-GetLifebarAdjustment()-SCREEN_WIDTH/2);
 					self:y(-154);
@@ -166,14 +170,14 @@ OnCommand="%function(self)
 				UpdateCommand="%function(self) self:zoomy(GetNotesOtherHit(self,PLAYER_2) / P2TotalSteps) end" />
 		</children></ActorFrame>
 		
-	<BitmapText Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and ShowStats(PLAYER_1) == 1" OnCommand="horizalign,right;zoom,0.5;maxwidth,SCREEN_WIDTH/4.5;y,SCREEN_TOP+54+16*0-SCREEN_HEIGHT/2;addx,-10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesFantasticHit(self,PLAYER_1)) end" />
-	<BitmapText Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and ShowStats(PLAYER_1) == 1" OnCommand="horizalign,right;zoom,0.5;maxwidth,SCREEN_WIDTH/5;y,SCREEN_TOP+54+16*1-SCREEN_HEIGHT/2;addx,-10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesExcellentHit(self,PLAYER_1)) end" />
-	<BitmapText Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and ShowStats(PLAYER_1) == 1 and not (GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()==DIFFICULTY_BEGINNER or GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()==DIFFICULTY_BEGINNER)"
+	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats(PLAYER_1) == 1" OnCommand="horizalign,right;zoom,0.5;maxwidth,SCREEN_WIDTH/4.5;y,SCREEN_TOP+54+16*0-SCREEN_HEIGHT/2;addx,-10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesFantasticHit(self,PLAYER_1)) end" />
+	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats(PLAYER_1) == 1" OnCommand="horizalign,right;zoom,0.5;maxwidth,SCREEN_WIDTH/5;y,SCREEN_TOP+54+16*1-SCREEN_HEIGHT/2;addx,-10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesExcellentHit(self,PLAYER_1)) end" />
+	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats(PLAYER_1) == 1 and not (GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()==DIFFICULTY_BEGINNER or GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()==DIFFICULTY_BEGINNER)"
 	OnCommand="horizalign,right;zoom,0.5;maxwidth,SCREEN_WIDTH/7;y,SCREEN_TOP+54+16*2-SCREEN_HEIGHT/2;addx,-10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesOtherHit(self,PLAYER_1)) end" />
 	
-	<BitmapText Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and ShowStats(PLAYER_2) == 1" OnCommand="horizalign,left;zoom,0.5;maxwidth,SCREEN_WIDTH/4.5;y,SCREEN_TOP+54+16*0-SCREEN_HEIGHT/2;addx,10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesFantasticHit(self,PLAYER_2)) end" />
-	<BitmapText Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and ShowStats(PLAYER_2) == 1" OnCommand="horizalign,left;zoom,0.5;maxwidth,SCREEN_WIDTH/5;y,SCREEN_TOP+54+16*1-SCREEN_HEIGHT/2;addx,10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesExcellentHit(self,PLAYER_2)) end" />
-	<BitmapText Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and ShowStats(PLAYER_2) == 1 and not (GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()==DIFFICULTY_BEGINNER or GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()==DIFFICULTY_BEGINNER)"
+	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1" OnCommand="horizalign,left;zoom,0.5;maxwidth,SCREEN_WIDTH/4.5;y,SCREEN_TOP+54+16*0-SCREEN_HEIGHT/2;addx,10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesFantasticHit(self,PLAYER_2)) end" />
+	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1" OnCommand="horizalign,left;zoom,0.5;maxwidth,SCREEN_WIDTH/5;y,SCREEN_TOP+54+16*1-SCREEN_HEIGHT/2;addx,10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesExcellentHit(self,PLAYER_2)) end" />
+	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1 and not (GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()==DIFFICULTY_BEGINNER or GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()==DIFFICULTY_BEGINNER)"
 	OnCommand="horizalign,left;zoom,0.5;maxwidth,SCREEN_WIDTH/7;y,SCREEN_TOP+54+16*2-SCREEN_HEIGHT/2;addx,10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesOtherHit(self,PLAYER_2)) end" />
 	
 	<BitmapText Condition="ShowStats(PLAYER_1) == 1 or ShowStats(PLAYER_2) == 1" OnCommand="zoom,0.5;y,SCREEN_TOP+54+16*0-SCREEN_HEIGHT/2;shadowlength,0;diffuse,#b2f9ff" File="ScreenGameplay judgment" Text="F" />
@@ -200,7 +204,7 @@ OnCommand="%function(self)
 		<children>	
 		<!-- Player 1's crap -->
 		<ActorFrame
-			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and ShowStats(PLAYER_1) == 1"
+			Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats(PLAYER_1) == 1"
 			OnCommand="%function(self)
 					self:x(SCREEN_RIGHT-20-GetLifebarAdjustment()-SCREEN_WIDTH/2);
 					self:y(0);
@@ -227,7 +231,7 @@ OnCommand="%function(self)
 		</children></ActorFrame>
 		<!-- Player 2's crap -->
 		<ActorFrame
-			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and ShowStats(PLAYER_2) == 1"
+			Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1"
 			OnCommand="%function(self)
 					self:x(SCREEN_LEFT+20+GetLifebarAdjustment()-SCREEN_WIDTH/2);
 					self:y(0);

@@ -1086,3 +1086,59 @@ function OffsetLifebarHeight(pn)
 	else return "SCREEN_CENTER_Y+30" end
 end
 	
+
+function PercentageTween(self, wait, tweentype, size, startvalue, endvalue, animation, duration)
+--wait is sleep applied before animating, 
+--tweentype is either zoom or cropping with direction
+--size is the largest possible number that can fit in the area (ie, max value is 100, so a value of 100 would be 'full'),
+--start and end are the current values to tween between placed in the container size (if 65 and 70, with a size of 100, it would start by showing 65% and tween to 70%)
+--animation is the type of tweening,
+--duration is time to complete the animation.	
+--usage: PercentageTween(1, right, 100, 30, 60, decelerate, 5)
+
+local startpercent=startvalue/size
+local endpercent=endvalue/size
+
+--cropping gets start and end switched since the less you crop, the more you see
+	if string.find(tweentype,"crop") then
+
+		if tweentype == 'cropright' then
+			self:cropright(1-startpercent) 
+			self:sleep(wait)
+			self:decelerate(duration)
+			self:cropright(1-endpercent)
+		end
+	
+	
+	end
+
+end
+	
+function PercentageTween2(self, wait, tweentype, size, startvalue, endvalue, animation, duration)
+--wait is sleep applied before animating, 
+--tweentype is either zoom or cropping with direction
+--size is the largest possible number that can fit in the area (ie, max value is 100, so a value of 100 would be 'full'),
+--start and end are the current values to tween between placed in the container size (if 65 and 70, with a size of 100, it would start by showing 65% and tween to 70%)
+--animation is the type of tweening,
+--duration is time to complete the animation.	
+--usage: PercentageTween(1, right, 100, 30, 60, decelerate, 5)
+
+local startpercent=startvalue/size
+local endpercent=endvalue/size
+
+--cropping gets start and end switched since the less you crop, the more you see
+	if string.find(tweentype,"crop") then
+
+		if tweentype == 'cropright' then
+			self:cropright(1-startpercent) 
+			self:sleep(wait)
+			self:decelerate(duration)
+			self:cropright(1-endpercent)
+		end
+	
+	
+	end
+
+end
+	
+

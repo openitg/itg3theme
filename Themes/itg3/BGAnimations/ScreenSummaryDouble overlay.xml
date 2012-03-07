@@ -209,23 +209,23 @@
 			OnCommand="%function(self) self:x(SCREEN_CENTER_X); self:y(4); self:SetCurrentAndDestinationItem((self:GetNumChildren()-1)/2); end"
 		>
 			<children>
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 1" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy SingleDigitGreats')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 2" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak1000Combo')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 3" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak2000Combo')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 4" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak3000Combo')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 5" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Greats80Percent')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 6" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy FullComboGreats')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 7" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Greats90Percent')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 8" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy FullComboPerfects')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 9" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak4000Combo')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 10" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak5000Combo')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 11" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Greats100Percent')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 12" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy FullComboMarvelouses')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 13" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak6000Combo')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 14" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak7000Combo')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 15" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak8000Combo')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 16" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak9000Combo')" OnCommand="zoom,0.3" />
-				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentCompelte(),0,17) &gt;= 17" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak10000Combo')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 1" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy SingleDigitGreats')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 2" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak1000Combo')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 3" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak2000Combo')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 4" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak3000Combo')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 5" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Greats80Percent')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 6" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy FullComboGreats')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 7" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Greats90Percent')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 8" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy FullComboPerfects')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 9" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak4000Combo')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 10" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak5000Combo')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 11" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Greats100Percent')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 12" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy FullComboMarvelouses')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 13" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak6000Combo')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 14" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak7000Combo')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 15" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak8000Combo')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 16" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak9000Combo')" OnCommand="zoom,0.3" />
+				<AutoActor Condition="scale(GetTotalPercentComplete(STEPS_TYPE_DANCE_DOUBLE),1.0,GetMaxPercentComplete(),0,17) &gt;= 17" File="@THEME:GetPath(EC_GRAPHICS,'ScreenAward','trophy Peak10000Combo')" OnCommand="zoom,0.3" />
 			</children>
 		</ActorScroller>
 	</children></ActorFrame>
