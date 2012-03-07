@@ -271,7 +271,7 @@ function Field(pn)
 	local solo = "x,SCREEN_CENTER_X;"
 	local vibrate = "vibrate;effectmagnitude,20,20,20;"
 	local spin = "spin;EffectClock,beat;effectmagnitude,0,0,45;"
-	local bob = "bob;EffectClock,beat;;effectmagnitude,30,30,30"
+	local bob = "bob;EffectClock,beat;effectmagnitude,30,30,30;"
 	local pulse = "pulse;EffectClock,beat;"
 	local wag = "wag;EffectClock,beat;"
 	local spinreverse = "spin;EffectClock,beat;effectmagnitude,0,0,-45;"
