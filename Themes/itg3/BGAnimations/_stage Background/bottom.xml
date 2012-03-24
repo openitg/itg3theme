@@ -1,46 +1,53 @@
 <ActorFrame><children>
+
 <Layer
 File="_bottom"
 InitCommand="zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;accelerate,0.3;diffusealpha,1"
 />
+
 <Layer
 File="lines"
 InitCommand="zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;accelerate,0.3;diffusealpha,1"
 />
+
 <Layer
 Condition="not GAMESTATE:IsCourseMode()"
 File="songbanner"
 InitCommand="Additiveblend,1;fadetop,.3;croptop,.3;diffusetopedge,#FFFFFF00"
 OnCommand="scaletoclipped,293,114;rotationz,180;zoomx,-1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+103;ztest,1;diffusealpha,0;linear,1;y,SCREEN_CENTER_Y+70;diffusealpha,0.2"
 />
+
 <Layer
 Condition="GAMESTATE:IsCourseMode()"
 File="coursebanner"
 InitCommand="Additiveblend,1;fadetop,1;diffusetopedge,#FFFFFF00"
 OnCommand="scaletoclipped,293,114;rotationz,180;zoomx,-1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+103;ztest,1;diffusealpha,0;linear,1;y,SCREEN_CENTER_Y+70;diffusealpha,0.2"
 />
+
 <Layer
 File="_flaremask"
 InitCommand="zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;zbuffer,1;blend,noeffect"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
 />
+
 <Layer
 File="_flares"
 InitCommand="ztest,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
 OnCommand="%function(self)
  self:diffusealpha(1) self:zoom(1); self:linear(1) self:rotationz(-250) self:diffusealpha(0) end"
 />
+
 <Layer
 File="bar"
-Condition="not GAMESTATE:IsCourseMode()"
 InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+156"
 OnCommand="zoomtowidth,SCREEN_WIDTH;faderight,.8;fadeleft,.8;cropright,1;linear,.7;cropright,0"
 />
 
-
+<!-- song titles -->
 <Layer
+Condition="not GAMESTATE:IsCourseMode()"
 Font="_r bold 30px"
 Text="@GetSongTitle()"
 InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+147"
@@ -48,11 +55,20 @@ OnCommand="draworder,9999999;maxwidth,SCREEN_WIDTH/8*7;shadowlength,2;horizalign
 /> 	
 
 <Layer
+Condition="not GAMESTATE:IsCourseMode()"
 Font="_r bold 30px"
 Text="@GetSongArtist()"
 InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+167"
 OnCommand="draworder,9999999;maxwidth,SCREEN_WIDTH/8*6.8;shadowlength,2;horizalign,center;zoom,.4;diffusealpha,0;sleep,.1;linear,.3;diffusealpha,1;"
 /> 	
 
-</children></ActorFrame>
+<!-- course titles -->
+<Layer
+Condition="GAMESTATE:IsCourseMode()"
+Font="_r bold 30px"
+Text="@GetCourseTitle()"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+147"
+OnCommand="draworder,9999999;maxwidth,SCREEN_WIDTH/8*7;shadowlength,2;horizalign,center;zoom,.5;diffusealpha,0;sleep,.1;linear,.3;diffusealpha,1;"
+/>
 
+</children></ActorFrame>

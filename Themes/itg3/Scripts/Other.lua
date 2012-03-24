@@ -755,6 +755,20 @@ function GetCourseTitle()
 		course:GetDisplayFullTitle()
 end
 
+function GetCourseDifficulty(pn)
+
+local trail = GAMESTATE:GetCurrentTrail(pn)
+      
+	if trail:GetDifficulty() == 2 then
+	return "Normal" end
+
+	if trail:GetDifficulty() == 3 then
+	return "Intense" end
+
+	return
+		trail:GetDifficulty()
+end
+
 function GetSongLength()
 	local song = GAMESTATE:GetCurrentSong()
 	if not song then return "" end
