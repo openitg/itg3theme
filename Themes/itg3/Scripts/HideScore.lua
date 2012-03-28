@@ -12,7 +12,7 @@ end
 -- Do initial reset
 ResetCustomMods()
 
--- Tournament options; currently only has hidescore
+
 function OptionTournamentOptions()
 	local t = {
 		Name = "TournamentOptions",
@@ -89,8 +89,6 @@ function OptionShowModifiers()
 end
 
 
--- DarkLink's Custom Mods
-
 function AvailableArrowDirections()
 
 if GAMESTATE:GetNumPlayersEnabled() == 1 then return "Normal", "Left", "Right", "Upside-Down", "Solo-Centered"
@@ -127,7 +125,7 @@ function OptionOrientation()
 	return t
 end
 
--- More of DarkLink's Stuff.
+
 function OptionPlayfield()
 	local t = {
 		Name = "PlayfieldMods",
@@ -161,7 +159,6 @@ function OptionPlayfield()
 	return t
 end
 
--- Screen Filters
 
 function OptionsScreenFilter()
 	local t = {
@@ -216,13 +213,38 @@ end
 -- instead take advantage of the X combo offset.  See the [Player] section
 -- in metrics.ini.
 function GetComboXOffset(pn)
+	local ret = 0
+
+	-- Offset Combo for 2 Players on a 1 Player Song in Marathon Mode Only --
+	-- Necrofantasia -- -- Floating Darkness -- -- Model DD398 -- -- Perfect Cherry Storm -- -- Anger of YuYu -- -- Psy-Kaliber 2097 --
+	if (GAMESTATE:IsCourseMode() and (GetCourseTitle() == 'Extra Stage (Movie)' or GetCourseTitle() == 'Extra Stage (Forever)' or GetCourseTitle() == 'Extra Stage (Infinity)' or GetCourseTitle() == 'Extra Stage (Redemption)' or GetCourseTitle() == 'Extra Stage (SRT X)' or GetCourseTitle() == 'Extra Stage (SRT 9)')) then
+	if (GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsPlayerEnabled(PLAYER_2)) then
+	if pn == PLAYER_1 
+		then ret = "-SCREEN_WIDTH/4-8"
+		else ret = "-SCREEN_WIDTH*2+SCREEN_WIDTH/4+8"
+		end end end
+
 	if CustomMods[pn].hidecombo == true then
-		return "SCREEN_WIDTH*2" -- This is enough to hide it on either side
-	else
-		return 0 -- No offset
+		ret = "SCREEN_WIDTH*2" -- This is enough to hide it on either side
 	end
+
+	return ret
 end
 
+function GetJudgeXOffset(pn)
+	local ret = 0
+
+	-- Offset Judgements for 2 Players on a 1 Player Song in Marathon Mode Only -- 
+	-- Necrofantasia -- -- Floating Darkness -- -- Model DD398 -- -- Perfect Cherry Storm -- -- Anger of YuYu -- -- Psy-Kaliber 2097 --
+	if (GAMESTATE:IsCourseMode() and (GetCourseTitle() == 'Extra Stage (Movie)' or GetCourseTitle() == 'Extra Stage (Forever)' or GetCourseTitle() == 'Extra Stage (Infinity)' or GetCourseTitle() == 'Extra Stage (Redemption)' or GetCourseTitle() == 'Extra Stage (SRT X)' or GetCourseTitle() == 'Extra Stage (SRT 9)')) then
+	if (GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsPlayerEnabled(PLAYER_2)) then
+	if pn == PLAYER_1 
+		then ret = "-SCREEN_WIDTH/4-8"
+		else ret = "-SCREEN_WIDTH*2+SCREEN_WIDTH/4+8"
+		end end end
+
+	return ret
+end
 
 -- Returns 1 if ingame stats are shown, 0 otherwise
 function ShowStats(pn)
@@ -267,80 +289,11 @@ local SoloOffset = 0
 	return "hidden,1"
 end
 
-function Field(pn)
-	-- Local Variables for Easier Editing.
-	local s = "y,SCREEN_TOP+240;"
-	local left = "rotationz,270;"
-	local right = "rotationz,90;"
-	local upsidedown = "rotationz,180;addy,20;"
-	local solo = "x,SCREEN_CENTER_X;"
-	local vibrate = "vibrate;effectmagnitude,20,20,20;"
-	local spin = "spin;EffectClock,beat;effectmagnitude,0,0,45;"
-	local bob = "bob;EffectClock,beat;effectmagnitude,30,30,30;"
-	local pulse = "pulse;EffectClock,beat;"
-	local wag = "wag;EffectClock,beat;"
-	local spinreverse = "spin;EffectClock,beat;effectmagnitude,0,0,-45;"
-	local leftsideoffset = "x,SCREEN_LEFT+190+" .. GetLifebarAdjustment() ..";"
-	local rightsideoffset = "x,SCREEN_RIGHT-190-" .. GetLifebarAdjustment() ..";"
-	local player1centeroffset = "x,SCREEN_CENTER_X-160-".. GetLifebarAdjustment() .. ";"
-	local player2centeroffset = "x,SCREEN_CENTER_X+160+" .. GetLifebarAdjustment() ..";"
-	local doublezoom = "zoom,.9;"
-	local right1poffset = "addx,SCREEN_WIDTH/2;"
-	local left1poffset = "addx,-SCREEN_WIDTH/2;"
-
-	if CustomMods[pn].left == true then 
-		s = left
-			if pn == PLAYER_1 then
-				s = s .. leftsideoffset
-			else
-				s = s .. player2centeroffset
-			end		
-		if GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsPlayerEnabled(PLAYER_1) then
-			s = s .. left1poffset end
-	elseif CustomMods[pn].right == true then 
-		s = right
-			if pn == PLAYER_2 then
-				s = s .. rightsideoffset
-			else
-				s = s .. player1centeroffset
-			end	
-		if GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsPlayerEnabled(PLAYER_2) then
-			s = s .. right1poffset end
-	elseif CustomMods[pn].upsidedown == true then
-		s = upsidedown
-	elseif CustomMods[pn].solo == true then
-		s = solo
-	else
-		s = s
-	end
-	
-	if CustomMods[pn].spin == true then
-		s = s .. spin end
-		
-	if CustomMods[pn].spinreverse == true then
-		s = s .. spinreverse end
-	
-	if CustomMods[pn].vibrate == true then
-		s = s .. vibrate end
-		
-	if CustomMods[pn].bob == true then
-		s = s .. bob end
-		
-	if CustomMods[pn].pulse == true then
-		s = s .. pulse end
-		
-	if CustomMods[pn].wag == true then
-		s = s .. wag end
-	
-	return s	
-	
-end
-
 function DrawDistances()
 	-- Use Full Screen If There is Only 1 Player, and Cut the Render Positions if 1 or Both use Left/Right.
 	local rend = "448"
 	
-	-- Player 1 ONLY Conditions
+	-- Player 1 Active Only
 	if GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsPlayerEnabled(PLAYER_2) then
 		if CustomMods[PLAYER_1].left == true or CustomMods[PLAYER_1].right == true then
 			if GAMESTATE:PlayerIsUsingModifier(PLAYER_1, 'hallway') then rend = SCREEN_WIDTH+100
@@ -355,7 +308,7 @@ function DrawDistances()
 	-- Player 1 AND Player 2 Conditions
 	if GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsPlayerEnabled(PLAYER_2) then
 		if CustomMods[PLAYER_1].left == true or CustomMods[PLAYER_1].right == true or CustomMods[PLAYER_2].left == true or CustomMods[PLAYER_2].right == true then
-			rend = SCREEN_WIDTH*0.4 end end -- 300 for 16:10
+			rend = SCREEN_WIDTH*0.4 end end
 
 	return rend
 end

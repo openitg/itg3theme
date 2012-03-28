@@ -756,17 +756,17 @@ function GetCourseTitle()
 end
 
 function GetCourseDifficulty(pn)
-
-local trail = GAMESTATE:GetCurrentTrail(pn)
+	local trail = GAMESTATE:GetCurrentTrail(pn)
       
 	if trail:GetDifficulty() == 2 then
-	return "Normal" end
+		return "Normal"
 
-	if trail:GetDifficulty() == 3 then
-	return "Intense" end
+	elseif trail:GetDifficulty() == 3 then
+		return "Intense"
 
-	return
-		trail:GetDifficulty()
+	else
+		return "" end
+
 end
 
 function GetSongLength()
