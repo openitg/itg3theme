@@ -7,8 +7,8 @@ Condition="not GAMESTATE:IsCourseMode()"
 	
 <Layer 
 File="_normal"
-Condition="GAMESTATE:IsCourseMode()"
 OnCommand="@HideFrame()"
+Condition="GAMESTATE:IsCourseMode()"
 />
 	
 <!-- Song info, background only fade -->
@@ -167,9 +167,7 @@ OnCommand="shadowlength,2;horizalign,right;zoom,.6;sleep,1;linear,1;diffusealpha
 <!-- Draw on top of the rest -->
 
 <!-- Demonstration only: -->
-<Layer 
-Class="ActorFrame" 
-Condition="GAMESTATE:IsDemonstration()"><children>
+<ActorFrame Condition="GAMESTATE:IsDemonstration()"><children>
 
 <Layer
 File="..\_metallic streak"
@@ -181,7 +179,7 @@ OnCommand="diffusealpha,.9;fadeleft,1;faderight,1"
 Type="BitmapText"
 Font="_z 36px black"
 Text="DEMO"
-OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+43;shadowlength,0;zoom,.7;pulse;EffectMagnitude,1.0,0.95,0;effectclock,bgm;effectperiod,1"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+43;shadowlength,0;zoom,.8;pulse;EffectMagnitude,1.0,0.95,0;effectclock,bgm;effectperiod,1"
 />
 
 <Layer
@@ -189,7 +187,7 @@ File="demonstration gradient"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0.8"
 />
 
-</children></Layer>
+</children></ActorFrame>
 
 <!-- coin display -->
 <Layer
