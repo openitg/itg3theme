@@ -152,10 +152,8 @@ function GetUpdateScreen()
 end
 
 function GetRevision()
-	return "ITG3:RL1.0"
+	return "ITG3:RL1.1"
 end
-
-
 
 function GetLoadingDevice()
 	return "Loading Device Info ..."
@@ -191,10 +189,4 @@ end
 
 function GetWorkingText()
 	return "Status: Working at +2.8V ~ +5V OUT [Normal Parameter]"
-end
-
-
-function OLGetTopMenu()
-	if GAMESTATE:IsCourseMode() then return "CourseMenu" end
-	return "SongMenu";
 end

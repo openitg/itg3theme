@@ -20,7 +20,7 @@ end
 
 function oitgACoptions()
 	if OPENITG then return "1,2,3,50,51,52,4,5,6,120,7,8,113,46,13" end
-	return "1,2,3,4,5,6,7,8,114,113,46,47,13"
+	return "1,2,3,51,4,5,6,7,8,114,113,46,47,13"
 end
 
 

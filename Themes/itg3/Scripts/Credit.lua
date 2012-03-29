@@ -1,5 +1,4 @@
-
--- simple alias for easier referencing
+-- A Simple Alias for Easier Referencing
 local ProfileTable = PROFILEMAN:GetMachineProfile():GetSaved()
 
 function CreditTypeRow()
@@ -129,7 +128,7 @@ end
 -- To be called wherever the LUA needs split
 function GetScreenCleaning()
 	local type = ProfileTable.CleanScreen
-	-- assume "coin" unless otherwise specified
+	-- assume "disabled" unless otherwise specified
 	if not type then return false end
 	if type == "enabled" then return true
 	else return false end
