@@ -299,13 +299,13 @@ function DrawDistances()
 			if GAMESTATE:PlayerIsUsingModifier(PLAYER_1, 'hallway') then rend = SCREEN_WIDTH+100
 			else rend = SCREEN_WIDTH+20 end end end
 
-	-- Player 2 ONLY Conditions
+	-- Player 2 Active Only
 	if GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 		if CustomMods[PLAYER_2].left == true or CustomMods[PLAYER_2].right == true then
 			if GAMESTATE:PlayerIsUsingModifier(PLAYER_2, 'hallway') then rend = SCREEN_WIDTH+100
 			else rend = SCREEN_WIDTH+20 end end end
 
-	-- Player 1 AND Player 2 Conditions
+	-- Player 1 AND Player 2 Active
 	if GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsPlayerEnabled(PLAYER_2) then
 		if CustomMods[PLAYER_1].left == true or CustomMods[PLAYER_1].right == true or CustomMods[PLAYER_2].left == true or CustomMods[PLAYER_2].right == true then
 			rend = SCREEN_WIDTH*0.4 end end
@@ -321,7 +321,7 @@ local s = "y,SCREEN_TOP+240;"
 	local solo = "x,SCREEN_CENTER_X;"
 	local vibrate = "vibrate;effectmagnitude,20,20,20;"
 	local spin = "spin;EffectClock,beat;effectmagnitude,0,0,45;"
-	local bob = "bob;EffectClock,beat;;effectmagnitude,30,30,30"
+	local bob = "bob;EffectClock,beat;effectmagnitude,0,-30,0"
 	local pulse = "pulse;EffectClock,beat;"
 	local wag = "wag;EffectClock,beat;"
 	local spinreverse = "spin;EffectClock,beat;effectmagnitude,0,0,-45;"
@@ -329,7 +329,6 @@ local s = "y,SCREEN_TOP+240;"
 	local rightsideoffset = "x,SCREEN_RIGHT-190-" .. GetLifebarAdjustment() ..";"
 	local player1centeroffset = "x,SCREEN_CENTER_X-160-".. GetLifebarAdjustment() .. ";"
 	local player2centeroffset = "x,SCREEN_CENTER_X+160+" .. GetLifebarAdjustment() ..";"
-	local doublezoom = "zoom,.9;"
 	local right1poffset = "addx,SCREEN_WIDTH/2;"
 	local left1poffset = "addx,-SCREEN_WIDTH/2;"
 
