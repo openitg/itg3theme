@@ -330,6 +330,13 @@ local Path = THEME:GetPath( EC_SOUNDS, '', "ScreenTitleMenu ForceGoodEnding" )
 end
 
 
+function PerfectEnding()
+local Path = THEME:GetPath( EC_SOUNDS, '', "ScreenTitleMenu ForceGoodEnding" )
+	SOUND:PlayOnce( Path )
+		GAMESTATE:SetEnv("ForcePerfectEnding",1)
+		MESSAGEMAN:Broadcast( "GoodEnding" )
+end
+
 -- Arcade unlocks:
 function Unlock( Title )
 	local Code = UNLOCKMAN:FindCode( Title )

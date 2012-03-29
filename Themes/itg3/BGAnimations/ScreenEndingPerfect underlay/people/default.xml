@@ -1,196 +1,197 @@
 ﻿<ActorFrame><children>
-	
-
 
 <Layer
 		File="kung_pic"
 		InitCommand="additiveblend,1;x,SCREEN_CENTER_X+SCREEN_WIDTH/4;y,SCREEN_BOTTOM;vertalign,bottom"
 		OnCommand="diffusealpha,0;sleep,23.17+4.426*0;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
-		
 
 <Layer
 		File="kung_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
 		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*0;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
-	/>  	
+	/>
+
+
 <Layer
 		File="jason_pic"
 		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12;y,SCREEN_BOTTOM;vertalign,bottom"
 		OnCommand="diffusealpha,0;sleep,23.17+4.426*1;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
-	/>  	
-		
+	/>  
 
 <Layer
 		File="jason_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
 		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*1;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
 	/> 
-	
+
+
 <Layer
 		File="dom_pic"
 		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12;y,SCREEN_BOTTOM;vertalign,bottom"
 		OnCommand="diffusealpha,0;sleep,23.17+4.426*2;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
-		
 
 <Layer
 		File="dom_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
 		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*2;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
-	/>  
+	/>
+
+
 <Layer
 		File="rain_pic"
 		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12;y,SCREEN_BOTTOM;vertalign,bottom"
 		OnCommand="diffusealpha,0;sleep,23.17+4.426*3;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
 		
-
 <Layer
 		File="rain_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
 		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*3;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
 	/>  
+
+
 <Layer
-		File="nevets_pic"
+		File="link_pic"
 		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12;y,SCREEN_BOTTOM;vertalign,bottom"
 		OnCommand="diffusealpha,0;sleep,23.17+4.426*4;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
 		
-
 <Layer
-		File="nevets_name"
+		File="link_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
 		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*4;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
-	/>  
+	/>  	
+
+
 <Layer
-		File="phrek_pic"
+		File="nevets_pic"
 		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12;y,SCREEN_BOTTOM;vertalign,bottom"
 		OnCommand="diffusealpha,0;sleep,23.17+4.426*5;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
 		
-
 <Layer
-		File="phrek_name"
+		File="nevets_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
 		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*5;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
 	/>  
+
+
 <Layer
-		File="jbean_pic"
+		File="phrek_pic"
 		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12;y,SCREEN_BOTTOM;vertalign,bottom"
 		OnCommand="diffusealpha,0;sleep,23.17+4.426*6;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
 		
+<Layer
+		File="phrek_name"
+		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
+		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*6;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
+	/>
+
+
+<Layer
+		File="jbean_pic"
+		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12;y,SCREEN_BOTTOM;vertalign,bottom"
+		OnCommand="diffusealpha,0;sleep,23.17+4.426*7;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
+	/>  	
 
 <Layer
 		File="jbean_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
-		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*6;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
-	/>  
+		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*7;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
+	/>
+
+
 <Layer
 		File="kyle_pic"
 		InitCommand="zoom,.9;additiveblend,1;x,SCREEN_CENTER_X+SCREEN_WIDTH/4+10;y,SCREEN_BOTTOM;vertalign,bottom"
-		OnCommand="diffusealpha,0;sleep,23.17+4.426*7;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
+		OnCommand="diffusealpha,0;sleep,23.17+4.426*8;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
-		
 
 <Layer
 		File="kyle_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
-		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*7;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
-	/>  
-	
+		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*8;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
+	/>
+
+
 <Layer
 		File="foy_pic"
 		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12-70;y,SCREEN_BOTTOM;vertalign,bottom"
-		OnCommand="diffusealpha,0;sleep,23.17+4.426*8;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
+		OnCommand="diffusealpha,0;sleep,23.17+4.426*9;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
-		
 
 <Layer
 		File="foy_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
-		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*8;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
+		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*9;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
 	/>  
-	
+
+
 <Layer
 		File="mj_pic"
 		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12;y,SCREEN_BOTTOM;vertalign,bottom"
-		OnCommand="diffusealpha,0;sleep,23.17+4.426*9;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
+		OnCommand="diffusealpha,0;sleep,23.17+4.426*10;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
-		
 
 <Layer
 		File="mj_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
-		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*9;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
+		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*10;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
 	/>  	
-	
+
+
 <Layer
 		File="ryan_pic"
 		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12;y,SCREEN_BOTTOM;vertalign,bottom"
-		OnCommand="diffusealpha,0;sleep,23.17+4.426*10;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
+		OnCommand="diffusealpha,0;sleep,23.17+4.426*11;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
-		
 
 <Layer
 		File="ryan_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
-		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*10;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
+		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*11;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
 	/>  	
-	
+
+
 <Layer
 		File="derek_pic"
 		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12;y,SCREEN_BOTTOM;vertalign,bottom"
-		OnCommand="diffusealpha,0;sleep,23.17+4.426*11;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
+		OnCommand="diffusealpha,0;sleep,23.17+4.426*12;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
-		
 
 <Layer
 		File="derek_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
-		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*11;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
+		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*12;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
 	/>  	
-	
+
+
 <Layer
 		File="novus_pic"
 		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+72;y,SCREEN_BOTTOM;vertalign,bottom"
-		OnCommand="diffusealpha,0;sleep,23.17+4.426*12;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
+		OnCommand="diffusealpha,0;sleep,23.17+4.426*13;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
-		
 
 <Layer
 		File="novus_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
-		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*12;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
-	/>  	
+		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*13;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
+	/>
+
+
 <Layer
 		File="eric_pic"
 		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12;y,SCREEN_BOTTOM;vertalign,bottom"
-		OnCommand="diffusealpha,0;sleep,23.17+4.426*13;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
+		OnCommand="diffusealpha,0;sleep,23.17+4.426*14;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
 	/>  	
-		
 
 <Layer
 		File="eric_name"
 		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
-		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*13;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
-	/>  	
-<Layer
-		File="link_pic"
-		InitCommand="additiveblend,1;horizalign,right;x,SCREEN_RIGHT+12;y,SCREEN_BOTTOM;vertalign,bottom"
-		OnCommand="diffusealpha,0;sleep,23.17+4.426*14;addx,SCREEN_WIDTH/2;decelerate,.5;addx,-SCREEN_WIDTH/2;diffusealpha,1;linear,2.926;addx,-9;linear,1;diffusealpha,0;addx,-3" 
-	/>  	
-		
-
-<Layer
-		File="link_name"
-		InitCommand="additiveblend,0;x,SCREEN_CENTER_X+SCREEN_WIDTH/2.1;y,SCREEN_BOTTOM-100;horizalign,right"
 		OnCommand="addx,-SCREEN_WIDTH*2;sleep,23.17+4.426*14;decelerate,.5;addx,SCREEN_WIDTH*2;linear,2.926;addx,9;linear,1;diffusealpha,0;addx,3" 
 	/>  	
-	
-	
-	
-	
 	
 </children></ActorFrame>
