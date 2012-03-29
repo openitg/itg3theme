@@ -168,4 +168,92 @@ function Get2PlayerJoinMessage()
 	end
 end
 
+function SpeedModTypeRow()
+	local Names = { "Standard", "Advanced" }
 
+	local type = ProfileTable.SpeedModType
+
+	-- called on construction, must set exactly one list member true
+	local function Load(self, list, pn)
+		-- short-circuit to 'standard' if no option is set
+		if not type then list[1] = true return end
+
+		-- do any of the options match the given type?
+		for i=1,2 do
+			if type == string.lower(Names[i]) then list[i] = true return end
+		end
+
+		-- none of the above worked. fallback on standard
+		list[1] = true
+	end
+
+	-- called as the screen destructs, to save the selected option in list
+	local function Save(self, list, pn)
+		for i=1,2 do
+			if list[i] then
+				ProfileTable.SpeedModType = string.lower(Names[i])
+				PROFILEMAN:SaveMachineProfile()
+				return
+			end
+		end
+	end
+
+	
+	local Params = { Name = "SpeedModType" }
+
+	return CreateOptionRow( Params, Names, Load, Save )
+end
+
+function GetSpeedModType()
+	local type = ProfileTable.SpeedModType
+		
+	if type == "advanced" then
+	return "list,Speed2" else
+	return "list,Speed"
+	end
+end
+
+function OptionsListToggleRow()
+	local Names = { "Disabled", "Enabled" }
+
+	local type = ProfileTable.OptionsListToggle
+
+	-- called on construction, must set exactly one list member true
+	local function Load(self, list, pn)
+		-- short-circuit to 'disabled' if no option is set
+		if not type then list[1] = true return end
+
+		-- do any of the options match the given type?
+		for i=1,2 do
+			if type == string.lower(Names[i]) then list[i] = true return end
+		end
+
+		-- none of the above worked. fallback on standard
+		list[1] = true
+	end
+
+	-- called as the screen destructs, to save the selected option in list
+	local function Save(self, list, pn)
+		for i=1,2 do
+			if list[i] then
+				ProfileTable.OptionsListToggle = string.lower(Names[i])
+				PROFILEMAN:SaveMachineProfile()
+				return
+			end
+		end
+	end
+
+	
+	local Params = { Name = "OptionsListToggle" }
+
+	return CreateOptionRow( Params, Names, Load, Save )
+end
+
+function GetOptionsList()
+	local type = ProfileTable.OptionsListToggle
+		
+	if type == "enabled" and GAMESTATE:GetPlayMode() ~= PLAY_MODE_ONI then
+	return "1" else
+	return "0"
+	end
+end
