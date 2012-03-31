@@ -168,13 +168,13 @@ function Get2PlayerJoinMessage()
 end
 
 function SpeedModTypeRow()
-	local Names = { "Standard", "Advanced" }
+	local Names = { "Basic", "Advanced" }
 
 	local type = ProfileTable.SpeedModType
 
 	-- called on construction, must set exactly one list member true
 	local function Load(self, list, pn)
-		-- short-circuit to 'standard' if no option is set
+		-- short-circuit to 'basic' if no option is set
 		if not type then list[1] = true return end
 
 		-- do any of the options match the given type?
