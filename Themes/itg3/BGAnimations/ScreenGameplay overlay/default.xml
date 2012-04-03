@@ -75,16 +75,16 @@ OnCommand="shadowlength,2;horizalign,right;zoom,.6;sleep,1;linear,1;diffusealpha
 Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsDemonstration()"
 Font="_r bold 30px"
 Text="@GetStepsDescriptionTextP1()"
-InitCommand="x,SCREEN_LEFT+100;y,SCREEN_CENTER_Y+172"
-OnCommand="shadowlength,2;horizalign,left;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
+InitCommand="x,SCREEN_LEFT+96;y,SCREEN_CENTER_Y+172"
+OnCommand="shadowlength,2;horizalign,left;zoom,.6;maxwidth,380;sleep,1;linear,1;diffusealpha,0;"
 /> 
 
 <Layer
 Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
 Font="_r bold 30px"
 Text="@GetStepsDescriptionTextP2()"
-InitCommand="x,SCREEN_RIGHT-100;y,SCREEN_CENTER_Y+172"
-OnCommand="shadowlength,2;horizalign,right;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
+InitCommand="x,SCREEN_RIGHT-96;y,SCREEN_CENTER_Y+172"
+OnCommand="shadowlength,2;horizalign,right;zoom,.6;maxwidth,380;sleep,1;linear,1;diffusealpha,0;"
 />
 
 <!-- player names -->
@@ -136,7 +136,7 @@ Condition="GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1) and 
 Font="_r bold 30px"
 Text="Difficulty:"
 InitCommand="x,SCREEN_LEFT+5;y,SCREEN_CENTER_Y+172"
-OnCommand="shadowlength,2;horizalign,left;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
+OnCommand="shadowlength,2;horizalign,left;zoom,.6;maxwidth,380;sleep,1;linear,1;diffusealpha,0;"
 /> 
 
 <Layer
@@ -144,7 +144,7 @@ Condition="GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2) and 
 Font="_r bold 30px"
 Text=":Difficulty"
 InitCommand="x,SCREEN_RIGHT-5;y,SCREEN_CENTER_Y+172"
-OnCommand="shadowlength,2;horizalign,right;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
+OnCommand="shadowlength,2;horizalign,right;zoom,.6;maxwidth,380;sleep,1;linear,1;diffusealpha,0;"
 />
 
 <!-- course difficulty -->
@@ -152,7 +152,7 @@ OnCommand="shadowlength,2;horizalign,right;zoom,.6;sleep,1;linear,1;diffusealpha
 Condition="GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsDemonstration()"
 Font="_r bold 30px"
 Text="@GetCourseDifficulty(PLAYER_1)"
-InitCommand="x,SCREEN_LEFT+87;y,SCREEN_CENTER_Y+172"
+InitCommand="x,SCREEN_LEFT+84;y,SCREEN_CENTER_Y+172"
 OnCommand="shadowlength,2;horizalign,left;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
 /> 
 
@@ -160,7 +160,7 @@ OnCommand="shadowlength,2;horizalign,left;zoom,.6;sleep,1;linear,1;diffusealpha,
 Condition="GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
 Font="_r bold 30px"
 Text="@GetCourseDifficulty(PLAYER_2)"
-InitCommand="x,SCREEN_RIGHT-87;y,SCREEN_CENTER_Y+172"
+InitCommand="x,SCREEN_RIGHT-84;y,SCREEN_CENTER_Y+172"
 OnCommand="shadowlength,2;horizalign,right;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
 />
 
