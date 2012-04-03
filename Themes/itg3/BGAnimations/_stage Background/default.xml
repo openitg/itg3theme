@@ -66,7 +66,7 @@ Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
 Font="_r bold 30px"
 Text="@GetStepsDescriptionTextP1()"
 InitCommand="x,SCREEN_LEFT+96;y,SCREEN_CENTER_Y+172"
-OnCommand="shadowlength,2;horizalign,left;zoom,.6;maxwidth,380"
+OnCommand="shadowlength,2;horizalign,left;zoom,.6;maxwidth,SCREEN_WIDTH/2"
 /> 
 
 <Layer
@@ -74,7 +74,7 @@ Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
 Font="_r bold 30px"
 Text="@GetStepsDescriptionTextP2()"
 InitCommand="x,SCREEN_RIGHT-96;y,SCREEN_CENTER_Y+172"
-OnCommand="shadowlength,2;horizalign,right;zoom,.6;maxwidth,380;"
+OnCommand="shadowlength,2;horizalign,right;zoom,.6;maxwidth,SCREEN_WIDTH/2"
 />
 
 <!-- course difficulty text -->
