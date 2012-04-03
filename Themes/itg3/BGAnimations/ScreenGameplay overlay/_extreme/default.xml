@@ -33,7 +33,7 @@
 			<Layer
 					Type="SongMeterDisplay"
 					OnCommand="additiveblend,1"
-					StreamWidth="226"
+					StreamWidth="220"
 					StreamPath="meter stream"
 				>
 					<Tip
@@ -93,7 +93,7 @@
 			<Layer
 					Type="BitmapText"
 					Font="_serpentine outline"
-					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+23;maxwidth,540;diffusebottomedge,#dedede"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+23;maxwidth,390;diffusebottomedge,#dedede"
 					OnCommand="addy,3;zoom,.5;shadowlength,0;zoomy,0;sleep,2;decelerate,0.3;zoomy,.5;animate,0;playcommand,Update"
 					CurrentSongChangedMessageCommand="playcommand,Update"
 					UpdateCommand="%SetFromSongTitleAndCourseTitle"
