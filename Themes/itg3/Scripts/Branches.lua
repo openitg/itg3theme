@@ -32,9 +32,12 @@ function EvaluationNextScreen()
 	if AllFailed() or IsFinalStage() then return "ScreenNameEntryTraditional" end
 	return NewSongScreen();
 end
+
 function ScreenCleaning()
-	if Hour() > 2 and Hour() < 7 and GetScreenCleaning() == true then return "ScreenNoise" end
-	return "ScreenCompany";
+	if Hour() >= GetCleanStartTime() and Hour() < GetCleanEndTime() and GetCleanScreen() == true then
+	return "ScreenNoise" end
+	
+	return "ScreenCompany"
 end
 
 function GetGameplayNextScreen()
