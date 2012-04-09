@@ -117,7 +117,7 @@ function OptionOrientation()
 			CustomMods[pn].left = list[2] -- Turns field left
 			CustomMods[pn].right = list[3] -- Turns field right
 			CustomMods[pn].upsidedown = list[4]  -- Flips field upside down
-			if GAMESTATE:GetNumPlayersEnabled() == 1 then CustomMods[pn].solo = list[5] end-- Centers the targets
+			if GAMESTATE:GetNumPlayersEnabled() == 1 then CustomMods[pn].solo = list[5] end -- Centers the targets
 		end
 		
 	}
@@ -140,8 +140,8 @@ function OptionPlayfield()
 			list[1] = CustomMods[pn].vibrate -- Makes the plaing field shake
 			list[2] = CustomMods[pn].spin -- Makes the playing field spin clockwise
 			list[3] = CustomMods[pn].spinreverse -- Makes the playing field spin counter-clockwise
-			list[4] = CustomMods[pn].bob -- Makes the playing field bob back and forth
-			list[5] = CustomMods[pn].pulse -- Makes the playing field pulse
+			list[4] = CustomMods[pn].bob -- Makes the playing field bob up and down
+			list[5] = CustomMods[pn].pulse -- Makes the playing field pulse in and out
 			list[6] = CustomMods[pn].wag -- Makes the playing field wag left and right
 		end,
 		
@@ -149,8 +149,8 @@ function OptionPlayfield()
 			CustomMods[pn].vibrate = list[1] -- Makes the plaing field shake
 			CustomMods[pn].spin = list[2] -- Makes the playing field spin clockwise
 			CustomMods[pn].spinreverse = list[3] -- Makes the playing field spin counter-clockwise
-			CustomMods[pn].bob = list[4] -- Makes the playing field bob back and forth
-			CustomMods[pn].pulse = list[5] -- Makes the playing field pulse
+			CustomMods[pn].bob = list[4] -- Makes the playing field bob up and down
+			CustomMods[pn].pulse = list[5] -- Makes the playing field pulse in and out
 			CustomMods[pn].wag = list[6] -- Makes the playing field wag left and right
 		end
 		
@@ -379,7 +379,7 @@ local s = "y,SCREEN_TOP+240;"
 	return s
 end
 
--- WinDEU Hates You / Loves You Stuff --
+-- WinDEU Hates You / Loves You, SRT, and My Little Spooty Stuff --
 
 -- [LifeP1OnCommand] --
 function GetLifeBarEffectsP1()
@@ -415,6 +415,12 @@ function GetLifeBarEffectsP1()
 	-- Lawn Wake XI --
 	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Hates You Forever/Lawn Wake XI'))
 		then s = 'draworder,-1;rotationz,-90;zoomy,0;sleep,2.45;zoomy,1;sleep,54.015;accelerate,1.2;addx,192;addy,-20;zoom,0.35;linear,1.3;addx,130;addy,-65;linear,0.75;addx,-75;addy,-38;linear,1.82;addx,-182;addy,91;linear,2;addx,230;addy,115;linear,0.28;addx,28;addy,-14;linear,2.6;addx,-260;addy,-130;linear,1.24;addx,124;addy,-62;linear,1.36;addx,136;addy,68;linear,2.6;addx,-260;addy,130;linear,0.12;addx,16;addy,8;linear,2.44;addx,244;addy,-122;linear,1.68;addx,-168;addy,-84;linear,0.92;addx,-92;addy,46;linear,2.6;addx,260;addy,130;linear,0.6;addx,-60;addy,30;linear,2;addx,-200;addy,-100;linear,2.1;addx,210;addy,-105;linear,0.5;addx,50;addy,25;linear,2.6;addx,-260;addy,130;linear,1;addx,100;addy,50;linear,1.6;addx,160;addy,-80;linear,2.5;addx,-250;addy,-125;linear,0.1;addx,-10;addy,5;linear,2.6;addx,260;addy,130;linear,1.44;addx,-142;addy,71;linear,1.18;addx,-118;addy,-59;linear,2.6;addx,260;addy,-130;linear,0.36;addx,-36;addy,-18;linear,2.24;addx,-224;addy,112;linear,0.44;addx,44;addy,22;decelerate,1.2;zoom,1;x,SCREEN_CENTER_X-296;y,SCREEN_CENTER_Y+30;sleep,10.8;linear,1.8;ZoomY,0'; end
+
+	-- My Little Spooty 2 --
+	
+	-- Catastrophe UVB-76 --
+	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('My Little Spooty 2/Catastrophe UVB-76'))
+		then s = 'draworder,-1;rotationz,-90;addx,-100;sleep,48.5;decelerate,0.8;addx,100;sleep,242.0;queuecommand,VibSpooty;sleep,4;decelerate,5.0;zoom,0.0001;rotationz,70;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y'; end
 
 	-- End Marathon Condition --
 	end
@@ -555,7 +561,7 @@ function GetPlayerEffectsP1(pn)
 	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Hates You Forever/Lawn Wake XI'))
 		then s = 'sleep,56.45;accelerate,1.2;addx,104;zoom,0.35;linear,1.3;addx,130;addy,-65;linear,0.75;addx,-75;addy,-38;linear,1.82;addx,-182;addy,91;linear,2;addx,230;addy,115;linear,0.28;addx,28;addy,-14;linear,2.6;addx,-260;addy,-130;linear,1.24;addx,124;addy,-62;linear,1.36;addx,136;addy,68;linear,2.6;addx,-260;addy,130;linear,0.12;addx,16;addy,8;linear,2.44;addx,244;addy,-122;linear,1.68;addx,-168;addy,-84;linear,0.92;addx,-92;addy,46;linear,2.6;addx,260;addy,130;linear,0.6;addx,-60;addy,30;linear,2;addx,-200;addy,-100;linear,2.1;addx,210;addy,-105;linear,0.5;addx,50;addy,25;linear,2.6;addx,-260;addy,130;linear,1;addx,100;addy,50;linear,1.6;addx,160;addy,-80;linear,2.5;addx,-250;addy,-125;linear,0.1;addx,-10;addy,5;linear,2.6;addx,260;addy,130;linear,1.44;addx,-142;addy,71;linear,1.18;addx,-118;addy,-59;linear,2.6;addx,260;addy,-130;linear,0.36;addx,-36;addy,-18;linear,2.24;addx,-224;addy,112;linear,0.44;addx,44;addy,22;decelerate,1.2;zoom,1;x,SCREEN_CENTER_X-160;y,SCREEN_CENTER_Y;rotationy,1440;sleep,1.2;linear,9.6;rotationz,12960'; end
 
-	-- WinDEU Hates You The Infinity + 1 --
+	-- WinDEU Hates You Infinity + 1 --
 	
 	-- Scarlet Heaven of Delays --
 	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Hates You Infinity +1/Scarlet Heaven Of Delays'))
@@ -565,7 +571,7 @@ function GetPlayerEffectsP1(pn)
 	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Hates You Infinity +1/Model DD398'))
 		then s = 'x,SCREEN_CENTER_X;sleep,45.4;accelerate,0.4;addx,240;addy,-45;rotationy,70;sleep,12;decelerate,0.8;rotationx,75;spring,2.4;rotationx,0;sleep,6.4;accelerate,1.6;addx,-120;addy,22;rotationy,35;decelerate,1.6;addx,-120;addy,23;rotationy,0;sleep,0.4;accelerate,0.4;addx,-240;addy,-45;rotationy,-70;sleep,5.6;decelerate,0.8;rotationx,75;spring,2.4;rotationx,0;accelerate,1.6;addx,120;addy,22;rotationy,-35;decelerate,1.6;addx,120;addy,23;rotationy,0;sleep,101;linear,1.59;zoom,0.85;addy,-20;sleep,0.01;addx,215;sleep,3.2;addx,-430;sleep,3.2;addx,215;sleep,3.2;addx,215;sleep,3.2;addx,-430;sleep,3.2;addx,215;sleep,3.2;addx,215;sleep,3.2;addx,-430;sleep,1.6;accelerate,0.8;zoom,0.925;addx,108;addy,10;decelerate,0.8;zoom,1;addx,107;addy,10'; end
 
-	-- WinDEU Loves You --
+	-- WinDEU Loves You The Redemption --
 
 	-- Return --
 	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Loves You/Return'))
@@ -590,7 +596,7 @@ function GetPlayerEffectsP1(pn)
 	-- Anger of YuYu --
 	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('SRT X/Anger of YuYu'))
 		then s = 'x,SCREEN_CENTER_X;sleep,56.152;queuecommand,LowVibrate;sleep,2.286;queuecommand,MidVibrate;sleep,9.142;queuecommand,HighVibrate;sleep,9.143;queuecommand,Stop;sleep,34.286;queuecommand,MidVibrate;decelerate,0.572;addx,-160;queuecommand,Stop;sleep,5.714-0.572;linear,1.143;addx,160;sleep,2.286;queuecommand,MidVibrate;decelerate,0.572;addx,160;queuecommand,Stop;sleep,5.714-0.572;linear,1.143;addx,-160'; end
-	
+
 	-- End Marathon Condition --
 	end
 
@@ -644,6 +650,12 @@ function GetLifeBarEffectsP2()
 	-- Lawn Wake XI --
 	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Hates You Forever/Lawn Wake XI'))
 		then s = 'draworder,-1;rotationz,-90;zoomy,0;sleep,2.45;zoomy,1;sleep,54.015;accelerate,1.2;addx,-192;addy,-20;zoom,0.35;linear,1.3;addx,130;addy,-65;linear,0.75;addx,-75;addy,-38;linear,1.82;addx,-182;addy,91;linear,2;addx,230;addy,115;linear,0.28;addx,28;addy,-14;linear,2.6;addx,-260;addy,-130;linear,1.24;addx,124;addy,-62;linear,1.36;addx,136;addy,68;linear,2.6;addx,-260;addy,130;linear,0.12;addx,16;addy,8;linear,2.44;addx,244;addy,-122;linear,1.68;addx,-168;addy,-84;linear,0.92;addx,-92;addy,46;linear,2.6;addx,260;addy,130;linear,0.6;addx,-60;addy,30;linear,2;addx,-200;addy,-100;linear,2.1;addx,210;addy,-105;linear,0.5;addx,50;addy,25;linear,2.6;addx,-260;addy,130;linear,1;addx,100;addy,50;linear,1.6;addx,160;addy,-80;linear,2.5;addx,-250;addy,-125;linear,0.1;addx,-10;addy,5;linear,2.6;addx,260;addy,130;linear,1.44;addx,-142;addy,71;linear,1.18;addx,-118;addy,-59;linear,2.6;addx,260;addy,-130;linear,0.36;addx,-36;addy,-18;linear,2.24;addx,-224;addy,112;linear,0.44;addx,44;addy,22;decelerate,1.2;zoom,1;x,SCREEN_CENTER_X+296;y,SCREEN_CENTER_Y+30;sleep,10.8;linear,1.8;ZoomY,0'; end
+
+	-- My Little Spooty 2 --
+	
+	-- Catastrophe UVB-76 --
+	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('My Little Spooty 2/Catastrophe UVB-76'))
+		then s = 'draworder,-1;rotationz,-90;addx,100;sleep,48.5;decelerate,0.8;addx,-100;sleep,242.0;queuecommand,VibSpooty;sleep,4;decelerate,5.0;zoom,0.0001;rotationz,70;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y'; end
 
 	-- End Marathon Condition --
 	end
