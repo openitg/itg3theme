@@ -574,11 +574,11 @@ function GetPlayerEffectsP1(pn)
 	-- WinDEU Loves You The Redemption --
 
 	-- Return --
-	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Loves You/Return'))
+	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Loves You The Redemption/Return'))
 		then s = 'sleep,47.300;accelerate,0.320;addx,400;rotationy,720;decelerate,0.321;addx,-400;rotationy,1440;sleep,26.709;decelerate,0.641;rotationz,360;rotationy,0;rotationx,720;sleep,14.786;decelerate,0.300;rotationy,360;addx,128'; end
 		
 	-- Perfect Cherry Storm --
-	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Loves You/Perfect Cherry Storm'))
+	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Loves You The Redemption/Perfect Cherry Storm'))
 		then s = 'x,SCREEN_CENTER_X;sleep,21.6;queuecommand,Vib1;sleep,60;queuecommand,Stop;sleep,67.2;linear,9.6;addx,-180;rotationz,-20;queuecommand,Rapidwag;linear,7.2;rotationz,-70;queuecommand,Stop;accelerate,1.2;addx,90;rotationz,-35;decelerate,1.2;addx,90;rotationz,0;sleep,40.8;queuecommand,Rapidwag2;sleep,14.4;queuecommand,Stop;sleep,4.9;decelerate,1.2;addx,160;rotationy,1440;sleep,1.2;decelerate,1.2;addx,-320;rotationy,0;sleep,1.2;decelerate,1.2;addx,320;rotationy,1440;sleep,1.2;decelerate,1.2;addx,-320;rotationy,0;sleep,1.2;decelerate,1.2;addx,320;rotationy,1440;sleep,1.2;decelerate,1.2;addx,-320;rotationy,0;sleep,1.2;decelerate,1.2;addx,320;rotationy,1440;sleep,1.2;decelerate,1.2;addx,-160;rotationy,0'; end
 	
 	-- SRT 9
@@ -815,15 +815,15 @@ function GetPlayerEffectsP2(pn)
 		then s = 'x,SCREEN_CENTER_X+SCREEN_WIDTH*2;sleep,45.4;accelerate,0.4;addx,240;addy,-45;rotationy,70;sleep,12;decelerate,0.8;rotationx,75;spring,2.4;rotationx,0;sleep,6.4;accelerate,1.6;addx,-120;addy,22;rotationy,35;decelerate,1.6;addx,-120;addy,23;rotationy,0;sleep,0.4;accelerate,0.4;addx,-240;addy,-45;rotationy,-70;sleep,5.6;decelerate,0.8;rotationx,75;spring,2.4;rotationx,0;accelerate,1.6;addx,120;addy,22;rotationy,-35;decelerate,1.6;addx,120;addy,23;rotationy,0;sleep,101;linear,1.59;zoom,0.85;addy,-20;sleep,0.01;addx,215;sleep,3.2;addx,-430;sleep,3.2;addx,215;sleep,3.2;addx,215;sleep,3.2;addx,-430;sleep,3.2;addx,215;sleep,3.2;addx,215;sleep,3.2;addx,-430;sleep,1.6;accelerate,0.8;zoom,0.925;addx,108;addy,10;decelerate,0.8;zoom,1;addx,107;addy,10'; else
 		s = 'x,SCREEN_CENTER_X;sleep,45.4;accelerate,0.4;addx,240;addy,-45;rotationy,70;sleep,12;decelerate,0.8;rotationx,75;spring,2.4;rotationx,0;sleep,6.4;accelerate,1.6;addx,-120;addy,22;rotationy,35;decelerate,1.6;addx,-120;addy,23;rotationy,0;sleep,0.4;accelerate,0.4;addx,-240;addy,-45;rotationy,-70;sleep,5.6;decelerate,0.8;rotationx,75;spring,2.4;rotationx,0;accelerate,1.6;addx,120;addy,22;rotationy,-35;decelerate,1.6;addx,120;addy,23;rotationy,0;sleep,101;linear,1.59;zoom,0.85;addy,-20;sleep,0.01;addx,215;sleep,3.2;addx,-430;sleep,3.2;addx,215;sleep,3.2;addx,215;sleep,3.2;addx,-430;sleep,3.2;addx,215;sleep,3.2;addx,215;sleep,3.2;addx,-430;sleep,1.6;accelerate,0.8;zoom,0.925;addx,108;addy,10;decelerate,0.8;zoom,1;addx,107;addy,10'; end end
 
-	-- WinDEU Loves You
+	-- WinDEU Loves You The Redemption --
 
 	-- Return --
-	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Loves You/Return'))
+	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Loves You The Redemption/Return'))
 		then s = 'sleep,47.300;accelerate,0.320;addx,-400;rotationy,720;decelerate,0.321;addx,400;rotationy,1440;sleep,26.709;decelerate,0.641;rotationz,360;rotationy,0;rotationx,720;sleep,14.786;decelerate,0.300;rotationy,360;addx,-128'; end
 		
 	-- Perfect Cherry Storm --
 	-- Push Off Screen if BOTH Players are Active --
-	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Loves You/Perfect Cherry Storm'))
+	if (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('WinDEU Loves You The Redemption/Perfect Cherry Storm'))
 		then if GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsPlayerEnabled(PLAYER_1)
 		then s = 'x,SCREEN_CENTER_X+SCREEN_WIDTH*2;sleep,21.6;queuecommand,Vib1;sleep,60;queuecommand,Stop;sleep,67.2;linear,9.6;addx,-180;rotationz,-20;queuecommand,Rapidwag;linear,7.2;rotationz,-70;queuecommand,Stop;accelerate,1.2;addx,90;rotationz,-35;decelerate,1.2;addx,90;rotationz,0;sleep,40.8;queuecommand,Rapidwag2;sleep,14.4;queuecommand,Stop;sleep,4.9;decelerate,1.2;addx,160;rotationy,1440;sleep,1.2;decelerate,1.2;addx,-320;rotationy,0;sleep,1.2;decelerate,1.2;addx,320;rotationy,1440;sleep,1.2;decelerate,1.2;addx,-320;rotationy,0;sleep,1.2;decelerate,1.2;addx,320;rotationy,1440;sleep,1.2;decelerate,1.2;addx,-320;rotationy,0;sleep,1.2;decelerate,1.2;addx,320;rotationy,1440;sleep,1.2;decelerate,1.2;addx,-160;rotationy,0'; else
 		s = 'x,SCREEN_CENTER_X;sleep,21.6;queuecommand,Vib1;sleep,60;queuecommand,Stop;sleep,67.2;linear,9.6;addx,-180;rotationz,-20;queuecommand,Rapidwag;linear,7.2;rotationz,-70;queuecommand,Stop;accelerate,1.2;addx,90;rotationz,-35;decelerate,1.2;addx,90;rotationz,0;sleep,40.8;queuecommand,Rapidwag2;sleep,14.4;queuecommand,Stop;sleep,4.9;decelerate,1.2;addx,160;rotationy,1440;sleep,1.2;decelerate,1.2;addx,-320;rotationy,0;sleep,1.2;decelerate,1.2;addx,320;rotationy,1440;sleep,1.2;decelerate,1.2;addx,-320;rotationy,0;sleep,1.2;decelerate,1.2;addx,320;rotationy,1440;sleep,1.2;decelerate,1.2;addx,-320;rotationy,0;sleep,1.2;decelerate,1.2;addx,320;rotationy,1440;sleep,1.2;decelerate,1.2;addx,-160;rotationy,0'; end end
@@ -892,7 +892,7 @@ function HideFrame()
 	if GetCourseTitle() == 'Stage 5 (Infinity)'
 		then s = 'hidden,1'; end
 
-	-- WinDEU Loves You --
+	-- WinDEU Loves You The Redemption --
 
 	-- Perfect Cherry Storm --
 	if GetCourseTitle() == 'Extra Stage (Redemption)'
@@ -929,6 +929,11 @@ end
 
 function Vibrate2()
 	s = 'vibrate;effectmagnitude,150,0,0';
+	return s
+end
+
+function VibSpooty()
+	s = 'vibrate;effectmagnitude,10,10,10';
 	return s
 end
 
