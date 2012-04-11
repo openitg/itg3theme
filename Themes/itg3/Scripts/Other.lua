@@ -113,14 +113,12 @@ end
 
 function WhyDontYouWork()
 	local song = GAMESTATE:GetCurrentSong()
-	local dir = song:GetSongDir()
-	if not song then return "" end
-	local banner = song:GetBannerPath()
-	
-	if string.find(dir,"/@mc1/") or string.find(dir,"/@mc2/") then return song:GetDisplayFullTitle()  end
-	
-	if not banner then return song:GetDisplayFullTitle()  end
-	return ""
+	local course = GAMESTATE:GetCurrentCourse()
+
+	if not song and not course then return "" end
+		
+	if song then return song:GetDisplayFullTitle() end
+	if course then return course:GetDisplayFullTitle() end
 end
 
 
