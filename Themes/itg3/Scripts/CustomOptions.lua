@@ -135,7 +135,7 @@ function GetCleanScreen()
 end
 
 function CleanStartTime()
-	local Names = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }
+	local Names = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }
 
 	local type = ProfileTable.CleanStartTime
 	
@@ -145,7 +145,7 @@ function CleanStartTime()
 		if not type then list[1] = true return end
 
 		-- do any of the options match the given type?
-		for i=1,23 do
+		for i=1,24 do
 			if type == string.lower(Names[i]) then list[i] = true return end
 		end
 
@@ -169,37 +169,11 @@ function CleanStartTime()
 end
 
 function GetCleanStartTime()
-	local type = ProfileTable.CleanStartTime
-	
-	if type == "1" then return 1
-	elseif type == "2" then return 2
-	elseif type == "3" then return 3
-	elseif type == "4" then return 4
-	elseif type == "5" then return 5
-	elseif type == "6" then return 6
-	elseif type == "7" then return 7
-	elseif type == "8" then return 8
-	elseif type == "9" then return 9
-	elseif type == "10" then return 10
-	elseif type == "11" then return 11
-	elseif type == "12" then return 12
-	elseif type == "13" then return 13
-	elseif type == "14" then return 14
-	elseif type == "15" then return 15
-	elseif type == "16" then return 16
-	elseif type == "17" then return 17
-	elseif type == "18" then return 18
-	elseif type == "19" then return 19
-	elseif type == "20" then return 20
-	elseif type == "21" then return 21
-	elseif type == "22" then return 22
-	elseif type == "23" then return 23
-	else return 1
-	end
+	return tonumber(ProfileTable.CleanStartTime)
 end
 
 function CleanEndTime()
-	local Names = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" }
+	local Names = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }
 
 	local type = ProfileTable.CleanEndTime
 	
@@ -233,33 +207,7 @@ function CleanEndTime()
 end
 
 function GetCleanEndTime()
-	local type = ProfileTable.CleanEndTime
-	
-	if type == "2" then return 2
-	elseif type == "3" then return 3
-	elseif type == "4" then return 4
-	elseif type == "5" then return 5
-	elseif type == "6" then return 6
-	elseif type == "7" then return 7
-	elseif type == "8" then return 8
-	elseif type == "9" then return 9
-	elseif type == "10" then return 10
-	elseif type == "11" then return 11
-	elseif type == "12" then return 12
-	elseif type == "13" then return 13
-	elseif type == "14" then return 14
-	elseif type == "15" then return 15
-	elseif type == "16" then return 16
-	elseif type == "17" then return 17
-	elseif type == "18" then return 18
-	elseif type == "19" then return 19
-	elseif type == "20" then return 20
-	elseif type == "21" then return 21
-	elseif type == "22" then return 22
-	elseif type == "23" then return 23
-	elseif type == "24" then return 24
-	else return 2
-	end 
+	return tonumber(ProfileTable.CleanEndTime)
 end
 
 function Get2PlayerJoinMessage()
