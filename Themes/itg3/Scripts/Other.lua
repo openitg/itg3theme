@@ -1041,11 +1041,12 @@ local t = ""
 if CustomMods[pn].left then if t == "" then t = "Rotated Left" else t = t .. ", Rotated Left" end end
 if CustomMods[pn].right then if t == "" then t = "Rotated Right" else t = t .. ", Rotated Right" end end
 if CustomMods[pn].downward then if t == "" then t = "Rotated Downward" else t = t .. ", Rotated Downward" end end
-if CustomMods[pn].solo then if t == "" then t = "Centered" else t = t .. ", Centered" end end
+if CustomMods[pn].solo then if t == "" then t = "Solo-Centered" else t = t .. ", Solo-Centered" end end
 
 if CustomMods[pn].wag then if t == "" then t = "Wag" else t = t .. ", Wag" end 
 elseif CustomMods[pn].pulse then if t == "" then t = "Pulse" else t = t .. ", Pulse" end 
-elseif CustomMods[pn].bounce then if t == "" then t = "Bounce" else t = t .. ", Bounce" end 
+elseif CustomMods[pn].bounce then if t == "" then t = "Bounce" else t = t .. ", Bounce" end
+elseif CustomMods[pn].bob then if t == "" then t = "Bob" else t = t .. ", Bob" end
 elseif CustomMods[pn].spinreverse then if t == "" then t = "Spin Left" else t = t .. ", Spin Right" end 
 elseif CustomMods[pn].spin then if t == "" then t = "Spin Right" else t = t .. ", Spin Right" end 
 elseif CustomMods[pn].vibrate then if t == "" then t = "Vibrate" else t = t .. ", Vibrate" end end
@@ -1128,4 +1129,10 @@ local endpercent=endvalue/size
 	
 	end
 
+end
+
+-- Hide the timer if "MenuTimer" is disabled
+function HideTimer()
+	local enabled = PREFSMAN:GetPreference("MenuTimer")
+	if enabled then return "0" else return "1" end
 end
