@@ -8,8 +8,14 @@ All I ask is that you keep this notice intact and don't redistribute in bytecode
 --]]
 
 local function IsBlacklisted( name )
-	-- never display fallback folders
-	if string.find( name, "fallback" ) then return true end
+	-- never display fallback folders (e.g. "fallback", "fallback3")
+	if string.sub( name, 1, 8 ) == "fallback" then return true end
+
+	-- never display default folders (e.g. "default", "default-h4x")
+	if string.sub( name, 1, 7 ) == "default" then return true end
+
+	-- never display arcade folders (e.g. "arcade", "arcade-h4x")
+	if string.sub( name, 1, 6 ) == "arcade" then return true end
 
 	-- never display dot directories (e.g. ".svn", ".nano")
 	if string.sub( name, 1, 1 ) == "." then return true end

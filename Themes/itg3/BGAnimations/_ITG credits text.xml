@@ -16,6 +16,7 @@
 <Layer Type="BitmapText" Text="A.J. Kung" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 <Layer Type="BitmapText" Text="Dominick Renzetti" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 <Layer Type="BitmapText" Text="Felipe Valladares" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Gabriel Marchan" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 <Layer Type="BitmapText" Text="" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 <Layer Type="BitmapText" Text="Original UI Concept" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#76B1D5;ztest,1" />
 <Layer Type="BitmapText" Text="Ryan McKanna" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
@@ -48,6 +49,7 @@
 <Layer Type="BitmapText" Text="Matthew Emirzian" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 <Layer Type="BitmapText" Text="Dalton Runberg" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 <Layer Type="BitmapText" Text="Dominick Renzetti" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
+<Layer Type="BitmapText" Text="Gabriel Marchan" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 <Layer Type="BitmapText" Text="Jordan Frederick" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 <Layer Type="BitmapText" Text="Mike Calfin" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />
 <Layer Type="BitmapText" Text="Ryan Konkul" File="_r bold 30px" OnCommand="zoom,0.7;diffuse,#FFFFFF;ztest,1" />

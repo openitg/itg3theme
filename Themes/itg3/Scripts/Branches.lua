@@ -32,9 +32,12 @@ function EvaluationNextScreen()
 	if AllFailed() or IsFinalStage() then return "ScreenNameEntryTraditional" end
 	return NewSongScreen();
 end
+
 function ScreenCleaning()
-	if Hour() > 2 and Hour() < 7 and GetScreenCleaning() == true then return "ScreenNoise" end
-	return "ScreenCompany";
+	if Hour() >= GetCleanStartTime() and Hour() < GetCleanEndTime() and GetCleanScreen() == true then
+	return "ScreenNoise" end
+	
+	return "ScreenCompany"
 end
 
 function GetGameplayNextScreen()
@@ -68,6 +71,7 @@ function GetGameplayNextScreen()
 end
 
 function SelectEndingScreen()
+	if GAMESTATE:GetEnv("ForcePerfectEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER01 then return "ScreenEndingPerfect" end
 	if GAMESTATE:GetEnv("ForceGoodEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER04 then return "ScreenEndingGood" end
 	if GAMESTATE:GetEnv("ForceOkayEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER07 then return "ScreenEndingOkay" end
 
@@ -152,10 +156,8 @@ function GetUpdateScreen()
 end
 
 function GetRevision()
-	return "ITG3:RL1.0"
+	return "ITG3:RL1.1"
 end
-
-
 
 function GetLoadingDevice()
 	return "Loading Device Info ..."
@@ -191,10 +193,4 @@ end
 
 function GetWorkingText()
 	return "Status: Working at +2.8V ~ +5V OUT [Normal Parameter]"
-end
-
-
-function OLGetTopMenu()
-	if GAMESTATE:IsCourseMode() then return "CourseMenu" end
-	return "SongMenu";
 end

@@ -38,7 +38,9 @@ local HoldNoteMap =
 };
 
 -- 103 is a sentinel for beta 2. There should be a better way to do this...
-local function IsSupported() return OPENITG and OPENITG_VERSION >= 103 end
+-- local function IsSupported() return OPENITG and OPENITG_VERSION >= 103 end
+-- Forcing the function to return 1. This is causing MANY builds to crash when Player 1 tries to use In-Game Stats alone. Removing until new builds are distributed to the public, or a better of way of checking builds is found.
+local function IsSupported() return 1 end
 
 function SetJudgmentFrameForPlayer( self, pn )
 	if not IsSupported() then return nil end

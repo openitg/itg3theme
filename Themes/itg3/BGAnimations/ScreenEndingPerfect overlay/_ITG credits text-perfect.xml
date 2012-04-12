@@ -16,6 +16,7 @@
 <Layer Type="BitmapText" Text="Felipe Valladares" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="A.J. Kung" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="Jason Bolt" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Gabriel Marchan" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="Original UI Concept" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
 <Layer Type="BitmapText" Text="Ryan McKanna" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
@@ -54,6 +55,7 @@
 <Layer Type="BitmapText" Text="Matthew Emirzian" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="Dalton Runberg" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="Dominick Renzetti" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Gabriel Marchan" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="Jordan Frederick" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="Mike Calfin" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="Ryan Konkul" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
@@ -76,8 +78,8 @@
 <Layer Type="BitmapText" Text="Eric Holniker" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="Courses" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
-<Layer Type="BitmapText" Text="Barry Knapp-Tabbernor" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="Gabriel Marchan" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
+<Layer Type="BitmapText" Text="Barry Knapp-Tabbernor" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />
 <Layer Type="BitmapText" Text="Producer" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#76B1D5;" />
 <Layer Type="BitmapText" Text="" File="_v credit" OnCommand="horizalign,left;shadowlength,1.25;zoom,0.7;diffuse,#FFFFFF;" />

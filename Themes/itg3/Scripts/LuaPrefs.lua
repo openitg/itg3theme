@@ -94,12 +94,12 @@ function CustomsLoadMaxOptions()
 	return CreatePrefsRow( Params, Names, Values, "CustomsLoadMax" )
 end
 
-function  CustomsLoadTimeoutOptions()
+function CustomsLoadTimeoutOptions()
 	
-	local Values = { 5, 10, 15, 20, 25, 30, 0 }
+	local Values = { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 0 }
 	local Names = {}
-	for i = 1,6 do Names[i] = Values[i] .. "s" end
-	Names[7] = "UNLIMITED"
+	for i = 1,11 do Names[i] = Values[i] end
+	Names[12] = "UNLIMITED"
 
 	local Params = { Name = "CustomsLoadTimeout" }
 	return CreatePrefsRow( Params, Names, Values, "CustomsLoadTimeout" )
@@ -118,14 +118,14 @@ function CustomMaxSizeOptions()
 end
 
 function CustomMaxStepSizeOptions()
-	-- offset by 30 KB, increments of 15 KB up to 150 KB and unlimited
+	-- offset by 30 KB, increments of 20 KB up to 150 KB and unlimited
 	local Names = {}
-	for i=1,9 do Names[i] = (30+((i-1)*15)) .. "KB" end
+	for i=1,7 do Names[i] = (30+((i-1)*20)) .. " KB" end
 	Names[10] = "UNLIMITED"
 
 	local Params = { Name = "CustomMaxStepSizeKB" }
 
-	return CreatePrefsRowRange( Params, Names, "CustomMaxStepSizeKB", 30, 15 )
+	return CreatePrefsRowRange( Params, Names, "CustomMaxStepSizeKB", 30, 20 )
 end
 
 -- Base function for the below derivations

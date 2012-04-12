@@ -1,34 +1,29 @@
-<ActorFrame> <children>
+<ActorFrame><children>
 
 <Layer 
-		File="@GameplayOverlay()"
-		Condition="not GAMESTATE:IsCourseMode()"
-	/>
+File="@GameplayOverlay()"
+Condition="not GAMESTATE:IsCourseMode()"
+/>
 	
 <Layer 
-		File="_normal"
-		Condition="GAMESTATE:IsCourseMode()"
-	/>
+File="_normal"
+OnCommand="@HideFrame()"
+Condition="GAMESTATE:IsCourseMode()"
+/>
 	
-	
-	<!-- Song info, background only fade -->
+<!-- Song info, background only fade -->
 
 <Layer
-		Type="Quad"
-		OnCommand="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffusealpha,1;linear,0.3;diffusealpha,0"
-	/>
-
-
-
+Type="Quad"
+OnCommand="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffusealpha,1;linear,0.3;diffusealpha,0"
+/>
 
 <Layer
 File="..\_Stage Background\bar.png"
-Condition="not GAMESTATE:IsDemonstration() and not GAMESTATE:IsCourseMode()"
+Condition="not GAMESTATE:IsDemonstration()"
 InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+156"
 OnCommand="zoomtowidth,SCREEN_WIDTH;faderight,.8;fadeleft,.8;sleep,2.25;cropright,0;linear,.6;cropleft,1"
 />
-
-
 
 <Layer
 File="..\_Stage Background\_left gradient.png"
@@ -36,24 +31,29 @@ Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsDemonstration
 InitCommand="x,SCREEN_LEFT;y,SCREEN_CENTER_Y+150"
 OnCommand="horizalign,left;sleep,1;linear,1;diffusealpha,0;"
 />
+
 <Layer
 File="..\_Stage Background\_right gradient.png"
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
 InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+150"
 OnCommand="horizalign,right;sleep,1;linear,1;diffusealpha,0;"
 />
+
 <Layer
 File="..\_Stage Background\_p1.png"
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsDemonstration()"
 InitCommand="x,SCREEN_LEFT;y,SCREEN_CENTER_Y+150"
 OnCommand="horizalign,left;sleep,1;linear,1;diffusealpha,0;"
 />
+
 <Layer
 File="..\_Stage Background\_p2.png"
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
 InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+150"
 OnCommand="horizalign,right;sleep,1;linear,1;diffusealpha,0;"
 />
+
+<!-- step artist text -->
 <Layer
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsDemonstration() and GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
 Font="_r bold 30px"
@@ -61,28 +61,32 @@ Text="Step Artist:"
 InitCommand="x,SCREEN_LEFT+5;y,SCREEN_CENTER_Y+172"
 OnCommand="shadowlength,2;horizalign,left;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
 /> 
+
 <Layer
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration() and GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or not GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
 Font="_r bold 30px"
 Text=":Step Artist"
 InitCommand="x,SCREEN_RIGHT-5;y,SCREEN_CENTER_Y+172"
 OnCommand="shadowlength,2;horizalign,right;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
-/> 
+/>
+
 <!-- steps description -->
 <Layer
-Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsDemonstration()"
+Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsDemonstration()"
 Font="_r bold 30px"
 Text="@GetStepsDescriptionTextP1()"
-InitCommand="x,SCREEN_LEFT+100;y,SCREEN_CENTER_Y+172"
-OnCommand="shadowlength,2;horizalign,left;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
+InitCommand="x,SCREEN_LEFT+96;y,SCREEN_CENTER_Y+172"
+OnCommand="shadowlength,2;horizalign,left;zoom,.6;maxwidth,SCREEN_WIDTH/2;sleep,1;linear,1;diffusealpha,0;"
 /> 
- <Layer
- Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
+
+<Layer
+Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
 Font="_r bold 30px"
 Text="@GetStepsDescriptionTextP2()"
-InitCommand="x,SCREEN_RIGHT-100;y,SCREEN_CENTER_Y+172"
-OnCommand="shadowlength,2;horizalign,right;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
+InitCommand="x,SCREEN_RIGHT-96;y,SCREEN_CENTER_Y+172"
+OnCommand="shadowlength,2;horizalign,right;zoom,.6;maxwidth,SCREEN_WIDTH/2;sleep,1;linear,1;diffusealpha,0;"
 />
+
 <!-- player names -->
 <Layer
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsDemonstration()"
@@ -91,19 +95,18 @@ Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_1)"
 InitCommand="x,SCREEN_LEFT+44;y,SCREEN_CENTER_Y+142"
 OnCommand="diffusealpha,1;shadowlength,2;horizalign,left;zoom,.8;sleep,1;linear,1;diffusealpha,0;"
 /> 
- <Layer
- Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
+
+<Layer
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
 Font="_r bold 30px"
 Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_2)"
 InitCommand="x,SCREEN_RIGHT-44;y,SCREEN_CENTER_Y+142"
 OnCommand="diffusealpha,1;shadowlength,2;horizalign,right;zoom,.8;sleep,1;linear,1;diffusealpha,0;"
 />
 
-
-
-
+<!-- song titles -->
 <Layer
-Condition="not GAMESTATE:IsDemonstration()"
+Condition="not GAMESTATE:IsCourseMode() and not GAMESTATE:IsDemonstration()"
 Font="_r bold 30px"
 Text="@GetSongTitle()"
 InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+147"
@@ -111,53 +114,94 @@ OnCommand="draworder,9999999;maxwidth,SCREEN_WIDTH/8*7;shadowlength,2;horizalign
 /> 	
 
 <Layer
-Condition="not GAMESTATE:IsDemonstration()"
+Condition="not GAMESTATE:IsCourseMode() and not GAMESTATE:IsDemonstration()"
 Font="_r bold 30px"
 Text="@GetSongArtist()"
 InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+167"
 OnCommand="draworder,9999999;maxwidth,SCREEN_WIDTH/8*6.8;shadowlength,2;horizalign,center;zoom,.4;sleep,1.5;linear,1;diffusealpha,0;"
+/>
+
+<!-- course titles -->
+<Layer
+Condition="GAMESTATE:IsCourseMode() and not GAMESTATE:IsDemonstration()"
+Font="_r bold 30px"
+Text="@GetCourseTitle()"
+InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+147"
+OnCommand="draworder,9999999;maxwidth,SCREEN_WIDTH/8*7;shadowlength,2;horizalign,center;zoom,.5;sleep,1.5;linear,1;diffusealpha,0;"
+/>
+
+<!-- course difficulty text -->
+<Layer
+Condition="GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsDemonstration()"
+Font="_r bold 30px"
+Text="Difficulty:"
+InitCommand="x,SCREEN_LEFT+5;y,SCREEN_CENTER_Y+172"
+OnCommand="shadowlength,2;horizalign,left;zoom,.6;maxwidth,380;sleep,1;linear,1;diffusealpha,0;"
 /> 
+
+<Layer
+Condition="GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
+Font="_r bold 30px"
+Text=":Difficulty"
+InitCommand="x,SCREEN_RIGHT-5;y,SCREEN_CENTER_Y+172"
+OnCommand="shadowlength,2;horizalign,right;zoom,.6;maxwidth,380;sleep,1;linear,1;diffusealpha,0;"
+/>
+
+<!-- course difficulty -->
+<Layer
+Condition="GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsDemonstration()"
+Font="_r bold 30px"
+Text="@GetCourseDifficulty(PLAYER_1)"
+InitCommand="x,SCREEN_LEFT+84;y,SCREEN_CENTER_Y+172"
+OnCommand="shadowlength,2;horizalign,left;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
+/> 
+
+<Layer
+Condition="GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
+Font="_r bold 30px"
+Text="@GetCourseDifficulty(PLAYER_2)"
+InitCommand="x,SCREEN_RIGHT-84;y,SCREEN_CENTER_Y+172"
+OnCommand="shadowlength,2;horizalign,right;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
+/>
 
 <!-- Draw on top of the rest -->
 
-
 <!-- Demonstration only: -->
-<Layer 
-Class="ActorFrame" 
-Condition="GAMESTATE:IsDemonstration()"><children>
+<ActorFrame Condition="GAMESTATE:IsDemonstration()"><children>
+
 <Layer
 File="..\_metallic streak"
 InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+43;zoomtowidth,SCREEN_WIDTH"
 OnCommand="diffusealpha,.9;fadeleft,1;faderight,1"
 />
+
 <Layer 
-		Type="BitmapText"
-		Font="_z 36px black"
-		Text="DEMO"
-		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+43;shadowlength,0;zoom,.7;pulse;EffectMagnitude,1.0,0.95,0;effectclock,bgm;effectperiod,1"
-	/>
-	<Layer
+Type="BitmapText"
+Font="_z 36px black"
+Text="DEMO"
+OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+43;shadowlength,0;zoom,.8;pulse;EffectMagnitude,1.0,0.95,0;effectclock,bgm;effectperiod,1"
+/>
+
+<Layer
 File="demonstration gradient"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0.8"
 />
 
-</children></Layer>
+</children></ActorFrame>
+
 <!-- coin display -->
 <Layer
 Condition="not GAMESTATE:IsDemonstration()"
 File="..\_gameplaycoins"
 />
 
-
 <Layer
-Condition="not GAMESTATE:IsDemonstration()
+Condition="not GAMESTATE:IsDemonstration() 
 and GAMESTATE:IsPlayerEnabled(PLAYER_1)
 and GAMESTATE:IsPlayerEnabled(PLAYER_2)
 and GAMESTATE:GetCurrentSong():GetDisplayArtist() == 'Dragonforce'
-and GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty() == GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()
-"
+and GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty() == GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()"
 File="_battlemeter"
 />
-		</children> 
-</ActorFrame>
 
+</children></ActorFrame>

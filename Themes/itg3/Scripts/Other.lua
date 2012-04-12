@@ -2,7 +2,7 @@
 function SongModifiers()
 	if OPENITG then 
 		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR and not GAMESTATE:PlayerUsingBothSides() then
-			return "1,2,3,4,7,5,18,17,9,22,23,10,11,12,13,14,15,19,25,20,27,24,16" --normal gameplay, no doubles7
+			return "1,2,3,4,7,5,18,17,9,22,23,10,11,12,13,14,15,19,25,20,27,24,16" --normal gameplay, no doubles
 			
 		elseif  GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR and GAMESTATE:PlayerUsingBothSides() then
 			return "1,2,3,4,7,5,18,17,9,23,10,11,12,13,14,15,19,25,20,27,24,16" --normal play, doubles
@@ -19,9 +19,10 @@ function SongModifiers()
 end
 
 function oitgACoptions()
-	if OPENITG then return "1,2,3,50,4,5,6,120,7,8,113,46,13" end
-	return "1,2,3,4,5,6,7,8,114,113,46,47,13"
+	if OPENITG then return "1,2,3,50,51,52,4,5,6,120,7,8,113,32,46,53" end
+	return "1,2,3,50,51,4,5,6,7,8,114,113,32,46,47,53"
 end
+
 
 function Platform() return "arcade" end
 
@@ -41,11 +42,9 @@ function ShowForITGIO( actor )
 	end
 end
 
-
 function HideForITGIO( actor )
 	if GetInputType() == "ITGIO" then actor:hidden(1) end
 end
-
 
 function IOBridge( actor )
 if GetInputType() == "ITGIO" or GetInputType() == "PIUIO" then
@@ -67,6 +66,7 @@ function GetWorkoutMenuCommand()
 	return "difficulty," .. GetInitialDifficulty() .. ";screen,ScreenWorkoutMenu;PlayMode,regular;SetEnv,Workout,1"
 end
 
+
 function ScreenEndingGetDisplayName( pn )
 	if PROFILEMAN:IsPersistentProfile(pn) then return GAMESTATE:GetPlayerDisplayName(pn) end
 	return "No Card"
@@ -85,11 +85,13 @@ function RandomStartSong()
 	local s = SONGMAN:FindSong( t[ math.random(1,table.getn(t)) ] )
 	GAMESTATE:SetPreferredSong( s )
 end
-	
+
+
 function ScreenOpenITG()
 	if OPENITG then return true end
 	return false
 end
+
 
 function AdBx()
 	if OPENITG then return "zoom,.6;x,SCREEN_RIGHT-SCREEN_WIDTH/3.3;y,SCREEN_BOTTOM-150" end
@@ -102,39 +104,22 @@ function AdITG3()
 	return "zoom,.8;x,SCREEN_RIGHT-SCREEN_WIDTH/2;y,SCREEN_TOP+120"
 end
 
-function oitg9()
-	if OPENITG then return "mod,6x;name,6x" end
-	return "mod,5.5x;name,5.5x"
-end
-function oitg10()
-	if OPENITG then return "mod,c450;name,c450" end
-	return "mod,6x;name,6x"
-end
-function oitg11()
-	if OPENITG then return "mod,m550;name,m550" end
-	return "mod,C450;name,c450"
-end
-
-
 
 function lightstest()
 	if OPENITG then return "Screen,ScreenTestLights;name,Test Lights" end
 	return "Screen,ScreenTestLightsLegacy;name,Test Lights"
 end
 
+
 function WhyDontYouWork()
 	local song = GAMESTATE:GetCurrentSong()
-	local dir = song:GetSongDir()
-	if not song then return "" end
-	local banner = song:GetBannerPath()
-	
-	if string.find(dir,"/@mc1/") or string.find(dir,"/@mc2/") then return song:GetDisplayFullTitle()  end
-	
-	if not banner then return song:GetDisplayFullTitle()  end
-	return ""
+	local course = GAMESTATE:GetCurrentCourse()
+
+	if not song and not course then return "" end
+		
+	if song then return song:GetDisplayFullTitle() end
+	if course then return course:GetDisplayFullTitle() end
 end
-
-
 
 
 function QuadAward( pn )
@@ -161,8 +146,6 @@ function PercentAward( pn )
 end
 
 
-
-
 function StarIcon( Actor,pn )
 local stars = StarAward( pn ); 
 Trace("stars: " .. stars);
@@ -172,7 +155,6 @@ Trace("stars: " .. stars);
         if stars >= 50 then Actor:setstate(6) end 
         if stars >= 100 then Actor:setstate(7) end 
 end
-
 
 function QuadIcon( Actor,pn ) 
 local quads = QuadAward( pn ); 
@@ -184,9 +166,6 @@ Trace("quads: " .. quads);
         if quads >= 100 then Actor:setstate(11) end 
 end
 
-
-
-
 function PercentIcon( Actor,pn ) 
 local perc = PercentAward( pn ); 
 Trace("perc: " .. perc);
@@ -196,8 +175,6 @@ Trace("perc: " .. perc);
         if perc >= 7500 then Actor:setstate(2) end 
         if perc >= 15000 then Actor:setstate(3) end 
 end
-
-
 
 function CalorieIcon( Actor,pn ) 
 local cals = CalorieAward( pn ); 
@@ -216,15 +193,6 @@ return "Played Songs:\n" .. PROFILEMAN:GetProfile(pn):GetTotalNumSongsPlayed()
 end
 
 
-
-
-
-
-
-
-
-
-
 function GetCreditsText()
 	local song = GAMESTATE:GetCurrentSong()
 	if not song then return "" end
@@ -237,8 +205,6 @@ function GetCreditsText()
 end
 
 
-
-
 function vertexcolor()
 	if GAMESTATE:GetCurrentSong() and GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove/VerTex') then return "diffusecolor,0,1,0,1" end
 	if GAMESTATE:GetCurrentSong() and  GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove 2/VerTex²') then return "diffusecolor,1,0,0,1" end
@@ -246,6 +212,7 @@ function vertexcolor()
 
 	return ""
 end
+
 
 function songfail()
 	if GAMESTATE:GetCurrentSong() and GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove/VerTex') then return false end
@@ -263,10 +230,6 @@ function songfail2()
 
 	return false
 end
-
-
-
-
 
 
 function StopCourseEarly()
@@ -357,7 +320,6 @@ local Path = THEME:GetPath( EC_SOUNDS, '', "ScreenTitleMenu ForceGoodEnding" )
 end
 
 
-
 function OkayEnding()
 local Path = THEME:GetPath( EC_SOUNDS, '', "ScreenTitleMenu ForceGoodEnding" )
 	SOUND:PlayOnce( Path )
@@ -366,11 +328,12 @@ local Path = THEME:GetPath( EC_SOUNDS, '', "ScreenTitleMenu ForceGoodEnding" )
 end
 
 
-
-
-
-
-
+function PerfectEnding()
+local Path = THEME:GetPath( EC_SOUNDS, '', "ScreenTitleMenu ForceGoodEnding" )
+	SOUND:PlayOnce( Path )
+		GAMESTATE:SetEnv("ForcePerfectEnding",1)
+		MESSAGEMAN:Broadcast( "GoodEnding" )
+end
 
 -- Arcade unlocks:
 function Unlock( Title )
@@ -404,9 +367,7 @@ function Unlock( Title )
 		if not s then GAMESTATE:SetEnv("UnlockName","Unknown Song") end
 		GAMESTATE:SetEnv("UnlockName",s:GetDisplayFullTitle())
 		MESSAGEMAN:Broadcast( "UnlockEntered" )
-		
-		
-		
+				
 	end
 	NewHelpText = nil
 
@@ -432,7 +393,6 @@ function FullComboSplashSound( pn )
 end
 
 
-
 function SetDifficultyFrameFromSteps( Actor, pn )
 	Trace( "SetDifficultyFrameFromSteps" )
 	local steps = GAMESTATE:GetCurrentSteps( pn );
@@ -440,12 +400,6 @@ function SetDifficultyFrameFromSteps( Actor, pn )
 		Actor:setstate(steps:GetDifficulty()) 
 	end
 end
-
-
-
-
-
-
 
 
 function SetDifficultyFrameFromGameState( Actor, pn )
@@ -457,6 +411,7 @@ function SetDifficultyFrameFromGameState( Actor, pn )
 		SetDifficultyFrameFromSteps( Actor, pn )
 	end
 end
+
 
 function SetFromSongTitleAndCourseTitle( actor )
 	Trace( "SetFromSongTitleAndCourseTitle" )
@@ -472,6 +427,7 @@ function SetFromSongTitleAndCourseTitle( actor )
 
 	actor:settext( text )
 end
+
 
 function SetRemovedText(self, port)
 	local CurrentSong = GAMESTATE:GetCurrentSong()
@@ -493,7 +449,6 @@ function GetActual( stepsType )
 		PROFILEMAN:GetMachineProfile():GetCoursesActual(stepsType,COURSE_DIFFICULTY_REGULAR)+
 		PROFILEMAN:GetMachineProfile():GetCoursesActual(stepsType,COURSE_DIFFICULTY_DIFFICULT)
 end
-
 function GetPossible( stepsType )
 	return 
 		PROFILEMAN:GetMachineProfile():GetSongsPossible(stepsType,DIFFICULTY_EASY)+
@@ -503,6 +458,7 @@ function GetPossible( stepsType )
 		PROFILEMAN:GetMachineProfile():GetCoursesPossible(stepsType,COURSE_DIFFICULTY_REGULAR)+
 		PROFILEMAN:GetMachineProfile():GetCoursesPossible(stepsType,COURSE_DIFFICULTY_DIFFICULT)
 end
+
 
 function GetTotalPercentComplete( stepsType )
 	return GetActual(stepsType) / (0.96*GetPossible(stepsType))
@@ -524,14 +480,17 @@ function GetMaxPercentCompelte( stepsType )
 	return 1/0.96;
 end
 
+
 -- This is overridden in the PS2 theme to set the options difficulty.
 function GetInitialDifficulty()
 	return "beginner"
 end
 
+
 function DifficultyChangingIsAvailable()
 	return GAMESTATE:GetPlayMode() ~= PLAY_MODE_ENDLESS and GAMESTATE:GetPlayMode() ~= PLAY_MODE_ONI and GAMESTATE:GetSortOrder() ~= SORT_MODE_MENU
 end
+
 
 function ModeMenuAvailable()
 	if GAMESTATE:IsCourseMode() then return false end
@@ -540,6 +499,7 @@ function ModeMenuAvailable()
 	--Trace( "here2" )
 	return true
 end
+
 
 function GetEditStepsText()
 	local steps = GAMESTATE:GetCurrentSteps(PLAYER_1)
@@ -552,9 +512,11 @@ function GetEditStepsText()
 	end
 end
 
+
 function GetScreenSelectStyleDefaultChoice()
 	if GAMESTATE:GetNumPlayersEnabled() == 1 then return "1" else return "2" end
 end
+
 
 -- Wag for ScreenSelectPlayMode scroll choice3.  This should use
 -- EffectMagnitude, and not a hardcoded "5".
@@ -566,6 +528,7 @@ function TweenedWag(self)
 	rz = rz + 5 * math.sin( percent * 2 * 3.141 ) * self:getaux()
 	self:rotationz( rz )
 end
+
 
 -- For DifficultyMeterSurvival:
 function SetColorFromMeterString( self )
@@ -584,6 +547,7 @@ function SetColorFromMeterString( self )
 	self:playcommand( "Set" .. cmd .. "Course" )
 end
 
+
 function GetPaneX( player )
 	if GAMESTATE:PlayerUsingBothSides() then
 		return SCREEN_CENTER_X
@@ -596,6 +560,7 @@ function GetPaneX( player )
 	end
 end
 
+
 function EvalX()
 	if not GAMESTATE:PlayerUsingBothSides() then return 0 end
 
@@ -604,11 +569,13 @@ function EvalX()
 	return Offset;
 end
 
+
 function EvalTweenDistance()
 	local Distance = SCREEN_WIDTH/2
 	if GAMESTATE:PlayerUsingBothSides() then Distance = Distance * 2 end
 	return Distance
 end
+
 
 -- used by BGA/ScreenEvaluation overlay
 -- XXX: don't lowercase commands on parse
@@ -621,6 +588,7 @@ function ActorFrame:difficultyoffset()
 	self:addy( 0 )
 end
 
+
 function GameState:PlayerDifficulty( pn )
 	if GAMESTATE:IsCourseMode() then
 		local trail = GAMESTATE:GetCurrentTrail(pn)
@@ -632,7 +600,6 @@ function GameState:PlayerDifficulty( pn )
 end
 
 
-
 function GetRandomSongNames( num )
 	local s = "";
 	for i = 1,num do
@@ -641,6 +608,7 @@ function GetRandomSongNames( num )
 	end
 	return s
 end
+
 
 function GetStepChartFacts()
 	local s = "";
@@ -664,6 +632,7 @@ function GetStepChartFacts()
 	return s
 end
 
+
 function GetRandomCourseNames( num )
 	local s = "";
 	for i = 1,num do
@@ -672,6 +641,7 @@ function GetRandomCourseNames( num )
 	end
 	return s
 end
+
 
 function GetModifierNames( num )
 	local mods = {
@@ -695,6 +665,7 @@ function GetModifierNames( num )
 	end
 	return s
 end
+
 
 function OkX()
 	if not GAMESTATE:PlayerUsingBothSides() then return 0 end
@@ -755,12 +726,29 @@ function GetCourseTitle()
 		course:GetDisplayFullTitle()
 end
 
+
+function GetCourseDifficulty(pn)
+	local trail = GAMESTATE:GetCurrentTrail(pn)
+      
+	if trail:GetDifficulty() == 2 then
+		return "Normal"
+
+	elseif trail:GetDifficulty() == 3 then
+		return "Intense"
+
+	else
+		return "" end
+
+end
+
+
 function GetSongLength()
 	local song = GAMESTATE:GetCurrentSong()
 	if not song then return "" end
 	return "Song Length: " .. SecondsToMMSS(song:MusicLengthSeconds())
 	
 end
+
 
 function SHUTUPSERIOUSLY()
 	Debug( "Screen width: " .. tostring(SCREEN_WIDTH) )
@@ -771,8 +759,6 @@ function SHUTUPSERIOUSLY()
 	Debug( "Screen bottom: " .. tostring(SCREEN_BOTTOM) )
 	SOUND:DimMusic(0, 6)
 end
-
-
 
 
 function LifeDifficultylevel1()
@@ -849,7 +835,6 @@ function GameplayOverlay()
 end
 
 
-
 function StepartistHiddenPress( actor )
 local song = GAMESTATE:GetCurrentSong();
 	if song then
@@ -870,9 +855,6 @@ local song = GAMESTATE:GetCurrentSong();
 	end
 
 end
-
-
-
 
 
 function P1Stepartist( actor )
@@ -938,6 +920,7 @@ function P2Stepartist( actor )
 	actor:settext( result )
 end
 
+
 --
 --str = str .. Values:GetValue( RADAR_CATEGORY_TAPS ) .. "\n"
 --str = str .. Values:GetValue( RADAR_CATEGORY_HOLDS ) .. "\n"
@@ -968,9 +951,6 @@ return str
 end
 
 
-
-
-
 function ColorRadar( player, Cat )
 if not player then return "" end
 
@@ -994,6 +974,7 @@ if val < 20 then return "diffuse,#FFFF00" end
 return "diffuse,#FFFF00"
 end
 
+
 function DemoName()
 	local song = GAMESTATE:GetCurrentSong()
 	if not song then return "" end
@@ -1003,15 +984,18 @@ function DemoName()
 		song:GetDisplayArtist()
 end
 
+
 function HideOnDoubles()
 if GAMESTATE:PlayerUsingBothSides() then return "hidden,1;" end
 return ""
 end
 
+
 function DoublesScoreCenterP1()
 if GAMESTATE:PlayerUsingBothSides() or CustomMods[PLAYER_1].solo == true then return "addx,SCREEN_WIDTH/4;" end
 return ""
 end
+
 
 function DoublesScoreCenterP2()
 if GAMESTATE:PlayerUsingBothSides() or CustomMods[PLAYER_2].solo == true then return "addx,-SCREEN_WIDTH/4-8;" end
@@ -1024,9 +1008,11 @@ if pn == PLAYER_1 then MESSAGEMAN:Broadcast( "Player1FullCombo" .. combotype ) e
 if pn == PLAYER_2 then MESSAGEMAN:Broadcast( "Player2FullCombo" .. combotype ) end
 end
 	
+
 function GetRateModHelper( rate )
    return GAMESTATE:PlayerIsUsingModifier(0, rate) or GAMESTATE:PlayerIsUsingModifier(1, rate)
 end
+
 
 function GetRateMod()
    if GetRateModHelper('1.0xmusic') then return ''
@@ -1046,7 +1032,8 @@ end
 	
 function DisplayCustomModifiersFrame(pn)
 
-end	
+end
+
 	
 function DisplayCustomModifiersText(pn)	--gives me text of all custom modifiers that are applied (and rate mods)
 local t = ""
@@ -1054,11 +1041,12 @@ local t = ""
 if CustomMods[pn].left then if t == "" then t = "Rotated Left" else t = t .. ", Rotated Left" end end
 if CustomMods[pn].right then if t == "" then t = "Rotated Right" else t = t .. ", Rotated Right" end end
 if CustomMods[pn].downward then if t == "" then t = "Rotated Downward" else t = t .. ", Rotated Downward" end end
-if CustomMods[pn].solo then if t == "" then t = "Centered" else t = t .. ", Centered" end end
+if CustomMods[pn].solo then if t == "" then t = "Solo-Centered" else t = t .. ", Solo-Centered" end end
 
 if CustomMods[pn].wag then if t == "" then t = "Wag" else t = t .. ", Wag" end 
 elseif CustomMods[pn].pulse then if t == "" then t = "Pulse" else t = t .. ", Pulse" end 
-elseif CustomMods[pn].bounce then if t == "" then t = "Bounce" else t = t .. ", Bounce" end 
+elseif CustomMods[pn].bounce then if t == "" then t = "Bounce" else t = t .. ", Bounce" end
+elseif CustomMods[pn].bob then if t == "" then t = "Bob" else t = t .. ", Bob" end
 elseif CustomMods[pn].spinreverse then if t == "" then t = "Spin Left" else t = t .. ", Spin Right" end 
 elseif CustomMods[pn].spin then if t == "" then t = "Spin Right" else t = t .. ", Spin Right" end 
 elseif CustomMods[pn].vibrate then if t == "" then t = "Vibrate" else t = t .. ", Vibrate" end end
@@ -1073,7 +1061,8 @@ return t
 
 end
 
- function OffsetDoublesModifiers(pn)
+
+function OffsetDoublesModifiers(pn)
 	if GAMESTATE:PlayerUsingBothSides() then
 		if pn == PLAYER_1 then return "addx,-70"
 		else return "addx,70" end	
@@ -1114,6 +1103,7 @@ local endpercent=endvalue/size
 
 end
 	
+
 function PercentageTween2(self, wait, tweentype, size, startvalue, endvalue, animation, duration)
 --wait is sleep applied before animating, 
 --tweentype is either zoom or cropping with direction
@@ -1140,5 +1130,9 @@ local endpercent=endvalue/size
 	end
 
 end
-	
 
+-- Hide the timer if "MenuTimer" is disabled
+function HideTimer()
+	local enabled = PREFSMAN:GetPreference("MenuTimer")
+	if enabled then return "0" else return "1" end
+end
