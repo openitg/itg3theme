@@ -1,71 +1,78 @@
-<ActorFrame
-OnCommand="%function(self)
-		ResetBeginnerDisplay() 
-		end">
-		<!--Resets custom modifiers if on beginner -->
-	<children>
+<!--Resets custom modifiers if on beginner -->
+<ActorFrame OnCommand="%function(self)	ResetBeginnerDisplay() end"><children>
+
 <ActorFrame Condition="not GAMESTATE:IsCourseMode() and not (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove/Training1/'))" ><children>
-<!-- normales -->
+
+<!-- Normal Mode -->
 <Actor
 File="@'../../Graphics/ScreenGameplay stage '..GetStageText()"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+60;horizalign,center;cropright,1.3;sleep,.22;linear,1;cropright,-0.3"
 />
+
 <Actor
 File="@'../../Graphics/_white ScreenGameplay stage '..GetStageText()"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+60;horizalign,center;cropleft,-0.3;cropright,1;faderight,.1;fadeleft,.1;sleep,.22;linear,1;cropleft,+1;cropright,-0.3"
 />
 
-
-
-
-
-<!-- reflect -->
-
+<!-- Reflection -->
 <Actor
 File="@'../../Graphics/ScreenGameplay stage '..GetStageText()"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+86;horizalign,center;rotationz,180;zoomx,-1;diffusealpha,0.6;fadetop,2;cropright,1.3;linear,1.225;cropright,-0.3"
 />
 
-
 </children></ActorFrame>
 
-
-
-
-
-<!-- tutorial -->
+<!-- Tutorial -->
 <ActorFrame Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove/Training1/')" ><children>
+
 <Actor
 File="@THEME:GetPath(EC_GRAPHICS,'','_tutorial welcome')"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-112;diffusealpha,0;zoom,4;sleep,0.0;linear,0.3;diffusealpha,1;zoom,1"
 />
+
 </children></ActorFrame>
 
-<!-- courses -->
+<!-- Courses -->
 <ActorFrame Condition="GAMESTATE:IsCourseMode()" ><children>
+
 <Actor
 File="../../Graphics/ScreenGameplay course song 1"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+60;horizalign,center;cropright,1.3;sleep,.07;linear,1;cropright,-0.3"
 />
+
 <Actor
 File="../../Graphics/_white ScreenGameplay course song 1"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+60;horizalign,center;cropleft,-0.3;cropright,1;faderight,.1;fadeleft,.1;sleep,.07;linear,1;cropleft,+1;cropright,-0.3"
 />
-<!-- reflect -->
+
+<!-- Reflect -->
 <Actor
 File="../../Graphics/ScreenGameplay course song 1"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+86;horizalign,center;rotationz,180;zoomx,-1;diffusealpha,0.6;fadetop,2;cropleft,-0.3;cropright,1;faderight,.1;fadeleft,.1;linear,1;cropleft,0;cropright,-0.3"
 />
+
 </children></ActorFrame>
+
 <Layer
 Class="Autoactor"
 File="blueflare"
 InitCommand="draworder,115"		
 OnCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+12.5;zoomx,15;zoomtoheight,SCREEN_HEIGHT+SCREEN_HEIGHT/4;linear,1;zoomtoheight,0;diffusealpha,.0"
 />
+
+<!-- Memory Card Icons -->
+<!-- Because of the way that the theme is layed out, we have to manually force the icons to show up here. Unfortunately it will only show an Active plugged in card, and no icon if the card was Disconnected after being mounted. Still better than having it disappear completely. -->
+<Layer
+File="../../Graphics/MemoryCardDisplay ready p1"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+OnCommand="draworder,115;x,SCREEN_LEFT+40;y,SCREEN_BOTTOM-15;"		
+/>
+
+<Layer
+File="../../Graphics/MemoryCardDisplay ready p2"
+Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+OnCommand="draworder,115;x,SCREEN_RIGHT-40;y,SCREEN_BOTTOM-15;"		
+/>
+
 </children>
 </ActorFrame>
-
-
-
-
