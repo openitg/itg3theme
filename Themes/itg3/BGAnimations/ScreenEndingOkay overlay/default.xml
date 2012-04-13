@@ -1,21 +1,17 @@
 <ActorFrame> <children>
-	<!-- <Layer
-		File="player pane"
-		OnCommand="x,SCREEN_CENTER_X-320+74;y,SCREEN_CENTER_Y+18"
-		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
-	/>
- -->
 
- 	 <Layer File="intro/arrow" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;addx,SCREEN_WIDTH*1.5;addy,SCREEN_HEIGHT*2;sleep,1.5;glow,1,1,1,1;decelerate,.6;addx,-SCREEN_WIDTH*1.5;addy,-SCREEN_HEIGHT*2;glow,0,0,0,0;wag;EffectMagnitude,4,0,4;EffectPeriod,8;sleep,1;linear,1;diffusealpha,.5;"/>
+	<Layer File="intro/arrow" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;addx,SCREEN_WIDTH*1.5;addy,SCREEN_HEIGHT*2;sleep,1.5;glow,1,1,1,1;decelerate,.6;addx,-SCREEN_WIDTH*1.5;addy,-SCREEN_HEIGHT*2;glow,0,0,0,0;wag;EffectMagnitude,4,0,4;EffectPeriod,8;sleep,1;linear,1;diffusealpha,.5;"/>
 
- <Layer File="credits" />
+	<Layer File="credits" />
 	
-	
- <Layer
+	<!-- Player 1 -->
+	<Layer
 		File="p1gradient"
 		OnCommand="diffusealpha,0;x,SCREEN_CENTER_X-255;y,SCREEN_CENTER_Y-140;sleep,4;linear,.6;diffusealpha,1;"
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
 	/>
+	
+	<!-- Normal Mode -->
 	<ActorFrame
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1) and not GAMESTATE:IsCourseMode()"
 		OnCommand="x,SCREEN_CENTER_X-276;y,SCREEN_CENTER_Y+41"
@@ -26,6 +22,7 @@
 		<Layer Type="BitmapText" Text="@DifficultyToThemedString(DIFFICULTY_CHALLENGE)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_CHALLENGE) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*3" />
 	</children> </ActorFrame>
 
+	<!-- Marathon Mode -->
 	<ActorFrame
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1) and GAMESTATE:IsCourseMode()"
 		OnCommand="x,SCREEN_CENTER_X-276;y,SCREEN_CENTER_Y+41"
@@ -33,18 +30,15 @@
 		<Layer Type="BitmapText" Text="@CourseDifficultyToThemedString(DIFFICULTY_MEDIUM)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_MEDIUM) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*1" />
 		<Layer Type="BitmapText" Text="@CourseDifficultyToThemedString(DIFFICULTY_HARD)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_HARD) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*2" />
 	</children> </ActorFrame>
-	
-	<!-- <Layer
-		File="player pane"
-		OnCommand="x,SCREEN_CENTER_X+320-74;y,SCREEN_CENTER_Y+18"
-		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
-	/> -->
-	
-<Layer
+		
+	<!-- Player 2 -->
+	<Layer
 		File="p2gradient"
 		OnCommand="diffusealpha,0;x,SCREEN_CENTER_X+255;y,SCREEN_CENTER_Y-140;sleep,4;linear,.6;diffusealpha,1;"
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
 	/>
+
+	<!-- Normal Mode -->
 	<ActorFrame
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2) and not GAMESTATE:IsCourseMode()"
 		OnCommand="x,SCREEN_CENTER_X+216;y,SCREEN_CENTER_Y+41"
@@ -55,6 +49,7 @@
 		<Layer Type="BitmapText" Text="@DifficultyToThemedString(DIFFICULTY_CHALLENGE)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_CHALLENGE) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*3" />
 	</children> </ActorFrame>
 
+	<!-- Marathon Mode -->
 	<ActorFrame
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2) and GAMESTATE:IsCourseMode()"
 		OnCommand="x,SCREEN_CENTER_X+216;y,SCREEN_CENTER_Y+41"
@@ -63,8 +58,7 @@
 		<Layer Type="BitmapText" Text="@CourseDifficultyToThemedString(DIFFICULTY_HARD)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_HARD) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*2" />
 	</children> </ActorFrame>
 
-	
-
+	<!-- Player 1 Name -->
 	<Layer
 		Text="@ScreenEndingGetDisplayName(PLAYER_1)"
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
@@ -72,6 +66,7 @@
 		OnCommand="@'x,SCREEN_CENTER_X-246;y,SCREEN_CENTER_Y-140;zoom,0.7;ShadowLength,2;diffuse,'..PlayerColor(PLAYER_1)"
 	/>
 
+	<!-- Player 2 Name -->
 	<Layer
 		Text="@ScreenEndingGetDisplayName(PLAYER_2)"
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
@@ -79,18 +74,15 @@
 		OnCommand="@'x,SCREEN_CENTER_X+246;y,SCREEN_CENTER_Y-140;zoom,0.7;ShadowLength,2;diffuse,'..PlayerColor(PLAYER_2)"
 	/>
 	
+	<!-- Intro Stuff -->
+	<Layer File="intro" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,20;addx,SCREEN_WIDTH*4"/>
+	<Layer File="../ScreenTitleMenu background/newlogo" OnCommand="diffusealpha,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,2;diffusealpha,1;sleep,1.5;linear,1;diffusealpha,0"/>
+	<Layer File="../ScreenTitleMenu background/glow" OnCommand="additiveblend,1;diffusealpha,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,1.7;accelerate,.2;glow,1,1,1,1;sleep,.2;decelerate,1;glow,0,0,0,0;diffusealpha,0;"/>
 
-	 <Layer File="intro" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,20;addx,SCREEN_WIDTH*4"/>
-	 <Layer File="../ScreenTitleMenu background/newlogo" OnCommand="diffusealpha,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,2;diffusealpha,1;sleep,1.5;linear,1;diffusealpha,0"/>
-	 <Layer File="../ScreenTitleMenu background/glow" OnCommand="additiveblend,1;diffusealpha,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,1.7;accelerate,.2;glow,1,1,1,1;sleep,.2;decelerate,1;glow,0,0,0,0;diffusealpha,0;"/>
-
-
-
-<Layer Type="AutoActor" File="../ScreenEndingGood underlay/thank you for playing" InitCommand="x,SCREEN_CENTER_X-40;y,SCREEN_CENTER_Y;addy,-110;addx,-SCREEN_WIDTH;sleep,.2;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.5;addx,20;linear,1;addx,5;diffusealpha,0" />
-<Layer Type="AutoActor" File="topmask" InitCommand="diffusealpha,0;x,SCREEN_CENTER_X;y,SCREEN_TOP;vertalign,top;zoomtowidth,358;sleep,3.5;linear,.5;diffusealpha,1" />
-
+	<!-- Thank You For Playing! -->
+	<Layer Type="AutoActor" File="../ScreenEndingGood underlay/thank you for playing" InitCommand="x,SCREEN_CENTER_X-40;y,SCREEN_CENTER_Y;addy,-110;addx,-SCREEN_WIDTH;sleep,.2;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.5;addx,20;linear,1;addx,5;diffusealpha,0" />
+	<Layer Type="AutoActor" File="topmask" InitCommand="diffusealpha,0;x,SCREEN_CENTER_X;y,SCREEN_TOP;vertalign,top;zoomtowidth,358;sleep,3.5;linear,.5;diffusealpha,1" />
 
 	<Layer File="../_ScreenEnding overlay common" />
 
 </children> </ActorFrame>
-
