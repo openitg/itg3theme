@@ -1,15 +1,13 @@
 <ActorFrame> <children>
-	<!-- <Layer
-		File="player pane"
-		OnCommand="x,SCREEN_CENTER_X-320+74;y,SCREEN_CENTER_Y+18"
-		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
-	/>
- -->
- <Layer
+
+	<!-- Player 1 -->
+	<Layer
 		File="p1gradient"
-		OnCommand="x,SCREEN_CENTER_X-230;y,SCREEN_CENTER_Y-140"
+		OnCommand="x,SCREEN_CENTER_X-246;y,SCREEN_CENTER_Y-140;zoomx,1.2"
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
 	/>
+
+	<!-- Normal Mode -->
 	<ActorFrame
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1) and not GAMESTATE:IsCourseMode()"
 		OnCommand="x,SCREEN_CENTER_X-276;y,SCREEN_CENTER_Y+41"
@@ -20,6 +18,7 @@
 		<Layer Type="BitmapText" Text="@DifficultyToThemedString(DIFFICULTY_CHALLENGE)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_CHALLENGE) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*3" />
 	</children> </ActorFrame>
 
+	<!-- Course Mode -->
 	<ActorFrame
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1) and GAMESTATE:IsCourseMode()"
 		OnCommand="x,SCREEN_CENTER_X-276;y,SCREEN_CENTER_Y+41"
@@ -28,17 +27,14 @@
 		<Layer Type="BitmapText" Text="@CourseDifficultyToThemedString(DIFFICULTY_HARD)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_HARD) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*2" />
 	</children> </ActorFrame>
 	
-	<!-- <Layer
-		File="player pane"
-		OnCommand="x,SCREEN_CENTER_X+320-74;y,SCREEN_CENTER_Y+18"
-		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
-	/> -->
-	
-<Layer
+	<!-- Player 2 -->
+	<Layer
 		File="p2gradient"
-		OnCommand="x,SCREEN_CENTER_X+230;y,SCREEN_CENTER_Y-140"
+		OnCommand="x,SCREEN_CENTER_X+246;y,SCREEN_CENTER_Y-140;zoomx,1.2"
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
 	/>
+
+	<!-- Normal Mode -->
 	<ActorFrame
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2) and not GAMESTATE:IsCourseMode()"
 		OnCommand="x,SCREEN_CENTER_X+216;y,SCREEN_CENTER_Y+41"
@@ -49,6 +45,7 @@
 		<Layer Type="BitmapText" Text="@DifficultyToThemedString(DIFFICULTY_CHALLENGE)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_CHALLENGE) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*3" />
 	</children> </ActorFrame>
 
+	<!-- Course Mode -->
 	<ActorFrame
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2) and GAMESTATE:IsCourseMode()"
 		OnCommand="x,SCREEN_CENTER_X+216;y,SCREEN_CENTER_Y+41"
@@ -57,9 +54,11 @@
 		<Layer Type="BitmapText" Text="@CourseDifficultyToThemedString(DIFFICULTY_HARD)" File="_r bold 30px" InitCommand="@'diffuse,' .. DifficultyColor(DIFFICULTY_HARD) .. ';ShadowLength,2;zoom,0.5'" OnCommand="y,20*2" />
 	</children> </ActorFrame>
 
+	<!-- Credits -->
 	<Layer File="../_scrolling ITG credits" />
 	<Layer File="../_ScreenEnding overlay common" />
 
+	<!-- Player 1 Name -->
 	<Layer
 		Text="@ScreenEndingGetDisplayName(PLAYER_1)"
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
@@ -67,6 +66,7 @@
 		OnCommand="@'x,SCREEN_CENTER_X-246;y,SCREEN_CENTER_Y-140;zoom,0.7;ShadowLength,2;diffuse,'..PlayerColor(PLAYER_1)"
 	/>
 
+	<!-- Player 2 Name -->
 	<Layer
 		Text="@ScreenEndingGetDisplayName(PLAYER_2)"
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
@@ -74,4 +74,3 @@
 		OnCommand="@'x,SCREEN_CENTER_X+246;y,SCREEN_CENTER_Y-140;zoom,0.7;ShadowLength,2;diffuse,'..PlayerColor(PLAYER_2)"
 	/>
 </children> </ActorFrame>
-
