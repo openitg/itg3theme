@@ -135,33 +135,38 @@ function GetCleanScreen()
 end
 
 function CleanStartTime()
-	local Names = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }
-
 	local type = ProfileTable.CleanStartTime
-	
+
+	local Values = {}
+	for i = 0,46 do Values[i+1] = i/2 end
+
+	local Names = {}
+	for i = 1,46 do Names[i] = SecondsToMMSS(Values[i]*60) end
+
 	-- called on construction, must set exactly one list member true
 	local function Load(self, list, pn)
-		-- short-circuit to '1' if no option is set
+		-- short-circuit to '0.00' if no option is set
 		if not type then list[1] = true return end
 
 		-- do any of the options match the given type?
-		for i=1,24 do
-			if type == string.lower(Names[i]) then list[i] = true return end
+		for i=1,46 do
+			if type == Values[i] then list[i] = true return end
 		end
 
-		-- none of the above worked. fallback on 1
+		-- none of the above worked. fallback on 0:00
 		list[1] = true
 	end
 
 	local function Save(self, list, pn)
-		for i=1,23 do
+		for i=1,47 do
 			if list[i] then
-				ProfileTable.CleanStartTime = string.lower(Names[i])
+				ProfileTable.CleanStartTime = Values[i]
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
 		end
 	end
+
 	
 	local Params = { Name = "CleanStartTime" }
 
@@ -169,32 +174,43 @@ function CleanStartTime()
 end
 
 function GetCleanStartTime()
+	local type = ProfileTable.CleanStartTime
+	
+	if type == nil then
+	return 0 else
 	return tonumber(ProfileTable.CleanStartTime)
+	end
 end
 
 function CleanEndTime()
-	local Names = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }
-
 	local type = ProfileTable.CleanEndTime
-	
+
+	local Values = {}
+	for i = 1,46 do Values[i] = i/2 + 0.5 end
+	Values[47] = 23.99
+
+	local Names = {}
+	for i = 1,47 do Names[i] = SecondsToMMSS(Values[i]*60) end
+	Names[47] = SecondsToMMSS(24*60)
+
 	-- called on construction, must set exactly one list member true
 	local function Load(self, list, pn)
-		-- short-circuit to '2' if no option is set
-		if not type then list[2] = true return end
+		-- short-circuit to '23:59' if no option is set
+		if not type then list[47] = true return end
 
 		-- do any of the options match the given type?
-		for i=1,23 do
-			if type == string.lower(Names[i]) then list[i] = true return end
+		for i=1,47 do
+			if type == Values[i] then list[i] = true return end
 		end
 
-		-- none of the above worked. fallback on 2
-		list[1] = true
+		-- none of the above worked. fallback on 23:59
+		list[47] = true
 	end
 
 	local function Save(self, list, pn)
-		for i=1,23 do
+		for i=1,47 do
 			if list[i] then
-				ProfileTable.CleanEndTime = string.lower(Names[i])
+				ProfileTable.CleanEndTime = Values[i]
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -207,7 +223,12 @@ function CleanEndTime()
 end
 
 function GetCleanEndTime()
+	local type = ProfileTable.CleanEndTime
+	
+	if type == nil then
+	return 24 else
 	return tonumber(ProfileTable.CleanEndTime)
+	end
 end
 
 function Get2PlayerJoinMessage()

@@ -1,7 +1,0 @@
-<ActorFrame> <children>
-	<Layer
-		Type="Quad"
-		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
-		OnCommand="diffuse,#000000;diffusealpha,0;linear,0.2;diffusealpha,1"
-	/>
-</children> </ActorFrame>
