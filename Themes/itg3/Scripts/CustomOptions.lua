@@ -176,7 +176,7 @@ end
 function GetCleanStartTime()
 	local type = ProfileTable.CleanStartTime
 	
-	if type == nil then
+	if not type then
 	return 0 else
 	return tonumber(ProfileTable.CleanStartTime)
 	end
@@ -225,7 +225,7 @@ end
 function GetCleanEndTime()
 	local type = ProfileTable.CleanEndTime
 	
-	if type == nil then
+	if not type then
 	return 24 else
 	return tonumber(ProfileTable.CleanEndTime)
 	end
