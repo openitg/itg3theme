@@ -1,7 +1,6 @@
 ﻿<ActorFrame
 OnCommand="%function(self)
 		ResetCustomMods() 
-		RandomStartSong()
 		end"
 		><children>
 <Layer

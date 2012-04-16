@@ -1156,6 +1156,11 @@ local endpercent=endvalue/size
 
 end
 
+function SongsOnPosition()
+	if DayOfMonth() == 1 and MonthOfYear() == 4 then return "x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-47;zoom,0.55;diffusealpha,0;sleep,0.7;linear,0.4;diffusealpha,1" end
+return "x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-17;zoom,0.55;diffusealpha,0;sleep,0.7;linear,0.4;diffusealpha,1"
+end
+
 -- Hide the timer if "MenuTimer" is disabled
 function HideTimer()
 	local enabled = PREFSMAN:GetPreference("MenuTimer")
