@@ -111,16 +111,41 @@ function lightstest()
 end
 
 
-function WhyDontYouWork()
+function GetStageTitle()
 	local song = GAMESTATE:GetCurrentSong()
 	local course = GAMESTATE:GetCurrentCourse()
-
-	if not song and not course then return "" end
-		
-	if song then return song:GetDisplayFullTitle() end
-	if course then return course:GetDisplayFullTitle() end
+	
+	if song then return song:GetDisplayFullTitle()
+	elseif course then return course:GetDisplayFullTitle()
+	else return "" end
 end
 
+function GetStageDir()
+	local song = GAMESTATE:GetCurrentSong()
+	local course = GAMESTATE:GetCurrentCourse()
+	local fulldir = ""
+   
+	-- OpenITG supports the full course path (requested by DarkLink :3)
+	if course then
+	
+	if OPENITG then fulldir = course:GetCourseDir()
+	if string.find(fulldir, "@mc1") or string.find(fulldir, "@mc2") then
+	return "Memory Card" .. string.sub(fulldir, 30, -5) else
+	return string.sub(fulldir, 10, -5) end
+	
+	-- Non-OpenITG only gets the course title.
+	else return course:GetDisplayFullTitle()
+	end
+	
+	elseif song then
+	fulldir = song:GetSongDir()
+	if string.find(fulldir, "@mc1") or string.find(fulldir, "@mc2") then
+	return "Memory Card" .. string.sub(fulldir, 28, -2) else
+	return string.sub(fulldir, 8, -2) end
+	
+	else
+	return "" end
+end
 
 function QuadAward( pn )
 	return PROFILEMAN:GetProfile(pn):GetTotalStepsWithTopGrade(STEPS_TYPE_DANCE_SINGLE,DIFFICULTY_CHALLENGE,GRADE_TIER01)

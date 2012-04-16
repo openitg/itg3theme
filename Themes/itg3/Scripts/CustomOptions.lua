@@ -1,6 +1,23 @@
 -- A Simple Alias for Easier Referencing
 local ProfileTable = PROFILEMAN:GetMachineProfile():GetSaved()
 
+function GetCustomSongCancelText()
+	Debug( "GetCustomSongCancelText" )
+
+	-- Set up two initial line spaces.
+	local ret = "\n\n"
+
+	if SelectButtonAvailable() then
+		ret = ret .. "Pressing &SELECT will cancel this selection."
+		return ret
+	else
+		ret = ret .. "Pressing &MENULEFT; + &MENURIGHT; will cancel this selection."
+		return ret
+	end
+
+	return "???"
+end
+
 function CreditTypeRow()
 	local Names = { "Coins", "Tokens", "Swipe Card" }
 
@@ -176,7 +193,7 @@ end
 function GetCleanStartTime()
 	local type = ProfileTable.CleanStartTime
 	
-	if type == nil then
+	if not type then
 	return 0 else
 	return tonumber(ProfileTable.CleanStartTime)
 	end
@@ -225,7 +242,7 @@ end
 function GetCleanEndTime()
 	local type = ProfileTable.CleanEndTime
 	
-	if type == nil then
+	if not type then
 	return 24 else
 	return tonumber(ProfileTable.CleanEndTime)
 	end
@@ -347,6 +364,76 @@ function GetOptionsList()
 	local type = ProfileTable.OptionsListToggle
 		
 	if type == "enabled" and GAMESTATE:GetPlayMode() ~= PLAY_MODE_ONI then
+	return "1" else
+	return "0"
+	end
+end
+
+function ScoreComparisonToggleRow()
+	local Names = { "Off", "On" }
+
+	local type = ProfileTable.ScoreComparisonToggle
+
+	-- called on construction, must set exactly one list member true
+	local function Load(self, list, pn)
+		-- short-circuit to 'off' if no option is set
+		if not type then list[1] = true return end
+
+		-- do any of the options match the given type?
+		for i=1,2 do
+			if type == string.lower(Names[i]) then list[i] = true return end
+		end
+
+		-- none of the above worked. fallback on off
+		list[1] = true
+	end
+
+	-- called as the screen destructs, to save the selected option in list
+	local function Save(self, list, pn)
+		for i=1,2 do
+			if list[i] then
+				ProfileTable.ScoreComparisonToggle = string.lower(Names[i])
+				PROFILEMAN:SaveMachineProfile()
+				return
+			end
+		end
+	end
+
+	
+	local Params = { Name = "ScoreComparisonToggle" }
+
+	return CreateOptionRow( Params, Names, Load, Save )
+end
+
+function CompareScores()
+	Debug( "CompareScores" )
+	-- This is hardcoded...it's just re-enforced to save time.
+        for pn = PLAYER_1,NUM_PLAYERS-1 do
+		if not GAMESTATE:IsPlayerEnabled(pn) then return "0" end
+	end
+
+	-- Only compare scores if Enabled through the Options Menu and if Both Players have the Same Steps.
+	if GetScoreComparison() == "0" then return "0" end
+
+	if GAMESTATE:IsCourseMode() then
+		local TrailP1 = GAMESTATE:GetCurrentTrail( PLAYER_1 );
+		local TrailP2 = GAMESTATE:GetCurrentTrail( PLAYER_2 );
+		if TrailP1 ~= TrailP2 then return "0" end
+	else
+		local StepsP1 = GAMESTATE:GetCurrentSteps( PLAYER_1 );
+		local StepsP2 = GAMESTATE:GetCurrentSteps( PLAYER_2 );
+		if StepsP1 ~= StepsP2 then return "0" end
+	end
+
+	Debug( "Returning true" )
+
+	return "1"
+end
+
+function GetScoreComparison()
+	local type = ProfileTable.ScoreComparisonToggle
+		
+	if type == "on" then
 	return "1" else
 	return "0"
 	end

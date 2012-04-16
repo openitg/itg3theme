@@ -150,10 +150,10 @@ File="_coins"
 	OnCommand="x,SCREEN_LEFT+SCREEN_WIDTH/3.6;y,SCREEN_TOP+78"
 	OffCommand="accelerate,0.3;addy,-120"
       > <children>
-<!-- Show the name of a song if it does not have a banner or is loaded from a USB drive -->
+<!-- Show the name of the song or course just played -->
       <Layer
 	Type="BitmapText"
-	Text="@WhyDontYouWork()"
+	Text="@GetStageTitle()"
 	Font="_r bold shadow 30px"
 	OnCommand="horizalign,center;maxwidth,SCREEN_WIDTH-40;shadowlength,0;zoom,.5;cropright,1;sleep,3;linear,.5;cropright,0;"
       />
