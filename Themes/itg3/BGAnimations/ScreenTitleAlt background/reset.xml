@@ -1,0 +1,7 @@
+﻿<ActorFrame
+OnCommand="%function(self)
+		ResetCustomMods() 
+		end"
+		><children>
+
+</children></ActorFrame>

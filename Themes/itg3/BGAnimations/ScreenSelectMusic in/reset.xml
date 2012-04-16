@@ -1,0 +1,7 @@
+﻿<ActorFrame
+OnCommand="%function(self)
+		RandomStartSong() 
+		end"
+		><children>
+
+</children></ActorFrame>
