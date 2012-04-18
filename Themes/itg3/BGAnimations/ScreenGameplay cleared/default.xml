@@ -7,7 +7,7 @@
 <Layer 
 		File="combosplash"
 		Condition="not GAMESTATE:IsCourseMode()"
-		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+150"
 	/>
 
 
