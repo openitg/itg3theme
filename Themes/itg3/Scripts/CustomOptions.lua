@@ -8,7 +8,7 @@ function GetCustomSongCancelText()
 	local ret = "\n\n"
 
 	if SelectButtonAvailable() then
-		ret = ret .. "Pressing &SELECT will cancel this selection."
+		ret = ret .. "Pressing &SELECT; will cancel this selection."
 		return ret
 	else
 		ret = ret .. "Pressing &MENULEFT; + &MENURIGHT; will cancel this selection."

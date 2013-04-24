@@ -7,7 +7,6 @@ Condition="not GAMESTATE:IsCourseMode()"
 	
 <Layer 
 File="_normal"
-OnCommand="@HideFrame()"
 Condition="GAMESTATE:IsCourseMode()"
 />
 	
