@@ -115,8 +115,8 @@ function GetStageTitle()
 	local song = GAMESTATE:GetCurrentSong()
 	local course = GAMESTATE:GetCurrentCourse()
 
-	if song then return song:GetDisplayFullTitle()
-	elseif course then return course:GetDisplayFullTitle()
+	if course then return course:GetDisplayFullTitle()
+	elseif song then return song:GetDisplayFullTitle()
 	else return "" end
 end
 
