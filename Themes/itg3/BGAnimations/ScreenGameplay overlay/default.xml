@@ -1,15 +1,15 @@
 <ActorFrame><children>
 
-<Layer 
+<Layer
 File="@GameplayOverlay()"
-Condition="not GAMESTATE:IsCourseMode()"
+Condition="not GAMESTATE:IsCourseMode() and not GAMESTATE:IsDemonstration()"
 />
-	
-<Layer 
+
+<Layer
 File="_normal"
-Condition="GAMESTATE:IsCourseMode()"
+Condition="GAMESTATE:IsCourseMode() or GAMESTATE:IsDemonstration()"
 />
-	
+
 <!-- Song info, background only fade -->
 
 <Layer
@@ -59,7 +59,7 @@ Font="_r bold 30px"
 Text="Step Artist:"
 InitCommand="x,SCREEN_LEFT+5;y,SCREEN_CENTER_Y+172"
 OnCommand="shadowlength,2;horizalign,left;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
-/> 
+/>
 
 <Layer
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration() and GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or not GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
@@ -76,7 +76,7 @@ Font="_r bold 30px"
 Text="@GetStepsDescriptionTextP1()"
 InitCommand="x,SCREEN_LEFT+96;y,SCREEN_CENTER_Y+172"
 OnCommand="shadowlength,2;horizalign,left;zoom,.6;maxwidth,SCREEN_WIDTH/2;sleep,1;linear,1;diffusealpha,0;"
-/> 
+/>
 
 <Layer
 Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
@@ -93,7 +93,7 @@ Font="_r bold 30px"
 Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_1)"
 InitCommand="x,SCREEN_LEFT+44;y,SCREEN_CENTER_Y+142"
 OnCommand="diffusealpha,1;shadowlength,2;horizalign,left;zoom,.8;sleep,1;linear,1;diffusealpha,0;"
-/> 
+/>
 
 <Layer
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
@@ -110,7 +110,7 @@ Font="_r bold 30px"
 Text="@GetSongTitle()"
 InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+147"
 OnCommand="draworder,9999999;maxwidth,SCREEN_WIDTH/8*7;shadowlength,2;horizalign,center;zoom,.5;sleep,1.5;linear,1;diffusealpha,0;"
-/> 	
+/>
 
 <Layer
 Condition="not GAMESTATE:IsCourseMode() and not GAMESTATE:IsDemonstration()"
@@ -136,7 +136,7 @@ Font="_r bold 30px"
 Text="Difficulty:"
 InitCommand="x,SCREEN_LEFT+5;y,SCREEN_CENTER_Y+172"
 OnCommand="shadowlength,2;horizalign,left;zoom,.6;maxwidth,380;sleep,1;linear,1;diffusealpha,0;"
-/> 
+/>
 
 <Layer
 Condition="GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
@@ -153,7 +153,7 @@ Font="_r bold 30px"
 Text="@GetCourseDifficulty(PLAYER_1)"
 InitCommand="x,SCREEN_LEFT+84;y,SCREEN_CENTER_Y+172"
 OnCommand="shadowlength,2;horizalign,left;zoom,.6;sleep,1;linear,1;diffusealpha,0;"
-/> 
+/>
 
 <Layer
 Condition="GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsDemonstration()"
@@ -195,7 +195,7 @@ File="..\_gameplaycoins"
 />
 
 <Layer
-Condition="not GAMESTATE:IsDemonstration() 
+Condition="not GAMESTATE:IsDemonstration()
 and GAMESTATE:IsPlayerEnabled(PLAYER_1)
 and GAMESTATE:IsPlayerEnabled(PLAYER_2)
 and GAMESTATE:GetCurrentSong():GetDisplayArtist() == 'Dragonforce'
