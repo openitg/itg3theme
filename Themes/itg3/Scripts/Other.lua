@@ -1,21 +1,21 @@
 -- Override these in other themes.
 function SongModifiers()
-	if OPENITG then 
+	if OPENITG then
 		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR and not GAMESTATE:PlayerUsingBothSides() then
 			return "1,2,3,4,7,5,18,17,9,22,23,10,11,12,13,14,15,19,25,20,27,24,16" --normal gameplay, no doubles
-			
+
 		elseif  GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR and GAMESTATE:PlayerUsingBothSides() then
 			return "1,2,3,4,7,5,18,17,9,23,10,11,12,13,14,15,19,25,20,27,24,16" --normal play, doubles
-		
+
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
 			return "1,2,3,4,7,5,18,17,9,22,23,12,13,14,15,19,21,27,24,16"	--course
 		else
 			return "1,2,3,4,7,5,18,17,9,10,11,12,13,14,15,16" end --"survival/fallback"
-			
-	
+
+
 	else return "1,2,3,4,7,5,18,17,9,10,11,12,13,14,15,16" end --not running oitg
-	
-	
+
+
 end
 
 function oitgACoptions()
@@ -37,7 +37,7 @@ end
 
 function ShowForITGIO( actor )
 	
-	if GetInputType() == "ITGIO" then actor:hidden(0) 
+	if GetInputType() == "ITGIO" then actor:hidden(0)
 	elseif GetInputType() == "Home" then actor:hidden(1)
 	end
 end
@@ -81,7 +81,7 @@ function RandomStartSong()
 		"In The Groove 3/Dance Vibrations",
 		"In The Groove 3/Coming Out",
 	};
-	
+
 	local s = SONGMAN:FindSong( t[ math.random(1,table.getn(t)) ] )
 	GAMESTATE:SetPreferredSong( s )
 end
@@ -114,9 +114,9 @@ end
 function GetStageTitle()
 	local song = GAMESTATE:GetCurrentSong()
 	local course = GAMESTATE:GetCurrentCourse()
-	
-	if song then return song:GetDisplayFullTitle()
-	elseif course then return course:GetDisplayFullTitle()
+
+	if course then return course:GetDisplayFullTitle()
+	elseif song then return song:GetDisplayFullTitle()
 	else return "" end
 end
 
@@ -124,25 +124,25 @@ function GetStageDir()
 	local song = GAMESTATE:GetCurrentSong()
 	local course = GAMESTATE:GetCurrentCourse()
 	local fulldir = ""
-   
+
 	-- OpenITG supports the full course path (requested by DarkLink :3)
 	if course then
-	
+
 	if OPENITG then fulldir = course:GetCourseDir()
 	if string.find(fulldir, "@mc1") or string.find(fulldir, "@mc2") then
 	return "Memory Card" .. string.sub(fulldir, 30, -5) else
 	return string.sub(fulldir, 10, -5) end
-	
+
 	-- Non-OpenITG only gets the course title.
 	else return course:GetDisplayFullTitle()
 	end
-	
+
 	elseif song then
 	fulldir = song:GetSongDir()
 	if string.find(fulldir, "@mc1") or string.find(fulldir, "@mc2") then
 	return "Memory Card" .. string.sub(fulldir, 28, -2) else
 	return string.sub(fulldir, 8, -2) end
-	
+
 	else
 	return "" end
 end
@@ -172,43 +172,43 @@ end
 
 
 function StarIcon( Actor,pn )
-local stars = StarAward( pn ); 
+local stars = StarAward( pn );
 Trace("stars: " .. stars);
-        if stars < 10 then Actor:hidden(1) end 
-        if stars >= 10 then Actor:setstate(4) end 
-        if stars >= 25 then Actor:setstate(5) end 
-        if stars >= 50 then Actor:setstate(6) end 
-        if stars >= 100 then Actor:setstate(7) end 
+	if stars < 10 then Actor:hidden(1) end
+	if stars >= 10 then Actor:setstate(4) end
+	if stars >= 25 then Actor:setstate(5) end
+	if stars >= 50 then Actor:setstate(6) end
+	if stars >= 100 then Actor:setstate(7) end
 end
 
-function QuadIcon( Actor,pn ) 
-local quads = QuadAward( pn ); 
+function QuadIcon( Actor,pn )
+local quads = QuadAward( pn );
 Trace("quads: " .. quads);
-        if quads < 10 then Actor:hidden(1) end 
-        if quads >= 10 then Actor:setstate(8) end 
-        if quads >= 25 then Actor:setstate(9) end 
-        if quads >= 50 then Actor:setstate(10) end 
-        if quads >= 100 then Actor:setstate(11) end 
+	if quads < 10 then Actor:hidden(1) end
+	if quads >= 10 then Actor:setstate(8) end
+	if quads >= 25 then Actor:setstate(9) end
+	if quads >= 50 then Actor:setstate(10) end
+	if quads >= 100 then Actor:setstate(11) end
 end
 
-function PercentIcon( Actor,pn ) 
-local perc = PercentAward( pn ); 
+function PercentIcon( Actor,pn )
+local perc = PercentAward( pn );
 Trace("perc: " .. perc);
-        if perc < 500 then Actor:hidden(1) end 
-        if perc >= 500 then Actor:setstate(0) end 
-        if perc >= 2500 then Actor:setstate(1) end 
-        if perc >= 7500 then Actor:setstate(2) end 
-        if perc >= 15000 then Actor:setstate(3) end 
+	if perc < 500 then Actor:hidden(1) end
+	if perc >= 500 then Actor:setstate(0) end
+	if perc >= 2500 then Actor:setstate(1) end
+	if perc >= 7500 then Actor:setstate(2) end
+	if perc >= 15000 then Actor:setstate(3) end
 end
 
-function CalorieIcon( Actor,pn ) 
-local cals = CalorieAward( pn ); 
+function CalorieIcon( Actor,pn )
+local cals = CalorieAward( pn );
 Trace("cals: " .. cals);
-        if cals < 250 then Actor:hidden(1) end 
-        if cals >= 250 then Actor:setstate(12) end 
-        if cals >= 750 then Actor:setstate(13) end 
-        if cals >= 1500 then Actor:setstate(14) end 
-        if cals >= 3000 then Actor:setstate(15) end 
+	if cals < 250 then Actor:hidden(1) end
+	if cals >= 250 then Actor:setstate(12) end
+	if cals >= 750 then Actor:setstate(13) end
+	if cals >= 1500 then Actor:setstate(14) end
+	if cals >= 3000 then Actor:setstate(15) end
 end
 
 
@@ -222,7 +222,7 @@ function GetCreditsText()
 	local song = GAMESTATE:GetCurrentSong()
 	if not song then return "" end
 
-	return 
+	return
 		song:GetDisplayFullTitle().."\n"..
 		song:GetDisplayArtist().."\n"..
 		GetStepsDescriptionTextP1().."\n"..
@@ -258,7 +258,7 @@ end
 
 
 function StopCourseEarly()
-	-- Stop gameplay between songs in Fitess: Random Endless if all players have 
+	-- Stop gameplay between songs in Fitess: Random Endless if all players have
 	-- completed their goals.
 	if not GAMESTATE:GetEnv("Workout") then return "0" end
 	if GAMESTATE:GetPlayMode() ~= PLAY_MODE_ENDLESS then return "0" end
@@ -392,7 +392,7 @@ function Unlock( Title )
 		if not s then GAMESTATE:SetEnv("UnlockName","Unknown Song") end
 		GAMESTATE:SetEnv("UnlockName",s:GetDisplayFullTitle())
 		MESSAGEMAN:Broadcast( "UnlockEntered" )
-				
+
 	end
 	NewHelpText = nil
 
@@ -406,9 +406,9 @@ function Unlock( Title )
 	local Bleep = THEME:GetPath( EC_SOUNDS, '', "bleep" )
 	SOUND:PlayOnce( Bleep )
 	SOUND:PlayOnce( Path )
-	
+
 	return s
-	
+
 end
 
 
@@ -422,7 +422,7 @@ function SetDifficultyFrameFromSteps( Actor, pn )
 	Trace( "SetDifficultyFrameFromSteps" )
 	local steps = GAMESTATE:GetCurrentSteps( pn );
 	if steps then 
-		Actor:setstate(steps:GetDifficulty()) 
+		Actor:setstate(steps:GetDifficulty())
 	end
 end
 
@@ -466,7 +466,7 @@ end
 
 
 function GetActual( stepsType )
-	return 
+	return
 		PROFILEMAN:GetMachineProfile():GetSongsActual(stepsType,DIFFICULTY_EASY)+
 		PROFILEMAN:GetMachineProfile():GetSongsActual(stepsType,DIFFICULTY_MEDIUM)+
 		PROFILEMAN:GetMachineProfile():GetSongsActual(stepsType,DIFFICULTY_HARD)+
@@ -528,11 +528,11 @@ end
 
 function GetEditStepsText()
 	local steps = GAMESTATE:GetCurrentSteps(PLAYER_1)
-	if steps == nil then 
+	if steps == nil then
 		return ""
 	elseif steps:GetDifficulty() == DIFFICULTY_EDIT then 
 		return steps:GetDescription()
-	else 
+	else
 		return DifficultyToThemedString(steps:GetDifficulty())
 	end
 end
@@ -670,7 +670,7 @@ end
 
 function GetModifierNames( num )
 	local mods = {
-		"x1","x1.5","x2","x2.5","x3","3.5x","x4","x5","x6","x8","c300","c450",
+		"x1","x1.5","x2","x2.5","x3","x3.5","x4","x5","x6","x8","c300","c450",
 		"Incoming","Overhead","Space","Hallway","Distant",
 		"Standard","Reverse","Split","Alternate","Cross","Centered",
 		"Accel","Decel","Wave","Expand","Boomerang","Bumpy",
@@ -754,7 +754,7 @@ end
 
 function GetCourseDifficulty(pn)
 	local trail = GAMESTATE:GetCurrentTrail(pn)
-      
+
 	if trail:GetDifficulty() == 2 then
 		return "Normal"
 
@@ -771,7 +771,7 @@ function GetSongLength()
 	local song = GAMESTATE:GetCurrentSong()
 	if not song then return "" end
 	return "Song Length: " .. SecondsToMMSS(song:MusicLengthSeconds())
-	
+
 end
 
 
@@ -834,7 +834,7 @@ function GameplayOverlay()
 	
 	local dir = CurrentSong:GetSongDir()
 	
-	if string.find(dir,"/Dance Dance Revolution Extreme/") or string.find(dir,"8th Mix") then 
+	if string.find(dir,"/Dance Dance Revolution Extreme/") or string.find(dir,"8th Mix") then
 		return "_extreme"  end
 	if  string.find( CurrentSong:GetDisplayFullTitle(), "VerTex" ) then
 		return "_vertex" end
@@ -1035,31 +1035,31 @@ end
 	
 
 function GetRateModHelper( rate )
-   return GAMESTATE:PlayerIsUsingModifier(0, rate) or GAMESTATE:PlayerIsUsingModifier(1, rate)
+	return GAMESTATE:PlayerIsUsingModifier(0, rate) or GAMESTATE:PlayerIsUsingModifier(1, rate)
 end
 
 
 function GetRateMod()
-   if GetRateModHelper('1.0xmusic') then return ''
-   elseif GetRateModHelper('1.1xmusic') then return '1.1x Rate' 
-   elseif GetRateModHelper('1.2xmusic') then return '1.2x Rate' 
-   elseif GetRateModHelper('1.3xmusic') then return '1.3x Rate' 
-   elseif GetRateModHelper('1.4xmusic') then return '1.4x Rate' 
-   elseif GetRateModHelper('1.5xmusic') then return '1.5x Rate' 
-   elseif GetRateModHelper('1.6xmusic') then return '1.6x Rate' 
-   elseif GetRateModHelper('1.7xmusic') then return '1.7x Rate' 
-   elseif GetRateModHelper('1.8xmusic') then return '1.8x Rate' 
-   elseif GetRateModHelper('1.9xmusic') then return '1.9x Rate' 
-   elseif GetRateModHelper('2.0xmusic') then return '2.0x Rate' 
-   else return '(Unknown rate mod)' end
-end	
-	
-	
+	if GetRateModHelper('1.0xmusic') then return ''
+	elseif GetRateModHelper('1.1xmusic') then return '1.1x Rate'
+	elseif GetRateModHelper('1.2xmusic') then return '1.2x Rate'
+	elseif GetRateModHelper('1.3xmusic') then return '1.3x Rate'
+	elseif GetRateModHelper('1.4xmusic') then return '1.4x Rate'
+	elseif GetRateModHelper('1.5xmusic') then return '1.5x Rate'
+	elseif GetRateModHelper('1.6xmusic') then return '1.6x Rate'
+	elseif GetRateModHelper('1.7xmusic') then return '1.7x Rate'
+	elseif GetRateModHelper('1.8xmusic') then return '1.8x Rate'
+	elseif GetRateModHelper('1.9xmusic') then return '1.9x Rate'
+	elseif GetRateModHelper('2.0xmusic') then return '2.0x Rate'
+	else return '(Unknown rate mod)' end
+end
+
+
 function DisplayCustomModifiersFrame(pn)
 
 end
 
-	
+
 function DisplayCustomModifiersText(pn)	--gives me text of all custom modifiers that are applied (and rate mods)
 local t = ""
 
@@ -1068,12 +1068,12 @@ if CustomMods[pn].right then if t == "" then t = "Rotated Right" else t = t .. "
 if CustomMods[pn].downward then if t == "" then t = "Rotated Downward" else t = t .. ", Rotated Downward" end end
 if CustomMods[pn].solo then if t == "" then t = "Solo-Centered" else t = t .. ", Solo-Centered" end end
 
-if CustomMods[pn].wag then if t == "" then t = "Wag" else t = t .. ", Wag" end 
-elseif CustomMods[pn].pulse then if t == "" then t = "Pulse" else t = t .. ", Pulse" end 
+if CustomMods[pn].wag then if t == "" then t = "Wag" else t = t .. ", Wag" end
+elseif CustomMods[pn].pulse then if t == "" then t = "Pulse" else t = t .. ", Pulse" end
 elseif CustomMods[pn].bounce then if t == "" then t = "Bounce" else t = t .. ", Bounce" end
 elseif CustomMods[pn].bob then if t == "" then t = "Bob" else t = t .. ", Bob" end
-elseif CustomMods[pn].spinreverse then if t == "" then t = "Spin Left" else t = t .. ", Spin Right" end 
-elseif CustomMods[pn].spin then if t == "" then t = "Spin Right" else t = t .. ", Spin Right" end 
+elseif CustomMods[pn].spinreverse then if t == "" then t = "Spin Left" else t = t .. ", Spin Right" end
+elseif CustomMods[pn].spin then if t == "" then t = "Spin Right" else t = t .. ", Spin Right" end
 elseif CustomMods[pn].vibrate then if t == "" then t = "Vibrate" else t = t .. ", Vibrate" end end
 
 if CustomMods[pn].dark == 0.5 then if t == "" then t = "Dark Filter" else t = t .. ", Dark Filter" end end
@@ -1090,7 +1090,7 @@ end
 function OffsetDoublesModifiers(pn)
 	if GAMESTATE:PlayerUsingBothSides() then
 		if pn == PLAYER_1 then return "addx,-70"
-		else return "addx,70" end	
+		else return "addx,70" end
 	else return "" end
 end
 
@@ -1099,7 +1099,7 @@ function OffsetLifebarHeight(pn)
 	if CustomMods[pn].left or CustomMods[pn].right then return "SCREEN_CENTER_Y"
 	else return "SCREEN_CENTER_Y+30" end
 end
-	
+
 
 function PercentageTween(self, wait, tweentype, size, startvalue, endvalue, animation, duration)
 --wait is sleep applied before animating, 
@@ -1117,7 +1117,7 @@ local endpercent=endvalue/size
 	if string.find(tweentype,"crop") then
 
 		if tweentype == 'cropright' then
-			self:cropright(1-startpercent) 
+			self:cropright(1-startpercent)
 			self:sleep(wait)
 			self:decelerate(duration)
 			self:cropright(1-endpercent)
