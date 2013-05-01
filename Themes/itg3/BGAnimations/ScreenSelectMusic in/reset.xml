@@ -1,6 +1,6 @@
 ﻿<ActorFrame
 OnCommand="%function(self)
-		RandomStartSong() 
+		RandomStartSong(); CalculateSpeedMod() 
 		end"
 		><children>
 

@@ -5,13 +5,13 @@
 	
 <Layer 
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)" 
-		OnCommand="x,372;y,81;addx,SCREEN_WIDTH*3/4;sleep,0.1;decelerate,0.3;addx,-SCREEN_WIDTH*3/4" 
+		OnCommand="x,372;y,81;addx,-SCREEN_WIDTH*3/4;sleep,0.2;decelerate,0.6;addx,SCREEN_WIDTH*3/4" 
 		OffCommand="accelerate,0.3;addx,SCREEN_WIDTH" 
 		File="@THEME:GetPath(EC_GRAPHICS,'','_name p1')"
 	/>
 <Layer 
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)" 
-		OnCommand="x,540;y,81;addx,SCREEN_WIDTH*3/4;sleep,0.2;decelerate,0.3;addx,-SCREEN_WIDTH*3/4" 
+		OnCommand="x,268;y,81;addx,SCREEN_WIDTH*3/4;sleep,0.2;decelerate,0.6;addx,-SCREEN_WIDTH*3/4" 
 		OffCommand="accelerate,0.3;addx,SCREEN_WIDTH" 
 		File="@THEME:GetPath(EC_GRAPHICS,'','_name p2')"
 	/>
@@ -21,6 +21,7 @@
 		OnCommand="diffusealpha,0;zoom,.7;bounceend,0.3;diffusealpha,.7;zoom,1"
 		OffCommand=""
 	/>
+
 <Layer
 File="ScreenOptions frame"
 InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;additiveblend,1;diffuseblink;effectcolor1,0.8,0.8,0.8,.85;effectdelay,.6;effectperiod,0.4;effectoffset,0.2;effectclock,bgm"
@@ -38,6 +39,26 @@ OffCommand="diffusealpha,1;accelerate,0.3;diffusealpha,0"
 		OnCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,#FFFFFF;diffusealpha,1;sleep,.2;linear,0.4;diffusealpha,0" 
 		OffCommand="hidden,1;"
 	/> 
+
+<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		Font="_v 26px bold diffuse"
+		Text="P1 Scroll Rate"
+		Command="@'diffuse,' .. PlayerColor(PLAYER_1) .. ';x,SCREEN_CENTER_X-160;y,SCREEN_TOP+86;ShadowLength,0;horizalign,left;zoom,0.5;queuecommand,Update'"
+		SpeedModChangedMessageCommand="queuecommand,Update"
+		UpdateCommand="%function(self) self:settext('P1: '..DisplaySpeedMod(1)) end"
+		OffCommand="zoom,0"
+	/>
+	<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		Font="_v 26px bold diffuse"
+		Text="P2 Scroll Rate"
+		InitCommand="addx,SCREEN_WIDTH*3/4;sleep,0.1;addx,-SCREEN_WIDTH*3/4"
+		Command="@'diffuse,' .. PlayerColor(PLAYER_2) .. ';ShadowLength,0;horizalign,right;zoom,0.5;x,SCREEN_CENTER_X+160;y,SCREEN_TOP+86;queuecommand,Update'"
+		SpeedModChangedMessageCommand="queuecommand,Update"
+		UpdateCommand="%function(self) self:settext('P2: '..DisplaySpeedMod(2)) end"
+		OffCommand="zoom,0"
+	/>
 
 <!-- system layer add -->
 <Layer
