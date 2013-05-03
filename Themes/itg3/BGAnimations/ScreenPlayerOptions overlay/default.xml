@@ -1,5 +1,20 @@
 <ActorFrame> 
 	<children>
+
+<!--SPO Time Tracker-->
+	<Layer Type="Quad"
+		InitCommand="sleep,0.01;queuecommand,SPOCountDown;"
+		SPOCountDownCommand="%function(self)
+			self:stoptweening();
+			ScreenPlayerOptionsTimer = ScreenPlayerOptionsTimer - 0.1;
+				if ScreenPlayerOptionsTimer <= 0 then
+					ScreenPlayerOptionsTimer = 0;
+				end
+		self:sleep(0.1);
+		self:queuecommand('SPOCountDown');
+		end"
+	/>
+
 <!-- stuff -->
 
 	

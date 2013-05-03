@@ -1333,17 +1333,51 @@ function CaptureBPM()
 end
 
 function BackButton()
-	local modList = {'Back to Music Selection'}
+	local modList = {'Return to Music Selection'}
 	local t = {
 		Name = "BackButton",
 		LayoutType = "ShowAllInRow",
 		SelectType = "SelectMultiple",
 		OneChoiceForAllPlayers = GAMESTATE:IsPlayerEnabled(PLAYER_1),
-		ExportOnChange = true,
+		ExportOnChange = false,
 		Choices = modList,
 		LoadSelections = function(self, list, pn) end,
-		SaveSelections = function(self, list, pn) if list[1] then SCREENMAN:SetNewScreen('ScreenSelectMusic2') end end
+		SaveSelections = function(self, list, pn) if list[1] and ScreenSelectMusicTimer > 5 then SCREENMAN:SetNewScreen('ScreenSelectMusic2') else if list[1] then SCREENMAN:SystemMessage('Not Enough Time Left!') end end end
 	}
 	setmetatable(t, t)
 	return t
+end
+
+function GetTimer(screen)
+	if ScreenSelectMusicTimer == nil then
+		ScreenSelectMusicTimer = DefaultSSM;
+	end
+	
+	if ScreenPlayerOptionsTimer == nil then
+		ScreenPlayerOptionsTimer = DefaultSPO;
+	end
+	
+	if screen == "ScreenEvaluation" then
+		ScreenSelectMusicTimer = DefaultSSM;
+		ScreenPlayerOptionsTimer = DefaultSPO;
+		ScreenEvaluationTimer = 30;
+		return math.ceil(ScreenEvaluationTimer)
+	end
+	
+	if screen == "ScreenSelectMusic" then
+		if ScreenSelectMusicTimer == nil then
+			ScreenSelectMusicTimer = DefaultSSM;		
+		end
+	return math.ceil(ScreenSelectMusicTimer)
+	end
+	
+	if screen == "ScreenPlayerOptions" then
+		if ScreenPlayerOptionsTimer == nil then
+			ScreenPlayerOptionsTimer = DefaultSPO;	
+		end
+	return math.ceil(ScreenPlayerOptionsTimer)
+	end
+	
+return 0;
+
 end

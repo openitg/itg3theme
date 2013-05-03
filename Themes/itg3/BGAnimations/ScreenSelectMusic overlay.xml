@@ -1,5 +1,19 @@
 <ActorFrame> <children>
-	
+
+<!--SSM Time Tracker-->
+	<Layer Type="Quad"
+		InitCommand="sleep,0.01;queuecommand,SSMCountDown;"
+		SSMCountDownCommand="%function(self)
+			self:stoptweening();
+			ScreenSelectMusicTimer = ScreenSelectMusicTimer - 0.1;
+				if ScreenSelectMusicTimer <= 0 then
+					ScreenSelectMusicTimer = 0;
+				end
+		self:sleep(0.1);
+		self:queuecommand('SSMCountDown');
+		end"
+	/>
+
 <Layer
 		File="ScreenWithMenuElements underlay\_sides"
 		OnCommand="ztest,1"
