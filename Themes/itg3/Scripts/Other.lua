@@ -1185,6 +1185,7 @@ function SpeedMods(name)
 					if s == modExtra[pn+1] or modList[n] == modExtra[pn+1] then list[n] = true; list[1] = false else list[n] = false end
 				end
 				if name == "Type" then
+					s = modList[n]; s = string.gsub(s,'-Mod','')
 					if s == modType[pn+1] then list[n] = true; list[1] = false else list[n] = false end
 				end
 			end
