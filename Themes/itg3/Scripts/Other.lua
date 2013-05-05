@@ -1182,11 +1182,9 @@ function SpeedMods(name)
 					if modList[n] == modBase[pn+1] then list[n] = true; list[1] = false else list[n] = false end
 				end
 				if name == "Extra" then
-					s = modList[n]; s = string.gsub(s,'+',''); s = tonumber(s)
 					if s == modExtra[pn+1] or modList[n] == modExtra[pn+1] then list[n] = true; list[1] = false else list[n] = false end
 				end
 				if name == "Type" then
-					s = modList[n]; s = string.gsub(s,'-Mod','')
 					if s == modType[pn+1] then list[n] = true; list[1] = false else list[n] = false end
 				end
 			end
@@ -1235,7 +1233,7 @@ function RateMods(name)
 	   
 		LoadSelections = function(self, list, pn)
 			for n = 1, table.getn(modList) do
-				if GAMESTATE:PlayerIsUsingModifier(pn,modList[n]..'xmusic') then list[n] = true; s = modList[n]; modRate = tonumber(s) else list[n] = false end
+				if GAMESTATE:PlayerIsUsingModifier(pn,modList[n]..'xmusic') then list[n] = true; modRate = modList[n] else list[n] = false end
 			end
 		end,
 
@@ -1243,7 +1241,7 @@ function RateMods(name)
 			for n = 1, table.getn(modList) do
 				if list[n] then s = modList[n] end
 			end
-			modRate = tonumber(s)
+			modRate = s
 			GAMESTATE:ApplyGameCommand('mod,'..s..'xmusic',pn+1)
 			ApplyRateAdjust()
 			MESSAGEMAN:Broadcast('RateModChanged')
@@ -1255,49 +1253,28 @@ function RateMods(name)
 end
 
 function CalculateSpeedMod()
-	modBase = {}
-	modExtra = {}
-	modType = {}
-	modSpeed = {}
+	modBase = { "1", "1" }
+	modExtra = { "+.5", "+.5" }
+	modType = { "x-mod", "x-mod"}
+	modSpeed = { "1.5x", "1.5x"}
+	
 	for pn=1, 2 do
 		if GAMESTATE:IsPlayerEnabled( pn - 1 ) then
-			modBase[pn] = 1
-			modExtra[pn] = 0
-			modType[pn] = 'x'
-			for j=0, 90, 10 do CalculateSpeedLoop(j,pn) end
-			for j=25, 75, 25 do CalculateSpeedLoop(j,pn) end
-			if modType[pn] == 'x' then modSpeed[pn] = modBase[pn] + modExtra[pn] ..'x' end
-			if modType[pn] == 'c' then modSpeed[pn] = 'c' .. modBase[pn]*100 + modExtra[pn]*100 end
-			if modType[pn] == 'm' then modSpeed[pn] = 'm' .. modBase[pn]*100 + modExtra[pn]*100 end
+
+			if modType[pn] == "x-mod" then modSpeed[pn] = modBase[pn] + modExtra[pn] .."x" end
+			if modType[pn] == "c-mod" then modSpeed[pn] = "c" .. modBase[pn]*100 + modExtra[pn]*100 end
+			if modType[pn] == "m-mod" then modSpeed[pn] = "m" .. modBase[pn]*100 + modExtra[pn]*100 end
 		end   
 	end
-end
-
-function CalculateSpeedLoop(j,pn)
-	for i=1, 15, 1 do
-		if GAMESTATE:PlayerIsUsingModifier(pn-1,i + j/100 .. 'x') then modBase[pn] = i; modExtra[pn] = j; modType[pn] = 'x' end
-	end
-	for i=100, 1500, 100 do
-		if GAMESTATE:PlayerIsUsingModifier(pn-1,'c' .. i + j) then modBase[pn] = i; modExtra[pn] = j; modType[pn] = 'c' end
-	end
-	for i=100, 1500, 100 do
-		if GAMESTATE:PlayerIsUsingModifier(pn-1,'m' .. i + j) then modBase[pn] = i; modExtra[pn] = j; modType[pn] = 'm' end
-	end
-end
-
-function ModPulse(self,mod)
-	for pn=0,1 do if GAMESTATE:PlayerIsUsingModifier(pn,mod) then GAMESTATE:ApplyGameCommand('mod,no '..mod,pn+1); self:queuecommand('Mod') end end
-	self:sleep(.1)
-	self:queuecommand('Pulse')
 end
 
 function ApplyRateAdjust()
 	for pn=1, 2 do
 		if GAMESTATE:IsPlayerEnabled( pn - 1 ) then
-			speed = string.gsub(modSpeed[pn],modType[pn],"")
-			if modType[pn] == "x" then speed = math.ceil(100*speed/modRate)/100 .. "x" end
-			if modType[pn] == "c" then speed = "c" .. math.ceil(speed/modRate) end
-			if modType[pn] == "m" then speed = "m" .. math.ceil(speed/modRate) end
+			speed = modBase[pn] + modExtra[pn]
+			if modType[pn] == "x-mod" then speed = math.ceil(100*speed/modRate)/100 .. "x" end
+			if modType[pn] == "c-mod" then speed = "c" .. math.ceil(speed/modRate) end
+			if modType[pn] == "m-mod" then speed = "m" .. math.ceil(speed/modRate) end
 			GAMESTATE:ApplyGameCommand('mod,' .. speed,pn)
 		end
 	end
@@ -1310,26 +1287,25 @@ function RevertRateAdjust()
 end
 
 function DisplaySpeedMod(pn)
-	speed = string.gsub(modSpeed[pn],modType[pn],"")
-	s = ''
-	if modType[pn] == "x" and bpm and bpm[1] ~= 'Various' and bpm[1] ~= '...'  then
-		s = math.floor(speed * bpm[1] + 0.5)
-		if bpm[2] ~= '' then s = s .. math.floor(speed * bpm[2] + 0.5) end
-		s = ' (' .. s .. ')'
-	end   
-	s = modSpeed[pn] .. s
-	return s
-end
+	s = modSpeed[pn]
+	if modType[pn] == "x-mod" then
+		if modExtra[pn] == "0" then
+		s = modBase[pn] + modExtra[pn] .. ".00" .. "x"
+		end
+		if modExtra[pn] == "+.5" then
+		s = modBase[pn] + modExtra[pn] .. "0" .. "x"
+		end
 
-function CaptureBPM()
-	bpm = {}
-	s = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
-	if s then
-		s = s:GetChild('Text'):GetText()
-		bpm[1] = string.gsub(s,'-%d+','')
-		bpm[2] = string.gsub(s,'%d+-','-')
-		if bpm[2] == bpm[1] then bpm[2] = '' end
+		if tonumber(modBase[pn]) <= 9 then
+		s = string.sub(s, 1, 4)
+		s = s .. "x"
+		end
+		if tonumber(modBase[pn]) > 9 then
+		s = string.sub(s, 1, 5)
+		s = s .. "x"
+		end
 	end
+	return s
 end
 
 function BackButton()
@@ -1342,7 +1318,7 @@ function BackButton()
 		ExportOnChange = false,
 		Choices = modList,
 		LoadSelections = function(self, list, pn) end,
-		SaveSelections = function(self, list, pn) if list[1] and ScreenSelectMusicTimer > 5 then SCREENMAN:SetNewScreen('ScreenSelectMusic2') else if list[1] then SCREENMAN:SystemMessage('Not Enough Time Left!') end end end
+		SaveSelections = function(self, list, pn) if list[1] and (ScreenSelectMusicTimer > 5) and (ScreenPlayerOptionsTimer > 5) then SCREENMAN:SetNewScreen('ScreenSelectMusic2') else if list[1] then SCREENMAN:SystemMessage('Not Enough Time Left to Go Back!') end end end
 	}
 	setmetatable(t, t)
 	return t
