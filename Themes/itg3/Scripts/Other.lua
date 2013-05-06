@@ -1212,7 +1212,7 @@ function SpeedMods(name)
 	return t
 end
 
-baseSpeed = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" }
+baseSpeed = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16" }
 extraSpeed = { "0", "+.25", "+.5", "+.75", "+.1", "+.2", "+.3", "+.4", "+.6", "+.7", "+.8", "+.9" }
 typeSpeed = { "x-mod", "c-mod", "m-mod" }
 modRate = 1
@@ -1272,10 +1272,10 @@ end
 function ApplyRateAdjust()
 	for pn=1, 2 do
 		if GAMESTATE:IsPlayerEnabled( pn - 1 ) then
-			speed = modBase[pn] + modExtra[pn]
-			if modType[pn] == "x-mod" then speed = math.ceil(100*speed/modRate)/100 .. "x" end
-			if modType[pn] == "c-mod" then speed = "c" .. math.ceil(speed/modRate) end
-			if modType[pn] == "m-mod" then speed = "m" .. math.ceil(speed/modRate) end
+			speed = string.gsub(modSpeed[pn],modType[pn],"")
+			if modType[pn] == "x" then speed = math.ceil(100*speed/modRate)/100 .. "x" end
+			if modType[pn] == "c" then speed = "c" .. math.ceil(speed/modRate) end
+			if modType[pn] == "m" then speed = "m" .. math.ceil(speed/modRate) end
 			GAMESTATE:ApplyGameCommand('mod,' .. speed,pn)
 		end
 	end
