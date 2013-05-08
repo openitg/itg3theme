@@ -1,5 +1,4 @@
-<ActorFrame> 
-	<children>
+<ActorFrame> <children>
 
 <!--SPO Time Tracker-->
 	<Layer Type="Quad"
@@ -16,7 +15,6 @@
 	/>
 
 <!-- stuff -->
-
 	
 <Layer 
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)" 
@@ -58,20 +56,40 @@ OffCommand="diffusealpha,1;accelerate,0.3;diffusealpha,0"
 <Layer
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
 		Font="_v 26px bold diffuse"
-		Text="P1 Scroll Rate"
-		Command="@'diffuse,' .. PlayerColor(PLAYER_1) .. ';x,SCREEN_CENTER_X-160;y,SCREEN_TOP+86;ShadowLength,0;horizalign,left;zoom,0.5;queuecommand,Update'"
+		Text="MOD: P1"
+		Command="@'diffuse,' .. PlayerColor(PLAYER_1) .. ';x,SCREEN_CENTER_X-210;y,SCREEN_TOP+85.5;zoom,0.5;addx,-SCREEN_WIDTH*3/4;sleep,0.2;decelerate,0.6;addx,SCREEN_WIDTH*3/4;ShadowLength,2;horizalign,left;queuecommand,Update'"
 		SpeedModChangedMessageCommand="queuecommand,Update"
-		UpdateCommand="%function(self) self:settext('P1: '..DisplaySpeedMod(1)) end"
+		UpdateCommand="%function(self) self:settext('MOD: '..DisplaySpeedMod(1)) end"
 		OffCommand="zoom,0"
 	/>
-	<Layer
+
+<Layer
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
 		Font="_v 26px bold diffuse"
-		Text="P2 Scroll Rate"
-		InitCommand="addx,SCREEN_WIDTH*3/4;sleep,0.1;addx,-SCREEN_WIDTH*3/4"
-		Command="@'diffuse,' .. PlayerColor(PLAYER_2) .. ';ShadowLength,0;horizalign,right;zoom,0.5;x,SCREEN_CENTER_X+160;y,SCREEN_TOP+86;queuecommand,Update'"
+		Text="MOD: P2"
+		Command="@'diffuse,' .. PlayerColor(PLAYER_2) .. ';x,SCREEN_CENTER_X+210;y,SCREEN_TOP+85.5;zoom,0.5;addx,SCREEN_WIDTH*3/4;sleep,0.2;decelerate,0.6;addx,-SCREEN_WIDTH*3/4;ShadowLength,2;horizalign,right;queuecommand,Update'"
 		SpeedModChangedMessageCommand="queuecommand,Update"
-		UpdateCommand="%function(self) self:settext('P2: '..DisplaySpeedMod(2)) end"
+		UpdateCommand="%function(self) self:settext('MOD: '..DisplaySpeedMod(2)) end"
+		OffCommand="zoom,0"
+	/>
+
+<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		Font="_v 26px bold diffuse"
+		Text="BPM: P1"
+		Command="@'diffuse,' .. PlayerColor(PLAYER_1) .. ';x,SCREEN_CENTER_X-125;y,SCREEN_TOP+85.5;zoom,0.5;addx,-SCREEN_WIDTH*3/4;sleep,0.2;decelerate,0.6;addx,SCREEN_WIDTH*3/4;ShadowLength,2;horizalign,left;queuecommand,Update'"
+		SpeedModChangedMessageCommand="queuecommand,Update"
+		UpdateCommand="%function(self) self:settext('BPM: '..DisplayBPM(1)) end"
+		OffCommand="zoom,0"
+	/>
+
+<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		Font="_v 26px bold diffuse"
+		Text="BPM: P2"
+		Command="@'diffuse,' .. PlayerColor(PLAYER_2) .. ';x,SCREEN_CENTER_X+125;y,SCREEN_TOP+85.5;zoom,0.5;addx,SCREEN_WIDTH*3/4;sleep,0.2;decelerate,0.6;addx,-SCREEN_WIDTH*3/4;ShadowLength,2;horizalign,right;queuecommand,Update'"
+		SpeedModChangedMessageCommand="queuecommand,Update"
+		UpdateCommand="%function(self) self:settext('BPM: '..DisplayBPM(2)) end"
 		OffCommand="zoom,0"
 	/>
 
@@ -79,5 +97,4 @@ OffCommand="diffusealpha,1;accelerate,0.3;diffusealpha,0"
 <Layer
 File="..\_coins"
 />
-	</children>
-</ActorFrame>
+</children></ActorFrame>

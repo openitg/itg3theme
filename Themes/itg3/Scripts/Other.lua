@@ -1206,7 +1206,6 @@ function SpeedMods(name)
 			ApplyRateAdjust()
 			MESSAGEMAN:Broadcast('SpeedModChanged')
 		end
-	   
 	}
 	setmetatable(t, t)
 	return t
@@ -1216,6 +1215,7 @@ baseSpeed = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"
 extraSpeed = { "0", "+.25", "+.5", "+.75", "+.1", "+.2", "+.3", "+.4", "+.6", "+.7", "+.8", "+.9" }
 typeSpeed = { "x-mod", "c-mod", "m-mod" }
 modRate = 1
+bpm = { "1", "2", "3" }
 
 rateGameplay = { "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0" }
 rateEdit = { "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5" }
@@ -1247,7 +1247,6 @@ function RateMods(name)
 			ApplyRateAdjust()
 			MESSAGEMAN:Broadcast('RateModChanged')
 		end
-	   
 	}
 	setmetatable(t, t)
 	return t
@@ -1288,7 +1287,7 @@ function RevertRateAdjust()
 end
 
 function DisplaySpeedMod(pn)
-	s = modSpeed[pn]
+	local s = modSpeed[pn]
 	if modType[pn] == "x-mod" then
 		if modExtra[pn] == "0" then
 		s = modBase[pn] + modExtra[pn] .. ".00" .. "x"
@@ -1296,7 +1295,6 @@ function DisplaySpeedMod(pn)
 		if modExtra[pn] == "+.5" then
 		s = modBase[pn] + modExtra[pn] .. "0" .. "x"
 		end
-
 		if tonumber(modBase[pn]) <= 9 then
 		s = string.sub(s, 1, 4)
 		s = s .. "x"
@@ -1307,6 +1305,82 @@ function DisplaySpeedMod(pn)
 		end
 	end
 	return s
+end
+
+function DisplayBPM(pn)
+	local speedMod = modSpeed[pn]
+	speedMod = string.gsub(speedMod,'x','')
+	speedMod = string.gsub(speedMod,'c','')
+	speedMod = string.gsub(speedMod,'m','')
+	local lowBPM = bpm[1]
+	local highBPM = bpm[2]
+
+	if modType[pn] == "x-mod" then
+
+		if lowBPM == "Various" or lowBPM == "..." then
+		return "???"
+		end
+		
+		lowScrollBPM = lowBPM * speedMod
+	
+		if string.sub(lowScrollBPM, 2, 2) == "." then
+		lowScrollBPM = string.sub(lowScrollBPM, 1, 1)
+		end
+		
+		if string.sub(lowScrollBPM, 3, 3) == "." then
+		lowScrollBPM = string.sub(lowScrollBPM, 1, 2)
+		end
+	
+		if string.sub(lowScrollBPM, 4, 4) == "." then
+		lowScrollBPM = string.sub(lowScrollBPM, 1, 3)
+		end
+		
+		if string.sub(lowScrollBPM, 5, 5) == "." then
+		lowScrollBPM = string.sub(lowScrollBPM, 1, 4)
+		end
+		
+		if string.sub(lowScrollBPM, 6, 6) == "." then
+		lowScrollBPM = string.sub(lowScrollBPM, 1, 5)
+		end
+
+		if highBPM ~= "" then
+
+			highScrollBPM = highBPM * speedMod
+		
+			if string.sub(highScrollBPM, 2, 2) == "." then
+			highScrollBPM = string.sub(highScrollBPM, 1, 1)
+			end
+
+			if string.sub(highScrollBPM, 3, 3) == "." then
+			highScrollBPM = string.sub(highScrollBPM, 1, 2)
+			end
+
+			if string.sub(highScrollBPM, 4, 4) == "." then
+			highScrollBPM = string.sub(highScrollBPM, 1, 3)
+			end
+	
+			if string.sub(highScrollBPM, 5, 5) == "." then
+			highScrollBPM = string.sub(highScrollBPM, 1, 4)
+			end
+		
+			if string.sub(highScrollBPM, 6, 6) == "." then
+			highScrollBPM = string.sub(highScrollBPM, 1, 5)
+			end
+		
+		end
+
+		if highBPM == "" then
+		return lowScrollBPM
+		else
+		return lowScrollBPM .. "-" .. highScrollBPM
+		end
+	end
+
+	if modType[pn] == "c-mod" or modType[pn] == "m-mod" then
+	return speedMod
+	end
+
+	return "???"
 end
 
 function BackButton()
@@ -1343,18 +1417,17 @@ function GetTimer(screen)
 	
 	if screen == "ScreenSelectMusic" then
 		if ScreenSelectMusicTimer == nil then
-			ScreenSelectMusicTimer = DefaultSSM;		
+			ScreenSelectMusicTimer = DefaultSSM;
 		end
 	return math.ceil(ScreenSelectMusicTimer)
 	end
 	
 	if screen == "ScreenPlayerOptions" then
 		if ScreenPlayerOptionsTimer == nil then
-			ScreenPlayerOptionsTimer = DefaultSPO;	
+			ScreenPlayerOptionsTimer = DefaultSPO;
 		end
 	return math.ceil(ScreenPlayerOptionsTimer)
 	end
-	
-return 0;
 
+	return 0;
 end
