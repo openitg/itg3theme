@@ -1292,7 +1292,15 @@ function DisplaySpeedMod(pn)
 		if modExtra[pn] == "0" then
 		s = modBase[pn] + modExtra[pn] .. ".00" .. "x"
 		end
-		if modExtra[pn] == "+.5" then
+		if modExtra[pn] == "+.1" or 
+		modExtra[pn] == "+.2" or 
+		modExtra[pn] == "+.3" or 
+		modExtra[pn] == "+.4" or
+		modExtra[pn] == "+.5" or
+		modExtra[pn] == "+.6" or
+		modExtra[pn] == "+.7" or
+		modExtra[pn] == "+.8" or
+		modExtra[pn] == "+.9" then
 		s = modBase[pn] + modExtra[pn] .. "0" .. "x"
 		end
 		if tonumber(modBase[pn]) <= 9 then
@@ -1321,7 +1329,7 @@ function DisplayBPM(pn)
 		return "???"
 		end
 		
-		lowScrollBPM = lowBPM * speedMod
+		lowScrollBPM = lowBPM * speedMod * modRate
 	
 		if string.sub(lowScrollBPM, 2, 2) == "." then
 		lowScrollBPM = string.sub(lowScrollBPM, 1, 1)
@@ -1345,7 +1353,7 @@ function DisplayBPM(pn)
 
 		if highBPM ~= "" then
 
-			highScrollBPM = highBPM * speedMod
+			highScrollBPM = highBPM * speedMod * modRate
 		
 			if string.sub(highScrollBPM, 2, 2) == "." then
 			highScrollBPM = string.sub(highScrollBPM, 1, 1)
