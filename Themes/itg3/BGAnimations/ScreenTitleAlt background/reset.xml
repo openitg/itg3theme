@@ -1,6 +1,7 @@
 ﻿<ActorFrame
 OnCommand="%function(self)
-		ResetCustomMods() 
+		ResetCustomMods()
+		CalculateSpeedMod()
 		end"
 		><children>
 

@@ -31,6 +31,10 @@ function SongModifiers()
 	return "101,102,103,2,99" --Global Fallback (We should never get here!)
 end
 
+function SongEditModifiers()
+	return "101,102,103,2,3,4,5,6,7,8,9,10"
+end
+
 function oitgACoptions()
 	if OPENITG then return "1,2,3,50,51,52,4,5,6,120,7,8,113,32,46,53" end
 	return "1,2,3,50,51,4,5,6,7,8,114,113,32,46,47,53"

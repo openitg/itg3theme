@@ -11,7 +11,7 @@ function GetArcadeStartScreen()
 end
 function ScreenTitleBranch()
 	DefaultSSM = 90.1;
-	DefaultSPO = 30.1;
+	DefaultSPO = 35.1;
 	ScreenSelectMusicTimer = DefaultSSM;
 	ScreenPlayerOptionsTimer = DefaultSPO;
 	if GAMESTATE:GetCoinMode() == COIN_MODE_HOME then return "ScreenTitleMenu" end
