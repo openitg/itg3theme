@@ -1,21 +1,27 @@
 -- Override these in other themes.
 function SongModifiers()
 	if OPENITG then
-		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR and not GAMESTATE:PlayerUsingBothSides() then
-			return "91,92,93,2,3,4,7,5,18,17,9,22,23,10,11,12,13,14,15,19,25,20,27,94,95,16" --normal gameplay, no doubles
-
-		elseif  GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR and GAMESTATE:PlayerUsingBothSides() then
-			return "1,2,3,4,7,5,18,17,9,23,10,11,12,13,14,15,19,25,20,27,24,16" --normal play, doubles
+		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
+			return "101,102,103,2,3,4,5,6,701,702,8," ..(not GAMESTATE:PlayerUsingBothSides() and "9," or "").. "10,11,12,13,14,15,16,17,18,19,21,22,23,99" --OpenITG Normal Gameplay
 
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
-			return "1,2,3,4,7,5,18,17,9,22,23,12,13,14,15,19,21,27,24,16"	--course
+			return "101,102,103,2,3,4,5,6,701,702,8," ..(not GAMESTATE:PlayerUsingBothSides() and "9," or "").. "10,11,12,13,14,15,16,17,18,20,21,22,23,99" --OpenITG Marathon Gameplay
+		
 		else
-			return "1,2,3,4,7,5,18,17,9,10,11,12,13,14,15,16" end --"survival/fallback"
+			return "101,102,103,2,99" --OpenITG Survival/Fallback Gameplay
+		end
+	end
 
+	if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
+		return "101,102,103,2,3,4,5,6,7,8," ..(not GAMESTATE:PlayerUsingBothSides() and "9," or "").. "10,11,12,13,14,15,16,17,18,22,23,99" --OpenITG Normal Gameplay
 
-	else return "1,2,3,4,7,5,18,17,9,10,11,12,13,14,15,16" end --not running oitg
-
-
+	elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
+		return "101,102,103,2,3,4,5,6,7,8," ..(not GAMESTATE:PlayerUsingBothSides() and "9," or "").. "10,11,12,13,14,15,16,17,18,20,22,23,99" --OpenITG Marathon Gameplay
+	else
+		return "101,102,103,2,99" --OpenITG Survival/Fallback Gameplay
+	end
+	
+	return "101,102,103,2,99" --Global Fallback (We should never get here!)
 end
 
 function oitgACoptions()
