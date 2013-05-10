@@ -1342,7 +1342,7 @@ function DisplayBPM(pn)
 
 	if modType[pn] == "x-mod" then
 
-		if lowBPM == "Various" or lowBPM == "..." then
+		if lowBPM == "Various" or lowBPM == "..." or lowBPM == nil then
 		return "???"
 		end
 		
