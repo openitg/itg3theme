@@ -792,7 +792,7 @@ function GetSongLength()
 end
 
 
-function SHUTUPSERIOUSLY()
+function DimTheMusic()
 	Debug( "Screen width: " .. tostring(SCREEN_WIDTH) )
 	Debug( "Screen height: " .. tostring(SCREEN_HEIGHT) )
 	Debug( "Screen right: " .. tostring(SCREEN_RIGHT) )
@@ -1283,7 +1283,7 @@ function RateMods(name)
 	return t
 end
 
-function CalculateSpeedMod()
+function InitializeSpeedMods()
 	modBase = { "1", "1" }
 	modExtra = { "+.5", "+.5" }
 	modType = { "x-mod", "x-mod" }

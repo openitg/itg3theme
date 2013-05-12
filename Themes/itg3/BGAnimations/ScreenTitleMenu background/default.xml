@@ -1,7 +1,7 @@
 ﻿<ActorFrame
 OnCommand="%function(self)
 		ResetCustomMods()
-		CalculateSpeedMod()
+		InitializeSpeedMods()
 		end"
 		><children>
 <Layer
