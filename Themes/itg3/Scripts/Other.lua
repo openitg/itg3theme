@@ -2,10 +2,10 @@
 function SongModifiers()
 	if OPENITG then
 		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
-			return SpeedLines() .. "2,3,4,5,6,701,702,8," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "10,11,12,13,14,15,16,17,18,19,21,22,23,99" --OpenITG Normal Gameplay
+			return SpeedLines() .. "2,3,4,5,6,701,702,8," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "10,11,12,13,14,151,16,17,18,19,21,22,23,99" --OpenITG Normal Gameplay
 
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
-			return SpeedLines() .. "2,3,4,5,6,701,702,8," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "10,11,12,13,14,15,16,17,18,20,21,22,23,99" --OpenITG Marathon Gameplay
+			return SpeedLines() .. "2,3,4,5,6,701,702,8," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "10,11,12,13,14,151,16,17,18,20,21,22,23,99" --OpenITG Marathon Gameplay
 
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE then
 			return "101,2,3,4,999" --OpenITG Battle Gameplay
