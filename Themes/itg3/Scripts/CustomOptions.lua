@@ -280,7 +280,7 @@ function Get2PlayerJoinMessage()
 end
 
 function SpeedModTypeRow()
-	local Names = { "Basic", "Advanced" }
+	local Names = { "Basic", "Advanced", "Pro" }
 
 	local type = ProfileTable.SpeedModType
 
@@ -290,7 +290,7 @@ function SpeedModTypeRow()
 		if not type then list[1] = true return end
 
 		-- do any of the options match the given type?
-		for i=1,2 do
+		for i=1,3 do
 			if type == string.lower(Names[i]) then list[i] = true return end
 		end
 
@@ -300,7 +300,7 @@ function SpeedModTypeRow()
 
 	-- called as the screen destructs, to save the selected option in list
 	local function Save(self, list, pn)
-		for i=1,2 do
+		for i=1,3 do
 			if list[i] then
 				ProfileTable.SpeedModType = string.lower(Names[i])
 				PROFILEMAN:SaveMachineProfile()
@@ -318,9 +318,12 @@ end
 function GetSpeedModType()
 	local type = ProfileTable.SpeedModType
 		
-	if type == "advanced" then
-	return "list,Speed2" else
-	return "list,Speed"
+	if type == "pro" then
+	return "pro"
+	elseif type == "advanced" then
+	return "advanced"
+	else
+	return "basic"
 	end
 end
 
