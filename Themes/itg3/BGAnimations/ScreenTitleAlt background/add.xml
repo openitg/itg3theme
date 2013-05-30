@@ -1,7 +1,7 @@
 ﻿<ActorFrame
-MadeChoiceP1MessageCommand="playcommand,shutup;playcommand,GoOff"
-MadeChoiceP2MessageCommand="playcommand,shutup;playcommand,GoOff"
-shutupCommand="%function() SHUTUPSERIOUSLY() end"><children>
+MadeChoiceP1MessageCommand="playcommand,Dim;playcommand,GoOff"
+MadeChoiceP2MessageCommand="playcommand,Dim;playcommand,GoOff"
+DimCommand="%function() DimTheMusic() end"><children>
 
 
     <AutoActor

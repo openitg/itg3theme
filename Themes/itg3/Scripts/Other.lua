@@ -1,21 +1,38 @@
 -- Override these in other themes.
 function SongModifiers()
 	if OPENITG then
-		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR and not GAMESTATE:PlayerUsingBothSides() then
-			return "1,2,3,4,7,5,18,17,9,22,23,10,11,12,13,14,15,19,25,20,27,24,16" --normal gameplay, no doubles
-
-		elseif  GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR and GAMESTATE:PlayerUsingBothSides() then
-			return "1,2,3,4,7,5,18,17,9,23,10,11,12,13,14,15,19,25,20,27,24,16" --normal play, doubles
+		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
+			return SpeedLines() .. "2,3,4,5,6,701,702,8," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "10,11,12,13,14,151,16,17,18,19,21,22,23,99" --OpenITG Normal Gameplay
 
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
-			return "1,2,3,4,7,5,18,17,9,22,23,12,13,14,15,19,21,27,24,16"	--course
+			return SpeedLines() .. "2,3,4,5,6,701,702,8," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "10,11,12,13,14,151,16,17,18,20,21,22,23,99" --OpenITG Marathon Gameplay
+
+		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE then
+			return "101,2,3,4,999" --OpenITG Battle Gameplay
+
 		else
-			return "1,2,3,4,7,5,18,17,9,10,11,12,13,14,15,16" end --"survival/fallback"
+			return "101,2,99" --OpenITG Survival/Fallback Gameplay
+		end
+	end
 
+	if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
+		return SpeedLines() .. "2,3,4,5,6,7,8," ..(not GAMESTATE:PlayerUsingBothSides() and "9," or "").. "10,11,12,13,14,15,16,17,18,22,23,99" --Normal Gameplay
 
-	else return "1,2,3,4,7,5,18,17,9,10,11,12,13,14,15,16" end --not running oitg
+	elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
+		return SpeedLines() .. "2,3,4,5,6,7,8," ..(not GAMESTATE:PlayerUsingBothSides() and "9," or "").. "10,11,12,13,14,15,16,17,18,20,22,23,99" --Marathon Gameplay
+	
+	elseif GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE then
+		return "101,2,3,4,999" --Battle Gameplay
 
+	else
+		return SpeedLines() .. "2,99" --OpenITG Survival/Fallback Gameplay
+	end
 
+	return "1,2,99" --Global Fallback (We should never get here!)
+end
+
+function SongEditModifiers()
+	return SpeedLines() .. "2,3,4,5,6,7,8,9,10"
 end
 
 function oitgACoptions()
@@ -775,7 +792,7 @@ function GetSongLength()
 end
 
 
-function SHUTUPSERIOUSLY()
+function DimTheMusic()
 	Debug( "Screen width: " .. tostring(SCREEN_WIDTH) )
 	Debug( "Screen height: " .. tostring(SCREEN_HEIGHT) )
 	Debug( "Screen right: " .. tostring(SCREEN_RIGHT) )
@@ -1160,4 +1177,314 @@ end
 function HideTimer()
 	local enabled = PREFSMAN:GetPreference("MenuTimer")
 	if enabled then return "0" else return "1" end
+end
+
+
+function SpeedMods(name)
+	local modList = baseSpeed; s = "Speed"
+	if name == "Extra" then modList = extraSpeed; s = "Extra " .. s end
+	if name == "Type" then modList = typeSpeed; s = s .. " Type" end
+	local t = {
+		Name = s,
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = false,
+		ExportOnChange = false,
+		Choices = modList,
+	   
+		LoadSelections = function(self, list, pn)
+			list[1] = true
+			for n = 2, table.getn(modList) do
+				if name == "Base" then
+					if modList[n] == modBase[pn+1] then list[n] = true; list[1] = false else list[n] = false end
+				end
+				if name == "Extra" then
+					if s == modExtra[pn+1] or modList[n] == modExtra[pn+1] then list[n] = true; list[1] = false else list[n] = false end
+				end
+				if name == "Type" then
+					s = modList[n]; s = string.gsub(s,'-Mod','')
+					if s == modType[pn+1] then list[n] = true; list[1] = false else list[n] = false end
+				end
+			end
+		end,
+
+		SaveSelections = function(self, list, pn)
+			for n = 1, table.getn(modList) do
+				if list[n] then s = modList[n] end
+			end
+			p = pn+1
+			if name == "Type" then modType[p] = s end
+			if name == "Base" then modBase[p] = s
+				if GetSpeedModType() ~= "pro" then
+					if string.find(modBase[p],"x") then modBase[p] = string.gsub(modBase[p], "x", ""); modType[p] = 'x-mod' end
+					if string.find(modBase[p],"c") then modBase[p] = string.gsub(modBase[p], "c", ""); modType[p] = 'c-mod' end
+					if string.find(modBase[p],"m") then modBase[p] = string.gsub(modBase[p], "m", ""); modType[p] = 'm-mod' end
+				end
+			end
+			if name == "Extra" then modExtra[p] = s end
+
+			if modType[p] == 'x-mod' then modSpeed[p] = modBase[p] + modExtra[p] .. 'x' end
+			if modType[p] == 'c-mod' then modSpeed[p] = 'c' .. modBase[p]*100 + modExtra[p]*100 end
+			if modType[p] == 'c-mod' and GetSpeedModType() ~= "pro" then modSpeed[p] = 'c' .. modBase[p] end
+			if modType[p] == 'm-mod' then modSpeed[p] = 'm' .. modBase[p]*100 + modExtra[p]*100 end
+			if modType[p] == 'm-mod' and GetSpeedModType() ~= "pro" then modSpeed[p] = 'm' .. modBase[p] end
+			GAMESTATE:ApplyGameCommand('mod,1x',p)
+			ApplyRateAdjust()
+			MESSAGEMAN:Broadcast('SpeedModChanged')
+		end
+	}
+	setmetatable(t, t)
+	return t
+end
+
+function SpeedLines()
+	local type = GetSpeedModType()
+	if type == "pro" then
+	return "101,102,103,"
+	else
+	return "101,"
+	end
+end
+
+modRate = 1
+bpm = { "1", "2", "3" }
+rateGameplay = { "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0" }
+rateEdit = { "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5" }
+
+function RateMods(name)
+	local modList = rateMods
+	if name == "Gameplay" then modList = rateGameplay end
+	if name == "Edit" then modList = rateEdit end
+	local t = {
+		Name = "Music Rate",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true,
+		ExportOnChange = false,
+		Choices = modList,
+	   
+		LoadSelections = function(self, list, pn)
+			for n = 1, table.getn(modList) do
+				if GAMESTATE:PlayerIsUsingModifier(pn,modList[n]..'xmusic') then list[n] = true; modRate = modList[n] else list[n] = false end
+			end
+		end,
+
+		SaveSelections = function(self, list, pn)
+			for n = 1, table.getn(modList) do
+				if list[n] then s = modList[n] end
+			end
+			modRate = s
+			GAMESTATE:ApplyGameCommand('mod,'..s..'xmusic',pn+1)
+			ApplyRateAdjust()
+			MESSAGEMAN:Broadcast('RateModChanged')
+		end
+	}
+	setmetatable(t, t)
+	return t
+end
+
+function InitializeSpeedMods()
+	modBase = { "1", "1" }
+	modExtra = { "+.5", "+.5" }
+	modType = { "x-mod", "x-mod" }
+	modSpeed = { "1.5x", "1.5x" }
+	
+	if GetSpeedModType() == "pro" then
+	baseSpeed = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16" }
+	extraSpeed = { "0", "+.25", "+.5", "+.75", "+.1", "+.2", "+.3", "+.4", "+.6", "+.7", "+.8", "+.9" }
+	end
+	
+	if GetSpeedModType() == "advanced" then
+		if OPENITG then baseSpeed = { "0.25x", "0.5x", "0.75x", "1x", "1.25x", "1.5x", "1.75x", "2x", "2.25x", "2.5x", "2.75x", "3x", "3.25x", "3.5x", "3.75x", "4x", "4.25x", "4.5x", "4.75x", "5x", "5.25x", "5.5x", "5.75x", "6x", "6.25x", "6.5x", "6.75x", "7x", "c400", "c425", "c450", "c475", "c500", "c525", "c550", "c575", "c600", "c625", "c650", "c675", "c700", "c725", "c750", "c775", "c800", "c825", "c850", "c875", "c900", "c925", "c950", "c975", "c1000", "m400", "m425", "m450", "m475", "m500", "m525", "m550", "m575", "m600", "m625", "m650", "m675", "m700", "m725", "m750", "m775", "m800", "m825", "m850", "m875", "m900", "m925", "m950", "m975", "m1000" }
+		else  baseSpeed = { "0.25x", "0.5x", "0.75x", "1x", "1.25x", "1.5x", "1.75x", "2x", "2.25x", "2.5x", "2.75x", "3x", "3.25x", "3.5x", "3.75x", "4x", "4.25x", "4.5x", "4.75x", "5x", "5.25x", "5.5x", "5.75x", "6x", "6.25x", "6.5x", "6.75x", "7x", "c400", "c425", "c450", "c475", "c500", "c525", "c550", "c575", "c600", "c625", "c650", "c675", "c700", "c725", "c750", "c775", "c800", "c825", "c850", "c875", "c900", "c925", "c950", "c975", "c1000" }
+		end
+	extraSpeed = { "0" }
+	modExtra = { "0", "0" }
+	end
+
+	if GetSpeedModType() == "basic" then
+		if OPENITG then baseSpeed = { "1x", "1.5x", "2x", "2.5x", "3x", "3.5x", "4x", "4.5x", "5x", "6x", "c450", "m450" }
+		else baseSpeed = { "1x", "1.5x", "2x", "2.5x", "3x", "3.5x", "4x", "4.5x", "5x", "5.5x", "6x", "c450" }
+		end
+	extraSpeed = { "0" }
+	modExtra = { "0", "0" }
+	end
+	
+	if OPENITG then
+	typeSpeed = { "x-mod", "c-mod", "m-mod" }
+	else
+	typeSpeed = { "x-mod", "c-mod" }
+	end
+end
+
+function ApplyRateAdjust()
+	for pn=1, 2 do
+		if GAMESTATE:IsPlayerEnabled( pn - 1 ) then
+			speed = string.gsub(modSpeed[pn],modType[pn],"")
+			if modType[pn] == "x" then speed = math.ceil(100*speed/modRate)/100 .. "x" end
+			if modType[pn] == "c" then speed = "c" .. math.ceil(speed/modRate) end
+			if modType[pn] == "m" then speed = "m" .. math.ceil(speed/modRate) end
+			GAMESTATE:ApplyGameCommand('mod,' .. speed,pn)
+		end
+	end
+end
+
+function RevertRateAdjust()
+	for pn=1, 2 do
+		if modSpeed and modSpeed[pn] then GAMESTATE:ApplyGameCommand('mod,' .. modSpeed[pn],pn) end
+	end
+end
+
+function DisplaySpeedMod(pn)
+	local s = modSpeed[pn]
+	if modType[pn] == "x-mod" and GetSpeedModType() == "pro" then
+		if modExtra[pn] == "0" then
+		s = modBase[pn] + modExtra[pn] .. ".00" .. "x"
+		end
+		if modExtra[pn] == "+.1" or 
+		modExtra[pn] == "+.2" or 
+		modExtra[pn] == "+.3" or 
+		modExtra[pn] == "+.4" or
+		modExtra[pn] == "+.5" or
+		modExtra[pn] == "+.6" or
+		modExtra[pn] == "+.7" or
+		modExtra[pn] == "+.8" or
+		modExtra[pn] == "+.9" then
+		s = modBase[pn] + modExtra[pn] .. "0" .. "x"
+		end
+		if tonumber(modBase[pn]) <= 9 then
+		s = string.sub(s, 1, 4)
+		s = s .. "x"
+		end
+		if tonumber(modBase[pn]) > 9 then
+		s = string.sub(s, 1, 5)
+		s = s .. "x"
+		end
+	end
+	return s
+end
+
+function DisplayBPM(pn)
+	local speedMod = modSpeed[pn]
+	speedMod = string.gsub(speedMod,'x','')
+	speedMod = string.gsub(speedMod,'c','')
+	speedMod = string.gsub(speedMod,'m','')
+	local lowBPM = bpm[1]
+	local highBPM = bpm[2]
+
+	if modType[pn] == "x-mod" then
+
+		if lowBPM == "Various" or lowBPM == "..." or lowBPM == nil then
+		return "???"
+		end
+		
+		lowScrollBPM = lowBPM * speedMod * modRate
+	
+		if string.sub(lowScrollBPM, 2, 2) == "." then
+		lowScrollBPM = string.sub(lowScrollBPM, 1, 1)
+		end
+		
+		if string.sub(lowScrollBPM, 3, 3) == "." then
+		lowScrollBPM = string.sub(lowScrollBPM, 1, 2)
+		end
+	
+		if string.sub(lowScrollBPM, 4, 4) == "." then
+		lowScrollBPM = string.sub(lowScrollBPM, 1, 3)
+		end
+		
+		if string.sub(lowScrollBPM, 5, 5) == "." then
+		lowScrollBPM = string.sub(lowScrollBPM, 1, 4)
+		end
+		
+		if string.sub(lowScrollBPM, 6, 6) == "." then
+		lowScrollBPM = string.sub(lowScrollBPM, 1, 5)
+		end
+
+		if highBPM ~= "" then
+
+			highScrollBPM = highBPM * speedMod * modRate
+		
+			if string.sub(highScrollBPM, 2, 2) == "." then
+			highScrollBPM = string.sub(highScrollBPM, 1, 1)
+			end
+
+			if string.sub(highScrollBPM, 3, 3) == "." then
+			highScrollBPM = string.sub(highScrollBPM, 1, 2)
+			end
+
+			if string.sub(highScrollBPM, 4, 4) == "." then
+			highScrollBPM = string.sub(highScrollBPM, 1, 3)
+			end
+	
+			if string.sub(highScrollBPM, 5, 5) == "." then
+			highScrollBPM = string.sub(highScrollBPM, 1, 4)
+			end
+		
+			if string.sub(highScrollBPM, 6, 6) == "." then
+			highScrollBPM = string.sub(highScrollBPM, 1, 5)
+			end
+		
+		end
+
+		if highBPM == "" then
+		return lowScrollBPM
+		else
+		return lowScrollBPM .. "-" .. highScrollBPM
+		end
+	end
+
+	if modType[pn] == "c-mod" or modType[pn] == "m-mod" then
+	return speedMod
+	end
+
+	return "???"
+end
+
+function BackButton()
+	local modList = {'Return to Music Selection'}
+	local t = {
+		Name = "BackButton",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectMultiple",
+		OneChoiceForAllPlayers = GAMESTATE:IsPlayerEnabled(PLAYER_1),
+		ExportOnChange = false,
+		Choices = modList,
+		LoadSelections = function(self, list, pn) end,
+		SaveSelections = function(self, list, pn) if list[1] and (ScreenSelectMusicTimer > 5) and (ScreenPlayerOptionsTimer > 5) then SCREENMAN:SetNewScreen('ScreenSelectMusic2') else if list[1] then SCREENMAN:SystemMessage('Not Enough Time Left to Go Back!') end end end
+	}
+	setmetatable(t, t)
+	return t
+end
+
+function GetTimer(screen)
+	if ScreenSelectMusicTimer == nil then
+		ScreenSelectMusicTimer = DefaultSSM;
+	end
+	
+	if ScreenPlayerOptionsTimer == nil then
+		ScreenPlayerOptionsTimer = DefaultSPO;
+	end
+	
+	if screen == "ScreenEvaluation" then
+		ScreenSelectMusicTimer = DefaultSSM;
+		ScreenPlayerOptionsTimer = DefaultSPO;
+		ScreenEvaluationTimer = 30;
+		return math.ceil(ScreenEvaluationTimer)
+	end
+	
+	if screen == "ScreenSelectMusic" then
+		if ScreenSelectMusicTimer == nil then
+			ScreenSelectMusicTimer = DefaultSSM;
+		end
+	return math.ceil(ScreenSelectMusicTimer)
+	end
+	
+	if screen == "ScreenPlayerOptions" then
+		if ScreenPlayerOptionsTimer == nil then
+			ScreenPlayerOptionsTimer = DefaultSPO;
+		end
+	return math.ceil(ScreenPlayerOptionsTimer)
+	end
+
+	return 0;
 end

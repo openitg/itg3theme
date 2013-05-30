@@ -1,5 +1,37 @@
 <ActorFrame> <children>
-	
+
+<!--SSM Time Tracker-->
+<Layer Type="Quad"
+	InitCommand="sleep,0.01;queuecommand,SSMCountDown;"
+	SSMCountDownCommand="%function(self)
+		self:stoptweening();
+		ScreenSelectMusicTimer = ScreenSelectMusicTimer - 0.1;
+			if ScreenSelectMusicTimer <= 0 then
+				ScreenSelectMusicTimer = 0;
+			end
+	self:sleep(0.1);
+	self:queuecommand('SSMCountDown');
+	end"
+/>
+
+<!--Capture BPM-->
+<Layer Type="Quad"
+	InitCommand="queuecommand,BPMCapture;" 
+	BPMCaptureCommand="%function(self)
+		songBPM = SCREENMAN:GetTopScreen():GetChild('BPMDisplay'):GetChild('Text'):GetText();
+		bpm[1] = string.gsub(songBPM,'-%d+','');
+		bpm[2] = string.gsub(songBPM,'%d+-','');
+			if bpm[2] == bpm[1] then bpm[2] = '';
+			end
+		bpm[3] = SCREENMAN:GetTopScreen():GetChild('BPMDisplay'):GetChild('Text'):GetText();
+			if not OPENITG then bpm[3] = math.floor(bpm[3] * modRate + 0.5)
+			end
+		end"
+	CurrentSongChangedMessageCommand="queuecommand,BPMCapture"
+	CurrentStepsP1ChangedMessageCommand="queuecommand,BPMCapture"
+	CurrentStepsP2ChangedMessageCommand="queuecommand,BPMCapture"
+/>
+
 <Layer
 		File="ScreenWithMenuElements underlay\_sides"
 		OnCommand="ztest,1"
@@ -438,8 +470,4 @@ SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0"
 File="_coins"
 />
 
-
-	
-		</children>
-	</ActorFrame>
-
+</children></ActorFrame>
