@@ -156,3 +156,17 @@ end
 function MarathonVersionOptions()
 	return SongLengthOptions( "MarathonVersion", "MarathonVerSongSeconds", 300, 11, 30 )
 end
+
+-- Music Wheel Speed, lowest: 10, highest: 60
+function MusicWheelOptions()
+	-- start with 10, go to 60
+	local Values = {}
+	for i = 1,11 do Values[i] = (10+(i-1)*5) end
+
+	local Names = {}
+	for i = 1,11 do Names[i] = Values[i] end
+
+	local Params = { Name = "MusicWheelSpeed" }
+
+	return CreatePrefsRow( Params, Names, Values, "MusicWheelSwitchSpeed" )
+end

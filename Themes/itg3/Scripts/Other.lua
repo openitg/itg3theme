@@ -36,8 +36,8 @@ function SongEditModifiers()
 end
 
 function oitgACoptions()
-	if OPENITG then return "1,2,3,50,51,52,4,5,6,120,7,8,113,32,46,53" end
-	return "1,2,3,50,51,4,5,6,7,8,114,113,32,46,47,53"
+	if OPENITG then return "1,2,3,50,51,52,4,5,6,120,7,8,113,32,54,53" end
+	return "1,2,3,50,51,4,5,6,7,8,114,113,32,54,47,53"
 end
 
 
