@@ -248,6 +248,145 @@ function GetCleanEndTime()
 	end
 end
 
+function MusicSelectTime()
+	-- start with 60, go to 240, increment by 15
+	local Values = {}
+	for i = 1,13 do Values[i] = (60+(i-1)*15) end
+
+	local Names = {}
+	for i = 1,13 do Names[i] = Values[i] end
+
+	local type = ProfileTable.MusicSelectTime
+	
+	local function Load(self, list, pn)
+		if not type then list[1] = true return end
+
+		for i=1,13 do
+			if type == string.lower(Names[i]) then list[i] = true return end
+		end
+
+		list[1] = true
+	end
+
+	local function Save(self, list, pn)
+		for i=1,13 do
+			if list[i] then
+				ProfileTable.MusicSelectTime = string.lower(Names[i])
+				PROFILEMAN:SaveMachineProfile()
+				return
+			end
+		end
+	end
+
+	
+	local Params = { Name = "MusicSelectTime" }
+
+	return CreateOptionRow( Params, Names, Load, Save )
+end
+
+function GetMusicSelectTime()
+	local type = ProfileTable.MusicSelectTime
+	
+	if not type then
+	return 60 else
+	-- return the time with a half-second extra as a buffer while the screen loads
+	return tonumber(ProfileTable.MusicSelectTime)+0.5
+	end
+end
+
+function OptionsSelectTime()
+	-- start with 40, go to 90, increment by 5
+	local Values = {}
+	for i = 1,13 do Values[i] = (30+(i-1)*5) end
+
+	local Names = {}
+	for i = 1,13 do Names[i] = Values[i] end
+
+	local type = ProfileTable.OptionsSelectTime
+	
+	local function Load(self, list, pn)
+		if not type then list[1] = true return end
+
+		for i=1,13 do
+			if type == string.lower(Names[i]) then list[i] = true return end
+		end
+
+		list[1] = true
+	end
+
+	local function Save(self, list, pn)
+		for i=1,13 do
+			if list[i] then
+				ProfileTable.OptionsSelectTime = string.lower(Names[i])
+				PROFILEMAN:SaveMachineProfile()
+				return
+			end
+		end
+	end
+
+	
+	local Params = { Name = "OptionsSelectTime" }
+
+	return CreateOptionRow( Params, Names, Load, Save )
+end
+
+function GetOptionsSelectTime()
+	local type = ProfileTable.OptionsSelectTime
+	
+	if not type then
+	return 40 else
+	-- return the time with a half-second extra as a buffer while the screen loads
+	return tonumber(ProfileTable.OptionsSelectTime)+0.5
+	end
+end
+
+
+function EvaluationScreenTime()
+	-- start with 30, go to 60, increment by 5
+	local Values = {}
+	for i = 1,13 do Values[i] = (30+(i-1)*5) end
+
+	local Names = {}
+	for i = 1,13 do Names[i] = Values[i] end
+
+	local type = ProfileTable.EvaluationScreenTime
+	
+	local function Load(self, list, pn)
+		if not type then list[1] = true return end
+
+		for i=1,13 do
+			if type == string.lower(Names[i]) then list[i] = true return end
+		end
+
+		list[1] = true
+	end
+
+	local function Save(self, list, pn)
+		for i=1,13 do
+			if list[i] then
+				ProfileTable.EvaluationScreenTime = string.lower(Names[i])
+				PROFILEMAN:SaveMachineProfile()
+				return
+			end
+		end
+	end
+
+	
+	local Params = { Name = "EvaluationScreenTime" }
+
+	return CreateOptionRow( Params, Names, Load, Save )
+end
+
+function GetEvaluationScreenTime()
+	local type = ProfileTable.EvaluationScreenTime
+	
+	if not type then
+	return 30 else
+	-- return the time with a half-second extra as a buffer while the screen loads
+	return tonumber(ProfileTable.EvaluationScreenTime)+0.5
+	end
+end
+
 function Get2PlayerJoinMessage()
 	if not GAMESTATE:PlayersCanJoin() then return "" end
 	if GAMESTATE:GetCoinMode()==COIN_MODE_FREE then return "2 Player mode available" end

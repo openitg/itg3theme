@@ -36,8 +36,8 @@ function SongEditModifiers()
 end
 
 function oitgACoptions()
-	if OPENITG then return "1,2,3,50,51,52,4,5,6,120,7,8,113,32,54,53" end
-	return "1,2,3,50,51,4,5,6,7,8,114,113,32,54,47,53"
+	if OPENITG then return "1,2,3,50,51,52,4,5,6,120,7,55,56,57,8,113,32,54,53" end
+	return "1,2,3,50,51,4,5,6,7,55,56,57,8,114,113,32,54,47,53"
 end
 
 
@@ -1450,38 +1450,30 @@ function BackButton()
 		ExportOnChange = false,
 		Choices = modList,
 		LoadSelections = function(self, list, pn) end,
-		SaveSelections = function(self, list, pn) if list[1] and (ScreenSelectMusicTimer > 5) and (ScreenPlayerOptionsTimer > 5) then SCREENMAN:SetNewScreen('ScreenSelectMusic2') else if list[1] then SCREENMAN:SystemMessage('Not Enough Time Left to Go Back!') end end end
+		SaveSelections = function(self, list, pn) if list[1] and (ScreenSelectMusicTimer > 10) and (ScreenPlayerOptionsTimer > 10) then SCREENMAN:SetNewScreen('ScreenSelectMusic2') else if list[1] then SCREENMAN:SystemMessage('Not Enough Time Left to Go Back!') end end end
 	}
 	setmetatable(t, t)
 	return t
 end
 
 function GetTimer(screen)
-	if ScreenSelectMusicTimer == nil then
-		ScreenSelectMusicTimer = DefaultSSM;
-	end
-	
-	if ScreenPlayerOptionsTimer == nil then
-		ScreenPlayerOptionsTimer = DefaultSPO;
-	end
-	
 	if screen == "ScreenEvaluation" then
-		ScreenSelectMusicTimer = DefaultSSM;
-		ScreenPlayerOptionsTimer = DefaultSPO;
-		ScreenEvaluationTimer = 30;
+		ScreenSelectMusicTimer = GetMusicSelectTime();
+		ScreenPlayerOptionsTimer = GetOptionsSelectTime();
+		ScreenEvaluationTimer = GetEvaluationScreenTime();
 		return math.ceil(ScreenEvaluationTimer)
 	end
 	
 	if screen == "ScreenSelectMusic" then
 		if ScreenSelectMusicTimer == nil then
-			ScreenSelectMusicTimer = DefaultSSM;
+			ScreenSelectMusicTimer = GetMusicSelectTime();
 		end
 	return math.ceil(ScreenSelectMusicTimer)
 	end
 	
 	if screen == "ScreenPlayerOptions" then
 		if ScreenPlayerOptionsTimer == nil then
-			ScreenPlayerOptionsTimer = DefaultSPO;
+			ScreenPlayerOptionsTimer = GetOptionsSelectTime();
 		end
 	return math.ceil(ScreenPlayerOptionsTimer)
 	end
