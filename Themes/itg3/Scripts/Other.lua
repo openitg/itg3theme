@@ -40,7 +40,7 @@ function BasicACoptions()
 	return "1,2,3,50,4,5,6,7,55,56,57,8,114,32,54,47"
 end
 
-fucntion CustomACOptions()
+function CustomACOptions()
 	if OPENITG then return "1,2,3,4,5,6,7,8,9,10,11,12,13,14" end
 	return "1,2,3,4,5,6,7,8,9,10,11,12,13,14"
 end
