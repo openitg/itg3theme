@@ -418,54 +418,6 @@ function Get2PlayerJoinMessage()
 	end
 end
 
-function SpeedModTypeRow()
-	local Names = { "Basic", "Advanced", "Pro" }
-
-	local type = ProfileTable.SpeedModType
-
-	-- called on construction, must set exactly one list member true
-	local function Load(self, list, pn)
-		-- short-circuit to 'basic' if no option is set
-		if not type then list[1] = true return end
-
-		-- do any of the options match the given type?
-		for i=1,3 do
-			if type == string.lower(Names[i]) then list[i] = true return end
-		end
-
-		-- none of the above worked. fallback on standard
-		list[1] = true
-	end
-
-	-- called as the screen destructs, to save the selected option in list
-	local function Save(self, list, pn)
-		for i=1,3 do
-			if list[i] then
-				ProfileTable.SpeedModType = string.lower(Names[i])
-				PROFILEMAN:SaveMachineProfile()
-				return
-			end
-		end
-	end
-
-	
-	local Params = { Name = "SpeedModType" }
-
-	return CreateOptionRow( Params, Names, Load, Save )
-end
-
-function GetSpeedModType()
-	local type = ProfileTable.SpeedModType
-		
-	if type == "pro" then
-	return "pro"
-	elseif type == "advanced" then
-	return "advanced"
-	else
-	return "basic"
-	end
-end
-
 function OptionsListToggleRow()
 	local Names = { "Disabled", "Enabled" }
 

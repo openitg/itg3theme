@@ -2,42 +2,42 @@
 function SongModifiers()
 	if OPENITG then
 		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
-			return SpeedLines() .. "2,3,4,5,6,701,702,8," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "10,11,12,13,14,151,16,17,18,19,21,22,23,99" --OpenITG Normal Gameplay
+			return "101,102,103,2,3,4,5,6,701,702,8," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "10,11,12,13,14,151,16,17,18,19,21,22,23,99" --OpenITG Normal Gameplay
 
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
-			return SpeedLines() .. "2,3,4,5,6,701,702,8," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "10,11,12,13,14,151,16,17,18,20,21,22,23,99" --OpenITG Marathon Gameplay
+			return "101,102,103,2,3,4,5,6,701,702,8," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "10,11,12,13,14,151,16,17,18,20,21,22,23,99" --OpenITG Marathon Gameplay
 
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE then
-			return "101,2,3,4,999" --OpenITG Battle Gameplay
+			return "101,102,103,2,3,4,999" --OpenITG Battle Gameplay
 
 		else
-			return "101,2,99" --OpenITG Survival/Fallback Gameplay
+			return "101,102,103,2,99" --OpenITG Survival/Fallback Gameplay
 		end
 	end
 
 	if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
-		return SpeedLines() .. "2,3,4,5,6,7,8," ..(not GAMESTATE:PlayerUsingBothSides() and "9," or "").. "10,11,12,13,14,15,16,17,18,22,23,99" --Normal Gameplay
+		return "101,102,103,2,3,4,5,6,7,8," ..(not GAMESTATE:PlayerUsingBothSides() and "9," or "").. "10,11,12,13,14,15,16,17,18,22,23,99" --Normal Gameplay
 
 	elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
-		return SpeedLines() .. "2,3,4,5,6,7,8," ..(not GAMESTATE:PlayerUsingBothSides() and "9," or "").. "10,11,12,13,14,15,16,17,18,20,22,23,99" --Marathon Gameplay
+		return "101,102,103,2,3,4,5,6,7,8," ..(not GAMESTATE:PlayerUsingBothSides() and "9," or "").. "10,11,12,13,14,15,16,17,18,20,22,23,99" --Marathon Gameplay
 	
 	elseif GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE then
 		return "101,2,3,4,999" --Battle Gameplay
 
 	else
-		return SpeedLines() .. "2,99" --OpenITG Survival/Fallback Gameplay
+		return "101,102,203,2,99" --OpenITG Survival/Fallback Gameplay
 	end
 
 	return "1,2,99" --Global Fallback (We should never get here!)
 end
 
 function SongEditModifiers()
-	return SpeedLines() .. "2,3,4,5,6,7,8,9,10"
+	return "101,102,103,2,3,4,5,6,7,8,9,10"
 end
 
 function ACoptions()
-	if OPENITG then return "1,2,3,50,51,52,4,5,6,120,7,55,56,57,8,32,54,53" end
-	return "1,2,3,50,51,4,5,6,7,55,56,57,8,114,32,54,47,53"
+	if OPENITG then return "1,2,3,50,52,4,5,6,120,7,55,56,57,8,32,54,53" end
+	return "1,2,3,50,4,5,6,7,55,56,57,8,114,32,54,47,53"
 end
 
 
@@ -1215,19 +1215,15 @@ function SpeedMods(name)
 			p = pn+1
 			if name == "Type" then modType[p] = s end
 			if name == "Base" then modBase[p] = s
-				if GetSpeedModType() ~= "pro" then
 					if string.find(modBase[p],"x") then modBase[p] = string.gsub(modBase[p], "x", ""); modType[p] = 'x-mod' end
 					if string.find(modBase[p],"c") then modBase[p] = string.gsub(modBase[p], "c", ""); modType[p] = 'c-mod' end
 					if string.find(modBase[p],"m") then modBase[p] = string.gsub(modBase[p], "m", ""); modType[p] = 'm-mod' end
-				end
 			end
 			if name == "Extra" then modExtra[p] = s end
 
 			if modType[p] == 'x-mod' then modSpeed[p] = modBase[p] + modExtra[p] .. 'x' end
 			if modType[p] == 'c-mod' then modSpeed[p] = 'c' .. modBase[p]*100 + modExtra[p]*100 end
-			if modType[p] == 'c-mod' and GetSpeedModType() ~= "pro" then modSpeed[p] = 'c' .. modBase[p] end
 			if modType[p] == 'm-mod' then modSpeed[p] = 'm' .. modBase[p]*100 + modExtra[p]*100 end
-			if modType[p] == 'm-mod' and GetSpeedModType() ~= "pro" then modSpeed[p] = 'm' .. modBase[p] end
 			GAMESTATE:ApplyGameCommand('mod,1x',p)
 			ApplyRateAdjust()
 			MESSAGEMAN:Broadcast('SpeedModChanged')
@@ -1235,15 +1231,6 @@ function SpeedMods(name)
 	}
 	setmetatable(t, t)
 	return t
-end
-
-function SpeedLines()
-	local type = GetSpeedModType()
-	if type == "pro" then
-	return "101,102,103,"
-	else
-	return "101,"
-	end
 end
 
 modRate = 1
@@ -1289,26 +1276,8 @@ function InitializeSpeedMods()
 	modType = { "x-mod", "x-mod" }
 	modSpeed = { "1.5x", "1.5x" }
 	
-	if GetSpeedModType() == "pro" then
 	baseSpeed = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16" }
 	extraSpeed = { "0", "+.25", "+.5", "+.75", "+.1", "+.2", "+.3", "+.4", "+.6", "+.7", "+.8", "+.9" }
-	end
-	
-	if GetSpeedModType() == "advanced" then
-		if OPENITG then baseSpeed = { "0.25x", "0.5x", "0.75x", "1x", "1.25x", "1.5x", "1.75x", "2x", "2.25x", "2.5x", "2.75x", "3x", "3.25x", "3.5x", "3.75x", "4x", "4.25x", "4.5x", "4.75x", "5x", "5.25x", "5.5x", "5.75x", "6x", "6.25x", "6.5x", "6.75x", "7x", "c400", "c425", "c450", "c475", "c500", "c525", "c550", "c575", "c600", "c625", "c650", "c675", "c700", "c725", "c750", "c775", "c800", "c825", "c850", "c875", "c900", "c925", "c950", "c975", "c1000", "m400", "m425", "m450", "m475", "m500", "m525", "m550", "m575", "m600", "m625", "m650", "m675", "m700", "m725", "m750", "m775", "m800", "m825", "m850", "m875", "m900", "m925", "m950", "m975", "m1000" }
-		else  baseSpeed = { "0.25x", "0.5x", "0.75x", "1x", "1.25x", "1.5x", "1.75x", "2x", "2.25x", "2.5x", "2.75x", "3x", "3.25x", "3.5x", "3.75x", "4x", "4.25x", "4.5x", "4.75x", "5x", "5.25x", "5.5x", "5.75x", "6x", "6.25x", "6.5x", "6.75x", "7x", "c400", "c425", "c450", "c475", "c500", "c525", "c550", "c575", "c600", "c625", "c650", "c675", "c700", "c725", "c750", "c775", "c800", "c825", "c850", "c875", "c900", "c925", "c950", "c975", "c1000" }
-		end
-	extraSpeed = { "0" }
-	modExtra = { "0", "0" }
-	end
-
-	if GetSpeedModType() == "basic" then
-		if OPENITG then baseSpeed = { "1x", "1.5x", "2x", "2.5x", "3x", "3.5x", "4x", "4.5x", "5x", "6x", "c450", "m450" }
-		else baseSpeed = { "1x", "1.5x", "2x", "2.5x", "3x", "3.5x", "4x", "4.5x", "5x", "5.5x", "6x", "c450" }
-		end
-	extraSpeed = { "0" }
-	modExtra = { "0", "0" }
-	end
 	
 	if OPENITG then
 	typeSpeed = { "x-mod", "c-mod", "m-mod" }
@@ -1337,7 +1306,6 @@ end
 
 function DisplaySpeedMod(pn)
 	local s = modSpeed[pn]
-	if modType[pn] == "x-mod" and GetSpeedModType() == "pro" then
 		if modExtra[pn] == "0" then
 		s = modBase[pn] + modExtra[pn] .. ".00" .. "x"
 		end
@@ -1360,7 +1328,6 @@ function DisplaySpeedMod(pn)
 		s = string.sub(s, 1, 5)
 		s = s .. "x"
 		end
-	end
 	return s
 end
 
