@@ -36,13 +36,13 @@ function SongEditModifiers()
 end
 
 function BasicACoptions()
-	if OPENITG then return "1,2,3,50,4,5,6,120,7,55,56,57,8,32" end
-	return "1,2,3,50,4,5,6,7,55,56,57,8,114,32,54,47"
+	if OPENITG then return "1,2,3,8,50,4,5,6,120,7,55,56,57" end
+	return "1,2,3,8,50,4,5,6,7,55,56,57,114,54,47"
 end
 
 function CustomACOptions()
-	if OPENITG then return "1,2,3,4,5,6,7,8,9,10,11,12,13,14" end
-	return "11,12,13,14"
+	if OPENITG then return "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" end
+	return "4,5,7,13,14,15"
 end
 
 function Platform() return "arcade" end
