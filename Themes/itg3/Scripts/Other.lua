@@ -42,7 +42,7 @@ end
 
 function CustomACOptions()
 	if OPENITG then return "1,2,3,4,5,6,7,8,9,10,11,12,13,14" end
-	return "1,2,3,4,5,6,7,8,9,10,11,12,13,14"
+	return "11,12,13,14"
 end
 
 function Platform() return "arcade" end
