@@ -1214,11 +1214,7 @@ function SpeedMods(name)
 			end
 			p = pn+1
 			if name == "Type" then modType[p] = s end
-			if name == "Base" then modBase[p] = s
-					if string.find(modBase[p],"x") then modBase[p] = string.gsub(modBase[p], "x", ""); modType[p] = 'x-mod' end
-					if string.find(modBase[p],"c") then modBase[p] = string.gsub(modBase[p], "c", ""); modType[p] = 'c-mod' end
-					if string.find(modBase[p],"m") then modBase[p] = string.gsub(modBase[p], "m", ""); modType[p] = 'm-mod' end
-			end
+			if name == "Base" then modBase[p] = s end
 			if name == "Extra" then modExtra[p] = s end
 
 			if modType[p] == 'x-mod' then modSpeed[p] = modBase[p] + modExtra[p] .. 'x' end
@@ -1306,6 +1302,7 @@ end
 
 function DisplaySpeedMod(pn)
 	local s = modSpeed[pn]
+	if modType[pn] == "x-mod" then
 		if modExtra[pn] == "0" then
 		s = modBase[pn] + modExtra[pn] .. ".00" .. "x"
 		end
@@ -1328,6 +1325,7 @@ function DisplaySpeedMod(pn)
 		s = string.sub(s, 1, 5)
 		s = s .. "x"
 		end
+	end
 	return s
 end
 
