@@ -35,9 +35,9 @@ function SongEditModifiers()
 	return SpeedLines() .. "2,3,4,5,6,7,8,9,10"
 end
 
-function oitgACoptions()
-	if OPENITG then return "1,2,3,50,51,52,4,5,6,120,7,55,56,57,8,113,32,54,53" end
-	return "1,2,3,50,51,4,5,6,7,55,56,57,8,114,113,32,54,47,53"
+function ACoptions()
+	if OPENITG then return "1,2,3,50,51,52,4,5,6,120,7,55,56,57,8,32,54,53" end
+	return "1,2,3,50,51,4,5,6,7,55,56,57,8,114,32,54,47,53"
 end
 
 
@@ -1458,10 +1458,11 @@ end
 
 function GetTimer(screen)
 	if screen == "ScreenEvaluation" then
+		-- reset the timers at the end of each round.
 		ScreenSelectMusicTimer = GetMusicSelectTime();
 		ScreenPlayerOptionsTimer = GetOptionsSelectTime();
-		ScreenEvaluationTimer = GetEvaluationScreenTime();
-		return math.ceil(ScreenEvaluationTimer)
+		
+		return GetEvaluationScreenTime();
 	end
 	
 	if screen == "ScreenSelectMusic" then
