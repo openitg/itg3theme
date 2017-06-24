@@ -1,5 +1,5 @@
 <!-- Resets custom modifiers if on beginner and menu times in case you use the back button on your keyboard -->
-<ActorFrame OnCommand="%function(self) ResetBeginnerDisplay() ScreenSelectMusicTimer = DefaultSSM ScreenPlayerOptionsTimer = DefaultSPO end"><children>
+<ActorFrame OnCommand="%function(self) ResetBeginnerDisplay() ScreenSelectMusicTimer = GetMusicSelectTime() ScreenPlayerOptionsTimer = GetOptionsSelectTime() end"><children>
 
 <ActorFrame Condition="not GAMESTATE:IsCourseMode() and not (GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove/Training1/'))" ><children>
 

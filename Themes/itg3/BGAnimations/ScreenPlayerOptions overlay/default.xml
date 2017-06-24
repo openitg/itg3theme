@@ -2,7 +2,7 @@
 
 <!--SPO Time Tracker-->
 	<Layer Type="Quad"
-		InitCommand="sleep,0.01;queuecommand,SPOCountDown;"
+		InitCommand="sleep,0.1;queuecommand,SPOCountDown;"
 		SPOCountDownCommand="%function(self)
 			self:stoptweening();
 			ScreenPlayerOptionsTimer = ScreenPlayerOptionsTimer - 0.1;
@@ -11,6 +11,15 @@
 				end
 		self:sleep(0.1);
 		self:queuecommand('SPOCountDown');
+		end"
+	/>
+	
+<!--We lose just under 3 seconds on SSM when transitioning to SPO, so this gives it back to Players.-->	
+	<Layer Type="Quad"
+		InitCommand="sleep,0.1;queuecommand,SSMCountUp;"
+		SSMCountUpCommand="%function(self)
+			self:stoptweening();
+			ScreenSelectMusicTimer = ScreenSelectMusicTimer + 3.0;
 		end"
 	/>
 
