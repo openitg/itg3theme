@@ -2,7 +2,7 @@
 
 <!--SSM Time Tracker-->
 <Layer Type="Quad"
-	InitCommand="sleep,0.01;queuecommand,SSMCountDown;"
+	InitCommand="sleep,0.1;queuecommand,SSMCountDown;"
 	SSMCountDownCommand="%function(self)
 		self:stoptweening();
 		ScreenSelectMusicTimer = ScreenSelectMusicTimer - 0.1;
@@ -13,6 +13,18 @@
 	self:queuecommand('SSMCountDown');
 	end"
 />
+
+<!--We lose a few seconds when players have to scroll down to the Back Button, so this gives it back to Players after they have entered SPO once.-->	
+	<Layer Type="Quad"
+		InitCommand="sleep,0.1;queuecommand,SPOCountUp;"
+		SPOCountUpCommand="%function(self)
+			self:stoptweening();
+			if ScreenPlayerOptionsTimer == OptionsSelectTime() then
+			else
+			ScreenPlayerOptionsTimer = ScreenPlayerOptionsTimer + 6.0;
+			end
+		end"
+	/>
 
 <!--Capture BPM-->
 <Layer Type="Quad"
