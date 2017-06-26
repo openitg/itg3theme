@@ -387,6 +387,54 @@ function GetEvaluationScreenTime()
 	end
 end
 
+function FailTypeOptions()
+	local Names = { "End of Song", "Immediately" , "Off" }
+
+	local type = ProfileTable.FailType
+
+	-- called on construction, must set exactly one list member true
+	local function Load(self, list, pn)
+		-- short-circuit to 'End of Song' if no option is set
+		if not type then list[3] = true return end
+
+		-- do any of the options match the given type?
+		for i=1,4 do
+			if type == Names[i] then list[i] = true return end
+		end
+
+		-- none of the above worked. fallback on 'End of Song'
+		list[3] = true
+	end
+
+	-- called as the screen destructs, to save the selected option in list
+	local function Save(self, list, pn)
+		for i=1,4 do
+			if list[i] then
+				ProfileTable.FailType = Names[i]
+				PROFILEMAN:SaveMachineProfile()
+				return
+			end
+		end
+	end
+
+	
+	local Params = { Name = "FailType" }
+
+	return CreateOptionRow( Params, Names, Load, Save )
+end
+
+function GetFailType()
+	local type = ProfileTable.FailType
+	-- assume "End of Song" unless otherwise specified
+	if not type then return "EndOfSong" end
+	-- always turn fail "Off" for the first song regardless of the Fail Type set in the menu.
+	if GAMESTATE:StageIndex() == 0 and type ~= "Off" then return "FailOff" end
+	if type == "Immediately" then return "FailImmediate"
+	elseif type == "Off" then return "FailOff"
+	else return "EndOfSong" end
+	return type
+end
+
 function Get2PlayerJoinMessage()
 	if not GAMESTATE:PlayersCanJoin() then return "" end
 	if GAMESTATE:GetCoinMode()==COIN_MODE_FREE then return "2 Player mode available" end

@@ -36,8 +36,8 @@ function SongEditModifiers()
 end
 
 function BasicACoptions()
-	if OPENITG then return "1,2,3,8,50,4,5,6,120,7,55,56,57" end
-	return "1,2,3,8,50,4,5,6,7,55,56,57,114,54,47"
+	if OPENITG then return "1,2,3,8,50,51,4,5,6,120,7,55,56,57" end
+	return "1,2,3,8,50,51,4,5,6,7,55,56,57,114,54,47"
 end
 
 function CustomACOptions()
