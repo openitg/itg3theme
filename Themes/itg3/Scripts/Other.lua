@@ -31,20 +31,6 @@ function SongModifiers()
 	return "101,102,103,2,99" --Global Fallback (We should never get here!)
 end
 
-function SongEditModifiers()
-	return "101,102,103,2,3,4,5,6,7,8,9"
-end
-
-function BasicACoptions()
-	if OPENITG then return "1,2,3,8,50,51,4,5,6,120,7,55,56,57" end
-	return "1,2,3,8,50,51,4,5,6,7,55,56,57,114,54,47"
-end
-
-function CustomACOptions()
-	if OPENITG then return "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" end
-	return "4,5,7,13,14,15"
-end
-
 function Platform() return "arcade" end
 
 function IsPIUIO() return GetInputType() == "PIUIO`" end
