@@ -100,7 +100,7 @@ end
 -- To be called wherever the lifebars are positioned
 function GetLifebarAdjustment()
 	local type = ProfileTable.LifebarAdjustment
-	-- assume "coin" unless otherwise specified
+	-- assume "0" unless otherwise specified
 	if not type then return "0" end
 	return type
 end
