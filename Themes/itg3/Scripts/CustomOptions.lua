@@ -387,6 +387,96 @@ function GetEvaluationScreenTime()
 	end
 end
 
+function GlobalOffset()
+	-- start with -0.030, go to 0.00, increment by 0.001
+	local Values = {}
+	for i = 1,31 do Values[i] = (-0.030+(i-1)*0.001) end
+
+	local Names = {}
+	for i = 1,31 do Names[i] = Values[i] end
+
+	local type = ProfileTable.GlobalOffset
+	
+	local function Load(self, list, pn)
+		if not type then list[18] = true return end
+
+		for i=1,31 do
+			if type == string.lower(Names[i]) then list[i] = true return end
+		end
+
+		list[1] = true
+	end
+
+	local function Save(self, list, pn)
+		for i=1,31 do
+			if list[i] then
+				ProfileTable.GlobalOffset = string.lower(Names[i])
+				PROFILEMAN:SaveMachineProfile()
+				return
+			end
+		end
+	end
+
+	
+	local Params = { Name = "GlobalOffset" }
+
+	return CreateOptionRow( Params, Names, Load, Save )
+end
+
+function GetGlobalOffset()
+	local type = ProfileTable.GlobalOffset
+	
+	if not type then
+	return -0.012 else
+	return tonumber(ProfileTable.GlobalOffset)
+	end
+end
+
+function JudgePaddingToggleRow()
+	local Names = { "Disabled", "Enabled" }
+
+	local type = ProfileTable.JudgePaddingToggle
+
+	-- called on construction, must set exactly one list member true
+	local function Load(self, list, pn)
+		-- short-circuit to 'disabled' if no option is set
+		if not type then list[1] = true return end
+
+		-- do any of the options match the given type?
+		for i=1,2 do
+			if type == string.lower(Names[i]) then list[i] = true return end
+		end
+
+		-- none of the above worked. fallback on standard
+		list[1] = true
+	end
+
+	-- called as the screen destructs, to save the selected option in list
+	local function Save(self, list, pn)
+		for i=1,2 do
+			if list[i] then
+				ProfileTable.JudgePaddingToggle = string.lower(Names[i])
+				PROFILEMAN:SaveMachineProfile()
+				return
+			end
+		end
+	end
+
+	
+	local Params = { Name = "JudgePadding" }
+
+	return CreateOptionRow( Params, Names, Load, Save )
+end
+
+function GetJudgePadding()
+	local type = ProfileTable.JudgePaddingToggle
+		
+	if type == "enabled" then
+	return "0.0015" else
+	return "0"
+	end
+end
+
 function FailTypeOptions()
 	local Names = { "End of Song", "Immediately" , "Off" }
 
