@@ -19,9 +19,8 @@
 		InitCommand="sleep,0.1;queuecommand,SPOCountUp;"
 		SPOCountUpCommand="%function(self)
 			self:stoptweening();
-			if ScreenPlayerOptionsTimer == GetOptionsSelectTime() then
-			else
-			ScreenPlayerOptionsTimer = ScreenPlayerOptionsTimer + 6.0;
+			if ScreenPlayerOptionsTimer ~= GetOptionsSelectTime() then
+			ScreenPlayerOptionsTimer = ScreenPlayerOptionsTimer + 6.0
 			end
 		end"
 	/>
