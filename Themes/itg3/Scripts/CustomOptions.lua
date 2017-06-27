@@ -488,17 +488,17 @@ function FailTypeOptions()
 		if not type then list[1] = true return end
 
 		-- do any of the options match the given type?
-		for i=1,4 do
+		for i=1,3 do
 			if type == Names[i] then list[i] = true return end
 		end
 
 		-- none of the above worked. fallback on 'End of Song'
-		list[3] = true
+		list[1] = true
 	end
 
 	-- called as the screen destructs, to save the selected option in list
 	local function Save(self, list, pn)
-		for i=1,4 do
+		for i=1,3 do
 			if list[i] then
 				ProfileTable.FailType = Names[i]
 				PROFILEMAN:SaveMachineProfile()
@@ -516,13 +516,12 @@ end
 function GetFailType()
 	local type = ProfileTable.FailType
 	-- assume "End of Song" unless otherwise specified
-	if not type then return "EndOfSong" end
+	if not type then return "FailEndOfSong" end
 	-- always turn fail "Off" for the first song regardless of the Fail Type set in the menu.
 	if GAMESTATE:StageIndex() == 0 and type ~= "Off" then return "FailOff" end
 	if type == "Immediately" then return "FailImmediate"
 	elseif type == "Off" then return "FailOff"
-	else return "EndOfSong" end
-	return type
+	else return "FailEndOfSong" end
 end
 
 function Get2PlayerJoinMessage()
