@@ -485,7 +485,7 @@ function FailTypeOptions()
 	-- called on construction, must set exactly one list member true
 	local function Load(self, list, pn)
 		-- short-circuit to 'End of Song' if no option is set
-		if not type then list[3] = true return end
+		if not type then list[1] = true return end
 
 		-- do any of the options match the given type?
 		for i=1,4 do
@@ -609,7 +609,7 @@ function ScoreComparisonToggleRow()
 	-- called on construction, must set exactly one list member true
 	local function Load(self, list, pn)
 		-- short-circuit to 'off' if no option is set
-		if not type then list[1] = true return end
+		if not type then list[2] = true return end
 
 		-- do any of the options match the given type?
 		for i=1,2 do
@@ -665,8 +665,8 @@ end
 function GetScoreComparison()
 	local type = ProfileTable.ScoreComparisonToggle
 		
-	if type == "on" then
-	return "1" else
-	return "0"
+	if type == "off" then
+	return "0" else
+	return "1"
 	end
 end
