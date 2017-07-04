@@ -1,5 +1,7 @@
-<!--We lose just under 3 seconds on SSM when transitioning to SPO, so this gives it back to Players.-->	
-<ActorFrame OnCommand="%function(self) ScreenSelectMusicTimer = ScreenSelectMusicTimer + 3.0 end"> <children>
+<ActorFrame> <children>
+
+<!--We lose just under 3 seconds on SSM when transitioning to SPO, so this gives it back to Players.-->
+<ActorFrame Command="%function(self) ScreenSelectMusicTimer = ScreenSelectMusicTimer + 3.0 end"/>
 
 <!--SPO Time Tracker-->
 <Layer Type="Quad"
