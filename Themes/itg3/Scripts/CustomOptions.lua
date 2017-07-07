@@ -1,6 +1,3 @@
--- A Simple Alias for Easier Referencing
-local ProfileTable = PROFILEMAN:GetMachineProfile():GetSaved()
-
 function GetCustomSongCancelText()
 	Debug( "GetCustomSongCancelText" )
 
@@ -21,7 +18,7 @@ end
 function CreditTypeRow()
 	local Names = { "Coins", "Tokens", "Swipe Card" }
 
-	local type = ProfileTable.CreditType
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().CreditType
 
 	-- called on construction, must set exactly one list member true
 	local function Load(self, list, pn)
@@ -41,7 +38,7 @@ function CreditTypeRow()
 	local function Save(self, list, pn)
 		for i=1,3 do
 			if list[i] then
-				ProfileTable.CreditType = string.lower(Names[i])
+				PROFILEMAN:GetMachineProfile():GetSaved().CreditType = string.lower(Names[i])
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -58,7 +55,7 @@ end
 function LifebarAdjustmentRow()
 	local Names = { "0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50" }
 
-	local type = ProfileTable.LifebarAdjustment
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().LifebarAdjustment
 	
 	local function Load(self, list, pn)
 		if not type then list[1] = true return end
@@ -73,7 +70,7 @@ function LifebarAdjustmentRow()
 	local function Save(self, list, pn)
 		for i=1,11 do
 			if list[i] then
-				ProfileTable.LifebarAdjustment = string.lower(Names[i])
+				PROFILEMAN:GetMachineProfile():GetSaved().LifebarAdjustment = string.lower(Names[i])
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -88,7 +85,7 @@ end
 
 -- To be called wherever the LUA needs split
 function GetCreditType()
-	local type = ProfileTable.CreditType
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().CreditType
 	-- assume "coin" unless otherwise specified
 	if not type then return "INSERT COIN" end
 	if type == "tokens" then return "INSERT TOKEN"
@@ -99,7 +96,7 @@ end
 
 -- To be called wherever the lifebars are positioned
 function GetLifebarAdjustment()
-	local type = ProfileTable.LifebarAdjustment
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().LifebarAdjustment
 	-- assume "0" unless otherwise specified
 	if not type then return "0" end
 	return type
@@ -109,7 +106,7 @@ end
 function CleanScreen()
 	local Names = { "Disabled", "Enabled" }
 
-	local type = ProfileTable.CleanScreen
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().CleanScreen
 
 	-- called on construction, must set exactly one list member true
 	local function Load(self, list, pn)
@@ -129,7 +126,7 @@ function CleanScreen()
 	local function Save(self, list, pn)
 		for i=1,2 do
 			if list[i] then
-				ProfileTable.CleanScreen = string.lower(Names[i])
+				PROFILEMAN:GetMachineProfile():GetSaved().CleanScreen = string.lower(Names[i])
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -143,7 +140,7 @@ function CleanScreen()
 end
 
 function GetCleanScreen()
-	local type = ProfileTable.CleanScreen
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().CleanScreen
 
 	if type == "enabled" then
 	return true else 
@@ -152,7 +149,7 @@ function GetCleanScreen()
 end
 
 function CleanStartTime()
-	local type = ProfileTable.CleanStartTime
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().CleanStartTime
 
 	local Values = {}
 	for i = 0,46 do Values[i+1] = i/2 end
@@ -177,7 +174,7 @@ function CleanStartTime()
 	local function Save(self, list, pn)
 		for i=1,47 do
 			if list[i] then
-				ProfileTable.CleanStartTime = Values[i]
+				PROFILEMAN:GetMachineProfile():GetSaved().CleanStartTime = Values[i]
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -191,16 +188,16 @@ function CleanStartTime()
 end
 
 function GetCleanStartTime()
-	local type = ProfileTable.CleanStartTime
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().CleanStartTime
 	
 	if not type then
 	return 0 else
-	return tonumber(ProfileTable.CleanStartTime)
+	return tonumber(PROFILEMAN:GetMachineProfile():GetSaved().CleanStartTime)
 	end
 end
 
 function CleanEndTime()
-	local type = ProfileTable.CleanEndTime
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().CleanEndTime
 
 	local Values = {}
 	for i = 1,46 do Values[i] = i/2 + 0.5 end
@@ -227,7 +224,7 @@ function CleanEndTime()
 	local function Save(self, list, pn)
 		for i=1,47 do
 			if list[i] then
-				ProfileTable.CleanEndTime = Values[i]
+				PROFILEMAN:GetMachineProfile():GetSaved().CleanEndTime = Values[i]
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -240,11 +237,11 @@ function CleanEndTime()
 end
 
 function GetCleanEndTime()
-	local type = ProfileTable.CleanEndTime
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().CleanEndTime
 	
 	if not type then
 	return 24 else
-	return tonumber(ProfileTable.CleanEndTime)
+	return tonumber(PROFILEMAN:GetMachineProfile():GetSaved().CleanEndTime)
 	end
 end
 
@@ -256,7 +253,7 @@ function MusicSelectTime()
 	local Names = {}
 	for i = 1,13 do Names[i] = Values[i] end
 
-	local type = ProfileTable.MusicSelectTime
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().MusicSelectTime
 	
 	local function Load(self, list, pn)
 		if not type then list[1] = true return end
@@ -271,7 +268,7 @@ function MusicSelectTime()
 	local function Save(self, list, pn)
 		for i=1,13 do
 			if list[i] then
-				ProfileTable.MusicSelectTime = string.lower(Names[i])
+				PROFILEMAN:GetMachineProfile():GetSaved().MusicSelectTime = string.lower(Names[i])
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -285,12 +282,12 @@ function MusicSelectTime()
 end
 
 function GetMusicSelectTime()
-	local type = ProfileTable.MusicSelectTime
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().MusicSelectTime
 	
 	if not type then
 	return 60 else
 	-- return the time with a half-second extra as a buffer while the screen loads
-	return tonumber(ProfileTable.MusicSelectTime)+0.5
+	return tonumber(PROFILEMAN:GetMachineProfile():GetSaved().MusicSelectTime)+0.5
 	end
 end
 
@@ -302,7 +299,7 @@ function OptionsSelectTime()
 	local Names = {}
 	for i = 1,13 do Names[i] = Values[i] end
 
-	local type = ProfileTable.OptionsSelectTime
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().OptionsSelectTime
 	
 	local function Load(self, list, pn)
 		if not type then list[1] = true return end
@@ -317,7 +314,7 @@ function OptionsSelectTime()
 	local function Save(self, list, pn)
 		for i=1,13 do
 			if list[i] then
-				ProfileTable.OptionsSelectTime = string.lower(Names[i])
+				PROFILEMAN:GetMachineProfile():GetSaved().OptionsSelectTime = string.lower(Names[i])
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -331,12 +328,12 @@ function OptionsSelectTime()
 end
 
 function GetOptionsSelectTime()
-	local type = ProfileTable.OptionsSelectTime
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().OptionsSelectTime
 	
 	if not type then
 	return 40 else
 	-- return the time with a half-second extra as a buffer while the screen loads
-	return tonumber(ProfileTable.OptionsSelectTime)+0.5
+	return tonumber(PROFILEMAN:GetMachineProfile():GetSaved().OptionsSelectTime)+0.5
 	end
 end
 
@@ -349,7 +346,7 @@ function EvaluationScreenTime()
 	local Names = {}
 	for i = 1,13 do Names[i] = Values[i] end
 
-	local type = ProfileTable.EvaluationScreenTime
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().EvaluationScreenTime
 	
 	local function Load(self, list, pn)
 		if not type then list[1] = true return end
@@ -364,7 +361,7 @@ function EvaluationScreenTime()
 	local function Save(self, list, pn)
 		for i=1,13 do
 			if list[i] then
-				ProfileTable.EvaluationScreenTime = string.lower(Names[i])
+				PROFILEMAN:GetMachineProfile():GetSaved().EvaluationScreenTime = string.lower(Names[i])
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -378,12 +375,12 @@ function EvaluationScreenTime()
 end
 
 function GetEvaluationScreenTime()
-	local type = ProfileTable.EvaluationScreenTime
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().EvaluationScreenTime
 	
 	if not type then
 	return 30 else
 	-- return the time with a half-second extra as a buffer while the screen loads
-	return tonumber(ProfileTable.EvaluationScreenTime)+0.5
+	return tonumber(PROFILEMAN:GetMachineProfile():GetSaved().EvaluationScreenTime)+0.5
 	end
 end
 
@@ -395,7 +392,7 @@ function GlobalOffset()
 	local Names = {}
 	for i = 1,31 do Names[i] = Values[i] end
 
-	local type = ProfileTable.GlobalOffset
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().GlobalOffset
 	
 	local function Load(self, list, pn)
 		if not type then list[18] = true return end
@@ -410,7 +407,7 @@ function GlobalOffset()
 	local function Save(self, list, pn)
 		for i=1,31 do
 			if list[i] then
-				ProfileTable.GlobalOffset = string.lower(Names[i])
+				PROFILEMAN:GetMachineProfile():GetSaved().GlobalOffset = string.lower(Names[i])
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -424,18 +421,18 @@ function GlobalOffset()
 end
 
 function GetGlobalOffset()
-	local type = ProfileTable.GlobalOffset
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().GlobalOffset
 	
 	if not type then
 	return -0.012 else
-	return tonumber(ProfileTable.GlobalOffset)
+	return tonumber(PROFILEMAN:GetMachineProfile():GetSaved().GlobalOffset)
 	end
 end
 
 function JudgePaddingToggleRow()
 	local Names = { "Disabled", "Enabled" }
 
-	local type = ProfileTable.JudgePaddingToggle
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().JudgePaddingToggle
 
 	-- called on construction, must set exactly one list member true
 	local function Load(self, list, pn)
@@ -455,7 +452,7 @@ function JudgePaddingToggleRow()
 	local function Save(self, list, pn)
 		for i=1,2 do
 			if list[i] then
-				ProfileTable.JudgePaddingToggle = string.lower(Names[i])
+				PROFILEMAN:GetMachineProfile():GetSaved().JudgePaddingToggle = string.lower(Names[i])
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -469,7 +466,7 @@ function JudgePaddingToggleRow()
 end
 
 function GetJudgePadding()
-	local type = ProfileTable.JudgePaddingToggle
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().JudgePaddingToggle
 		
 	if type == "enabled" then
 	return "0.0015" else
@@ -480,7 +477,7 @@ end
 function FailTypeOptions()
 	local Names = { "End of Song", "Immediately" , "Off" }
 
-	local type = ProfileTable.FailType
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().FailType
 
 	-- called on construction, must set exactly one list member true
 	local function Load(self, list, pn)
@@ -500,7 +497,7 @@ function FailTypeOptions()
 	local function Save(self, list, pn)
 		for i=1,3 do
 			if list[i] then
-				ProfileTable.FailType = Names[i]
+				PROFILEMAN:GetMachineProfile():GetSaved().FailType = Names[i]
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -514,7 +511,7 @@ function FailTypeOptions()
 end
 
 function GetFailType()
-	local type = ProfileTable.FailType
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().FailType
 	-- assume "End of Song" unless otherwise specified
 	if not type then return "FailEndOfSong" end
 	-- always turn fail "Off" for the first song regardless of the Fail Type set in the menu.
@@ -532,7 +529,7 @@ function Get2PlayerJoinMessage()
 	if GAMESTATE:GetPremium() == PREMIUM_JOINT then numSidesNotJoined = numSidesNotJoined - 1 end	
 	local coinsRequiredToJoinRest = numSidesNotJoined * PREFSMAN:GetPreference("CoinsPerCredit")
 	local remaining = coinsRequiredToJoinRest - GAMESTATE:GetCoins();
-	local type = ProfileTable.CreditType
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().CreditType
 	
 	if remaining <= 0 then return "2 Player mode available" end
 	
@@ -558,7 +555,7 @@ end
 function OptionsListToggleRow()
 	local Names = { "Disabled", "Enabled" }
 
-	local type = ProfileTable.OptionsListToggle
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().OptionsListToggle
 
 	-- called on construction, must set exactly one list member true
 	local function Load(self, list, pn)
@@ -578,7 +575,7 @@ function OptionsListToggleRow()
 	local function Save(self, list, pn)
 		for i=1,2 do
 			if list[i] then
-				ProfileTable.OptionsListToggle = string.lower(Names[i])
+				PROFILEMAN:GetMachineProfile():GetSaved().OptionsListToggle = string.lower(Names[i])
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -592,7 +589,7 @@ function OptionsListToggleRow()
 end
 
 function GetOptionsList()
-	local type = ProfileTable.OptionsListToggle
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().OptionsListToggle
 		
 	if type == "enabled" and GAMESTATE:GetPlayMode() ~= PLAY_MODE_ONI then
 	return "1" else
@@ -603,7 +600,7 @@ end
 function ScoreComparisonToggleRow()
 	local Names = { "Off", "On" }
 
-	local type = ProfileTable.ScoreComparisonToggle
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().ScoreComparisonToggle
 
 	-- called on construction, must set exactly one list member true
 	local function Load(self, list, pn)
@@ -623,7 +620,7 @@ function ScoreComparisonToggleRow()
 	local function Save(self, list, pn)
 		for i=1,2 do
 			if list[i] then
-				ProfileTable.ScoreComparisonToggle = string.lower(Names[i])
+				PROFILEMAN:GetMachineProfile():GetSaved().ScoreComparisonToggle = string.lower(Names[i])
 				PROFILEMAN:SaveMachineProfile()
 				return
 			end
@@ -662,7 +659,7 @@ function CompareScores()
 end
 
 function GetScoreComparison()
-	local type = ProfileTable.ScoreComparisonToggle
+	local type = PROFILEMAN:GetMachineProfile():GetSaved().ScoreComparisonToggle
 		
 	if type == "off" then
 	return "0" else
