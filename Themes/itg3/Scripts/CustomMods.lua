@@ -5,8 +5,8 @@ CustomMods = {}
 -- Since tables can only be assigned by reference in Lua, we must explicitly
 -- define defaults for each player.
 function ResetCustomMods()
-	CustomMods[PLAYER_1] = { hidescore = false, hidecombo = false, hidelife = false, showstats = false, showmods = false, normal = true, left = false, right = false, upsidedown = false, solo = false, vibrate = false, spin = false, spinreverse = false, bob = false, pulse = false, wag = false, dark = 0 }
-	CustomMods[PLAYER_2] = { hidescore = false, hidecombo = false, hidelife = false, showstats = false, showmods = false, normal = true, left = false, right = false, upsidedown = false, solo = false, vibrate = false, spin = false, spinreverse = false, bob = false, pulse = false, wag = false, dark = 0 }
+	CustomMods[PLAYER_1] = { hidescore = false, hidecombo = false, hidelife = false, showstats = false, showmods = false, normal = true, left = false, right = false, upsidedown = false, solo = false, vibrate = false, spin = false, spinreverse = false, bob = false, pulse = false, wag = false, dark = 0, judgment = "ITG3" }
+	CustomMods[PLAYER_2] = { hidescore = false, hidecombo = false, hidelife = false, showstats = false, showmods = false, normal = true, left = false, right = false, upsidedown = false, solo = false, vibrate = false, spin = false, spinreverse = false, bob = false, pulse = false, wag = false, dark = 0, judgment = "ITG3" }
 end
 
 -- Do initial reset
@@ -186,6 +186,79 @@ function OptionsScreenFilter()
 	}
 	setmetatable(t, t)
 	return t
+end
+
+
+function OptionJudgmentFont()
+	local t = {
+		Name = "JudgmentFont",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = false,
+		ExportOnChange = false,
+		Choices = { "ITG 3", "ITG 2", "Love", "GrooveNights", "Chromatic", "Tactics" },
+		LoadSelections = function(self, list, pn)
+			--if GAMESTATE:StageIndex() == 0 then ResetCustomMods() end -- Reset if we're on the first stage
+			if CustomMods[pn].judgment == "ITG3" then list[1] = true
+			elseif CustomMods[pn].judgment == "ITG2" then list[2] = true
+			elseif CustomMods[pn].judgment == "Love" then list[3] = true
+			elseif CustomMods[pn].judgment == "GrooveNights" then list[4] = true
+			elseif CustomMods[pn].judgment == "Chromatic" then list[5] = true
+			elseif CustomMods[pn].judgment == "Tactics" then list[6] = true
+			else list[1] = true end
+		end,
+		SaveSelections = function(self, list, pn)
+				if list [1] then CustomMods[pn].judgment = "ITG3"
+				elseif list [2] then CustomMods[pn].judgment = "ITG2"
+				elseif list [3] then CustomMods[pn].judgment = "Love"
+				elseif list [4] then CustomMods[pn].judgment = "GrooveNights"
+				elseif list [5] then CustomMods[pn].judgment = "Chromatic"
+				elseif list [6] then CustomMods[pn].judgment = "Tactics"				
+				else CustomMods[pn].judgment = "ITG3" end
+		end
+	}
+	setmetatable(t, t)
+	return t
+end
+
+function GameplayInit(self)
+	self:queuecommand('FirstUpdate')
+end
+
+function Gameplay(self)
+	SetJudgmentFont()
+end
+
+function SetJudgmentFont()
+	for p = 1,2 do local x = SCREENMAN:GetTopScreen():GetChild('PlayerP' .. p)
+		if x then x = x:GetChild('Judgment'):GetChild('');
+			if p == 1 then
+				if CustomMods[PLAYER_1].judgment ~= "ITG3" then x:Load( THEME:GetPath( EC_GRAPHICS, '', '_judgments/' .. CustomMods[PLAYER_1].judgment ))
+				end
+			end
+			if p == 2 then
+				if CustomMods[PLAYER_2].judgment ~= "ITG3" then x:Load( THEME:GetPath( EC_GRAPHICS, '', '_judgments/' .. CustomMods[PLAYER_2].judgment ))
+				end
+			end
+		end
+	end
+end
+
+function JudgmentCommand(j)
+	return "zoom,0.8;decelerate,0.1;zoom,0.75;sleep,0.6;accelerate,0.2;zoom,0"
+end
+
+function JudgmentOddCommand(j)
+	return ""
+end
+
+function JudgmentEvenCommand(j)
+	return ""
+end
+
+-- Returns a players selected judgment font
+function GetJudgmentFont(pn)
+	return CustomMods[pn].judgment
 end
 
 -- Returns the screen darken mod
