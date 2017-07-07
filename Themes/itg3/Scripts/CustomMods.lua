@@ -268,28 +268,22 @@ end
 
 -- Returns 1 if score is hidden, 0 otherwise; for use in metrics.ini.
 function IsScoreHidden(pn)
-	local ret = 0
-	
-	if CustomMods[pn].hidescore == true then ret = 1 end
-	return ret
+	if CustomMods[pn].hidescore == true then return 1 
+	else return 0 end
 end
 
 -- Returns 1 if life is hidden, 0 otherwise; for use in metrics.ini.
 function IsLifeHidden(pn)
-	local ret = 0
-	
-	if CustomMods[pn].hidelife == true then ret = 1 end
-	return ret
+	if CustomMods[pn].hidelife == true then return 1
+	else return 0 end
 end
 
 -- We can't use the 'hidden' command on a per-player basis for combo, so
 -- instead take advantage of the X combo offset.
 function GetComboXOffset(pn)
-	local ret = 0
-
 	-- Hide the Lifebar off to the side.
-	if CustomMods[pn].hidecombo == true then ret = "-SCREEN_WIDTH*2" end
-	return ret
+	if CustomMods[pn].hidecombo == true then return "-SCREEN_WIDTH*2"
+	else return 0 end
 end
 
 function GetJudgeXOffset(pn)
@@ -297,15 +291,13 @@ function GetJudgeXOffset(pn)
 end
 
 function ShowStats(pn)
-	local ret = 0
-	if CustomMods[pn].showstats == true then ret = 1 end
-	return ret
+	if CustomMods[pn].showstats == true then return 1
+	else return 0 end
 end
 
 function ShowCourseModifiers(pn)
-	local ret = 1
-	if CustomMods[pn].showmods == true then ret = 0 end
-	return ret
+	if CustomMods[pn].showmods == true then return 0
+	else return 1 end
 end
 
 function ResetBeginnerDisplay()
