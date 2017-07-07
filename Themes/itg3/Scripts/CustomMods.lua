@@ -160,7 +160,7 @@ function OptionPlayfield()
 end
 
 
-function OptionsScreenFilter()
+function OptionScreenFilter()
 	local t = {
 		Name = "ScreenFilter",
 		LayoutType = "ShowAllInRow",
