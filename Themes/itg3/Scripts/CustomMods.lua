@@ -244,18 +244,6 @@ function SetJudgmentFont()
 	end
 end
 
-function JudgmentCommand(j)
-	return "zoom,0.8;decelerate,0.1;zoom,0.75;sleep,0.6;accelerate,0.2;zoom,0"
-end
-
-function JudgmentOddCommand(j)
-	return ""
-end
-
-function JudgmentEvenCommand(j)
-	return ""
-end
-
 -- Returns a players selected judgment font
 function GetJudgmentFont(pn)
 	return CustomMods[pn].judgment
