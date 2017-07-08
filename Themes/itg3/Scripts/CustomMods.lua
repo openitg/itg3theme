@@ -230,16 +230,14 @@ function Gameplay(self)
 end
 
 function SetJudgmentFont()
-	for p = 1,2 do local x = SCREENMAN:GetTopScreen():GetChild('PlayerP' .. p)
-		if x then x = x:GetChild('Judgment'):GetChild('');
-			if p == 1 then
-				if CustomMods[PLAYER_1].judgment ~= "ITG3" then x:Load( THEME:GetPath( EC_GRAPHICS, '', '_judgments/' .. CustomMods[PLAYER_1].judgment ))
-				end
-			end
-			if p == 2 then
-				if CustomMods[PLAYER_2].judgment ~= "ITG3" then x:Load( THEME:GetPath( EC_GRAPHICS, '', '_judgments/' .. CustomMods[PLAYER_2].judgment ))
-				end
-			end
+	if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
+		local x = SCREENMAN:GetTopScreen():GetChild('PlayerP1'):GetChild('Judgment'):GetChild('');
+		if CustomMods[PLAYER_1].judgment ~= "ITG3" then x:Load( THEME:GetPath( EC_GRAPHICS, '', '_judgments/' .. CustomMods[PLAYER_1].judgment ))
+		end
+	end
+	if GAMESTATE:IsPlayerEnabled(PLAYER_2) then
+		local x = SCREENMAN:GetTopScreen():GetChild('PlayerP2'):GetChild('Judgment'):GetChild('');
+		if CustomMods[PLAYER_2].judgment ~= "ITG3" then x:Load( THEME:GetPath( EC_GRAPHICS, '', '_judgments/' .. CustomMods[PLAYER_2].judgment ))
 		end
 	end
 end
