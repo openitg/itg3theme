@@ -88,6 +88,38 @@ function OptionShowModifiers()
 	return t
 end
 
+function OptionNextScreen()
+	local t = {
+		Name = "NextScreen",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectMultiple",
+		OneChoiceForAllPlayers = true,
+		ExportOnChange = false,
+		Choices = { 'Music Selection', 'More Options' },
+		
+		LoadSelections = function(self, list, pn)
+		end,
+		
+		SaveSelections = function(self, list, pn)
+			if ( ( list[1] or list[2] ) and ScreenPlayerOptionsTimer < 5 ) then
+			SCREENMAN:SystemMessage('Not Enough Time Left!')
+			elseif list[1] then SCREENMAN:SetNewScreen('ScreenSelectMusic2')
+			elseif list[2] then GetMoreOptionsScreen()
+			end
+		end
+	}
+	setmetatable(t, t)
+	return t
+end
+
+function GetMoreOptionsScreen()
+	--Give players a bit of buffer when switching between More Options.
+	ScreenPlayerOptionsTimer = (ScreenPlayerOptionsTimer + 5)
+	if ModsScreen == 'PlayerOptions' then
+	return SCREENMAN:SetNewScreen('ScreenSongOptions') else
+	return SCREENMAN:SetNewScreen('ScreenPlayerOptions')
+	end
+end
 
 function AvailableArrowDirections()
 

@@ -1395,22 +1395,6 @@ function DisplayBPM(pn)
 	return "???"
 end
 
-function BackButton()
-	local modList = {'Return to Music Selection'}
-	local t = {
-		Name = "BackButton",
-		LayoutType = "ShowAllInRow",
-		SelectType = "SelectMultiple",
-		OneChoiceForAllPlayers = GAMESTATE:IsPlayerEnabled(PLAYER_1),
-		ExportOnChange = false,
-		Choices = modList,
-		LoadSelections = function(self, list, pn) end,
-		SaveSelections = function(self, list, pn) if list[1] and (ScreenSelectMusicTimer > 10) and (ScreenPlayerOptionsTimer > 10) then SCREENMAN:SetNewScreen('ScreenSelectMusic2') else if list[1] then SCREENMAN:SystemMessage('Not Enough Time Left to Go Back!') end end end
-	}
-	setmetatable(t, t)
-	return t
-end
-
 function GetTimer(screen)
 	if screen == "ScreenEvaluation" then
 		-- reset the timers at the end of each round.
