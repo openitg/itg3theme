@@ -36,9 +36,10 @@ function EvaluationNextScreen()
 end
 
 function ScreenCleaning()
-	if Hour() >= GetCleanStartTime() and Hour() < GetCleanEndTime() and GetCleanScreen() == true then
-	return "ScreenNoise" end
-	
+	if GetCleanScreen() == true then
+		if Hour() >= GetCleanStartTime() and Hour() < GetCleanEndTime() then
+		return "ScreenNoise" end
+	end
 	return "ScreenCompany"
 end
 
