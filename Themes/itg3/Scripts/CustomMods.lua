@@ -199,20 +199,22 @@ function OptionScreenFilter()
 		SelectType = "SelectOne",
 		OneChoiceForAllPlayers = false,
 		ExportOnChange = false,
-		Choices = { "Disabled", "Dark", "Darker", "Darkest"},
+		Choices = { "Disabled", "Light", "Medium", "Dark", "Darkest"},
 		LoadSelections = function(self, list, pn)
 			--if GAMESTATE:StageIndex() == 0 then ResetCustomMods() end -- Reset if we're on the first stage
-			if CustomMods[pn].dark == 0 then list[1] = true 
-			elseif CustomMods[pn].dark == 0.5 then list[2] = true 
-			elseif CustomMods[pn].dark == 0.65 then list[3] = true 
-			elseif CustomMods[pn].dark == 0.85 then list[4] = true 
+			if CustomMods[pn].dark == 0 then list[1] = true
+			elseif CustomMods[pn].dark == 0.3 then list[2] = true 			
+			elseif CustomMods[pn].dark == 0.5 then list[3] = true 
+			elseif CustomMods[pn].dark == 0.7 then list[4] = true 
+			elseif CustomMods[pn].dark == 0.9 then list[5] = true 
 			else list[1] = true end
 		end,
 		SaveSelections = function(self, list, pn)
-				if list [1] then CustomMods[pn].dark = 0 
-				elseif list [2] then CustomMods[pn].dark = 0.5 
-				elseif list [3] then CustomMods[pn].dark = 0.65
-				elseif list [4] then CustomMods[pn].dark = 0.85 
+				if list [1] then CustomMods[pn].dark = 0
+				elseif list [2] then CustomMods[pn].dark = 0.3
+				elseif list [3] then CustomMods[pn].dark = 0.5
+				elseif list [4] then CustomMods[pn].dark = 0.7
+				elseif list [5] then CustomMods[pn].dark = 0.9 
 				else CustomMods[pn].dark = 0 end
 		end
 	}
