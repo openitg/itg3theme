@@ -74,11 +74,15 @@ function GetGameplayNextScreen()
 end
 
 function SelectEndingScreen()
-	if GAMESTATE:GetEnv("ForcePerfectEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER01 then return "ScreenEndingPerfect" end
-	if GAMESTATE:GetEnv("ForceGoodEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER04 then return "ScreenEndingGood" end
-	if GAMESTATE:GetEnv("ForceOkayEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER07 then return "ScreenEndingOkay" end
-
+	if GAMESTATE:GetEnv("ForcePerfectEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER01 then
+	return "ScreenEndingPerfect"
+	elseif GAMESTATE:GetEnv("ForceGoodEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER04 then
+	return "ScreenEndingGood"
+	elseif GAMESTATE:GetEnv("ForceOkayEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER07 then
+	return "ScreenEndingOkay"
+	else
 	return "ScreenEndingNormal"
+	end
 end
 
 function ScreenAfterGameplayWorkout()
