@@ -1,34 +1,52 @@
 -- Override these in other themes.
-function SongModifiers()
+function PlayerOptionsMods()
 	if OPENITG then
 		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
-			return "101,102,103,2,3,4," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "10,5,6,701,702,8,11,12,13,14,151,16,17,18,19,21,22,23,99" --OpenITG Normal Gameplay
-
+			return "101,102,103,2,3,5,10,18,99,23" --OpenITG Normal Gameplay	
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
-			return "101,102,103,2,3,4," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "10,5,6,701,702,8,11,12,13,14,151,16,17,18,20,21,22,23,99" --OpenITG Marathon Gameplay
-
+			return "101,102,103,2,3,5,10,18,99,23" --OpenITG Marathon Gameplay
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE then
 			return "101,102,103,2,3,4,999" --OpenITG Battle Gameplay
-
 		else
 			return "101,102,103,2,99" --OpenITG Survival/Fallback Gameplay
 		end
 	end
 
 	if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
-		return "101,102,103,2,3,4," ..(not GAMESTATE:PlayerUsingBothSides() and "9," or "").. "10,5,6,7,8,11,12,13,14,15,16,17,18,22,23,99" --Normal Gameplay
-
+		return "101,102,103,2,3,5,10,18,99,23" --Normal Gameplay
 	elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
-		return "101,102,103,2,3,4," ..(not GAMESTATE:PlayerUsingBothSides() and "9," or "").. "10,5,6,7,8,11,12,13,14,15,16,17,18,20,22,23,99" --Marathon Gameplay
-	
+		return "101,102,103,2,3,5,10,18,99,23" --Marathon Gameplay
 	elseif GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE then
 		return "101,102,103,2,3,4,999" --Battle Gameplay
-
 	else
-		return "101,102,203,2,99" --OpenITG Survival/Fallback Gameplay
+		return "101,102,203,2,99" --Survival/Fallback Gameplay
 	end
 
-	return "101,102,103,2,99" --Global Fallback (We should never get here!)
+	return "1,2,99" --Global Fallback (We should never get here!)
+end
+
+function SongOptionsMods()
+	if OPENITG then
+		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
+			return (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "4,6,701,8,13,11,16,17,19,21,22,23" --OpenITG Normal Gameplay			
+		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
+			return (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "4,6,701,8,13,11,16,17,20,21,22,23" --OpenITG Marathon Gameplay
+		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE then
+			return "23" --OpenITG Battle Gameplay (We should never get here!)
+		else
+			return "23" --OpenITG Survival/Fallback Gameplay (We should never get here!)
+		end
+	end
+
+	if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
+		return "4," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "6,7,8,11,13,16,17,22,23" -- Normal Gameplay
+	elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
+		return "4," .. (not GAMESTATE:PlayerUsingBothSides() and "9," or "") .. "6,7,8,11,13,16,17,20,22,23" --Marathon Gameplay
+	else
+		return "23" --OpenITG Survival/Fallback Gameplay (We should never get here!)
+	end
+	
+	return "23" --Global Fallback (We should never get here!)
 end
 
 function Platform() return "arcade" end
