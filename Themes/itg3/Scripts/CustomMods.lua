@@ -5,8 +5,8 @@ CustomMods = {}
 -- Since tables can only be assigned by reference in Lua, we must explicitly
 -- define defaults for each player.
 function ResetCustomMods()
-	CustomMods[PLAYER_1] = { hidescore = false, hidecombo = false, hidelife = false, showstats = false, showmods = false, normal = true, left = false, right = false, upsidedown = false, solo = false, vibrate = false, spin = false, spinreverse = false, bob = false, pulse = false, wag = false, dark = 0, judgment = "ITG3" }
-	CustomMods[PLAYER_2] = { hidescore = false, hidecombo = false, hidelife = false, showstats = false, showmods = false, normal = true, left = false, right = false, upsidedown = false, solo = false, vibrate = false, spin = false, spinreverse = false, bob = false, pulse = false, wag = false, dark = 0, judgment = "ITG3" }
+	CustomMods[PLAYER_1] = { hidescore = false, hidecombo = false, hidelife = false, showstats = false, showmods = false, judgmentposition = false, normal = true, left = false, right = false, upsidedown = false, solo = false, vibrate = false, spin = false, spinreverse = false, bob = false, pulse = false, wag = false, dark = 0, judgment = "ITG3" }
+	CustomMods[PLAYER_2] = { hidescore = false, hidecombo = false, hidelife = false, showstats = false, showmods = false, judgmentposition = false, normal = true, left = false, right = false, upsidedown = false, solo = false, vibrate = false, spin = false, spinreverse = false, bob = false, pulse = false, wag = false, dark = 0, judgment = "ITG3" }
 end
 
 -- Do initial reset
@@ -87,6 +87,31 @@ function OptionShowModifiers()
 	setmetatable(t, t)
 	return t
 end
+
+
+function OptionJudgmentPosition()
+	local t = {
+		Name = "JudgmentPosition",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectMultiple",
+		OneChoiceForAllPlayers = false,
+		ExportOnChange = false,
+		Choices = { "Judgments Behind Arrows" },
+		
+		LoadSelections = function(self, list, pn)
+			--if GAMESTATE:StageIndex() == 0 then ResetCustomMods() end -- Reset if we're on the first stage
+			list[1] = CustomMods[pn].judgmentposition -- Resets the judgements in front of arrows
+		end,
+		
+		SaveSelections = function(self, list, pn)
+			CustomMods[pn].judgmentposition = list[1] -- judgments behind arrows
+		end
+		
+	}
+	setmetatable(t, t)
+	return t
+end
+
 
 function OptionNextScreen()
 	local t = {
