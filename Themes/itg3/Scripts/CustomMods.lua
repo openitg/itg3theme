@@ -76,7 +76,7 @@ function OptionShowModifiers()
 		
 		LoadSelections = function(self, list, pn)
 			--if GAMESTATE:StageIndex() == 0 then ResetCustomMods() end -- Reset if we're on the first stage
-			list[1] = CustomMods[pn].showmods -- Resets the option to be off  ingame bargraph
+			list[1] = CustomMods[pn].showmods -- Resets the live course mods to be off
 		end,
 		
 		SaveSelections = function(self, list, pn)
