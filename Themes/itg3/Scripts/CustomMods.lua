@@ -297,6 +297,11 @@ function SetJudgmentFont()
 	end
 end
 
+function GetJudgmentPosition()
+	if (GAMESTATE:IsPlayerEnabled(PLAYER_1) and CustomMods[PLAYER_1].judgmentposition == true) or (GAMESTATE:IsPlayerEnabled(PLAYER_2) and CustomMods[PLAYER_2].judgmentposition == true) then return 1
+	else return 0 end
+end
+	
 -- Returns a players selected judgment font
 function GetJudgmentFont(pn)
 	return CustomMods[pn].judgment
