@@ -289,10 +289,10 @@ function Gameplay(self)
 end
 
 function SetJudgmentFont()
-	if GAMESTATE:IsPlayerEnabled(PLAYER_1) and CustomMods[PLAYER_1].judgment ~= "ITG3" then
+	if GAMESTATE:IsPlayerEnabled(PLAYER_1) and CustomMods[PLAYER_1].judgment ~= "ITG3" and GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()~=DIFFICULTY_BEGINNER then
 		SCREENMAN:GetTopScreen():GetChild('PlayerP1'):GetChild('Judgment'):GetChild(''):Load( THEME:GetPath( EC_GRAPHICS, '', '_judgments/' .. CustomMods[PLAYER_1].judgment ))
 	end
-	if GAMESTATE:IsPlayerEnabled(PLAYER_2) and CustomMods[PLAYER_2].judgment ~= "ITG3" then
+	if GAMESTATE:IsPlayerEnabled(PLAYER_2) and CustomMods[PLAYER_2].judgment ~= "ITG3" and GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()~=DIFFICULTY_BEGINNER then
 		SCREENMAN:GetTopScreen():GetChild('PlayerP2'):GetChild('Judgment'):GetChild(''):Load( THEME:GetPath( EC_GRAPHICS, '', '_judgments/' .. CustomMods[PLAYER_2].judgment ))
 	end
 end
