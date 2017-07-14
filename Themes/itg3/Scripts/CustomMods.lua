@@ -48,15 +48,15 @@ function OptionShowStats()
 		SelectType = "SelectMultiple",
 		OneChoiceForAllPlayers = false,
 		ExportOnChange = false,
-		Choices = { "Show InGame Statistics" },
+		Choices = { "Show In-Game Statistics" },
 		
 		LoadSelections = function(self, list, pn)
 			--if GAMESTATE:StageIndex() == 0 then ResetCustomMods() end -- Reset if we're on the first stage
-			list[1] = CustomMods[pn].showstats -- Resets the ingame bargraph to be off
+			list[1] = CustomMods[pn].showstats -- Resets the in-game bargraph to be off
 		end,
 		
 		SaveSelections = function(self, list, pn)
-			CustomMods[pn].showstats = list[1] -- ingame bargraph
+			CustomMods[pn].showstats = list[1] -- in-game bargraph
 		end
 		
 	}
