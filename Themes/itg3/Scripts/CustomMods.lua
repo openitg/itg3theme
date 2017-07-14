@@ -118,7 +118,7 @@ function OptionNextScreen()
 		Name = "NextScreen",
 		LayoutType = "ShowAllInRow",
 		SelectType = "SelectMultiple",
-		OneChoiceForAllPlayers = GAMESTATE:IsPlayerEnabled(PLAYER_1),
+		OneChoiceForAllPlayers = false,
 		ExportOnChange = false,
 		Choices = { 'Music Selection', 'More Options' },
 		
