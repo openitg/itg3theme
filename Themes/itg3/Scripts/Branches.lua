@@ -25,20 +25,14 @@ function GetUpdateScreen()
 	return "ScreenArcadePatch"
 end
 
-function EvaluationNextScreenExit()
+function EvaluationNextScreen()
 	Trace( "GetGameplayNextScreen: " )
 	Trace( " AllFailed = "..tostring(AllFailed()) )
 	Trace( " IsEventMode = "..tostring(GAMESTATE:IsEventMode()) )
 	Trace( " IsFinalStage = "..tostring(IsFinalStage()) )
 	if GAMESTATE:IsEventMode() then return NewSongScreen() end
-	if AllFailed() or IsFinalStage() then return "ScreenNameEntryTraditional" end
+	if AllFailed() or IsFinalStage() or GAMESTATE:IsExtraStage() then return "ScreenNameEntryTraditional" end
 	return NewSongScreen();
-end
-
-function EvaluationNextScreen()
-	if( IsNetSMOnline() ) then return "ScreenNetRoom" end
-	if( IsNetConnected() ) then return "ScreenNetSelectMusic" end
-	return NewSongScreen()
 end
 
 function ScreenCleaning()
