@@ -31,7 +31,7 @@ function EvaluationNextScreen()
 	Trace( " IsEventMode = "..tostring(GAMESTATE:IsEventMode()) )
 	Trace( " IsFinalStage = "..tostring(IsFinalStage()) )
 	if GAMESTATE:IsEventMode() then return NewSongScreen() end
-	if AllFailed() or IsFinalStage() then return "ScreenNameEntryTraditional" end
+	if AllFailed() then return "ScreenNameEntryTraditional" end
 	return NewSongScreen();
 end
 
@@ -139,7 +139,6 @@ return "ScreenTitleJoin"
 end
 
 function OptionsMenuAvailable()
-	if GAMESTATE:IsExtraStage() or GAMESTATE:IsExtraStage2() then return false end
 	if GAMESTATE:GetPlayMode()==PLAY_MODE_ONI then return false end
 	return true
 end
