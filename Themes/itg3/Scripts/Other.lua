@@ -2,9 +2,9 @@
 function PlayerOptionsMods()
 	if OPENITG then
 		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
-			return "101,102,103,2,3,5,6,7,99,100" --OpenITG Normal Gameplay	
+			return "101,102,103,2,3,5,6,7,16,99,100" --OpenITG Normal Gameplay	
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
-			return "101,102,103,2,3,5,6,7,99,100" --OpenITG Marathon Gameplay
+			return "101,102,103,2,3,5,6,7,17,99,100" --OpenITG Marathon Gameplay
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE then
 			return "101,102,103,2,3,4,999" --OpenITG Battle Gameplay
 		else
@@ -15,7 +15,7 @@ function PlayerOptionsMods()
 	if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
 		return "101,102,103,2,3,5,6,7,99,100" --Normal Gameplay
 	elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
-		return "101,102,103,2,3,5,6,7,99,100" --Marathon Gameplay
+		return "101,102,103,2,3,5,6,7,17,99,100" --Marathon Gameplay
 	elseif GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE then
 		return "101,102,103,2,3,4,999" --Battle Gameplay
 	else
@@ -28,9 +28,9 @@ end
 function SongOptionsMods()
 	if OPENITG then
 		if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
-			return (not GAMESTATE:PlayerUsingBothSides() and "8," or "") .. "4,9,10,110,12,13,14,15,16,18,20,100" --OpenITG Normal Gameplay			
+			return (not GAMESTATE:PlayerUsingBothSides() and "8," or "") .. "4,9,10,110,12,13,14,15,18,20,100" --OpenITG Normal Gameplay			
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
-			return (not GAMESTATE:PlayerUsingBothSides() and "8," or "") .. "4,9,10,110,12,13,14,15,17,18,20,100" --OpenITG Marathon Gameplay
+			return (not GAMESTATE:PlayerUsingBothSides() and "8," or "") .. "4,9,10,110,12,13,14,15,18,20,100" --OpenITG Marathon Gameplay
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE then
 			return "23" --OpenITG Battle Gameplay (We should never get here!)
 		else
@@ -41,7 +41,7 @@ function SongOptionsMods()
 	if GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR then
 		return (not GAMESTATE:PlayerUsingBothSides() and "8," or "") .. "4,9,10,11,12,13,14,15,20,100" -- Normal Gameplay
 	elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
-		return (not GAMESTATE:PlayerUsingBothSides() and "8," or "") .. "4,9,10,11,12,13,14,15,17,20,100" --Marathon Gameplay
+		return (not GAMESTATE:PlayerUsingBothSides() and "8," or "") .. "4,9,10,11,12,13,14,15,20,100" --Marathon Gameplay
 	else
 		return "23" --OpenITG Survival/Fallback Gameplay (We should never get here!)
 	end
