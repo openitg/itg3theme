@@ -43,10 +43,10 @@ function SongOptionsMods()
 	elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
 		return (not GAMESTATE:PlayerUsingBothSides() and "7," or "") .. "8,9,10,11,12,13,14,15,20,100" --Marathon Gameplay
 	else
-		return "23" --OpenITG Survival/Fallback Gameplay (We should never get here!)
+		return "1,2,99" --OpenITG Survival/Fallback Gameplay (We should never get here!)
 	end
 	
-	return "23" --Global Fallback (We should never get here!)
+	return "1,2,99" --Global Fallback (We should never get here!)
 end
 
 function Platform() return "arcade" end
