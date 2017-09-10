@@ -32,9 +32,9 @@ function SongOptionsMods()
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then
 			return (not GAMESTATE:PlayerUsingBothSides() and "7," or "") .. "8,9,10,110,12,13,14,15,16,20,100" --OpenITG Marathon Gameplay
 		elseif GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE then
-			return "23" --OpenITG Battle Gameplay (We should never get here!)
+			return "1,2,99" --OpenITG Battle Gameplay (We should never get here!)
 		else
-			return "23" --OpenITG Survival/Fallback Gameplay (We should never get here!)
+			return "1,2,99" --OpenITG Survival/Fallback Gameplay (We should never get here!)
 		end
 	end
 
