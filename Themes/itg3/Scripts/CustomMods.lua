@@ -229,15 +229,15 @@ function OptionScreenFilter()
 			--if GAMESTATE:StageIndex() == 0 then ResetCustomMods() end -- Reset if we're on the first stage
 			if CustomMods[pn].dark == 0 then list[1] = true 
 			elseif CustomMods[pn].dark == 0.5 then list[2] = true 
-			elseif CustomMods[pn].dark == 0.65 then list[3] = true 
-			elseif CustomMods[pn].dark == 0.85 then list[4] = true 
+			elseif CustomMods[pn].dark == 0.75 then list[3] = true 
+			elseif CustomMods[pn].dark == 0.95 then list[4] = true 
 			else list[1] = true end
 		end,
 		SaveSelections = function(self, list, pn)
 				if list [1] then CustomMods[pn].dark = 0 
 				elseif list [2] then CustomMods[pn].dark = 0.5 
-				elseif list [3] then CustomMods[pn].dark = 0.65
-				elseif list [4] then CustomMods[pn].dark = 0.85 
+				elseif list [3] then CustomMods[pn].dark = 0.75
+				elseif list [4] then CustomMods[pn].dark = 0.95 
 				else CustomMods[pn].dark = 0 end
 		end
 	}
