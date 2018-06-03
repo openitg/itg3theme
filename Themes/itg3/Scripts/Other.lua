@@ -1229,6 +1229,7 @@ function SpeedMods(name)
 			if modType[p] == 'c-mod' then modSpeed[p] = 'c' .. modBase[p]*100 + modExtra[p]*100 end
 			if modType[p] == 'm-mod' then modSpeed[p] = 'm' .. modBase[p]*100 + modExtra[p]*100 end
 			GAMESTATE:ApplyGameCommand('mod,1x',p)
+			ApplyRateAdjust()
 			MESSAGEMAN:Broadcast('SpeedModChanged')
 		end
 	}
@@ -1265,6 +1266,7 @@ function RateMods(name)
 			end
 			modRate = s
 			GAMESTATE:ApplyGameCommand('mod,'..s..'xmusic',pn+1)
+			ApplyRateAdjust()
 			MESSAGEMAN:Broadcast('RateModChanged')
 		end
 	}
