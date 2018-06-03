@@ -1102,8 +1102,8 @@ elseif CustomMods[pn].spin then if t == "" then t = "Spin Right" else t = t .. "
 elseif CustomMods[pn].vibrate then if t == "" then t = "Vibrate" else t = t .. ", Vibrate" end end
 
 if CustomMods[pn].dark == 0.5 then if t == "" then t = "Dark Filter" else t = t .. ", Dark Filter" end end
-if CustomMods[pn].dark == 0.65 then if t == "" then t = "Darker Filter" else t = t .. ", Darker Filter" end end
-if CustomMods[pn].dark == 0.85 then if t == "" then t = "Darkest Filter" else t = t .. ", Darkest Filter" end end
+if CustomMods[pn].dark == 0.75 then if t == "" then t = "Darker Filter" else t = t .. ", Darker Filter" end end
+if CustomMods[pn].dark == 0.95 then if t == "" then t = "Darkest Filter" else t = t .. ", Darkest Filter" end end
 
 if GetRateMod() ~= '' then if t == "" then t = GetRateMod() else t = t .. ", " .. GetRateMod() end end
 
