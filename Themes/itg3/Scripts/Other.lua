@@ -1407,7 +1407,7 @@ function DisplayBPM(pn)
 	end
 
 	if modType[pn] == "c-mod" or modType[pn] == "m-mod" then
-	return speedMod
+	return speedMod * modRate
 	end
 
 	return "???"
