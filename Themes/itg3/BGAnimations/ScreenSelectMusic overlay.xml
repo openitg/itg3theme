@@ -28,8 +28,7 @@
 			if bpm[2] == bpm[1] then bpm[2] = '';
 			end
 		bpm[3] = SCREENMAN:GetTopScreen():GetChild('BPMDisplay'):GetChild('Text'):GetText();
-			if not OPENITG then bpm[3] = math.floor(bpm[3] * modRate + 0.5)
-			end
+		bpm[3] = math.floor(bpm[3] * modRate + 0.5)
 		end"
 	CurrentSongChangedMessageCommand="queuecommand,BPMCapture"
 	CurrentStepsP1ChangedMessageCommand="queuecommand,BPMCapture"
